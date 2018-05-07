@@ -1,0 +1,19 @@
+{
+  "name": "sakuten.frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Sakuten Dev Team",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "hyperapp": "^1.2.5"
+  },
+  "devDependencies": {
+    "serve": "^6.5.6",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "webpack": "^4.8.0",
+    "webpack-cli": "^2.1.3"
+  }
+}
