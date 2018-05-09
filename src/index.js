@@ -42,7 +42,8 @@ const actions = {
         }).catch(resp => {
           console.error(resp)
         })
-    }
+    },
+    logout: () => (state, actions) => actions.setToken(""),
   }
 }
 
@@ -67,6 +68,7 @@ const loginView = (state, actions) => (
 const loggedinView = (state, actions) => (
   <div>
     <h1>Logged in as {state.credentials.username} {state.credentials.token}</h1>
+    <button onclick={actions.credentials.logout}>Logout</button>
   </div>
 )
 
