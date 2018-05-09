@@ -1,8 +1,5 @@
 import { h, app } from "hyperapp"
 import {fetch_api} from "./api"
-import {inspect} from "util"
-
-const api_server = 'localhost:5000'
 
 const savedToken = localStorage.getItem('Token')
 const state = {
@@ -79,4 +76,3 @@ const view = (state, actions) => (
 )
 
 app(state, actions, view, document.body)
-// actions.login()
