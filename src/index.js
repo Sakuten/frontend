@@ -16,8 +16,8 @@ const state = {
       token: savedToken || "",
       status: {}
     },
-    classroom: "",
-    lottery: ""
+    classroom: 1,
+    lottery: 1
   }
 }
 
@@ -105,7 +105,8 @@ const actions = {
 }
 
 const LotterySelect = ({classroom}) => (state, actions) => (
-  <select name="lotteries" oninput={e => actions.submission.setLottery(e.target.value)}>
+  <select name="lotteries"
+      oninput={e => actions.submission.setLottery(e.target.value)}>
     {
       state.data.lottery_list
         .filter(c => c.classroom_id == classroom)
@@ -138,6 +139,7 @@ const loggedinView = (state, actions) => (
   <div oncreate={actions.submission.credentials.fetchStatus}>
     <h1>You are {state.submission.credentials.username}</h1>
     <select name="classrooms"
+      value={state.submission.classroom}
       oncreate={() => {actions.data.fetchClassroomList(); actions.data.fetchLotteryList();}}
       oninput={e => actions.submission.setClassroom(e.target.value)}>
       {
