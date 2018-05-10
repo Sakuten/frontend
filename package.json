@@ -28,6 +28,10 @@
   "scripts": {
     "lint": "eslint .",
     "fix": "yarn run lint --fix",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": ["eslint --fix", "git add"]
   }
 }
