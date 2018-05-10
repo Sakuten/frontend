@@ -3,54 +3,54 @@ import {fetch_api} from "./api"
 
 const savedToken = localStorage.getItem('Token')
 const state = {
-  credentials: {
-    password: "",
-    username: "",
-    token: savedToken || ""
-  },
   data: {
     classroom_list: [],
     lottery_list: []
   },
   submission: {
+    credentials: {
+      password: "",
+      username: "",
+      token: savedToken || ""
+    },
     classroom: "",
     lottery: ""
   }
 }
 
 const actions = {
-  credentials: {
-    setPassword: text => ({ password: text }),
-    clearPassword: () => ({ password: "" }),
-    setUsername: text => ({ username: text }),
-    setToken: text => {
-      localStorage.setItem('Token', text)
-      return { token: text }
-    },
-    login: () => (state, actions) => {
-      fetch_api('auth/', {
-          method: 'post',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          data: {
-            password: state.password,
-            username: state.username
-          }
-        }).then((response) => {
-          const json = response.data
-          if('token' in json) {
-            actions.setToken(json.token)
-            actions.clearPassword()
-          } else
-            throw Error("Invalid response returned")
-        }).catch(resp => {
-          console.error(resp)
-        })
-    },
-    logout: () => (state, actions) => actions.setToken("")
-  },
   submission: {
+    credentials: {
+      setPassword: text => ({ password: text }),
+      clearPassword: () => ({ password: "" }),
+      setUsername: text => ({ username: text }),
+      setToken: text => {
+        localStorage.setItem('Token', text)
+        return { token: text }
+      },
+      login: () => (state, actions) => {
+        fetch_api('auth/', {
+            method: 'post',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            data: {
+              password: state.password,
+              username: state.username
+            }
+          }).then((response) => {
+            const json = response.data
+            if('token' in json) {
+              actions.setToken(json.token)
+              actions.clearPassword()
+            } else
+              throw Error("Invalid response returned")
+          }).catch(resp => {
+            console.error(resp)
+          })
+      },
+      logout: () => (state, actions) => actions.setToken("")
+    },
     setClassroom: id => ({classroom: id}),
     setLottery: id => ({lottery: id}),
     apply: () => (state, actions) => {
@@ -102,22 +102,22 @@ const loginView = (state, actions) => (
     <input
       autofocus
       placeholder="username"
-      value={state.credentials.username}
-      oninput={e => actions.credentials.setUsername(e.target.value)}
+      value={state.submission.credentials.username}
+      oninput={e => actions.submission.credentials.setUsername(e.target.value)}
     />
     <input
       autofocus
       placeholder="password"
-      value={state.credentials.password}
-      oninput={e => actions.credentials.setPassword(e.target.value)}
+      value={state.submission.credentials.password}
+      oninput={e => actions.submission.credentials.setPassword(e.target.value)}
     />
-    <button onclick={actions.credentials.login}>Login</button>
+    <button onclick={actions.submission.credentials.login}>Login</button>
   </div>
 )
 
 const loggedinView = (state, actions) => (
   <div>
-    <h1>You are {state.credentials.username}</h1>
+    <h1>You are {state.submission.credentials.username}</h1>
     <select name="classrooms"
       oncreate={() => {actions.data.fetchClassroomList(); actions.data.fetchLotteryList();}}
       oninput={e => actions.submission.setClassroom(e.target.value)}>
@@ -128,13 +128,14 @@ const loggedinView = (state, actions) => (
       }
     </select>
     {state.submission.classroom ? <LotterySelect classroom={state.submission.classroom} /> : null}
-    <button onclick={actions.credentials.logout}>Logout</button>
+    {state.submission.lottery ? <button onclick={actions.submission.apply}>Apply</button> : null}
+    <button onclick={actions.submission.credentials.logout}>Logout</button>
   </div>
 )
 
 const view = (state, actions) => (
   <div>
-    {state.credentials.token ? loggedinView : loginView}
+    {state.submission.credentials.token ? loggedinView : loginView}
   </div>
 )
 
