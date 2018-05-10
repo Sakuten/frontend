@@ -81,6 +81,18 @@ const actions = {
           actions.credentials.fetchStatus()
         })
         .catch(console.error)
+    },
+    draw: () => (state, actions) => {
+      fetchApi(`api/lotteries/${state.lottery}/draw`, {
+        method: 'get',
+        headers: {
+          'Authorization': 'Bearer ' + state.credentials.token
+        }
+      })
+        .then((response) => {
+          alert(response.data.chosen)
+        })
+        .catch(console.error)
     }
   },
   data: {
@@ -149,6 +161,7 @@ const loggedinView = (state, actions) => (
     </select>
     <LotterySelect classroom={state.submission.classroom} />
     <button onclick={actions.submission.apply}>Apply</button>
+    {state.submission.credentials.status.username === 'admin' ? <button onclick={actions.submission.draw}>Draw</button> : null}
     <button onclick={actions.submission.credentials.logout}>Logout</button>
     {JSON.stringify(state.submission.credentials.status)}
   </div>
