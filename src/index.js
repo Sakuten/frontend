@@ -47,6 +47,7 @@ const actions = {
             if('token' in json) {
               actions.setToken(json.token)
               actions.clearPassword()
+              actions.fetchStatus()
             } else
               throw Error("Invalid response returned")
           }).catch(resp => {
@@ -136,8 +137,8 @@ const loginView = (state, actions) => (
 )
 
 const loggedinView = (state, actions) => (
-  <div oncreate={actions.submission.credentials.fetchStatus}>
-    <h1>You are {state.submission.credentials.username}</h1>
+  <div>
+    <h1>You are {state.submission.credentials.status.username}</h1>
     <select name="classrooms"
       value={state.submission.classroom}
       oncreate={() => {actions.data.fetchClassroomList(); actions.data.fetchLotteryList();}}
@@ -163,8 +164,10 @@ const view = (state, actions) => (
 
 const main = app(state, actions, view, document.body)
 
-setInterval(() => {
+const update = () => {
   const state = main.getState()
   if(state.submission.credentials.token)
     main.submission.credentials.fetchStatus()
-}, 10000)
+}
+update()
+setInterval(update, 10000)
