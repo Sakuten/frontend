@@ -1,7 +1,7 @@
 'use strict'
 
-import { h, app } from "hyperapp"
-import {fetch_api} from "./api"
+import { h, app } from 'hyperapp'
+import {fetchApi} from './api'
 
 const savedToken = localStorage.getItem('Token')
 const state = {
@@ -11,9 +11,9 @@ const state = {
   },
   submission: {
     credentials: {
-      password: "",
-      username: "",
-      token: savedToken || "",
+      password: '',
+      username: '',
+      token: savedToken || '',
       status: {}
     },
     classroom: 1,
@@ -26,43 +26,42 @@ const actions = {
   submission: {
     credentials: {
       setPassword: text => ({ password: text }),
-      clearPassword: () => ({ password: "" }),
+      clearPassword: () => ({ password: '' }),
       setUsername: text => ({ username: text }),
       setToken: text => {
         localStorage.setItem('Token', text)
         return { token: text }
       },
       login: () => (state, actions) => {
-        fetch_api('auth/', {
-            method: 'post',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            data: {
-              password: state.password,
-              username: state.username
-            }
-          }).then((response) => {
-            const json = response.data
-            if('token' in json) {
-              actions.setToken(json.token)
-              actions.clearPassword()
-              actions.fetchStatus()
-            } else
-              throw Error("Invalid response returned")
-          }).catch(resp => {
-            console.error(resp)
-          })
+        fetchApi('auth/', {
+          method: 'post',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          data: {
+            password: state.password,
+            username: state.username
+          }
+        }).then((response) => {
+          const json = response.data
+          if ('token' in json) {
+            actions.setToken(json.token)
+            actions.clearPassword()
+            actions.fetchStatus()
+          } else { throw Error('Invalid response returned') }
+        }).catch(resp => {
+          console.error(resp)
+        })
       },
-      logout: () => (state, actions) => actions.setToken(""),
+      logout: () => (state, actions) => actions.setToken(''),
       setStatus: status => ({status}),
       fetchStatus: () => (state, actions) => {
-        fetch_api(`api/status`, {
-            method: 'get',
-            headers: {
-              'Authorization': 'Bearer '+state.token
-            }
-          })
+        fetchApi(`api/status`, {
+          method: 'get',
+          headers: {
+            'Authorization': 'Bearer ' + state.token
+          }
+        })
           .then(response => {
             actions.setStatus(response.data.status)
           })
@@ -72,46 +71,46 @@ const actions = {
     setClassroom: id => ({classroom: id}),
     setLottery: id => ({lottery: id}),
     apply: () => (state, actions) => {
-      fetch_api(`api/lotteries/${state.lottery}/apply`, {
-          method: 'put',
-          headers: {
-            'Authorization': 'Bearer '+state.credentials.token
-          }
-        })
+      fetchApi(`api/lotteries/${state.lottery}/apply`, {
+        method: 'put',
+        headers: {
+          'Authorization': 'Bearer ' + state.credentials.token
+        }
+      })
         .then(response => {
           actions.credentials.fetchStatus()
         })
         .catch(console.error)
-    },
+    }
   },
   data: {
     setLotteryList: list => ({ lottery_list: list }),
     fetchLotteryList: () => (state, actions) => {
-      fetch_api('api/lotteries', {})
+      fetchApi('api/lotteries', {})
         .then(response => {
           actions.setLotteryList(response.data.lotteries)
         })
-          .catch(console.error)
+        .catch(console.error)
     },
     setClassroomList: list => ({ classroom_list: list }),
     fetchClassroomList: () => (state, actions) => {
-      fetch_api('api/classrooms', {})
+      fetchApi('api/classrooms', {})
         .then(response => {
           actions.setClassroomList(response.data.classrooms)
         })
-          .catch(console.error)
+        .catch(console.error)
     }
   }
 }
 
 const LotterySelect = ({classroom}) => (state, actions) => (
   <select name="lotteries"
-      oninput={e => actions.submission.setLottery(e.target.value)}>
+    oninput={e => actions.submission.setLottery(e.target.value)}>
     {
       state.data.lottery_list
-        .filter(c => c.classroom_id == classroom)
+        .filter(c => c.classroom_id === classroom)
         .map(c =>
-          <option value={c.id}>第{c.index+1}公演</option>
+          <option value={c.id}>第{c.index + 1}公演</option>
         )
     }
   </select>
@@ -140,7 +139,7 @@ const loggedinView = (state, actions) => (
     <h1>You are {state.submission.credentials.status.username}</h1>
     <select name="classrooms"
       value={state.submission.classroom}
-      oncreate={() => {actions.data.fetchClassroomList(); actions.data.fetchLotteryList();}}
+      oncreate={() => { actions.data.fetchClassroomList(); actions.data.fetchLotteryList() }}
       oninput={e => actions.submission.setClassroom(e.target.value)}>
       {
         state.data.classroom_list.map(c =>
@@ -165,8 +164,7 @@ const main = app(state, actions, view, document.body)
 
 const update = () => {
   const state = main.getState()
-  if(state.submission.credentials.token)
-    main.submission.credentials.fetchStatus()
+  if (state.submission.credentials.token) { main.submission.credentials.fetchStatus() }
 }
 update()
 setInterval(update, 10000)
