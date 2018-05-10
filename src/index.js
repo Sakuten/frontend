@@ -158,4 +158,6 @@ const view = (state, actions) => (
   </div>
 )
 
-app(state, actions, view, document.body)
+const main = app(state, actions, view, document.body)
+
+setInterval(main.submission.credentials.fetchStatus, 10000)
