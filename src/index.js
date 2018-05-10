@@ -64,7 +64,6 @@ const actions = {
             }
           })
           .then(response => {
-            console.log(response.data)
             actions.setStatus(response.data.status)
           })
           .catch(console.error)
