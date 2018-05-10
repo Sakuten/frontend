@@ -54,13 +54,14 @@ const actions = {
     setClassroom: id => ({classroom: id}),
     setLottery: id => ({lottery: id}),
     apply: () => (state, actions) => {
-      fetch_api(`api/lotteries/${state.lottery}`, {
-        headers: {
-          'Authorization': 'Bearer '+state.token
-        }
-      })
+      fetch_api(`api/lotteries/${state.lottery}/apply`, {
+          method: 'put',
+          headers: {
+            'Authorization': 'Bearer '+state.credentials.token
+          }
+        })
         .then(response => {
-          actions.setLotteryList(response.data.lotteries)
+          console.log(response)
         })
         .catch(console.error)
     }
