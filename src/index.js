@@ -11,7 +11,8 @@ const state = {
     credentials: {
       password: "",
       username: "",
-      token: savedToken || ""
+      token: savedToken || "",
+      status: {}
     },
     classroom: "",
     lottery: ""
@@ -49,7 +50,21 @@ const actions = {
             console.error(resp)
           })
       },
-      logout: () => (state, actions) => actions.setToken("")
+      logout: () => (state, actions) => actions.setToken(""),
+      setStatus: status => ({status}),
+      fetchStatus: () => (state, actions) => {
+        fetch_api(`api/status`, {
+            method: 'get',
+            headers: {
+              'Authorization': 'Bearer '+state.token
+            }
+          })
+          .then(response => {
+            console.log(response.data)
+            actions.setStatus(response.data.status)
+          })
+          .catch(console.error)
+      }
     },
     setClassroom: id => ({classroom: id}),
     setLottery: id => ({lottery: id}),
@@ -61,10 +76,10 @@ const actions = {
           }
         })
         .then(response => {
-          console.log(response)
+          actions.credentials.fetchStatus()
         })
         .catch(console.error)
-    }
+    },
   },
   data: {
     setLotteryList: list => ({ lottery_list: list }),
@@ -117,7 +132,7 @@ const loginView = (state, actions) => (
 )
 
 const loggedinView = (state, actions) => (
-  <div>
+  <div oncreate={actions.submission.credentials.fetchStatus}>
     <h1>You are {state.submission.credentials.username}</h1>
     <select name="classrooms"
       oncreate={() => {actions.data.fetchClassroomList(); actions.data.fetchLotteryList();}}
@@ -131,6 +146,7 @@ const loggedinView = (state, actions) => (
     {state.submission.classroom ? <LotterySelect classroom={state.submission.classroom} /> : null}
     {state.submission.lottery ? <button onclick={actions.submission.apply}>Apply</button> : null}
     <button onclick={actions.submission.credentials.logout}>Logout</button>
+    {JSON.stringify(state.submission.credentials.status)}
   </div>
 )
 
