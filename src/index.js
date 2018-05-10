@@ -22,6 +22,7 @@ const state = {
 }
 
 const actions = {
+  getState: () => state => state,
   submission: {
     credentials: {
       setPassword: text => ({ password: text }),
@@ -160,4 +161,8 @@ const view = (state, actions) => (
 
 const main = app(state, actions, view, document.body)
 
-setInterval(main.submission.credentials.fetchStatus, 10000)
+setInterval(() => {
+  const state = main.getState()
+  if(state.submission.credentials.token)
+    main.submission.credentials.fetchStatus()
+}, 10000)
