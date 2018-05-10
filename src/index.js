@@ -1,3 +1,5 @@
+'use strict'
+
 import { h, app } from "hyperapp"
 import {fetch_api} from "./api"
 
