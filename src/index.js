@@ -77,7 +77,7 @@ const actions = {
           'Authorization': 'Bearer ' + state.credentials.token
         }
       })
-        .then(response => {
+        .then((/* response */) => {
           actions.credentials.fetchStatus()
         })
         .catch(console.error)
@@ -154,7 +154,7 @@ const loggedinView = (state, actions) => (
   </div>
 )
 
-const view = (state, actions) => (
+const view = (state /*, actions */) => (
   <div>
     {state.submission.credentials.token ? loggedinView : loginView}
   </div>
