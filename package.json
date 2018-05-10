@@ -31,7 +31,9 @@
     "lint": "eslint .",
     "fix": "yarn run lint --fix",
     "lint-staged": "lint-staged",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "dev": "webpack -w",
+    "serve": "serve"
   },
   "lint-staged": {
     "*.{js,jsx}": [
