@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+}
+
+.text {
+  border-style: solid;
+  border-color: #000;
+  border-width: 3px;
+
+  padding: 5px;
+  margin: 5px;
+}
+
+.button {
+  border-style: none;
+
+  margin: 3px;
+  padding: 8px;
+  color: #fff;
+  background-color: #000;
+}

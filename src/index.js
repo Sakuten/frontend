@@ -3,6 +3,12 @@
 import { h, app } from 'hyperapp'
 import {fetchApi} from './api'
 
+import loginStyles from './css/login.css'
+
+const styles = {
+  login: loginStyles
+}
+
 const savedToken = localStorage.getItem('Token')
 const state = {
   data: {
@@ -117,20 +123,23 @@ const LotterySelect = ({classroom}) => (state, actions) => (
 )
 
 const loginView = (state, actions) => (
-  <div>
+  <div class={styles.login.container}>
     <input
+      class={styles.login.text}
       autofocus
       placeholder="username"
       value={state.submission.credentials.username}
       oninput={e => actions.submission.credentials.setUsername(e.target.value)}
     />
     <input
+      class={styles.login.text}
+      autofocus
       autofocus
       placeholder="password"
       value={state.submission.credentials.password}
       oninput={e => actions.submission.credentials.setPassword(e.target.value)}
     />
-    <button onclick={actions.submission.credentials.login}>Login</button>
+    <button class={styles.login.button} onclick={actions.submission.credentials.login}>Login</button>
   </div>
 )
 
