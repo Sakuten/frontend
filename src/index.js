@@ -200,7 +200,7 @@ const loggedinView = (state, actions) => (
     <LotterySelect classroom={state.submission.classroom} />
     <button class={styles.dashboard.button} onclick={actions.submission.apply}>Apply</button>
     <h2 class={styles.dashboard.heading}>Your Applications</h2>
-    <ApplicationList list={state.submission.credentials.status.applications} oncancel={actions.submission.cancelWithId} />
+  <ApplicationList list={state.submission.credentials.status.applications} oncancel={id => actions.submission.cancelWithId(id).catch(actions.logError)} />
   </div>
 )
 
