@@ -167,8 +167,8 @@ const loggedinView = (state, actions) => (
       </select>
     </div>
     <LotterySelect classroom={state.submission.classroom} />
-    <button onclick={actions.submission.apply}>Apply</button>
-    <button onclick={actions.submission.credentials.logout}>Logout</button>
+    <button class={styles.dashboard.button} onclick={actions.submission.apply}>Apply</button>
+    <button class={styles.dashboard.button} onclick={actions.submission.credentials.logout}>Logout</button>
     {JSON.stringify(state.submission.credentials.status)}
   </div>
 )

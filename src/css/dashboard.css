@@ -53,3 +53,13 @@
     border-width: 6px 6px 0 6px;
     border-color: #fff transparent transparent transparent; 
 }
+
+.button {
+  border-style: none;
+  background-color: #000;
+  color: #fff;
+  padding: 7.5px;
+  margin: 5px;
+  font-size: 13px;
+  vertical-align: bottom;
+}
