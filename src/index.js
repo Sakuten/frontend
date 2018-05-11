@@ -34,6 +34,7 @@ const state = {
 
 const actions = {
   getState: () => state => state,
+  logError: error => state => ({ errors: state.errors.concat(error)}),
   submission: {
     credentials: {
       setPassword: text => ({ password: text }),
