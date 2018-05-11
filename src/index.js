@@ -150,6 +150,18 @@ const loginView = (state, actions) => (
   </div>
 )
 
+const ApplicationList = ({list}) => (
+  <div>
+  {
+    list ? list.map(c =>
+      <div class={styles.dashboard.appcard}>
+        {JSON.stringify(c)}
+      </div>
+    ) : null
+  }
+  </div>
+)
+
 const loggedinView = (state, actions) => (
   <div class={styles.dashboard.container}>
     <h1>Logged in as {state.submission.credentials.status.username}</h1>
@@ -170,7 +182,8 @@ const loggedinView = (state, actions) => (
     </div>
     <LotterySelect classroom={state.submission.classroom} />
     <button class={styles.dashboard.button} onclick={actions.submission.apply}>Apply</button>
-    {JSON.stringify(state.submission.credentials.status)}
+    <h2 class={styles.dashboard.heading}>Your Applications</h2>
+    <ApplicationList list={state.submission.credentials.status.applications} />
   </div>
 )
 
