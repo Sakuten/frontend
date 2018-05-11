@@ -79,5 +79,9 @@
   border: 5px solid #000;
   padding: 10px;
   font-size: 20px;
-  margin: 5px;
+}
+
+.cancelButton {
+  composes: button;
+  background-color: #d63031;
 }

@@ -78,6 +78,18 @@ const actions = {
     },
     setClassroom: id => ({classroom: id}),
     setLottery: id => ({lottery: id}),
+    cancelWithId: (id) => (state, actions) => {
+      fetchApi(`api/lotteries/${id}/apply`, {
+        method: 'delete',
+        headers: {
+          'Authorization': 'Bearer ' + state.credentials.token
+        }
+      })
+        .then((/* response */) => {
+          actions.credentials.fetchStatus()
+        })
+        .catch(resp => console.log(resp.response))
+    },
     apply: () => (state, actions) => {
       fetchApi(`api/lotteries/${state.lottery}/apply`, {
         method: 'put',
@@ -162,12 +174,13 @@ const loginView = (state, actions) => (
   </div>
 )
 
-const ApplicationList = ({list}) => (
+const ApplicationList = ({list, oncancel}) => (
   <div>
     {
       list ? list.map(c =>
         <div class={styles.dashboard.appcard}>
           {JSON.stringify(c)}
+          <button class={styles.dashboard.cancelButton} onclick={() => oncancel(c.lottery_id)}>Cancel</button>
         </div>
       ) : null
     }
@@ -195,7 +208,7 @@ const loggedinView = (state, actions) => (
     <LotterySelect classroom={state.submission.classroom} />
     <button class={styles.dashboard.button} onclick={actions.submission.apply}>Apply</button>
     <h2 class={styles.dashboard.heading}>Your Applications</h2>
-    <ApplicationList list={state.submission.credentials.status.applications} />
+    <ApplicationList list={state.submission.credentials.status.applications} oncancel={actions.submission.cancelWithId} />
   </div>
 )
 
