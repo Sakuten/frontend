@@ -139,7 +139,9 @@ const loginView = (state, actions) => (
       value={state.submission.credentials.password}
       oninput={e => actions.submission.credentials.setPassword(e.target.value)}
     />
-    <button class={styles.login.button} onclick={actions.submission.credentials.login}>Login</button>
+    <div class={styles.login.buttonContainer}>
+      <button class={styles.login.button} onclick={actions.submission.credentials.login}>Login</button>
+    </div>
   </div>
 )
 

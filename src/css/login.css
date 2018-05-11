@@ -17,6 +17,11 @@
   margin: 5px;
 }
 
+.buttonContainer {
+  width: 100%;
+  text-align: center;
+}
+
 .button {
   border-style: none;
 
