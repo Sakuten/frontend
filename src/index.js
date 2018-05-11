@@ -152,13 +152,13 @@ const loginView = (state, actions) => (
 
 const ApplicationList = ({list}) => (
   <div>
-  {
-    list ? list.map(c =>
-      <div class={styles.dashboard.appcard}>
-        {JSON.stringify(c)}
-      </div>
-    ) : null
-  }
+    {
+      list ? list.map(c =>
+        <div class={styles.dashboard.appcard}>
+          {JSON.stringify(c)}
+        </div>
+      ) : null
+    }
   </div>
 )
 
@@ -171,7 +171,7 @@ const loggedinView = (state, actions) => (
       <select name="classrooms"
         class={styles.dashboard.dropdown}
         value={state.submission.classroom}
-        oncreate={() => { actions.data.fetchClassroomList(); actions.data.fetchLotteryList(); }}
+        oncreate={() => { actions.data.fetchClassroomList(); actions.data.fetchLotteryList() }}
         oninput={e => actions.submission.setClassroom(e.target.value)}>
         {
           state.data.classroom_list.map(c =>
