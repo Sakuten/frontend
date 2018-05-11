@@ -152,7 +152,9 @@ const loginView = (state, actions) => (
 
 const loggedinView = (state, actions) => (
   <div class={styles.dashboard.container}>
-    <h1>You are {state.submission.credentials.status.username}</h1>
+    <h1>Logged in as {state.submission.credentials.status.username}</h1>
+    <button class={styles.dashboard.button} onclick={actions.submission.credentials.logout}>Logout</button>
+    <h2 class={styles.dashboard.heading}>Apply</h2>
     <div class={styles.dashboard.dropwrap}>
       <select name="classrooms"
         class={styles.dashboard.dropdown}
@@ -168,7 +170,6 @@ const loggedinView = (state, actions) => (
     </div>
     <LotterySelect classroom={state.submission.classroom} />
     <button class={styles.dashboard.button} onclick={actions.submission.apply}>Apply</button>
-    <button class={styles.dashboard.button} onclick={actions.submission.credentials.logout}>Logout</button>
     {JSON.stringify(state.submission.credentials.status)}
   </div>
 )
