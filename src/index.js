@@ -4,9 +4,11 @@ import { h, app } from 'hyperapp'
 import {fetchApi} from './api'
 
 import loginStyles from './css/login.css'
+import dashboardStyles from './css/dashboard.css'
 
 const styles = {
-  login: loginStyles
+  login: loginStyles,
+  dashboard: dashboardStyles
 }
 
 const savedToken = localStorage.getItem('Token')
@@ -110,16 +112,19 @@ const actions = {
 }
 
 const LotterySelect = ({classroom}) => (state, actions) => (
-  <select name="lotteries"
-    oninput={e => actions.submission.setLottery(e.target.value)}>
-    {
-      state.data.lottery_list
-        .filter(c => c.classroom_id === classroom)
-        .map(c =>
-          <option value={c.id}>第{c.index + 1}公演</option>
-        )
-    }
-  </select>
+  <div class={styles.dashboard.dropwrap}>
+    <select name="lotteries"
+      class={styles.dashboard.dropdown}
+      oninput={e => actions.submission.setLottery(e.target.value)}>
+      {
+        state.data.lottery_list
+          .filter(c => c.classroom_id === Number(classroom))
+          .map(c =>
+            <option value={c.id}>第{c.index + 1}公演</option>
+          )
+      }
+    </select>
+  </div>
 )
 
 const loginView = (state, actions) => (
@@ -146,18 +151,21 @@ const loginView = (state, actions) => (
 )
 
 const loggedinView = (state, actions) => (
-  <div>
+  <div class={styles.dashboard.container}>
     <h1>You are {state.submission.credentials.status.username}</h1>
-    <select name="classrooms"
-      value={state.submission.classroom}
-      oncreate={() => { actions.data.fetchClassroomList(); actions.data.fetchLotteryList() }}
-      oninput={e => actions.submission.setClassroom(e.target.value)}>
-      {
-        state.data.classroom_list.map(c =>
-          <option value={c.id}>{c.grade} {c.name}</option>
-        )
-      }
-    </select>
+    <div class={styles.dashboard.dropwrap}>
+      <select name="classrooms"
+        class={styles.dashboard.dropdown}
+        value={state.submission.classroom}
+        oncreate={() => { actions.data.fetchClassroomList(); actions.data.fetchLotteryList(); }}
+        oninput={e => actions.submission.setClassroom(e.target.value)}>
+        {
+          state.data.classroom_list.map(c =>
+            <option value={c.id}>{c.grade} {c.name}</option>
+          )
+        }
+      </select>
+    </div>
     <LotterySelect classroom={state.submission.classroom} />
     <button onclick={actions.submission.apply}>Apply</button>
     <button onclick={actions.submission.credentials.logout}>Logout</button>
