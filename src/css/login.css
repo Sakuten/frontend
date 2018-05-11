@@ -11,10 +11,11 @@
 .text {
   border-style: solid;
   border-color: #000;
-  border-width: 3px;
+  border-width: 6px;
 
-  padding: 5px;
-  margin: 5px;
+  padding: 10px 12px;
+  margin: 7px;
+  font-size: 15px;
 }
 
 .buttonContainer {
@@ -25,8 +26,9 @@
 .button {
   border-style: none;
 
-  margin: 3px;
-  padding: 8px;
+  margin: 20px;
+  padding: 10px 20px;
   color: #fff;
   background-color: #000;
+  font-size: 20px;
 }
