@@ -5,14 +5,17 @@ import {fetchApi} from './api'
 
 import loginStyles from './css/login.css'
 import dashboardStyles from './css/dashboard.css'
+import errorStyles from './css/error.css'
 
 const styles = {
   login: loginStyles,
-  dashboard: dashboardStyles
+  dashboard: dashboardStyles,
+  error: errorStyles
 }
 
 const savedToken = localStorage.getItem('Token')
 const state = {
+  errors: [],
   data: {
     classroom_list: [],
     lottery_list: []
@@ -199,9 +202,20 @@ const loggedinView = (state, actions) => (
   </div>
 )
 
+const ErrorView = ({errors}) => (
+  <div class={styles.error.container}>
+    {
+      errors.map(e =>
+        <div class={styles.error.card}>{JSON.stringify(e)}</div>
+      )
+    }
+  </div>
+)
+
 const view = (state /*, actions */) => (
   <div>
     {state.submission.credentials.token ? loggedinView : loginView}
+    <ErrorView errors={state.errors} />
   </div>
 )
 
