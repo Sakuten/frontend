@@ -5,14 +5,17 @@ import {fetchApi} from './api'
 
 import loginStyles from './css/login.css'
 import dashboardStyles from './css/dashboard.css'
+import errorStyles from './css/error.css'
 
 const styles = {
   login: loginStyles,
-  dashboard: dashboardStyles
+  dashboard: dashboardStyles,
+  error: errorStyles
 }
 
 const savedToken = localStorage.getItem('Token')
 const state = {
+  errors: [],
   data: {
     classroom_list: [],
     lottery_list: []
@@ -31,6 +34,7 @@ const state = {
 
 const actions = {
   getState: () => state => state,
+  logError: error => state => ({ errors: state.errors.concat(error.response ? error.response.data : (error.request ? error.request : error.message))}),
   submission: {
     credentials: {
       setPassword: text => ({ password: text }),
@@ -40,7 +44,7 @@ const actions = {
         localStorage.setItem('Token', text)
         return { token: text }
       },
-      login: () => (state, actions) => {
+      login: () => (state, actions) =>
         fetchApi('auth/', {
           method: 'post',
           headers: {
@@ -50,20 +54,17 @@ const actions = {
             password: state.password,
             username: state.username
           }
-        }).then((response) => {
+        }).then(async (response) => {
           const json = response.data
           if ('token' in json) {
             actions.setToken(json.token)
             actions.clearPassword()
-            actions.fetchStatus()
+            await actions.fetchStatus()
           } else { throw Error('Invalid response returned') }
-        }).catch(resp => {
-          console.error(resp)
-        })
-      },
+        }),
       logout: () => (state, actions) => actions.setToken(''),
       setStatus: status => ({status}),
-      fetchStatus: () => (state, actions) => {
+      fetchStatus: () => (state, actions) =>
         fetchApi(`api/status`, {
           method: 'get',
           headers: {
@@ -73,12 +74,10 @@ const actions = {
           .then(response => {
             actions.setStatus(response.data.status)
           })
-          .catch(console.error)
-      }
     },
     setClassroom: id => ({classroom: id}),
     setLottery: id => ({lottery: id}),
-    cancelWithId: (id) => (state, actions) => {
+    cancelWithId: (id) => (state, actions) =>
       fetchApi(`api/lotteries/${id}/apply`, {
         method: 'delete',
         headers: {
@@ -87,22 +86,18 @@ const actions = {
       })
         .then((/* response */) => {
           actions.credentials.fetchStatus()
-        })
-        .catch(resp => console.log(resp.response))
-    },
-    apply: () => (state, actions) => {
+        }),
+    apply: () => (state, actions) =>
       fetchApi(`api/lotteries/${state.lottery}/apply`, {
         method: 'put',
         headers: {
           'Authorization': 'Bearer ' + state.credentials.token
         }
       })
-        .then((/* response */) => {
-          actions.credentials.fetchStatus()
-        })
-        .catch(console.error)
-    },
-    draw: () => (state, actions) => {
+        .then(async (/* response */) => {
+          await actions.credentials.fetchStatus()
+        }),
+    draw: () => (state, actions) =>
       fetchApi(`api/lotteries/${state.lottery}/draw`, {
         method: 'get',
         headers: {
@@ -112,26 +107,20 @@ const actions = {
         .then((response) => {
           alert(response.data.chosen)
         })
-        .catch(console.error)
-    }
   },
   data: {
     setLotteryList: list => ({ lottery_list: list }),
-    fetchLotteryList: () => (state, actions) => {
+    fetchLotteryList: () => (state, actions) =>
       fetchApi('api/lotteries', {})
         .then(response => {
           actions.setLotteryList(response.data.lotteries)
-        })
-        .catch(console.error)
-    },
+        }),
     setClassroomList: list => ({ classroom_list: list }),
-    fetchClassroomList: () => (state, actions) => {
+    fetchClassroomList: () => (state, actions) =>
       fetchApi('api/classrooms', {})
         .then(response => {
           actions.setClassroomList(response.data.classrooms)
         })
-        .catch(console.error)
-    }
   }
 }
 
@@ -169,7 +158,7 @@ const loginView = (state, actions) => (
       oninput={e => actions.submission.credentials.setPassword(e.target.value)}
     />
     <div class={styles.login.buttonContainer}>
-      <button class={styles.login.button} onclick={actions.submission.credentials.login}>Login</button>
+      <button class={styles.login.button} onclick={() => { actions.submission.credentials.login().catch(actions.logError) }}>Login</button>
     </div>
   </div>
 )
@@ -196,7 +185,10 @@ const loggedinView = (state, actions) => (
       <select name="classrooms"
         class={styles.dashboard.dropdown}
         value={state.submission.classroom}
-        oncreate={() => { actions.data.fetchClassroomList(); actions.data.fetchLotteryList() }}
+        oncreate={() => {
+          actions.data.fetchClassroomList().catch(actions.logError)
+          actions.data.fetchLotteryList().catch(actions.logError)
+        }}
         oninput={e => actions.submission.setClassroom(e.target.value)}>
         {
           state.data.classroom_list.map(c =>
@@ -212,9 +204,20 @@ const loggedinView = (state, actions) => (
   </div>
 )
 
+const ErrorView = ({errors}) => (
+  <div class={styles.error.container}>
+    {
+      errors.map(e =>
+        <div class={styles.error.card}>{JSON.stringify(e)}</div>
+      )
+    }
+  </div>
+)
+
 const view = (state /*, actions */) => (
   <div>
     {state.submission.credentials.token ? loggedinView : loginView}
+    <ErrorView errors={state.errors} />
   </div>
 )
 
@@ -222,7 +225,7 @@ const main = app(state, actions, view, document.body)
 
 const update = () => {
   const state = main.getState()
-  if (state.submission.credentials.token) { main.submission.credentials.fetchStatus() }
+  if (state.submission.credentials.token) { main.submission.credentials.fetchStatus().catch(main.logError) }
 }
 update()
 setInterval(update, 10000)
