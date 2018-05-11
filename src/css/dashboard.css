@@ -75,6 +75,8 @@
   border: 5px solid #000;
   padding: 10px;
   font-size: 20px;
+  margin: 5px;
+  overflow-x: scroll;
 }
 
 .cancelButton {
