@@ -1,0 +1,34 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.text {
+  border-style: solid;
+  border-color: #000;
+  border-width: 6px;
+
+  padding: 10px 12px;
+  margin: 7px;
+  font-size: 15px;
+}
+
+.buttonContainer {
+  width: 100%;
+  text-align: center;
+}
+
+.button {
+  border-style: none;
+
+  margin: 20px;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #000;
+  font-size: 20px;
+}
