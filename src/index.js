@@ -105,7 +105,7 @@ const actions = {
         }
       })
         .then((response) => {
-          alert(response.data.chosen)
+          throw response.data
         })
   },
   data: {
