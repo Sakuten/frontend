@@ -35,8 +35,8 @@
     "fix": "yarn run lint --fix",
     "lint-staged": "lint-staged",
     "precommit": "lint-staged",
-    "dev": "webpack-serve",
-    "serve": "serve"
+    "dev": "webpack-serve --content dist",
+    "serve": "serve dist"
   },
   "lint-staged": {
     "*.{js,jsx}": [
