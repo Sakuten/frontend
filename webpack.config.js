@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const path = require('path')
 
 module.exports = {
@@ -6,6 +7,11 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.API_SERVER': JSON.stringify(process.env.API_SERVER || "http://localhost:8000")
+    })
+  ],
   module: {
     rules: [
       {
