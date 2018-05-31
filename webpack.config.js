@@ -7,6 +7,7 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
+  mode: process.env.WEBPACK_SERVE ? 'development' : 'production',
   plugins: [
     new webpack.DefinePlugin({
       'process.env.API_SERVER': process.env.API_SERVER || "http://localhost:8000"
