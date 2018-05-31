@@ -9,7 +9,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.API_SERVER': JSON.stringify(process.env.API_SERVER || "http://localhost:8000")
+      'process.env.API_SERVER': process.env.API_SERVER || "http://localhost:8000"
     })
   ],
   module: {
