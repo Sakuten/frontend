@@ -8,8 +8,11 @@ RUN tar xf /entrykit.tgz \
     && chmod +x /bin/entrykit \
     && /bin/entrykit --symlink
 
-RUN npm install -g yarn \
-    && mkdir /code
+ADD https://github.com/yarnpkg/yarn/releases/download/v1.7.0/yarn-v1.7.0.tar.gz /opt/yarn.tgz
+
+RUN cd /opt \
+    && tar xf yarn.tgz \
+    && ln -s yarn-1.7.0/bin/yarn /bin/yarn
 
 WORKDIR /code
 
