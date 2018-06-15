@@ -76,7 +76,6 @@ const actions = {
           })
           .catch(error => {
             if (error.response && error.response.data.message === 'Unauthorized') {
-              console.log('logout')
               actions.logout()
             } else {
               throw error
