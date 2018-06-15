@@ -74,6 +74,13 @@ const actions = {
           .then(response => {
             actions.setStatus(response.data.status)
           })
+          .catch(error => {
+            if (error.response && error.response.data.message === 'Unauthorized') {
+              actions.logout()
+            } else {
+              throw error
+            }
+          })
     },
     setClassroom: id => ({classroom: id}),
     setLottery: id => ({lottery: id}),
