@@ -74,6 +74,14 @@ const actions = {
           .then(response => {
             actions.setStatus(response.data.status)
           })
+          .catch(error => {
+            if (error.response && error.response.data.message === 'Unauthorized') {
+              console.log('logout')
+              actions.logout()
+            } else {
+              throw error
+            }
+          })
     },
     setClassroom: id => ({classroom: id}),
     setLottery: id => ({lottery: id}),
@@ -177,7 +185,7 @@ const ApplicationList = ({list, oncancel}) => (
 )
 
 const loggedinView = (state, actions) => (
-  <div class={styles.dashboard.container}>
+  <div class={styles.dashboard.container} oncreate={actions.submission.credentials.redirectTop}>
     <h1>Logged in as {state.submission.credentials.status.username}</h1>
     <button class={styles.dashboard.button} onclick={actions.submission.credentials.logout}>Logout</button>
     <h2 class={styles.dashboard.heading}>Apply</h2>
@@ -200,7 +208,7 @@ const loggedinView = (state, actions) => (
     <LotterySelect classroom={state.submission.classroom} />
     {state.submission.credentials.status.username === 'admin' ? <button class={styles.dashboard.button} onclick={actions.submission.draw}>Draw</button> : <button class={styles.dashboard.button} onclick={actions.submission.apply}>Apply</button>}
     <h2 class={styles.dashboard.heading}>Your Applications</h2>
-  <ApplicationList list={state.submission.credentials.status.applications} oncancel={id => actions.submission.cancelWithId(id).catch(actions.logError)} />
+    <ApplicationList list={state.submission.credentials.status.applications} oncancel={id => actions.submission.cancelWithId(id).catch(actions.logError)} />
   </div>
 )
 
