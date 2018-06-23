@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Sakuten Dev Team",
-  "license": "UNLICENSED",
-  "private": true,
+  "license": "MIT",
+  "private": false,
   "dependencies": {
     "axios": "^0.18.0",
     "deep-assign": "^2.0.0",
