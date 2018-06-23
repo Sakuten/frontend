@@ -10,6 +10,7 @@ module.exports = {
     'react/jsx-uses-vars': 2
   },
   'parserOptions': {
+    'ecmaVersion': 6,
     'ecmaFeatures': {
       'jsx': true
     }
