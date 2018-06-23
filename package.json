@@ -36,6 +36,7 @@
     "lint-staged": "lint-staged",
     "precommit": "lint-staged",
     "dev": "webpack-serve --content dist",
+    "build": "webpack --env production",
     "serve": "serve dist"
   },
   "lint-staged": {
