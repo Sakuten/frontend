@@ -4,6 +4,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/7a1416c7bd571ee50afc/maintainability)](https://codeclimate.com/github/Sakuten/frontend/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/7a1416c7bd571ee50afc/test_coverage)](https://codeclimate.com/github/Sakuten/frontend/test_coverage)
 [![Depencencies](https://david-dm.org/Sakuten/lottery-frontend.svg)](https://david-dm.org/Sakuten/lottery-frontend)
+[![devDepencencies](https://david-dm.org/Sakuten/lottery-frontend/dev-status.svg)](https://david-dm.org/Sakuten/lottery-frontend?type=dev)
 [![Known Vulnerabilities](https://snyk.io/test/github/Sakuten/lottery-frontend/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Sakuten/lottery-frontend?targetFile=package.json)
 
 フロントエンドです。
