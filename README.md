@@ -11,6 +11,12 @@
 
 ## Get started
 
+### システム全体を動かす
+
+See [Sakuten/devenv](https://github.com/Sakuten/devenv#%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83)
+
+### フロントエンドのみ
+
 ```bash
 yarn install
 yarn dev
