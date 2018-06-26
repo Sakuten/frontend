@@ -18,4 +18,4 @@ WORKDIR /code
 
 ENTRYPOINT ["prehook", "node -v", "--", \
             "prehook", "yarn install --modules-folder /node_modules", "--", \
-            "yarn", "run", "start", "-n"]
+            "yarn", "start"]
