@@ -5,16 +5,8 @@ import { inject, observer } from 'mobx-react';
 import LoginView from './LoginView'
 import ApplicationView from './ApplicationView'
 
-@inject('event')
-@observer
-class App extends Component {
-  render() {
-    return (
-      <div>
-        {this.props.store.credential.isLoggedIn ? <ApplicationView user={this.props.store.credential.status} /> : <LoginView credential={this.props.store.credential} />}
-      </div>
-    );
-  }
-}
+const App = ({store, event}) => (
+  store.credential.isLoggedIn ? <ApplicationView user={store.credential.status} /> : <LoginView credential={store.credential} />
+)
 
-export default App;
+export default inject('event')(observer(App))
