@@ -52,6 +52,10 @@ export class CredentialStore {
     this.token = ''
   }
 
+  @computed get isLoggedIn() {
+    return this.token.length !== 0
+  }
+
 }
 
 
