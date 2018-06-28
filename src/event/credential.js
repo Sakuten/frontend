@@ -12,30 +12,30 @@ export class CredentialObject {
         'Content-Type': 'application/json'
       },
       data: {
-        password: this.store.password,
-        username: this.store.username
+        password: this.store.credential.password,
+        username: this.store.credential.username
       }
     }).then(async (response) => {
       const json = response.data
       if ('token' in json) {
-        this.store.setToken(json.token)
-        this.store.clearPassword()
-        this.store.fetchStatus()
+        this.store.credential.setToken(json.token)
+        this.store.credential.clearPassword()
+        this.store.credential.fetchStatus()
       } else { throw Error('Invalid response returned') }
     })
   }
 
   onLogout = () => {
-    this.store.setToken('')
+    this.store.credential.setToken('')
   }
 
   onChangeUsername = (username) => {
     username = username.trim()
-    this.store.setUsername(username)
+    this.store.credential.setUsername(username)
   }
 
   onChangePassword = (password) => {
     password = password.trim()
-    this.store.setPassword(password)
+    this.store.credential.setPassword(password)
   }
 }
