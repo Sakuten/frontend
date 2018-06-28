@@ -1,10 +1,12 @@
 import { observable, computed, action } from 'mobx';
 import {fetchApi} from '../api'
 
+const savedToken = localStorage.getItem('Token')
+
 export class CredentialObject {
   @observable password = ""
   @observable username = ""
-  @observable token = ""
+  @observable token = savedToken || ""
   @observable status = new Map()
 
   @computed get isLoggedIn() {
@@ -20,6 +22,7 @@ export class CredentialObject {
   }
 
   @action.bound setToken(token) {
+    localStorage.setItem('Token', token)
     this.token = token
   }
 
