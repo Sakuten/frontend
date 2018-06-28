@@ -1,4 +1,5 @@
 import { observable, computed, action } from 'mobx';
+import {fetchApi} from '../api'
 
 export class CredentialObject {
   @observable password = ""
@@ -30,6 +31,18 @@ export class CredentialObject {
 
   @action.bound clearPassword() {
     this.password = ''
+  }
+
+  @action.bound fetchStatus() {
+    fetchApi(`api/status`, {
+      method: 'get',
+      headers: {
+        'Authorization': 'Bearer ' + this.token
+      }
+    })
+      .then(response => {
+        this.setStatus(response.data.status)
+      })
   }
 
 }

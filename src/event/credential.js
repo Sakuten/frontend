@@ -20,28 +20,9 @@ export class CredentialObject {
       if ('token' in json) {
         this.store.credential.setToken(json.token)
         this.store.credential.clearPassword()
-        this.fetchStatus()
+        this.store.credential.fetchStatus()
       } else { throw Error('Invalid response returned') }
     })
-  }
-
-  fetchStatus = () => {
-    fetchApi(`api/status`, {
-      method: 'get',
-      headers: {
-        'Authorization': 'Bearer ' + this.store.credential.token
-      }
-    })
-      .then(response => {
-        this.store.credential.setStatus(response.data.status)
-      })
-      .catch(error => {
-        if (error.response && error.response.data.message === 'Unauthorized') {
-          this.logout()
-        } else {
-          throw error
-        }
-      })
   }
 
   onLogout = () => {
