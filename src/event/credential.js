@@ -2,7 +2,7 @@ import {fetchApi} from '../api'
 
 export class CredentialObject {
   constructor(store) {
-    this.store = store.credential;
+    this.store = store;
   }
 
   onLogin = () => {
