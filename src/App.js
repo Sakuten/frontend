@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        {this.props.store.credential.isLoggedIn ? <ApplicationView credential={this.props.store.credential} /> : <LoginView credential={this.props.store.credential} />}
+        {this.props.store.credential.isLoggedIn ? <ApplicationView user={this.props.store.credential.status} /> : <LoginView credential={this.props.store.credential} />}
       </div>
     );
   }
