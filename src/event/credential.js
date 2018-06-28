@@ -5,7 +5,7 @@ export class CredentialObject {
     this.store = store;
   }
 
-  login = () => {
+  onLogin = () => {
     fetchApi('auth/', {
       method: 'post',
       headers: {
@@ -44,7 +44,7 @@ export class CredentialObject {
       })
   }
 
-  logout = () => {
+  onLogout = () => {
     this.store.credential.setToken('')
   }
 
