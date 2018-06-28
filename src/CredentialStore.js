@@ -22,10 +22,36 @@ export class CredentialStore {
       if ('token' in json) {
         this.token = json.token
         this.password = ''
-        // this.fetchStatus()
+        this.fetchStatus()
       } else { throw Error('Invalid response returned') }
     })
   }
+
+  @action.bound fetchStatus() {
+    fetchApi(`api/status`, {
+      method: 'get',
+      headers: {
+        'Authorization': 'Bearer ' + this.token
+      }
+    })
+      .then(response => {
+        Object.keys(response.data.status).forEach(key => {
+              this.status.set(key, response.data.status[key]);
+          });
+      })
+      .catch(error => {
+        if (error.response && error.response.data.message === 'Unauthorized') {
+          this.logout()
+        } else {
+          throw error
+        }
+      })
+  }
+
+  @action.bound logout() {
+    this.token = ''
+  }
+
 }
 
 
