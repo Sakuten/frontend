@@ -5,13 +5,13 @@ import { inject, observer } from 'mobx-react';
 import {LoginView} from './LoginView'
 import {ApplicationView} from './ApplicationView'
 
-@inject('credential')
+@inject('event')
 @observer
 class App extends Component {
   render() {
     return (
       <div>
-        {this.props.credential.isLoggedIn ? <ApplicationView /> : <LoginView />}
+        {this.props.store.credential.isLoggedIn ? <ApplicationView credential={this.props.store.credential} /> : <LoginView credential={this.props.store.credential} />}
       </div>
     );
   }

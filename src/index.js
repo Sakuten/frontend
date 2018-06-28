@@ -4,14 +4,18 @@ import './index.css';
 import App from './App';
 import { Provider } from 'mobx-react';
 import registerServiceWorker from './registerServiceWorker';
-import {CredentialStore} from './CredentialStore'
+import {Store} from './store'
+import {Event} from './event'
+import {configure} from 'mobx'
 
+configure({ enforceActions: true })
 
-const credentialStore = new CredentialStore()
+const store = new Store()
+const event = new Event(store)
 
 ReactDOM.render(
-  <Provider credential={credentialStore}>
-    <App />
+  <Provider event={event}>
+    <App store={store} />
   </Provider>,
   document.getElementById('root'));
 registerServiceWorker();
