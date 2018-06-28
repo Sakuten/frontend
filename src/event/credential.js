@@ -47,4 +47,14 @@ export class CredentialObject {
   logout = () => {
     this.store.credential.setToken('')
   }
+
+  onChangeUsername = (username) => {
+    username = username.trim()
+    this.store.credential.setUsername(username)
+  }
+
+  onChangePassword = (password) => {
+    password = password.trim()
+    this.store.credential.setPassword(password)
+  }
 }
