@@ -7,7 +7,7 @@ export class ApplicationObject {
   }
 
   onUpdate = async () => {
-    await new Promise.all([
+    await Promise.all([
       this.store.fetchClassroomList(),
       this.store.fetchLotteryList()
     ])
