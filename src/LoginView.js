@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 
-@inject('event')
-@observer
-export class LoginView extends Component {
-  render() {
-    return (
-      <div>
-        <input type="text" name="username" value={this.props.credential.username} onChange={e => this.props.event.credential.onChangeUsername(e.target.value) } />
-        <input type="text" name="password" value={this.props.credential.password} onChange={e => this.props.event.credential.onChangePassword(e.target.value) } />
-        <button onClick={this.props.event.credential.login}>Login</button>
-      </div>
-    );
-  }
+const LoginView = ({credential, event}) => {
+  const {
+    onChangeUsername,
+    onChangePassword,
+    onLogin,
+  } = event.credential
+
+  return (
+    <div>
+      <input type="text" name="username" value={credential.username} onChange={e => onChangeUsername(e.target.value)} />
+      <input type="text" name="password" value={credential.password} onChange={e => onChangePassword(e.target.value)} />
+      <button onClick={onLogin}>Login</button>
+    </div>
+  )
 }
+
+export default inject('event')(observer(LoginView))
