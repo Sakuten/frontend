@@ -22,6 +22,15 @@ const ApplicationView = ({user, application, event}) => {
     )
     }
   </select>
+<select name="lotteries" onChange={e => onChangeLottery(e.target.value)}>
+      {
+        application.lottery_list
+          .filter(c => c.classroom_id === Number(application.classroom))
+          .map(c =>
+            <option value={c.id}>第{c.index + 1}公演</option>
+          )
+      }
+    </select>
     </div>
   )
 }
