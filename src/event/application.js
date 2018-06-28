@@ -8,17 +8,27 @@ export class ApplicationObject {
 
   onUpdate = async () => {
     await Promise.all([
-      this.store.fetchClassroomList(),
-      this.store.fetchLotteryList()
+      this.store.application.fetchClassroomList(),
+      this.store.application.fetchLotteryList()
     ])
   }
 
   onChangeClassroom = (classroom) => {
-    this.store.setClassroom(classroom)
+    this.store.application.setClassroom(classroom)
   }
 
   onChangeLottery = (lottery) => {
-    this.store.setLottery(lottery)
+    this.store.application.setLottery(lottery)
+  }
+
+  onApply = async () => {
+   await fetchApi(`api/lotteries/${this.store.application.lottery}/apply`, {
+      method: 'put',
+      headers: {
+        'Authorization': 'Bearer ' + this.store.credential.token
+      }
+    })
+    await this.store.credential.fetchStatus()
   }
 }
 

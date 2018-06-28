@@ -9,6 +9,7 @@ const ApplicationView = ({user, application, event}) => {
   const {
     onChangeClassroom,
     onChangeLottery,
+    onApply,
   } = event.application
 
   return (
@@ -31,6 +32,7 @@ const ApplicationView = ({user, application, event}) => {
           )
       }
     </select>
+    <button onClick={onApply}>Apply</button>
     </div>
   )
 }
