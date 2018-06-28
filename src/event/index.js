@@ -5,6 +5,6 @@ export class Event {
   constructor(store) {
     this.store = store;
     this.credential = new CredentialObject(store.credential)
-    this.application = new ApplicationObjecy(store.application)
+    this.application = new ApplicationObject(store.application)
   }
 }

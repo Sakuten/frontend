@@ -3,6 +3,7 @@ import {fetchApi} from '../api'
 export class ApplicationObject {
   constructor(store) {
     this.store = store;
+    this.onUpdate()
   }
 
   onUpdate = async () => {
