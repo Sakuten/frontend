@@ -1,6 +1,6 @@
-import {fetchApi} from './api'
+import {fetchApi} from '../api'
 
-export class Event {
+export class CredentialObject {
   constructor(store) {
     this.store = store;
   }
@@ -47,5 +47,4 @@ export class Event {
   logout = () => {
     this.store.credential.setToken('')
   }
-
 }

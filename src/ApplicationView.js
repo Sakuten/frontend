@@ -8,7 +8,7 @@ export class ApplicationView extends Component {
     return (
       <div>
         <h1>Logged in as {this.props.user.get('username')}</h1>
-        <button onClick={this.props.event.logout}>Logout</button>
+        <button onClick={this.props.event.credential.logout}>Logout</button>
       </div>
     );
   }
