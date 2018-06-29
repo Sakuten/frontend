@@ -95,8 +95,5 @@
       "react-app",
       "mobx"
     ]
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   }
 }
