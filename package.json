@@ -55,7 +55,7 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "build:css": "node-sass-chokidar --include-path src/style --include-path node_modules src/style -o src/style",
+    "build:css": "node-sass-chokidar --include-path src/style --include-path node_modules $ADDITIONAL_CSS_BUILD_OPTS src/style -o src/style",
     "start:css": "yarn run build:css && yarn run build:css --watch --recursive",
     "build:js": "node scripts/build.js",
     "start:js": "node scripts/start.js",
