@@ -1,8 +1,8 @@
 import {fetchApi} from '../util/api'
 
 export class ApplicationObject {
-  constructor(store) {
-    this.store = store;
+  constructor (store) {
+    this.store = store
     this.onUpdate()
   }
 
@@ -22,7 +22,7 @@ export class ApplicationObject {
   }
 
   onApply = async () => {
-   await fetchApi(`api/lotteries/${this.store.application.lottery}/apply`, {
+    await fetchApi(`api/lotteries/${this.store.application.lottery}/apply`, {
       method: 'put',
       headers: {
         'Authorization': 'Bearer ' + this.store.credential.token
@@ -41,4 +41,3 @@ export class ApplicationObject {
     await this.store.credential.fetchStatus()
   }
 }
-

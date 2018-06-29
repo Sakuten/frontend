@@ -1,5 +1,5 @@
-import React from 'react';
-import { observer } from 'mobx-react';
+import React from 'react'
+import { observer } from 'mobx-react'
 
 const ApplicationList = ({list, onCancel}) => (
   <div>
@@ -15,4 +15,3 @@ const ApplicationList = ({list, onCancel}) => (
 )
 
 export default observer(ApplicationList)
-

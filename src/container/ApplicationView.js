@@ -1,5 +1,5 @@
-import React from 'react';
-import { inject, observer } from 'mobx-react';
+import React from 'react'
+import { inject, observer } from 'mobx-react'
 
 import ApplicationList from '../component/ApplicationList'
 import ClassroomSelect from '../component/ClassroomSelect'
@@ -7,14 +7,14 @@ import LotterySelect from '../component/LotterySelect'
 
 const ApplicationView = ({user, application, event}) => {
   const {
-    onLogout,
+    onLogout
   } = event.credential
 
   const {
     onChangeClassroom,
     onChangeLottery,
     onApply,
-    onCancel,
+    onCancel
   } = event.application
 
   return (

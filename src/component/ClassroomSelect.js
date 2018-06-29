@@ -1,8 +1,8 @@
-import React from 'react';
-import { observer } from 'mobx-react';
+import React from 'react'
+import { observer } from 'mobx-react'
 
 const ClassroomSelect = ({list, value, onChange}) => (
-  <select name="classrooms" value={value} onChange={e => onChange(e.target.value)}>
+  <select name='classrooms' value={value} onChange={e => onChange(e.target.value)}>
     {
       list.map(c =>
         <option value={c.id}>{c.grade} {c.name}</option>
@@ -12,4 +12,3 @@ const ClassroomSelect = ({list, value, onChange}) => (
 )
 
 export default observer(ClassroomSelect)
-
