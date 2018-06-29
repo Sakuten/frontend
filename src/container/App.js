@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { inject, observer } from 'mobx-react';
 import LoginView from './LoginView'
 import ApplicationView from './ApplicationView'
