@@ -30,5 +30,15 @@ export class ApplicationObject {
     })
     await this.store.credential.fetchStatus()
   }
+
+  onCancel = async (id) => {
+    await fetchApi(`api/lotteries/${id}/apply`, {
+      method: 'delete',
+      headers: {
+        'Authorization': 'Bearer ' + this.store.credential.token
+      }
+    })
+    await this.store.credential.fetchStatus()
+  }
 }
 

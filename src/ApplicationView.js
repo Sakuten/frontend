@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 
+const ApplicationList = observer(({list, onCancel}) => (
+  <div>
+    {
+      list ? list.map(c =>
+        <div>
+          {JSON.stringify(c)}
+          <button onClick={() => onCancel(c.lottery_id)}>Cancel</button>
+        </div>
+      ) : null
+    }
+  </div>
+))
+
+
 const ApplicationView = ({user, application, event}) => {
   const {
     onLogout,
@@ -10,6 +24,7 @@ const ApplicationView = ({user, application, event}) => {
     onChangeClassroom,
     onChangeLottery,
     onApply,
+    onCancel,
   } = event.application
 
   return (
@@ -33,6 +48,8 @@ const ApplicationView = ({user, application, event}) => {
       }
     </select>
     <button onClick={onApply}>Apply</button>
+    <h2>Your Applications</h2>
+    <ApplicationList list={user.get('applications')} onCancel={onCancel} />
     </div>
   )
 }
