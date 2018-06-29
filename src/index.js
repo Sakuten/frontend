@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from './container/App';
 import { Provider } from 'mobx-react';
 import registerServiceWorker from './registerServiceWorker';
 import {Store} from './store'
