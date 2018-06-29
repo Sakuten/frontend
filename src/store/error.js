@@ -6,10 +6,7 @@ export class ErrorObject {
 
   constructor () {
     axios.interceptors.response.use(
-      response => {
-        console.log(response)
-        return response
-      },
+      response => response,
       error => {
         const message = error.response ? error.response.data : (error.request ? error.request : error.message)
         this.addError(message)
