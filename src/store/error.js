@@ -12,7 +12,7 @@ export class ErrorObject {
       },
       error => {
         const message = error.response ? error.response.data : (error.request ? error.request : error.message)
-        this.addError(JSON.stringify(message))
+        this.addError(message)
         return Promise.reject(error)
       }
     )

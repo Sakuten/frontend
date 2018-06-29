@@ -6,7 +6,7 @@ const ErrorList = ({list}) => (
     {
       list.map(c =>
         <div>
-          {c}
+          {JSON.stringify(c)}
         </div>
       )
     }
