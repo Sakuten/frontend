@@ -1,5 +1,5 @@
 import { observable, computed, action } from 'mobx';
-import {fetchApi} from '../api'
+import {fetchApi} from '../util/api'
 
 export class ApplicationObject {
   @observable classroom = 1

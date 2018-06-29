@@ -1,4 +1,4 @@
-import {fetchApi} from '../api'
+import {fetchApi} from '../util/api'
 
 export class ApplicationObject {
   constructor(store) {
