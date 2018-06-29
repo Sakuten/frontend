@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './container/App';
 import { Provider } from 'mobx-react';
-import registerServiceWorker from './registerServiceWorker';
+import registerServiceWorker from './util/registerServiceWorker';
 import {Store} from './store'
 import {Event} from './event'
 import {configure} from 'mobx'
