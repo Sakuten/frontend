@@ -6,6 +6,7 @@ import registerServiceWorker from './util/registerServiceWorker';
 import {Store} from './store'
 import {Event} from './event'
 import {configure} from 'mobx'
+import './style/index.css'
 
 configure({ enforceActions: true })
 
