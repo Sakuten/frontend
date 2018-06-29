@@ -1,8 +1,9 @@
 {
-  "extends": "react-app",
+  "extends": ["standard", "standard-react"],
   "parserOptions": {
     "ecmaVersion": 8
   },
+  "parser": "babel-eslint",
   "env": {
     "browser": true,
     "es6": true
