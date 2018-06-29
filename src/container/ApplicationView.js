@@ -1,19 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { inject, observer } from 'mobx-react';
 
-const ApplicationList = observer(({list, onCancel}) => (
-  <div>
-    {
-      list ? list.map(c =>
-        <div>
-          {JSON.stringify(c)}
-          <button onClick={() => onCancel(c.lottery_id)}>Cancel</button>
-        </div>
-      ) : null
-    }
-  </div>
-))
-
+import ApplicationList from '../component/ApplicationList'
 
 const ApplicationView = ({user, application, event}) => {
   const {
