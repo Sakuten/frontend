@@ -5,23 +5,23 @@ export class ApplicationObject {
   @observable classroom = 1
   @observable lottery = 1
 
-  @observable classroom_list = []
-  @observable lottery_list = []
+  @observable classroomList = []
+  @observable lotteryList = []
 
-  @action.bound setClassroom (classroom_id) {
-    this.classroom = classroom_id
+  @action.bound setClassroom (classroomId) {
+    this.classroom = classroomId
   }
 
-  @action.bound setLottery (lottery_id) {
-    this.lottery = lottery_id
+  @action.bound setLottery (lotteryId) {
+    this.lottery = lotteryId
   }
 
-  @action.bound setClassroomList (classroom_list) {
-    this.classroom_list = classroom_list
+  @action.bound setClassroomList (classroomList) {
+    this.classroomList = classroomList
   }
 
-  @action.bound setLotteryList (lottery_list) {
-    this.lottery_list = lottery_list
+  @action.bound setLotteryList (lotteryList) {
+    this.lotteryList = lotteryList
   }
 
   @action.bound fetchClassroomList () {

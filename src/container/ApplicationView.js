@@ -22,8 +22,8 @@ const ApplicationView = ({user, application, event}) => {
       <h1>Logged in as {user.get('username')}</h1>
       <button onClick={onLogout}>Logout</button>
       <h2>Apply</h2>
-      <ClassroomSelect list={application.classroom_list} value={application.classroom} onChange={onChangeClassroom} />
-      <LotterySelect classroom={application.classroom} list={application.lottery_list} value={application.lottery} onChange={onChangeLottery} />
+      <ClassroomSelect list={application.classroomList} value={application.classroom} onChange={onChangeClassroom} />
+      <LotterySelect classroom={application.classroom} list={application.lotteryList} value={application.lottery} onChange={onChangeLottery} />
       <button onClick={onApply}>Apply</button>
       <h2>Your Applications</h2>
       <ApplicationList list={user.get('applications')} onCancel={onCancel} />
