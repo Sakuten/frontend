@@ -19,7 +19,7 @@ See [Sakuten/devenv](https://github.com/Sakuten/devenv#%E9%96%8B%E7%99%BA%E7%92%
 
 ```bash
 yarn install
-yarn dev
+yarn start
 ```
 
 ## License
