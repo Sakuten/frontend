@@ -13,7 +13,8 @@ const setup = propOverrides => {
 
   return {
     props,
-    wrapper
+    wrapper,
+    error: wrapper.find('[data-test="errorlist-error"]')
   }
 }
 
@@ -25,8 +26,8 @@ describe('components', () => {
     })
 
     it('renders two errors', () => {
-      const { wrapper } = setup()
-      expect(wrapper.find('[data-test="errorlist-error"]').length).toBe(2)
+      const { error } = setup()
+      expect(error.length).toBe(2)
     })
   })
 })
