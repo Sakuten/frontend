@@ -5,7 +5,22 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ClassroomSelect
-    list={Array []}
+    list={
+        Array [
+            Object {
+              "grade": 5,
+              "id": 1,
+              "index": 0,
+              "name": "A",
+            },
+            Object {
+              "grade": 5,
+              "id": 2,
+              "index": 1,
+              "name": "B",
+            },
+          ]
+    }
     onChange={[Function]}
     value={0}
 />,
@@ -21,13 +36,74 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [],
+      "children": Array [
+        <option
+          data-test="classroom-option"
+          value={1}
+>
+          5
+           
+          A
+</option>,
+        <option
+          data-test="classroom-option"
+          value={2}
+>
+          5
+           
+          B
+</option>,
+      ],
+      "data-test": "classroom-select",
       "name": "classrooms",
       "onChange": [Function],
       "value": 0,
     },
     "ref": null,
-    "rendered": Array [],
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            5,
+            " ",
+            "A",
+          ],
+          "data-test": "classroom-option",
+          "value": 1,
+        },
+        "ref": null,
+        "rendered": Array [
+          5,
+          " ",
+          "A",
+        ],
+        "type": "option",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            5,
+            " ",
+            "B",
+          ],
+          "data-test": "classroom-option",
+          "value": 2,
+        },
+        "ref": null,
+        "rendered": Array [
+          5,
+          " ",
+          "B",
+        ],
+        "type": "option",
+      },
+    ],
     "type": "select",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -36,13 +112,74 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": Array [],
+        "children": Array [
+          <option
+            data-test="classroom-option"
+            value={1}
+>
+            5
+             
+            A
+</option>,
+          <option
+            data-test="classroom-option"
+            value={2}
+>
+            5
+             
+            B
+</option>,
+        ],
+        "data-test": "classroom-select",
         "name": "classrooms",
         "onChange": [Function],
         "value": 0,
       },
       "ref": null,
-      "rendered": Array [],
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              5,
+              " ",
+              "A",
+            ],
+            "data-test": "classroom-option",
+            "value": 1,
+          },
+          "ref": null,
+          "rendered": Array [
+            5,
+            " ",
+            "A",
+          ],
+          "type": "option",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              5,
+              " ",
+              "B",
+            ],
+            "data-test": "classroom-option",
+            "value": 2,
+          },
+          "ref": null,
+          "rendered": Array [
+            5,
+            " ",
+            "B",
+          ],
+          "type": "option",
+        },
+      ],
       "type": "select",
     },
   ],
