@@ -25,7 +25,9 @@ const setup = propOverrides => {
 
   return {
     props,
-    wrapper
+    wrapper,
+    application: wrapper.find('[data-test="applicationlist-application"]'),
+    cancelButton: wrapper.find('[data-test="applicationlist-cancel"]')
   }
 }
 
@@ -37,24 +39,24 @@ describe('components', () => {
     })
 
     it('renders nothing without list', () => {
-      const { wrapper } = setup({list: null})
-      expect(wrapper.find('[data-test="application"]').length).toBe(0)
+      const { application } = setup({list: null})
+      expect(application.length).toBe(0)
     })
 
     it('renders two applications', () => {
-      const { wrapper } = setup()
-      expect(wrapper.find('[data-test="application"]').length).toBe(2)
+      const { application } = setup()
+      expect(application.length).toBe(2)
     })
 
     it('renders two cancel buttons', () => {
-      const { wrapper } = setup()
-      expect(wrapper.find('[data-test="cancel"]').length).toBe(2)
+      const { cancelButton } = setup()
+      expect(cancelButton.length).toBe(2)
     })
 
     it('calls onCancel with lottery id when cancel button is clicked', () => {
       const mock = jest.fn()
-      const { wrapper } = setup({list: [{lottery_id: 1}], onCancel: mock})
-      wrapper.find('[data-test="cancel"]').at(0).simulate('click')
+      const { cancelButton } = setup({list: [{lottery_id: 1}], onCancel: mock})
+      cancelButton.at(0).simulate('click')
       expect(mock).toBeCalledWith(1)
     })
   })
