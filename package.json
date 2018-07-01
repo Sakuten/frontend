@@ -65,7 +65,8 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx,mjs}"
+      "src/**/*.{js,jsx,mjs}",
+      "!src/api/**/*"
     ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
