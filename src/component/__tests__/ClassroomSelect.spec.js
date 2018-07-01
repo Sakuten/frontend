@@ -13,7 +13,7 @@ const setup = propOverrides => {
 
   return {
     props,
-    wrapper,
+    wrapper
   }
 }
 

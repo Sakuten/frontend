@@ -1,30 +1,29 @@
-import { ApplicationObject } from "../application"
-import axios from 'axios'
+import { ApplicationObject } from '../application'
 
-describe("ApplicationObject", () => {
+describe('ApplicationObject', () => {
   let store
 
   beforeEach(() => {
     store = new ApplicationObject()
   })
 
-  it("can have classroom id", () => {
+  it('can have classroom id', () => {
     store.setClassroom(2)
     expect(store.classroom).toBe(2)
   })
 
-  it("can have lottery id", () => {
+  it('can have lottery id', () => {
     store.setLottery(2)
     expect(store.lottery).toBe(2)
   })
 
-  it("can have classroom list", () => {
-    store.setClassroomList([1,2])
-    expect(store.classroomList).toEqual([1,2])
+  it('can have classroom list', () => {
+    store.setClassroomList([1, 2])
+    expect(store.classroomList).toEqual([1, 2])
   })
 
-  it("can have lottery list", () => {
-    store.setLotteryList([1,2])
-    expect(store.lotteryList).toEqual([1,2])
+  it('can have lottery list', () => {
+    store.setLotteryList([1, 2])
+    expect(store.lotteryList).toEqual([1, 2])
   })
 })
