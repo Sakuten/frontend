@@ -46,4 +46,9 @@ describe('CredentialObject', () => {
     expect(store.status.get('applications')[0]).toBe(1)
     expect(store.status.get('applications')[1]).toBe(2)
   })
+
+  it('fetches status', async () => {
+    await store.fetchStatus()
+    expect(store.status.size).not.toBe(0)
+  })
 })

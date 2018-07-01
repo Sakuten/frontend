@@ -26,4 +26,14 @@ describe('ApplicationObject', () => {
     store.setLotteryList([1, 2])
     expect(store.lotteryList).toEqual([1, 2])
   })
+
+  it('fetches lottery list', async () => {
+    await store.fetchLotteryList()
+    expect(store.lotteryList.length).not.toBe(0)
+  })
+
+  it('fetches classroom list', async () => {
+    await store.fetchClassroomList()
+    expect(store.classroomList.length).not.toBe(0)
+  })
 })
