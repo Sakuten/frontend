@@ -43,7 +43,9 @@ const setup = propOverrides => {
 
   return {
     props,
-    wrapper
+    wrapper,
+    select: wrapper.find('[data-test="lottery-select"]'),
+    option: wrapper.find('[data-test="lottery-option"]')
   }
 }
 
@@ -55,35 +57,35 @@ describe('components', () => {
     })
 
     it('renders two options', () => {
-      const { wrapper } = setup()
-      expect(wrapper.find('[data-test="lottery-option"]').length).toBe(2)
-      expect(wrapper.find('[data-test="lottery-option"]').at(0).props().value).toBe(3)
-      expect(wrapper.find('[data-test="lottery-option"]').at(1).props().value).toBe(4)
+      const { option } = setup()
+      expect(option.length).toBe(2)
+      expect(option.at(0).props().value).toBe(3)
+      expect(option.at(1).props().value).toBe(4)
     })
 
     it('renders with human-readable messages', () => {
-      const { wrapper } = setup()
-      expect(wrapper.find('[data-test="lottery-option"]').at(0).text()).toBe('第3公演')
-      expect(wrapper.find('[data-test="lottery-option"]').at(1).text()).toBe('第4公演')
+      const { option } = setup()
+      expect(option.at(0).text()).toBe('第3公演')
+      expect(option.at(1).text()).toBe('第4公演')
     })
 
     it('renders only in same classroom', () => {
-      const { wrapper } = setup({classroom: 2})
-      expect(wrapper.find('[data-test="lottery-option"]').length).toBe(2)
-      expect(wrapper.find('[data-test="lottery-option"]').at(0).props().value).toBe(5)
-      expect(wrapper.find('[data-test="lottery-option"]').at(1).props().value).toBe(6)
+      const { option } = setup({classroom: 2})
+      expect(option.length).toBe(2)
+      expect(option.at(0).props().value).toBe(5)
+      expect(option.at(1).props().value).toBe(6)
     })
 
     it('calls onChange with id when something is selected', () => {
       const mock = jest.fn()
-      const { wrapper } = setup({onChange: mock})
-      wrapper.find('[data-test="lottery-select"]').simulate('change', {target: {value: 4}})
+      const { select } = setup({onChange: mock})
+      select.simulate('change', {target: {value: 4}})
       expect(mock).toBeCalledWith(4)
     })
 
     it('renders specified id', () => {
-      const { wrapper } = setup({value: 4})
-      expect(wrapper.find('[data-test="lottery-select"]').props().value).toBe(4)
+      const { select } = setup({value: 4})
+      expect(select.props().value).toBe(4)
     })
   })
 })
