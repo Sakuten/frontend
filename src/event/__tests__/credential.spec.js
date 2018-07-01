@@ -22,4 +22,19 @@ describe('CredentialObject', () => {
     event.onLogout()
     expect(event.store.credential.token.length).toBe(0)
   })
+
+  it('can login', async () => {
+    await event.onLogin()
+    expect(event.store.credential.token.length).not.toBe(0)
+  })
+
+  it('clears password in login', async () => {
+    await event.onLogin()
+    expect(event.store.credential.password.length).toBe(0)
+  })
+
+  it('fetches status in login', async () => {
+    await event.onLogin()
+    expect(event.store.credential.status.size).not.toBe(0)
+  })
 })
