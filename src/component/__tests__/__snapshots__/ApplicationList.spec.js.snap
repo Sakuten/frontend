@@ -5,7 +5,22 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ApplicationList
-    list={Array []}
+    list={
+        Array [
+            Object {
+              "id": 24,
+              "lottery_id": 1,
+              "status": null,
+              "user_id": 3,
+            },
+            Object {
+              "id": 25,
+              "lottery_id": 2,
+              "status": null,
+              "user_id": 3,
+            },
+          ]
+    }
     onCancel={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
@@ -20,10 +35,104 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [],
+      "children": Array [
+        <div
+          data-test="application"
+>
+          {"id":24,"lottery_id":1,"status":null,"user_id":3}
+          <button
+                    data-test="cancel"
+                    onClick={[Function]}
+          >
+                    Cancel
+          </button>
+</div>,
+        <div
+          data-test="application"
+>
+          {"id":25,"lottery_id":2,"status":null,"user_id":3}
+          <button
+                    data-test="cancel"
+                    onClick={[Function]}
+          >
+                    Cancel
+          </button>
+</div>,
+      ],
     },
     "ref": null,
-    "rendered": Array [],
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "{\\"id\\":24,\\"lottery_id\\":1,\\"status\\":null,\\"user_id\\":3}",
+            <button
+              data-test="cancel"
+              onClick={[Function]}
+>
+              Cancel
+</button>,
+          ],
+          "data-test": "application",
+        },
+        "ref": null,
+        "rendered": Array [
+          "{\\"id\\":24,\\"lottery_id\\":1,\\"status\\":null,\\"user_id\\":3}",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Cancel",
+              "data-test": "cancel",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Cancel",
+            "type": "button",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "{\\"id\\":25,\\"lottery_id\\":2,\\"status\\":null,\\"user_id\\":3}",
+            <button
+              data-test="cancel"
+              onClick={[Function]}
+>
+              Cancel
+</button>,
+          ],
+          "data-test": "application",
+        },
+        "ref": null,
+        "rendered": Array [
+          "{\\"id\\":25,\\"lottery_id\\":2,\\"status\\":null,\\"user_id\\":3}",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Cancel",
+              "data-test": "cancel",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Cancel",
+            "type": "button",
+          },
+        ],
+        "type": "div",
+      },
+    ],
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -32,10 +141,104 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": Array [],
+        "children": Array [
+          <div
+            data-test="application"
+>
+            {"id":24,"lottery_id":1,"status":null,"user_id":3}
+            <button
+                        data-test="cancel"
+                        onClick={[Function]}
+            >
+                        Cancel
+            </button>
+</div>,
+          <div
+            data-test="application"
+>
+            {"id":25,"lottery_id":2,"status":null,"user_id":3}
+            <button
+                        data-test="cancel"
+                        onClick={[Function]}
+            >
+                        Cancel
+            </button>
+</div>,
+        ],
       },
       "ref": null,
-      "rendered": Array [],
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "{\\"id\\":24,\\"lottery_id\\":1,\\"status\\":null,\\"user_id\\":3}",
+              <button
+                data-test="cancel"
+                onClick={[Function]}
+>
+                Cancel
+</button>,
+            ],
+            "data-test": "application",
+          },
+          "ref": null,
+          "rendered": Array [
+            "{\\"id\\":24,\\"lottery_id\\":1,\\"status\\":null,\\"user_id\\":3}",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Cancel",
+                "data-test": "cancel",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Cancel",
+              "type": "button",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "{\\"id\\":25,\\"lottery_id\\":2,\\"status\\":null,\\"user_id\\":3}",
+              <button
+                data-test="cancel"
+                onClick={[Function]}
+>
+                Cancel
+</button>,
+            ],
+            "data-test": "application",
+          },
+          "ref": null,
+          "rendered": Array [
+            "{\\"id\\":25,\\"lottery_id\\":2,\\"status\\":null,\\"user_id\\":3}",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Cancel",
+                "data-test": "cancel",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Cancel",
+              "type": "button",
+            },
+          ],
+          "type": "div",
+        },
+      ],
       "type": "div",
     },
   ],
