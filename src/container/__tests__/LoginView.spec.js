@@ -34,13 +34,13 @@ describe('containers', () => {
     })
 
     it('renders username stored in store', () => {
-      const { usernameInput } = setup({}, {credential: {username: "username"}}, {}, false)
-      expect(usernameInput.props().value).toBe("username")
+      const { usernameInput } = setup({}, {credential: {username: 'username'}}, {}, false)
+      expect(usernameInput.props().value).toBe('username')
     })
 
     it('renders password stored in store', () => {
-      const { passwordInput } = setup({}, {credential: {password: "password"}}, {}, false)
-      expect(passwordInput.props().value).toBe("password")
+      const { passwordInput } = setup({}, {credential: {password: 'password'}}, {}, false)
+      expect(passwordInput.props().value).toBe('password')
     })
   })
 })
