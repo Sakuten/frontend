@@ -4,7 +4,9 @@ import ErrorList from '../ErrorList'
 
 const setup = propOverrides => {
   const props = Object.assign({
-    list: []
+    list: [
+      { message: 'Error 1' },
+      { message: 'Error 2' }]
   }, propOverrides)
 
   const wrapper = shallow(<ErrorList {...props} />)
@@ -17,9 +19,14 @@ const setup = propOverrides => {
 
 describe('components', () => {
   describe('ErrorList', () => {
-    test('render', () => {
+    it('render', () => {
       const { wrapper } = setup()
       expect(wrapper).toMatchSnapshot()
+    })
+
+    it('renders two errors', () => {
+      const { wrapper } = setup()
+      expect(wrapper.find('[data-test="errorlist-error"]').length).toBe(2)
     })
   })
 })
