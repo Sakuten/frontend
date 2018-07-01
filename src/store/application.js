@@ -24,17 +24,13 @@ export class ApplicationObject {
     this.lotteryList = lotteryList
   }
 
-  @action.bound fetchClassroomList () {
-    getClassrooms()
-      .then(response => {
-        this.setClassroomList(response.data.classrooms)
-      })
+  @action.bound async fetchClassroomList () {
+    const response = await getClassrooms()
+    this.setClassroomList(response.data.classrooms)
   }
 
-  @action.bound fetchLotteryList () {
-    getLotteries()
-      .then(response => {
-        this.setLotteryList(response.data.lotteries)
-      })
+  @action.bound async fetchLotteryList () {
+    const response = await getLotteries()
+    this.setLotteryList(response.data.lotteries)
   }
 }

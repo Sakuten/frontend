@@ -42,10 +42,8 @@ export class CredentialObject {
     this.password = ''
   }
 
-  @action.bound fetchStatus () {
-    getStatus(this.token)
-      .then(response => {
-        this.setStatus(response.data.status)
-      })
+  @action.bound async fetchStatus () {
+    const response = await getStatus(this.token)
+    this.setStatus(response.data.status)
   }
 }
