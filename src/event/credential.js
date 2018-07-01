@@ -1,4 +1,4 @@
-import {fetchApi} from '../util/api'
+import {authenicate} from '../api/operation'
 
 export class CredentialObject {
   constructor (store) {
@@ -6,23 +6,15 @@ export class CredentialObject {
   }
 
   onLogin = () => {
-    fetchApi('auth/', {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      data: {
-        password: this.store.credential.password,
-        username: this.store.credential.username
-      }
-    }).then(async (response) => {
-      const json = response.data
-      if ('token' in json) {
-        this.store.credential.setToken(json.token)
-        this.store.credential.clearPassword()
-        this.store.credential.fetchStatus()
-      } else { throw Error('Invalid response returned') }
-    })
+    authenicate(this.store.credential.username, this.store.credential.password)
+      .then(async (response) => {
+        const json = response.data
+        if ('token' in json) {
+          this.store.credential.setToken(json.token)
+          this.store.credential.clearPassword()
+          this.store.credential.fetchStatus()
+        } else { throw Error('Invalid response returned') }
+      })
   }
 
   onLogout = () => {
