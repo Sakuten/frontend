@@ -18,7 +18,7 @@ const ApplicationView = ({user, application, event}) => {
   } = event.application
 
   return (
-    <div>
+    <div data-test='applicationview'>
       <h1>Logged in as {user.get('username')}</h1>
       <button onClick={onLogout}>Logout</button>
       <h2>Apply</h2>
