@@ -6,8 +6,14 @@ import ErrorList from '../component/ErrorList'
 
 const App = ({store, event}) => (
   <div>
-    {store.credential.isLoggedIn ? <ApplicationView user={store.credential.status} application={store.application} /> : <LoginView credential={store.credential} />}
-    <ErrorList list={store.error.errorList} />
+    <section className='section'>
+      <div className='container'>
+        {store.credential.isLoggedIn ? <ApplicationView user={store.credential.status} application={store.application} /> : <LoginView credential={store.credential} />}
+      </div>
+    </section>
+    <section className='section'>
+      <ErrorList list={store.error.errorList} />
+    </section>
   </div>
 )
 
