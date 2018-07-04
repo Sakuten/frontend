@@ -5,7 +5,7 @@ const ErrorList = ({list}) => (
   <div>
     {
       list.map(c =>
-        <div>
+        <div className='notification is-danger'>
           {JSON.stringify(c)}
         </div>
       )
