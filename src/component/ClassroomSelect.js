@@ -5,7 +5,7 @@ const ClassroomSelect = ({list, value, onChange}) => (
   <select name='classrooms' value={value} onChange={e => onChange(e.target.value)}>
     {
       list.map(c =>
-        <option value={c.id}>{c.grade} {c.name}</option>
+        <option key={c.id} value={c.id}>{c.grade} {c.name}</option>
       )
     }
   </select>
