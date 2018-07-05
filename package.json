@@ -56,7 +56,9 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "start": "node scripts/start.js",
+    "start:deps": "chokidar ./package.json -c 'yarn install'",
+    "start:js": "node scripts/start.js",
+    "start": "npm-run-all -p start:deps start:js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "lint": "eslint .",
