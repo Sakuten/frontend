@@ -1,15 +1,14 @@
 [build]
-  publish = "dist"
+  publish = "build"
   command = "yarn build"
 
 [build.environment]
-  API_SERVER = "https://sakuten-api-dev.now.sh"
+  REACT_APP_API_SERVER = "https://sakuten-api-dev.herokuapp.com"
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  force = true
 
 [[headers]]
   for = "/index.html"
