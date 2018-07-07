@@ -1,5 +1,5 @@
 import { observable, action } from 'mobx'
-import {fetchApi} from '../util/api'
+import {getClassrooms, getLotteries} from '../api/operation'
 
 export class ApplicationObject {
   @observable classroom = 1
@@ -24,17 +24,13 @@ export class ApplicationObject {
     this.lotteryList = lotteryList
   }
 
-  @action.bound fetchClassroomList () {
-    fetchApi('api/classrooms', {})
-      .then(response => {
-        this.setClassroomList(response.data.classrooms)
-      })
+  @action.bound async fetchClassroomList () {
+    const response = await getClassrooms()
+    this.setClassroomList(response.data.classrooms)
   }
 
-  @action.bound fetchLotteryList () {
-    fetchApi('api/lotteries', {})
-      .then(response => {
-        this.setLotteryList(response.data.lotteries)
-      })
+  @action.bound async fetchLotteryList () {
+    const response = await getLotteries()
+    this.setLotteryList(response.data.lotteries)
   }
 }
