@@ -6,124 +6,124 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Provider
     event={
-        Event {
-            "application": ApplicationObject {
-              "onApply": [Function],
-              "onCancel": [Function],
-              "onChangeClassroom": [Function],
-              "onChangeLottery": [Function],
-              "onUpdate": [Function],
-              "store": Store {
-                "application": ApplicationObject {},
-                "credential": CredentialObject {
-                  "password": "",
-                  "status": Object {},
-                  "token": "",
-                  "username": "",
-                  Symbol(mobx did run lazy initializers): true,
-                  Symbol(mobx administration): ObservableObjectAdministration$$1 {
-                    "defaultEnhancer": [Function],
-                    "keysAtom": Atom$$1 {
-                      "diffValue": 0,
-                      "isBeingObserved": false,
-                      "isPendingUnobservation": false,
-                      "lastAccessedBy": 0,
-                      "lowestObserverState": 2,
-                      "name": "CredentialObject@1.keys",
-                      "observers": Set {},
-                    },
-                    "name": "CredentialObject@1",
-                    "target": [Circular],
-                    "values": Map {
-                      "password" => "",
-                      "username" => "",
-                      "token" => "",
-                      "status" => Object {},
-                      "isLoggedIn" => false,
-                    },
-                  },
-                },
-                "error": ErrorObject {},
-              },
-            },
+      Event {
+        "application": ApplicationObject {
+          "onApply": [Function],
+          "onCancel": [Function],
+          "onChangeClassroom": [Function],
+          "onChangeLottery": [Function],
+          "onUpdate": [Function],
+          "store": Store {
+            "application": ApplicationObject {},
             "credential": CredentialObject {
-              "onChangePassword": [Function],
-              "onChangeUsername": [Function],
-              "onLogin": [Function],
-              "onLogout": [Function],
-              "store": Store {
-                "application": ApplicationObject {},
-                "credential": CredentialObject {
-                  "password": "",
-                  "status": Object {},
-                  "token": "",
-                  "username": "",
-                  Symbol(mobx did run lazy initializers): true,
-                  Symbol(mobx administration): ObservableObjectAdministration$$1 {
-                    "defaultEnhancer": [Function],
-                    "keysAtom": Atom$$1 {
-                      "diffValue": 0,
-                      "isBeingObserved": false,
-                      "isPendingUnobservation": false,
-                      "lastAccessedBy": 0,
-                      "lowestObserverState": 2,
-                      "name": "CredentialObject@1.keys",
-                      "observers": Set {},
-                    },
-                    "name": "CredentialObject@1",
-                    "target": [Circular],
-                    "values": Map {
-                      "password" => "",
-                      "username" => "",
-                      "token" => "",
-                      "status" => Object {},
-                      "isLoggedIn" => false,
-                    },
-                  },
+              "password": "",
+              "status": Object {},
+              "token": "",
+              "username": "",
+              Symbol(mobx did run lazy initializers): true,
+              Symbol(mobx administration): ObservableObjectAdministration$$1 {
+                "defaultEnhancer": [Function],
+                "keysAtom": Atom$$1 {
+                  "diffValue": 0,
+                  "isBeingObserved": false,
+                  "isPendingUnobservation": false,
+                  "lastAccessedBy": 0,
+                  "lowestObserverState": 2,
+                  "name": "CredentialObject@1.keys",
+                  "observers": Set {},
                 },
-                "error": ErrorObject {},
-              },
-            },
-            "store": Store {
-              "application": ApplicationObject {},
-              "credential": CredentialObject {
-                "password": "",
-                "status": Object {},
-                "token": "",
-                "username": "",
-                Symbol(mobx did run lazy initializers): true,
-                Symbol(mobx administration): ObservableObjectAdministration$$1 {
-                  "defaultEnhancer": [Function],
-                  "keysAtom": Atom$$1 {
-                    "diffValue": 0,
-                    "isBeingObserved": false,
-                    "isPendingUnobservation": false,
-                    "lastAccessedBy": 0,
-                    "lowestObserverState": 2,
-                    "name": "CredentialObject@1.keys",
-                    "observers": Set {},
-                  },
-                  "name": "CredentialObject@1",
-                  "target": [Circular],
-                  "values": Map {
-                    "password" => "",
-                    "username" => "",
-                    "token" => "",
-                    "status" => Object {},
-                    "isLoggedIn" => false,
-                  },
+                "name": "CredentialObject@1",
+                "target": [Circular],
+                "values": Map {
+                  "password" => "",
+                  "username" => "",
+                  "token" => "",
+                  "status" => Map {},
+                  "isLoggedIn" => false,
                 },
               },
-              "error": ErrorObject {},
             },
-          }
+            "error": ErrorObject {},
+          },
+        },
+        "credential": CredentialObject {
+          "onChangePassword": [Function],
+          "onChangeUsername": [Function],
+          "onLogin": [Function],
+          "onLogout": [Function],
+          "store": Store {
+            "application": ApplicationObject {},
+            "credential": CredentialObject {
+              "password": "",
+              "status": Object {},
+              "token": "",
+              "username": "",
+              Symbol(mobx did run lazy initializers): true,
+              Symbol(mobx administration): ObservableObjectAdministration$$1 {
+                "defaultEnhancer": [Function],
+                "keysAtom": Atom$$1 {
+                  "diffValue": 0,
+                  "isBeingObserved": false,
+                  "isPendingUnobservation": false,
+                  "lastAccessedBy": 0,
+                  "lowestObserverState": 2,
+                  "name": "CredentialObject@1.keys",
+                  "observers": Set {},
+                },
+                "name": "CredentialObject@1",
+                "target": [Circular],
+                "values": Map {
+                  "password" => "",
+                  "username" => "",
+                  "token" => "",
+                  "status" => Map {},
+                  "isLoggedIn" => false,
+                },
+              },
+            },
+            "error": ErrorObject {},
+          },
+        },
+        "store": Store {
+          "application": ApplicationObject {},
+          "credential": CredentialObject {
+            "password": "",
+            "status": Object {},
+            "token": "",
+            "username": "",
+            Symbol(mobx did run lazy initializers): true,
+            Symbol(mobx administration): ObservableObjectAdministration$$1 {
+              "defaultEnhancer": [Function],
+              "keysAtom": Atom$$1 {
+                "diffValue": 0,
+                "isBeingObserved": false,
+                "isPendingUnobservation": false,
+                "lastAccessedBy": 0,
+                "lowestObserverState": 2,
+                "name": "CredentialObject@1.keys",
+                "observers": Set {},
+              },
+              "name": "CredentialObject@1",
+              "target": [Circular],
+              "values": Map {
+                "password" => "",
+                "username" => "",
+                "token" => "",
+                "status" => Map {},
+                "isLoggedIn" => false,
+              },
+            },
+          },
+          "error": ErrorObject {},
+        },
+      }
     }
->
+  >
     <inject-ApplicationView-with-event
-        application={ApplicationObject {}}
-        user={Object {}}
+      application={ApplicationObject {}}
+      user={Object {}}
     />
-</Provider>,
+  </Provider>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
