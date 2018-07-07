@@ -2,10 +2,10 @@ import React from 'react'
 import { observer } from 'mobx-react'
 
 const ErrorList = ({list}) => (
-  <div>
+  <div data-test='errorlist'>
     {
       list.map((c, i) =>
-        <div key={i}>
+        <div data-test='errorlist-error' key={i}>
           {JSON.stringify(c)}
         </div>
       )

@@ -1,5 +1,5 @@
 import { observable, computed, action } from 'mobx'
-import {fetchApi} from '../util/api'
+import {getStatus} from '../api/operation'
 
 const savedToken = localStorage.getItem('Token')
 
@@ -42,15 +42,8 @@ export class CredentialObject {
     this.password = ''
   }
 
-  @action.bound fetchStatus () {
-    fetchApi(`api/status`, {
-      method: 'get',
-      headers: {
-        'Authorization': 'Bearer ' + this.token
-      }
-    })
-      .then(response => {
-        this.setStatus(response.data.status)
-      })
+  @action.bound async fetchStatus () {
+    const response = await getStatus(this.token)
+    this.setStatus(response.data.status)
   }
 }
