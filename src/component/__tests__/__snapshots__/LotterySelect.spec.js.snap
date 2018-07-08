@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components LotterySelect render 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <LotterySelect
+    classroom={1}
+    list={
+      Array [
+        Object {
+          "classroom_id": 1,
+          "done": false,
+          "id": 3,
+          "index": 2,
+          "name": "5A.2",
+        },
+        Object {
+          "classroom_id": 1,
+          "done": false,
+          "id": 4,
+          "index": 3,
+          "name": "5A.3",
+        },
+        Object {
+          "classroom_id": 2,
+          "done": false,
+          "id": 5,
+          "index": 0,
+          "name": "5B.0",
+        },
+        Object {
+          "classroom_id": 2,
+          "done": false,
+          "id": 6,
+          "index": 1,
+          "name": "5B.1",
+        },
+      ]
+    }
+    onChange={[MockFunction]}
+    value={3}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <option
+          data-test="lottery-option"
+          value={3}
+        >
+          第
+          3
+          公演
+        </option>,
+        <option
+          data-test="lottery-option"
+          value={4}
+        >
+          第
+          4
+          公演
+        </option>,
+      ],
+      "data-test": "lottery-select",
+      "name": "lotteries",
+      "onChange": [Function],
+      "value": 3,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "第",
+            3,
+            "公演",
+          ],
+          "data-test": "lottery-option",
+          "value": 3,
+        },
+        "ref": null,
+        "rendered": Array [
+          "第",
+          3,
+          "公演",
+        ],
+        "type": "option",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "第",
+            4,
+            "公演",
+          ],
+          "data-test": "lottery-option",
+          "value": 4,
+        },
+        "ref": null,
+        "rendered": Array [
+          "第",
+          4,
+          "公演",
+        ],
+        "type": "option",
+      },
+    ],
+    "type": "select",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <option
+            data-test="lottery-option"
+            value={3}
+          >
+            第
+            3
+            公演
+          </option>,
+          <option
+            data-test="lottery-option"
+            value={4}
+          >
+            第
+            4
+            公演
+          </option>,
+        ],
+        "data-test": "lottery-select",
+        "name": "lotteries",
+        "onChange": [Function],
+        "value": 3,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "第",
+              3,
+              "公演",
+            ],
+            "data-test": "lottery-option",
+            "value": 3,
+          },
+          "ref": null,
+          "rendered": Array [
+            "第",
+            3,
+            "公演",
+          ],
+          "type": "option",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "第",
+              4,
+              "公演",
+            ],
+            "data-test": "lottery-option",
+            "value": 4,
+          },
+          "ref": null,
+          "rendered": Array [
+            "第",
+            4,
+            "公演",
+          ],
+          "type": "option",
+        },
+      ],
+      "type": "select",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

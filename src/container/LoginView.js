@@ -9,10 +9,10 @@ const LoginView = ({credential, event}) => {
   } = event.credential
 
   return (
-    <div>
-      <input type='text' name='username' value={credential.username} onChange={e => onChangeUsername(e.target.value)} />
-      <input type='text' name='password' value={credential.password} onChange={e => onChangePassword(e.target.value)} />
-      <button onClick={onLogin}>Login</button>
+    <div data-test='loginview'>
+      <input data-test='loginview-username' type='text' name='username' value={credential.username} onChange={e => onChangeUsername(e.target.value)} />
+      <input data-test='loginview-password' type='text' name='password' value={credential.password} onChange={e => onChangePassword(e.target.value)} />
+      <button data-test='loginview-login' onClick={onLogin}>Login</button>
     </div>
   )
 }

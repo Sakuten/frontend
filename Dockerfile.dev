@@ -15,7 +15,8 @@ RUN cd /opt \
     && ln -s yarn-1.7.0/bin/yarn /bin/yarn
 
 WORKDIR /code
-
 ENTRYPOINT ["prehook", "node -v", "--", \
             "prehook", "yarn install --modules-folder /node_modules", "--", \
-            "yarn", "start"]
+            "yarn", "run"]
+
+CMD ["start"]

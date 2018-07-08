@@ -1,4 +1,4 @@
-import {fetchApi} from '../util/api'
+import {applyLottery, cancelLottery} from '../api/operation'
 
 export class ApplicationObject {
   constructor (store) {
@@ -22,22 +22,12 @@ export class ApplicationObject {
   }
 
   onApply = async () => {
-    await fetchApi(`api/lotteries/${this.store.application.lottery}/apply`, {
-      method: 'put',
-      headers: {
-        'Authorization': 'Bearer ' + this.store.credential.token
-      }
-    })
+    await applyLottery(this.store.application.lottery, this.store.credential.token)
     await this.store.credential.fetchStatus()
   }
 
   onCancel = async (id) => {
-    await fetchApi(`api/lotteries/${id}/apply`, {
-      method: 'delete',
-      headers: {
-        'Authorization': 'Bearer ' + this.store.credential.token
-      }
-    })
+    await cancelLottery(id, this.store.credential.token)
     await this.store.credential.fetchStatus()
   }
 }
