@@ -6,24 +6,24 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ClassroomSelect
     list={
-        Array [
-            Object {
-              "grade": 5,
-              "id": 1,
-              "index": 0,
-              "name": "A",
-            },
-            Object {
-              "grade": 5,
-              "id": 2,
-              "index": 1,
-              "name": "B",
-            },
-          ]
+      Array [
+        Object {
+          "grade": 5,
+          "id": 1,
+          "index": 0,
+          "name": "A",
+        },
+        Object {
+          "grade": 5,
+          "id": 2,
+          "index": 1,
+          "name": "B",
+        },
+      ]
     }
-    onChange={[Function]}
+    onChange={[MockFunction]}
     value={0}
-/>,
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -40,19 +40,19 @@ ShallowWrapper {
         <option
           data-test="classroom-option"
           value={1}
->
+        >
           5
            
           A
-</option>,
+        </option>,
         <option
           data-test="classroom-option"
           value={2}
->
+        >
           5
            
           B
-</option>,
+        </option>,
       ],
       "data-test": "classroom-select",
       "name": "classrooms",
@@ -116,19 +116,19 @@ ShallowWrapper {
           <option
             data-test="classroom-option"
             value={1}
->
+          >
             5
              
             A
-</option>,
+          </option>,
           <option
             data-test="classroom-option"
             value={2}
->
+          >
             5
              
             B
-</option>,
+          </option>,
         ],
         "data-test": "classroom-select",
         "name": "classrooms",

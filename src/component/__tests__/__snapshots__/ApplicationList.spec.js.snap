@@ -6,23 +6,23 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ApplicationList
     list={
-        Array [
-            Object {
-              "id": 24,
-              "lottery_id": 1,
-              "status": null,
-              "user_id": 3,
-            },
-            Object {
-              "id": 25,
-              "lottery_id": 2,
-              "status": null,
-              "user_id": 3,
-            },
-          ]
+      Array [
+        Object {
+          "id": 24,
+          "lottery_id": 1,
+          "status": null,
+          "user_id": 3,
+        },
+        Object {
+          "id": 25,
+          "lottery_id": 2,
+          "status": null,
+          "user_id": 3,
+        },
+      ]
     }
-    onCancel={[Function]}
-/>,
+    onCancel={[MockFunction]}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -38,26 +38,26 @@ ShallowWrapper {
       "children": Array [
         <div
           data-test="applicationlist-application"
->
+        >
           {"id":24,"lottery_id":1,"status":null,"user_id":3}
           <button
-                    data-test="applicationlist-cancel"
-                    onClick={[Function]}
+            data-test="applicationlist-cancel"
+            onClick={[Function]}
           >
-                    Cancel
+            Cancel
           </button>
-</div>,
+        </div>,
         <div
           data-test="applicationlist-application"
->
+        >
           {"id":25,"lottery_id":2,"status":null,"user_id":3}
           <button
-                    data-test="applicationlist-cancel"
-                    onClick={[Function]}
+            data-test="applicationlist-cancel"
+            onClick={[Function]}
           >
-                    Cancel
+            Cancel
           </button>
-</div>,
+        </div>,
       ],
     },
     "ref": null,
@@ -72,9 +72,9 @@ ShallowWrapper {
             <button
               data-test="applicationlist-cancel"
               onClick={[Function]}
->
+            >
               Cancel
-</button>,
+            </button>,
           ],
           "data-test": "applicationlist-application",
         },
@@ -107,9 +107,9 @@ ShallowWrapper {
             <button
               data-test="applicationlist-cancel"
               onClick={[Function]}
->
+            >
               Cancel
-</button>,
+            </button>,
           ],
           "data-test": "applicationlist-application",
         },
@@ -144,26 +144,26 @@ ShallowWrapper {
         "children": Array [
           <div
             data-test="applicationlist-application"
->
+          >
             {"id":24,"lottery_id":1,"status":null,"user_id":3}
             <button
-                        data-test="applicationlist-cancel"
-                        onClick={[Function]}
+              data-test="applicationlist-cancel"
+              onClick={[Function]}
             >
-                        Cancel
+              Cancel
             </button>
-</div>,
+          </div>,
           <div
             data-test="applicationlist-application"
->
+          >
             {"id":25,"lottery_id":2,"status":null,"user_id":3}
             <button
-                        data-test="applicationlist-cancel"
-                        onClick={[Function]}
+              data-test="applicationlist-cancel"
+              onClick={[Function]}
             >
-                        Cancel
+              Cancel
             </button>
-</div>,
+          </div>,
         ],
       },
       "ref": null,
@@ -178,9 +178,9 @@ ShallowWrapper {
               <button
                 data-test="applicationlist-cancel"
                 onClick={[Function]}
->
+              >
                 Cancel
-</button>,
+              </button>,
             ],
             "data-test": "applicationlist-application",
           },
@@ -213,9 +213,9 @@ ShallowWrapper {
               <button
                 data-test="applicationlist-cancel"
                 onClick={[Function]}
->
+              >
                 Cancel
-</button>,
+              </button>,
             ],
             "data-test": "applicationlist-application",
           },
