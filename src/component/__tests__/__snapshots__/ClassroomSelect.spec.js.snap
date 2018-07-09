@@ -63,7 +63,7 @@ ShallowWrapper {
     "rendered": Array [
       Object {
         "instance": null,
-        "key": undefined,
+        "key": "1",
         "nodeType": "host",
         "props": Object {
           "children": Array [
@@ -84,7 +84,7 @@ ShallowWrapper {
       },
       Object {
         "instance": null,
-        "key": undefined,
+        "key": "2",
         "nodeType": "host",
         "props": Object {
           "children": Array [
@@ -139,7 +139,7 @@ ShallowWrapper {
       "rendered": Array [
         Object {
           "instance": null,
-          "key": undefined,
+          "key": "1",
           "nodeType": "host",
           "props": Object {
             "children": Array [
@@ -160,7 +160,7 @@ ShallowWrapper {
         },
         Object {
           "instance": null,
-          "key": undefined,
+          "key": "2",
           "nodeType": "host",
           "props": Object {
             "children": Array [

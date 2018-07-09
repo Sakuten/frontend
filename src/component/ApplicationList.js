@@ -4,8 +4,8 @@ import { observer } from 'mobx-react'
 const ApplicationList = ({list, onCancel}) => (
   <div>
     {
-      list ? list.map(c =>
-        <div data-test='applicationlist-application'>
+      list ? list.map((c, i) =>
+        <div data-test='applicationlist-application' key={i}>
           {JSON.stringify(c)}
           <button data-test='applicationlist-cancel' onClick={() => onCancel(c.lottery_id)}>Cancel</button>
         </div>
