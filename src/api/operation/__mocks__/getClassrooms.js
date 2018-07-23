@@ -1,8 +1,7 @@
 import { responsify } from '../../../util/responsify'
 
 export const getClassrooms = () => new Promise((resolve, reject) => {
-  resolve(responsify({
-    'classrooms': [
+  resolve(responsify([
       {
         'grade': 5,
         'id': 1,
@@ -51,6 +50,5 @@ export const getClassrooms = () => new Promise((resolve, reject) => {
         'index': 3,
         'name': 'D'
       }
-    ]
-  }))
+  ]))
 })

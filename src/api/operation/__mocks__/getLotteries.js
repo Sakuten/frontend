@@ -1,8 +1,7 @@
 import { responsify } from '../../../util/responsify'
 
 export const getLotteries = () => new Promise((resolve, reject) => {
-  resolve(responsify({
-    'lotteries': [
+  resolve(responsify([
       {
         'classroom_id': 1,
         'done': false,
@@ -227,6 +226,5 @@ export const getLotteries = () => new Promise((resolve, reject) => {
         'index': 3,
         'name': '6D.3'
       }
-    ]
-  }))
+  ]))
 })
