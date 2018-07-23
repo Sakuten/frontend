@@ -7,7 +7,7 @@ const LotterySelect = ({list, value, classroom, onChange}) => (
       list
         .filter(c => c.classroom_id === Number(classroom))
         .map(c =>
-          <option data-test='lottery-option' value={c.id}>第{c.index + 1}公演</option>
+          <option data-test='lottery-option' key={c.id} value={c.id}>第{c.index + 1}公演</option>
         )
     }
   </select>
