@@ -8,16 +8,28 @@ ShallowWrapper {
     list={
       Array [
         Object {
-          "id": 24,
-          "lottery_id": 1,
-          "status": null,
-          "user_id": 3,
+          "id": 1,
+          "lottery": Object {
+            "classroom_id": 1,
+            "done": false,
+            "id": 1,
+            "index": 0,
+            "name": "5A.0",
+            "winners": Array [],
+          },
+          "status": "pending",
         },
         Object {
-          "id": 25,
-          "lottery_id": 2,
-          "status": null,
-          "user_id": 3,
+          "id": 2,
+          "lottery": Object {
+            "classroom_id": 1,
+            "done": false,
+            "id": 2,
+            "index": 0,
+            "name": "5A.0",
+            "winners": Array [],
+          },
+          "status": "pending",
         },
       ]
     }
@@ -39,7 +51,7 @@ ShallowWrapper {
         <div
           data-test="applicationlist-application"
         >
-          {"id":24,"lottery_id":1,"status":null,"user_id":3}
+          {"id":1,"lottery":{"classroom_id":1,"done":false,"id":1,"index":0,"name":"5A.0","winners":[]},"status":"pending"}
           <button
             data-test="applicationlist-cancel"
             onClick={[Function]}
@@ -50,7 +62,7 @@ ShallowWrapper {
         <div
           data-test="applicationlist-application"
         >
-          {"id":25,"lottery_id":2,"status":null,"user_id":3}
+          {"id":2,"lottery":{"classroom_id":1,"done":false,"id":2,"index":0,"name":"5A.0","winners":[]},"status":"pending"}
           <button
             data-test="applicationlist-cancel"
             onClick={[Function]}
@@ -68,7 +80,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            "{\\"id\\":24,\\"lottery_id\\":1,\\"status\\":null,\\"user_id\\":3}",
+            "{\\"id\\":1,\\"lottery\\":{\\"classroom_id\\":1,\\"done\\":false,\\"id\\":1,\\"index\\":0,\\"name\\":\\"5A.0\\",\\"winners\\":[]},\\"status\\":\\"pending\\"}",
             <button
               data-test="applicationlist-cancel"
               onClick={[Function]}
@@ -80,7 +92,7 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
-          "{\\"id\\":24,\\"lottery_id\\":1,\\"status\\":null,\\"user_id\\":3}",
+          "{\\"id\\":1,\\"lottery\\":{\\"classroom_id\\":1,\\"done\\":false,\\"id\\":1,\\"index\\":0,\\"name\\":\\"5A.0\\",\\"winners\\":[]},\\"status\\":\\"pending\\"}",
           Object {
             "instance": null,
             "key": undefined,
@@ -103,7 +115,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            "{\\"id\\":25,\\"lottery_id\\":2,\\"status\\":null,\\"user_id\\":3}",
+            "{\\"id\\":2,\\"lottery\\":{\\"classroom_id\\":1,\\"done\\":false,\\"id\\":2,\\"index\\":0,\\"name\\":\\"5A.0\\",\\"winners\\":[]},\\"status\\":\\"pending\\"}",
             <button
               data-test="applicationlist-cancel"
               onClick={[Function]}
@@ -115,7 +127,7 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
-          "{\\"id\\":25,\\"lottery_id\\":2,\\"status\\":null,\\"user_id\\":3}",
+          "{\\"id\\":2,\\"lottery\\":{\\"classroom_id\\":1,\\"done\\":false,\\"id\\":2,\\"index\\":0,\\"name\\":\\"5A.0\\",\\"winners\\":[]},\\"status\\":\\"pending\\"}",
           Object {
             "instance": null,
             "key": undefined,
@@ -145,7 +157,7 @@ ShallowWrapper {
           <div
             data-test="applicationlist-application"
           >
-            {"id":24,"lottery_id":1,"status":null,"user_id":3}
+            {"id":1,"lottery":{"classroom_id":1,"done":false,"id":1,"index":0,"name":"5A.0","winners":[]},"status":"pending"}
             <button
               data-test="applicationlist-cancel"
               onClick={[Function]}
@@ -156,7 +168,7 @@ ShallowWrapper {
           <div
             data-test="applicationlist-application"
           >
-            {"id":25,"lottery_id":2,"status":null,"user_id":3}
+            {"id":2,"lottery":{"classroom_id":1,"done":false,"id":2,"index":0,"name":"5A.0","winners":[]},"status":"pending"}
             <button
               data-test="applicationlist-cancel"
               onClick={[Function]}
@@ -174,7 +186,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "{\\"id\\":24,\\"lottery_id\\":1,\\"status\\":null,\\"user_id\\":3}",
+              "{\\"id\\":1,\\"lottery\\":{\\"classroom_id\\":1,\\"done\\":false,\\"id\\":1,\\"index\\":0,\\"name\\":\\"5A.0\\",\\"winners\\":[]},\\"status\\":\\"pending\\"}",
               <button
                 data-test="applicationlist-cancel"
                 onClick={[Function]}
@@ -186,7 +198,7 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            "{\\"id\\":24,\\"lottery_id\\":1,\\"status\\":null,\\"user_id\\":3}",
+            "{\\"id\\":1,\\"lottery\\":{\\"classroom_id\\":1,\\"done\\":false,\\"id\\":1,\\"index\\":0,\\"name\\":\\"5A.0\\",\\"winners\\":[]},\\"status\\":\\"pending\\"}",
             Object {
               "instance": null,
               "key": undefined,
@@ -209,7 +221,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "{\\"id\\":25,\\"lottery_id\\":2,\\"status\\":null,\\"user_id\\":3}",
+              "{\\"id\\":2,\\"lottery\\":{\\"classroom_id\\":1,\\"done\\":false,\\"id\\":2,\\"index\\":0,\\"name\\":\\"5A.0\\",\\"winners\\":[]},\\"status\\":\\"pending\\"}",
               <button
                 data-test="applicationlist-cancel"
                 onClick={[Function]}
@@ -221,7 +233,7 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            "{\\"id\\":25,\\"lottery_id\\":2,\\"status\\":null,\\"user_id\\":3}",
+            "{\\"id\\":2,\\"lottery\\":{\\"classroom_id\\":1,\\"done\\":false,\\"id\\":2,\\"index\\":0,\\"name\\":\\"5A.0\\",\\"winners\\":[]},\\"status\\":\\"pending\\"}",
             Object {
               "instance": null,
               "key": undefined,
