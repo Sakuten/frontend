@@ -1,6 +1,6 @@
 import { responsify } from '../../../util/responsify'
 
-export const getClassrooms = () => new Promise((resolve, reject) => {
+export const getApplications = () => new Promise((resolve, reject) => {
   resolve(responsify([
     {
       "id": 1,
