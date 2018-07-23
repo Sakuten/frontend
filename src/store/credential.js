@@ -44,6 +44,6 @@ export class CredentialObject {
 
   @action.bound async fetchStatus () {
     const response = await getStatus(this.token)
-    this.setStatus(response.data.status)
+    this.setStatus(response.data)
   }
 }

@@ -53,7 +53,7 @@ describe('containers', () => {
     it('renders application list', async () => {
       const { store, wrapper } = setup({}, {}, {}, false)
       await store.credential.fetchStatus()
-      expect(wrapper.render().find('[data-test="applicationlist-application"]').length).toBe(2)
+      expect(wrapper.render().find('[data-test="applicationlist-application"]').length).toBe(1)
     })
   })
 })
