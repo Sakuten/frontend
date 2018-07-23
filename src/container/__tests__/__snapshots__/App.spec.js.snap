@@ -416,7 +416,7 @@ ShallowWrapper {
       }
     }
   >
-    <Router
+    <MemoryRouter
       history={
         Object {
           "action": "POP",
@@ -438,6 +438,11 @@ ShallowWrapper {
           "subscribe": [Function],
           "unsubscribe": [Function],
         }
+      }
+      initialEntries={
+        Array [
+          "/",
+        ]
       }
     >
       <inject-App-with-event
@@ -575,7 +580,7 @@ ShallowWrapper {
           }
         }
       />
-    </Router>
+    </MemoryRouter>
   </Provider>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -744,6 +749,9 @@ ShallowWrapper {
         "subscribe": [Function],
         "unsubscribe": [Function],
       },
+      "initialEntries": Array [
+        "/",
+      ],
     },
     "ref": null,
     "rendered": Object {
@@ -1050,6 +1058,9 @@ ShallowWrapper {
           "subscribe": [Function],
           "unsubscribe": [Function],
         },
+        "initialEntries": Array [
+          "/",
+        ],
       },
       "ref": null,
       "rendered": Object {

@@ -3,13 +3,13 @@ import { shallow, mount } from 'enzyme'
 import deepAssign from 'deep-assign'
 import createBrowserHistory from 'history/createBrowserHistory'
 import { syncHistoryWithStore } from 'mobx-react-router'
-import { Router } from 'react-router'
+import { MemoryRouter } from 'react-router'
 import { Provider } from 'mobx-react'
 import App from '../App'
 import {Store} from '../../store'
 import {Event} from '../../event'
 
-const setup = (propOverrides, storeOverrides, isShallow = true) => {
+const setup = (propOverrides, storeOverrides, path = '/', isShallow = true) => {
   const store = deepAssign(new Store(), storeOverrides)
   const event = new Event(store)
   const props = Object.assign({
@@ -20,9 +20,9 @@ const setup = (propOverrides, storeOverrides, isShallow = true) => {
   const history = syncHistoryWithStore(browserHistory, store.router)
   const dom = (
     <Provider event={event} >
-      <Router history={history} >
+      <MemoryRouter initialEntries={[path]} history={history} >
         <App store={store} />
-      </Router>
+      </MemoryRouter>
     </Provider>
   )
   const wrapper = (isShallow ? shallow : mount)(dom)
@@ -43,16 +43,16 @@ describe('containers', () => {
       expect(wrapper).toMatchSnapshot()
     })
 
-    // it('renders ApplicationView when it isn\'t logged in', () => {
-    //   const { loginView, applicationView } = setup({}, {credential: {token: 'token'}}, false)
-    //   expect(applicationView.length).toBe(1)
-    //   expect(loginView.length).toBe(0)
-    // })
+    it('renders ApplicationView when it is logged in', () => {
+      const { loginView, applicationView } = setup({}, {credential: {token: 'token'}}, '/lottery', false)
+      expect(applicationView.length).toBe(1)
+      expect(loginView.length).toBe(0)
+    })
 
-    // it('renders LoginView when it is logged in', () => {
-    //   const { loginView, applicationView } = setup({}, {credential: {token: ''}}, false)
-    //   expect(applicationView.length).toBe(0)
-    //   expect(loginView.length).toBe(1)
-    // })
+    it('renders LoginView when it isn\'t logged in', () => {
+      const { loginView, applicationView } = setup({}, {credential: {token: ''}}, '/lottery/login', false)
+      expect(applicationView.length).toBe(0)
+      expect(loginView.length).toBe(1)
+    })
   })
 })
