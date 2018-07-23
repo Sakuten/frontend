@@ -25,10 +25,12 @@ export class ApplicationObject {
   onApply = async () => {
     await applyLottery(this.store.application.lottery, this.store.credential.token)
     await this.store.credential.fetchStatus()
+    await this.onUpdate()
   }
 
   onCancel = async (id) => {
     await cancelLottery(id, this.store.credential.token)
     await this.store.credential.fetchStatus()
+    await this.onUpdate()
   }
 }
