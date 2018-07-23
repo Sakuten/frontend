@@ -1,7 +1,7 @@
 import {fetchApi} from '../request'
 
 export const applyLottery = (lotteryId, token) => fetchApi(`lotteries/${lotteryId}`, {
-  method: 'put',
+  method: 'post',
   headers: {
     'Authorization': 'Bearer ' + token
   }
