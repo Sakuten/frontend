@@ -34,7 +34,7 @@ describe('containers', () => {
 
     it('renders user id', async () => {
       const { store, title } = setup({}, {}, {}, false)
-      await store.credential.fetchStatus()
+      await store.fetchStatus()
       expect(title.text()).toBe('Logged in as example1')
     })
 
@@ -52,7 +52,7 @@ describe('containers', () => {
 
     it('renders application list', async () => {
       const { store, wrapper } = setup({}, {}, {}, false)
-      await store.credential.fetchStatus()
+      await store.fetchStatus()
       expect(wrapper.render().find('[data-test="applicationlist-application"]').length).toBe(1)
     })
   })

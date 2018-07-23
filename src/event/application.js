@@ -9,8 +9,7 @@ export class ApplicationObject {
   onUpdate = async () => {
     await Promise.all([
       this.store.application.fetchClassroomList(),
-      this.store.application.fetchLotteryList(),
-      this.store.application.fetchApplicationList()
+      this.store.application.fetchLotteryList()
     ])
   }
 
@@ -24,13 +23,11 @@ export class ApplicationObject {
 
   onApply = async () => {
     await applyLottery(this.store.application.lottery, this.store.credential.token)
-    await this.store.credential.fetchStatus()
-    await this.onUpdate()
+    await this.store.fetchStatus()
   }
 
   onCancel = async (id) => {
     await cancelLottery(id, this.store.credential.token)
-    await this.store.credential.fetchStatus()
-    await this.onUpdate()
+    await this.store.fetchStatus()
   }
 }
