@@ -17,6 +17,14 @@ ShallowWrapper {
             "application": ApplicationObject {},
             "credential": CredentialObject {},
             "error": ErrorObject {},
+            "router": RouterStore {
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "history": null,
+              "push": [Function],
+              "replace": [Function],
+            },
           },
         },
         "credential": CredentialObject {
@@ -28,12 +36,28 @@ ShallowWrapper {
             "application": ApplicationObject {},
             "credential": CredentialObject {},
             "error": ErrorObject {},
+            "router": RouterStore {
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "history": null,
+              "push": [Function],
+              "replace": [Function],
+            },
           },
         },
         "store": Store {
           "application": ApplicationObject {},
           "credential": CredentialObject {},
           "error": ErrorObject {},
+          "router": RouterStore {
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "history": null,
+            "push": [Function],
+            "replace": [Function],
+          },
         },
       }
     }

@@ -17,6 +17,14 @@ ShallowWrapper {
             "application": ApplicationObject {},
             "credential": CredentialObject {},
             "error": ErrorObject {},
+            "router": RouterStore {
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "history": null,
+              "push": [Function],
+              "replace": [Function],
+            },
           },
         },
         "credential": CredentialObject {
@@ -28,25 +36,57 @@ ShallowWrapper {
             "application": ApplicationObject {},
             "credential": CredentialObject {},
             "error": ErrorObject {},
+            "router": RouterStore {
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "history": null,
+              "push": [Function],
+              "replace": [Function],
+            },
           },
         },
         "store": Store {
           "application": ApplicationObject {},
           "credential": CredentialObject {},
           "error": ErrorObject {},
+          "router": RouterStore {
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "history": null,
+            "push": [Function],
+            "replace": [Function],
+          },
         },
       }
     }
   >
-    <inject-App-with-event
-      store={
-        Store {
-          "application": ApplicationObject {},
-          "credential": CredentialObject {},
-          "error": ErrorObject {},
-        }
+    <MemoryRouter
+      initialEntries={
+        Array [
+          "/",
+        ]
       }
-    />
+    >
+      <inject-App-with-event
+        store={
+          Store {
+            "application": ApplicationObject {},
+            "credential": CredentialObject {},
+            "error": ErrorObject {},
+            "router": RouterStore {
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "history": null,
+              "push": [Function],
+              "replace": [Function],
+            },
+          }
+        }
+      />
+    </MemoryRouter>
   </Provider>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -60,18 +100,29 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "store": Store {
-        "application": ApplicationObject {},
-        "credential": CredentialObject {},
-        "error": ErrorObject {},
-      },
+      "children": <inject-App-with-event
+        store={
+          Store {
+            "application": ApplicationObject {},
+            "credential": CredentialObject {},
+            "error": ErrorObject {},
+            "router": RouterStore {
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "history": null,
+              "push": [Function],
+              "replace": [Function],
+            },
+          }
+        }
+      />,
+      "initialEntries": Array [
+        "/",
+      ],
     },
     "ref": null,
-    "rendered": null,
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
+    "rendered": Object {
       "instance": null,
       "key": undefined,
       "nodeType": "class",
@@ -80,10 +131,73 @@ ShallowWrapper {
           "application": ApplicationObject {},
           "credential": CredentialObject {},
           "error": ErrorObject {},
+          "router": RouterStore {
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "history": null,
+            "push": [Function],
+            "replace": [Function],
+          },
         },
       },
       "ref": null,
       "rendered": null,
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <inject-App-with-event
+          store={
+            Store {
+              "application": ApplicationObject {},
+              "credential": CredentialObject {},
+              "error": ErrorObject {},
+              "router": RouterStore {
+                "go": [Function],
+                "goBack": [Function],
+                "goForward": [Function],
+                "history": null,
+                "push": [Function],
+                "replace": [Function],
+              },
+            }
+          }
+        />,
+        "initialEntries": Array [
+          "/",
+        ],
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "store": Store {
+            "application": ApplicationObject {},
+            "credential": CredentialObject {},
+            "error": ErrorObject {},
+            "router": RouterStore {
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "history": null,
+              "push": [Function],
+              "replace": [Function],
+            },
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
       "type": [Function],
     },
   ],
