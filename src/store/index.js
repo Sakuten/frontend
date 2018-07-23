@@ -10,7 +10,8 @@ export class Store {
     this.router = new RouterStore()
     this.error = new ErrorObject()
 
-    this.fetchStatus()
+    if(this.credential.isLoggedIn)
+      this.fetchStatus()
   }
 
   fetchStatus = async () => {

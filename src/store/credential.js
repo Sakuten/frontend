@@ -9,12 +9,6 @@ export class CredentialObject {
   @observable token = savedToken || ''
   @observable status = new Map()
 
-  constructor () {
-    if (savedToken) {
-      this.fetchStatus()
-    }
-  }
-
   @computed get isLoggedIn () {
     return this.token.length !== 0
   }
