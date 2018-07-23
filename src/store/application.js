@@ -26,11 +26,11 @@ export class ApplicationObject {
 
   @action.bound async fetchClassroomList () {
     const response = await getClassrooms()
-    this.setClassroomList(response.data.classrooms)
+    this.setClassroomList(response.data)
   }
 
   @action.bound async fetchLotteryList () {
     const response = await getLotteries()
-    this.setLotteryList(response.data.lotteries)
+    this.setLotteryList(response.data)
   }
 }
