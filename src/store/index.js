@@ -15,8 +15,8 @@ export class Store {
 
   fetchStatus = async () => {
     await Promise.all([
-      this.store.credential.fetchStatus(),
-      this.store.application.fetchApplicationList()
+      this.credential.fetchStatus(),
+      this.application.fetchApplicationList(this.credential.token)
     ])
   }
 }

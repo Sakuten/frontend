@@ -40,8 +40,8 @@ export class ApplicationObject {
     this.setLotteryList(response.data)
   }
 
-  @action.bound async fetchApplicationList () {
-    const response = await getApplications()
+  @action.bound async fetchApplicationList (token) {
+    const response = await getApplications(token)
     this.setApplicationList(response.data)
   }
 }

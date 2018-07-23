@@ -44,7 +44,7 @@ describe('stores', () => {
     })
 
     it('fetches application list', async () => {
-      await store.fetchApplicationList()
+      await store.fetchApplicationList('')
       expect(store.applicationList.length).not.toBe(0)
     })
   })
