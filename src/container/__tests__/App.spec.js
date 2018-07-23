@@ -1,8 +1,6 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 import deepAssign from 'deep-assign'
-import createBrowserHistory from 'history/createBrowserHistory'
-import { syncHistoryWithStore } from 'mobx-react-router'
 import { MemoryRouter } from 'react-router'
 import { Provider } from 'mobx-react'
 import App from '../App'
@@ -16,11 +14,9 @@ const setup = (propOverrides, storeOverrides, path = '/', isShallow = true) => {
     store
   }, propOverrides)
 
-  const browserHistory = createBrowserHistory()
-  const history = syncHistoryWithStore(browserHistory, store.router)
   const dom = (
     <Provider event={event} >
-      <MemoryRouter initialEntries={[path]} history={history} >
+      <MemoryRouter initialEntries={[path]}>
         <App store={store} />
       </MemoryRouter>
     </Provider>
