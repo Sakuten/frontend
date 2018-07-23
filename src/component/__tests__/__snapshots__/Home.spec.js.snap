@@ -18,33 +18,47 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        "Hello Here is Home",
-        <a
+        <p>
+          Hello Here is Home
+        </p>,
+        <Link
           data-test="home-login"
-          href="/lottery/login"
+          replace={false}
+          to="/lottery/login"
         >
           Login
-        </a>,
+        </Link>,
       ],
     },
     "ref": null,
     "rendered": Array [
-      "Hello Here is Home",
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "children": "Hello Here is Home",
+        },
+        "ref": null,
+        "rendered": "Hello Here is Home",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
           "children": "Login",
           "data-test": "home-login",
-          "href": "/lottery/login",
+          "replace": false,
+          "to": "/lottery/login",
         },
         "ref": null,
         "rendered": "Login",
-        "type": "a",
+        "type": [Function],
       },
     ],
-    "type": "p",
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -53,33 +67,47 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          "Hello Here is Home",
-          <a
+          <p>
+            Hello Here is Home
+          </p>,
+          <Link
             data-test="home-login"
-            href="/lottery/login"
+            replace={false}
+            to="/lottery/login"
           >
             Login
-          </a>,
+          </Link>,
         ],
       },
       "ref": null,
       "rendered": Array [
-        "Hello Here is Home",
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "children": "Hello Here is Home",
+          },
+          "ref": null,
+          "rendered": "Hello Here is Home",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
             "children": "Login",
             "data-test": "home-login",
-            "href": "/lottery/login",
+            "replace": false,
+            "to": "/lottery/login",
           },
           "ref": null,
           "rendered": "Login",
-          "type": "a",
+          "type": [Function],
         },
       ],
-      "type": "p",
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {
