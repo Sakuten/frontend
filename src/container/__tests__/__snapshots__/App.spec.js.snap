@@ -15,8 +15,36 @@ ShallowWrapper {
           "onUpdate": [Function],
           "store": Store {
             "application": ApplicationObject {},
-            "credential": CredentialObject {},
+            "credential": CredentialObject {
+              "password": "",
+              "status": Object {},
+              "token": "",
+              "username": "",
+              Symbol(mobx did run lazy initializers): true,
+              Symbol(mobx administration): ObservableObjectAdministration$$1 {
+                "defaultEnhancer": [Function],
+                "keysAtom": Atom$$1 {
+                  "diffValue": 0,
+                  "isBeingObserved": false,
+                  "isPendingUnobservation": false,
+                  "lastAccessedBy": 0,
+                  "lowestObserverState": 2,
+                  "name": "CredentialObject@1.keys",
+                  "observers": Set {},
+                },
+                "name": "CredentialObject@1",
+                "target": [Circular],
+                "values": Map {
+                  "password" => "",
+                  "username" => "",
+                  "token" => "",
+                  "status" => Map {},
+                  "isLoggedIn" => false,
+                },
+              },
+            },
             "error": ErrorObject {},
+            "fetchStatus": [Function],
             "router": RouterStore {
               "go": [Function],
               "goBack": [Function],
@@ -34,8 +62,36 @@ ShallowWrapper {
           "onLogout": [Function],
           "store": Store {
             "application": ApplicationObject {},
-            "credential": CredentialObject {},
+            "credential": CredentialObject {
+              "password": "",
+              "status": Object {},
+              "token": "",
+              "username": "",
+              Symbol(mobx did run lazy initializers): true,
+              Symbol(mobx administration): ObservableObjectAdministration$$1 {
+                "defaultEnhancer": [Function],
+                "keysAtom": Atom$$1 {
+                  "diffValue": 0,
+                  "isBeingObserved": false,
+                  "isPendingUnobservation": false,
+                  "lastAccessedBy": 0,
+                  "lowestObserverState": 2,
+                  "name": "CredentialObject@1.keys",
+                  "observers": Set {},
+                },
+                "name": "CredentialObject@1",
+                "target": [Circular],
+                "values": Map {
+                  "password" => "",
+                  "username" => "",
+                  "token" => "",
+                  "status" => Map {},
+                  "isLoggedIn" => false,
+                },
+              },
+            },
             "error": ErrorObject {},
+            "fetchStatus": [Function],
             "router": RouterStore {
               "go": [Function],
               "goBack": [Function],
@@ -48,8 +104,36 @@ ShallowWrapper {
         },
         "store": Store {
           "application": ApplicationObject {},
-          "credential": CredentialObject {},
+          "credential": CredentialObject {
+            "password": "",
+            "status": Object {},
+            "token": "",
+            "username": "",
+            Symbol(mobx did run lazy initializers): true,
+            Symbol(mobx administration): ObservableObjectAdministration$$1 {
+              "defaultEnhancer": [Function],
+              "keysAtom": Atom$$1 {
+                "diffValue": 0,
+                "isBeingObserved": false,
+                "isPendingUnobservation": false,
+                "lastAccessedBy": 0,
+                "lowestObserverState": 2,
+                "name": "CredentialObject@1.keys",
+                "observers": Set {},
+              },
+              "name": "CredentialObject@1",
+              "target": [Circular],
+              "values": Map {
+                "password" => "",
+                "username" => "",
+                "token" => "",
+                "status" => Map {},
+                "isLoggedIn" => false,
+              },
+            },
+          },
           "error": ErrorObject {},
+          "fetchStatus": [Function],
           "router": RouterStore {
             "go": [Function],
             "goBack": [Function],
@@ -73,8 +157,36 @@ ShallowWrapper {
         store={
           Store {
             "application": ApplicationObject {},
-            "credential": CredentialObject {},
+            "credential": CredentialObject {
+              "password": "",
+              "status": Object {},
+              "token": "",
+              "username": "",
+              Symbol(mobx did run lazy initializers): true,
+              Symbol(mobx administration): ObservableObjectAdministration$$1 {
+                "defaultEnhancer": [Function],
+                "keysAtom": Atom$$1 {
+                  "diffValue": 0,
+                  "isBeingObserved": false,
+                  "isPendingUnobservation": false,
+                  "lastAccessedBy": 0,
+                  "lowestObserverState": 2,
+                  "name": "CredentialObject@1.keys",
+                  "observers": Set {},
+                },
+                "name": "CredentialObject@1",
+                "target": [Circular],
+                "values": Map {
+                  "password" => "",
+                  "username" => "",
+                  "token" => "",
+                  "status" => Map {},
+                  "isLoggedIn" => false,
+                },
+              },
+            },
             "error": ErrorObject {},
+            "fetchStatus": [Function],
             "router": RouterStore {
               "go": [Function],
               "goBack": [Function],
@@ -104,8 +216,36 @@ ShallowWrapper {
         store={
           Store {
             "application": ApplicationObject {},
-            "credential": CredentialObject {},
+            "credential": CredentialObject {
+              "password": "",
+              "status": Object {},
+              "token": "",
+              "username": "",
+              Symbol(mobx did run lazy initializers): true,
+              Symbol(mobx administration): ObservableObjectAdministration$$1 {
+                "defaultEnhancer": [Function],
+                "keysAtom": Atom$$1 {
+                  "diffValue": 0,
+                  "isBeingObserved": false,
+                  "isPendingUnobservation": false,
+                  "lastAccessedBy": 0,
+                  "lowestObserverState": 2,
+                  "name": "CredentialObject@1.keys",
+                  "observers": Set {},
+                },
+                "name": "CredentialObject@1",
+                "target": [Circular],
+                "values": Map {
+                  "password" => "",
+                  "username" => "",
+                  "token" => "",
+                  "status" => Map {},
+                  "isLoggedIn" => false,
+                },
+              },
+            },
             "error": ErrorObject {},
+            "fetchStatus": [Function],
             "router": RouterStore {
               "go": [Function],
               "goBack": [Function],
@@ -129,8 +269,36 @@ ShallowWrapper {
       "props": Object {
         "store": Store {
           "application": ApplicationObject {},
-          "credential": CredentialObject {},
+          "credential": CredentialObject {
+            "password": "",
+            "status": Object {},
+            "token": "",
+            "username": "",
+            Symbol(mobx did run lazy initializers): true,
+            Symbol(mobx administration): ObservableObjectAdministration$$1 {
+              "defaultEnhancer": [Function],
+              "keysAtom": Atom$$1 {
+                "diffValue": 0,
+                "isBeingObserved": false,
+                "isPendingUnobservation": false,
+                "lastAccessedBy": 0,
+                "lowestObserverState": 2,
+                "name": "CredentialObject@1.keys",
+                "observers": Set {},
+              },
+              "name": "CredentialObject@1",
+              "target": [Circular],
+              "values": Map {
+                "password" => "",
+                "username" => "",
+                "token" => "",
+                "status" => Map {},
+                "isLoggedIn" => false,
+              },
+            },
+          },
           "error": ErrorObject {},
+          "fetchStatus": [Function],
           "router": RouterStore {
             "go": [Function],
             "goBack": [Function],
@@ -157,8 +325,36 @@ ShallowWrapper {
           store={
             Store {
               "application": ApplicationObject {},
-              "credential": CredentialObject {},
+              "credential": CredentialObject {
+                "password": "",
+                "status": Object {},
+                "token": "",
+                "username": "",
+                Symbol(mobx did run lazy initializers): true,
+                Symbol(mobx administration): ObservableObjectAdministration$$1 {
+                  "defaultEnhancer": [Function],
+                  "keysAtom": Atom$$1 {
+                    "diffValue": 0,
+                    "isBeingObserved": false,
+                    "isPendingUnobservation": false,
+                    "lastAccessedBy": 0,
+                    "lowestObserverState": 2,
+                    "name": "CredentialObject@1.keys",
+                    "observers": Set {},
+                  },
+                  "name": "CredentialObject@1",
+                  "target": [Circular],
+                  "values": Map {
+                    "password" => "",
+                    "username" => "",
+                    "token" => "",
+                    "status" => Map {},
+                    "isLoggedIn" => false,
+                  },
+                },
+              },
               "error": ErrorObject {},
+              "fetchStatus": [Function],
               "router": RouterStore {
                 "go": [Function],
                 "goBack": [Function],
@@ -182,8 +378,36 @@ ShallowWrapper {
         "props": Object {
           "store": Store {
             "application": ApplicationObject {},
-            "credential": CredentialObject {},
+            "credential": CredentialObject {
+              "password": "",
+              "status": Object {},
+              "token": "",
+              "username": "",
+              Symbol(mobx did run lazy initializers): true,
+              Symbol(mobx administration): ObservableObjectAdministration$$1 {
+                "defaultEnhancer": [Function],
+                "keysAtom": Atom$$1 {
+                  "diffValue": 0,
+                  "isBeingObserved": false,
+                  "isPendingUnobservation": false,
+                  "lastAccessedBy": 0,
+                  "lowestObserverState": 2,
+                  "name": "CredentialObject@1.keys",
+                  "observers": Set {},
+                },
+                "name": "CredentialObject@1",
+                "target": [Circular],
+                "values": Map {
+                  "password" => "",
+                  "username" => "",
+                  "token" => "",
+                  "status" => Map {},
+                  "isLoggedIn" => false,
+                },
+              },
+            },
             "error": ErrorObject {},
+            "fetchStatus": [Function],
             "router": RouterStore {
               "go": [Function],
               "goBack": [Function],
