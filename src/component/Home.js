@@ -1,9 +1,10 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const Home = () => (
   <p>
     Hello Here is Home
-    <a data-test='home-login' href='/lottery/login'>Login</a>
+    <Link data-test='home-login' to='/lottery/login'>Login</Link>
   </p>
 )
 
