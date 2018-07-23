@@ -50,5 +50,15 @@ describe('containers', () => {
       expect(applicationView.length).toBe(0)
       expect(loginView.length).toBe(1)
     })
+
+    it('redirects from /lottery to /lottery/login when it isn\'t logged in', () => {
+      const { wrapper } = setup({}, {credential: {token: ''}}, '/lottery', false)
+      expect(wrapper.find('Redirect').prop('to')).toBe('/lottery/login')
+    })
+
+    it('redirects from /lottery/login to /lottery when it is logged in', () => {
+      const { wrapper } = setup({}, {credential: {token: 'token'}}, '/lottery/login', false)
+      expect(wrapper.find('Redirect').prop('to')).toBe('/lottery')
+    })
   })
 })
