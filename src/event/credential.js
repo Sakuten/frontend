@@ -13,10 +13,12 @@ export class CredentialObject {
       this.store.credential.clearPassword()
       await this.store.credential.fetchStatus()
     } else { throw Error('Invalid response returned') }
+    this.store.router.history.push('/lottery')
   }
 
   onLogout = () => {
     this.store.credential.setToken('')
+    this.store.router.history.push('/lottery/login')
   }
 
   onChangeUsername = (username) => {
