@@ -9,5 +9,14 @@ export class Store {
     this.application = new ApplicationObject()
     this.router = new RouterStore()
     this.error = new ErrorObject()
+
+    if (this.credential.isLoggedIn) { this.fetchStatus() }
+  }
+
+  fetchStatus = async () => {
+    await Promise.all([
+      this.credential.fetchStatus(),
+      this.application.fetchApplicationList(this.credential.token)
+    ])
   }
 }
