@@ -13,14 +13,16 @@ export class CredentialObject {
       this.store.credential.clearPassword()
       await this.store.credential.fetchStatus()
     } else { throw Error('Invalid response returned') }
-    if(this.store.router.history) // Avoid in testing
-      this.store.router.history.push('/lottery')
+
+    // Avoid in testing
+    if (this.store.router.history) { this.store.router.history.push('/lottery') }
   }
 
   onLogout = () => {
     this.store.credential.setToken('')
-    if(this.store.router.history) // Avoid in testing
-      this.store.router.history.push('/lottery/login')
+
+    // Avoid in testing
+    if (this.store.router.history) { this.store.router.history.push('/lottery/login') }
   }
 
   onChangeUsername = (username) => {
