@@ -4,6 +4,7 @@
 
 [build.environment]
   REACT_APP_API_SERVER = "https://sakuten-api-dev.herokuapp.com"
+  REACT_APP_STAGING_BUILD = "1"
 
 [[redirects]]
   from = "/*"
