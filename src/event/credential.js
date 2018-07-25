@@ -6,11 +6,10 @@ export class CredentialObject {
   }
 
   onLogin = async () => {
-    const response = await authenicate(this.store.credential.username, this.store.credential.password)
+    const response = await authenicate(this.store.credential.username, this.store.credential.recaptchaResponse)
     const json = response.data
     if ('token' in json) {
       this.store.credential.setToken(json.token)
-      this.store.credential.clearPassword()
       await this.store.fetchStatus()
     } else { throw Error('Invalid response returned') }
   }
@@ -24,8 +23,8 @@ export class CredentialObject {
     this.store.credential.setUsername(username)
   }
 
-  onChangePassword = (password) => {
-    password = password.trim()
-    this.store.credential.setPassword(password)
+  onChangeRecaptchaResponse = (recaptchaResponse) => {
+    recaptchaResponse = recaptchaResponse.trim()
+    this.store.credential.setRecaptchaResponse(recaptchaResponse)
   }
 }

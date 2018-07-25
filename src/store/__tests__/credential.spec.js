@@ -13,16 +13,6 @@ describe('stores', () => {
       expect(store.username).toBe('username')
     })
 
-    it('can have password', () => {
-      store.setPassword('password')
-      expect(store.password).toBe('password')
-    })
-
-    it('can clear password', () => {
-      store.clearPassword()
-      expect(store.password).toBe('')
-    })
-
     it('can have token', () => {
       store.setToken('token')
       expect(store.token).toBe('token')
