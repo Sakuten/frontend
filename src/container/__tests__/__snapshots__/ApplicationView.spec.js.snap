@@ -16,7 +16,7 @@ ShallowWrapper {
           "store": Store {
             "application": ApplicationObject {},
             "credential": CredentialObject {
-              "password": "",
+              "recaptchaResponse": "",
               "status": Object {},
               "token": "",
               "username": "",
@@ -35,8 +35,8 @@ ShallowWrapper {
                 "name": "CredentialObject@1",
                 "target": [Circular],
                 "values": Map {
-                  "password" => "",
                   "username" => "",
+                  "recaptchaResponse" => "",
                   "token" => "",
                   "status" => Map {},
                   "isLoggedIn" => false,
@@ -56,14 +56,14 @@ ShallowWrapper {
           },
         },
         "credential": CredentialObject {
-          "onChangePassword": [Function],
+          "onChangeRecaptchaResponse": [Function],
           "onChangeUsername": [Function],
           "onLogin": [Function],
           "onLogout": [Function],
           "store": Store {
             "application": ApplicationObject {},
             "credential": CredentialObject {
-              "password": "",
+              "recaptchaResponse": "",
               "status": Object {},
               "token": "",
               "username": "",
@@ -82,8 +82,8 @@ ShallowWrapper {
                 "name": "CredentialObject@1",
                 "target": [Circular],
                 "values": Map {
-                  "password" => "",
                   "username" => "",
+                  "recaptchaResponse" => "",
                   "token" => "",
                   "status" => Map {},
                   "isLoggedIn" => false,
@@ -105,7 +105,7 @@ ShallowWrapper {
         "store": Store {
           "application": ApplicationObject {},
           "credential": CredentialObject {
-            "password": "",
+            "recaptchaResponse": "",
             "status": Object {},
             "token": "",
             "username": "",
@@ -124,8 +124,8 @@ ShallowWrapper {
               "name": "CredentialObject@1",
               "target": [Circular],
               "values": Map {
-                "password" => "",
                 "username" => "",
+                "recaptchaResponse" => "",
                 "token" => "",
                 "status" => Map {},
                 "isLoggedIn" => false,
