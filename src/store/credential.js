@@ -4,8 +4,8 @@ import {getStatus} from '../api/operation'
 const savedToken = localStorage.getItem('Token')
 
 export class CredentialObject {
-  @observable password = ''
   @observable username = ''
+  @observable recaptchaResponse = ''
   @observable token = savedToken || ''
   @observable status = new Map()
 
@@ -17,8 +17,8 @@ export class CredentialObject {
     this.username = username
   }
 
-  @action.bound setPassword (password) {
-    this.password = password
+  @action.bound setRecaptchaResponse (recaptchaResponse) {
+    this.recaptchaResponse = recaptchaResponse
   }
 
   @action.bound setToken (token) {
@@ -30,10 +30,6 @@ export class CredentialObject {
     Object.keys(obj).forEach(key => {
       this.status.set(key, obj[key])
     })
-  }
-
-  @action.bound clearPassword () {
-    this.password = ''
   }
 
   @action.bound async fetchStatus () {
