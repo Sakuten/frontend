@@ -1,3 +1,3 @@
 import {fetchApi} from '../request'
 
-export const getClassrooms = () => fetchApi(`api/classrooms`, {})
+export const getClassrooms = () => fetchApi(`classrooms`, {})

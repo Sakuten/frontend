@@ -11,7 +11,7 @@ export class CredentialObject {
     if ('token' in json) {
       this.store.credential.setToken(json.token)
       this.store.credential.clearPassword()
-      await this.store.credential.fetchStatus()
+      await this.store.fetchStatus()
     } else { throw Error('Invalid response returned') }
   }
 

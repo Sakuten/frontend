@@ -44,6 +44,7 @@ ShallowWrapper {
               },
             },
             "error": ErrorObject {},
+            "fetchStatus": [Function],
             "router": RouterStore {
               "go": [Function],
               "goBack": [Function],
@@ -90,6 +91,7 @@ ShallowWrapper {
               },
             },
             "error": ErrorObject {},
+            "fetchStatus": [Function],
             "router": RouterStore {
               "go": [Function],
               "goBack": [Function],
@@ -131,6 +133,7 @@ ShallowWrapper {
             },
           },
           "error": ErrorObject {},
+          "fetchStatus": [Function],
           "router": RouterStore {
             "go": [Function],
             "goBack": [Function],
