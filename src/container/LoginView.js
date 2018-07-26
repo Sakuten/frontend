@@ -13,16 +13,19 @@ const LoginView = ({credential, event}) => {
 
   return (
     <div data-test='loginview'>
-      <QrReader
-        onError={onQRError}
-        onScan={onQRScan}
-        style={{ width: '30%' }}
-      />
-      <ReCAPTCHA
-        size='normal'
-        sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
-        onChange={onChangeRecaptchaResponse}
-      />
+      {
+        credential.secretId
+          ? <ReCAPTCHA
+            size='normal'
+            sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
+            onChange={onChangeRecaptchaResponse}
+          />
+          : <QrReader
+            onError={onQRError}
+            onScan={onQRScan}
+            style={{ width: '30%' }}
+          />
+      }
       <button data-test='loginview-login' onClick={onLogin}>Login</button>
     </div>
   )
