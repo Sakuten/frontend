@@ -1,9 +1,9 @@
 import { observable, computed, action } from 'mobx'
 import {getStatus} from '../api/operation'
-import qs from 'query-string'
+import qs from 'querystring'
 
 const savedToken = localStorage.getItem('Token')
-const paramSecretId = qs.parse(location.search).sid
+const paramSecretId = qs.parse(location.search.substr(1)).sid
 
 export class CredentialObject {
   @observable secretId = paramSecretId || ''
