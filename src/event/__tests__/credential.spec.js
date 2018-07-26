@@ -28,5 +28,23 @@ describe('events', () => {
       await event.onLogin()
       expect(event.store.credential.status.size).not.toBe(0)
     })
+
+    it('redirects to /lottery in login', async () => {
+      const mock = jest.fn()
+      event.store.router.history = {
+        push: mock
+      }
+      await event.onLogin()
+      expect(mock).toHaveBeenCalledWith('/lottery')
+    })
+
+    it('redirects to /lottery/login in logout', async () => {
+      const mock = jest.fn()
+      event.store.router.history = {
+        push: mock
+      }
+      await event.onLogout()
+      expect(mock).toHaveBeenCalledWith('/lottery/login')
+    })
   })
 })
