@@ -4,16 +4,10 @@ import {getStatus} from '../api/operation'
 const savedToken = localStorage.getItem('Token')
 
 export class CredentialObject {
-  @observable password = ''
   @observable username = ''
+  @observable recaptchaResponse = ''
   @observable token = savedToken || ''
   @observable status = new Map()
-
-  constructor () {
-    if (savedToken) {
-      this.fetchStatus()
-    }
-  }
 
   @computed get isLoggedIn () {
     return this.token.length !== 0
@@ -23,8 +17,8 @@ export class CredentialObject {
     this.username = username
   }
 
-  @action.bound setPassword (password) {
-    this.password = password
+  @action.bound setRecaptchaResponse (recaptchaResponse) {
+    this.recaptchaResponse = recaptchaResponse
   }
 
   @action.bound setToken (token) {
@@ -38,12 +32,8 @@ export class CredentialObject {
     })
   }
 
-  @action.bound clearPassword () {
-    this.password = ''
-  }
-
   @action.bound async fetchStatus () {
     const response = await getStatus(this.token)
-    this.setStatus(response.data.status)
+    this.setStatus(response.data)
   }
 }

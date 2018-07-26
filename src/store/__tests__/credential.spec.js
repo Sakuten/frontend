@@ -13,16 +13,6 @@ describe('stores', () => {
       expect(store.username).toBe('username')
     })
 
-    it('can have password', () => {
-      store.setPassword('password')
-      expect(store.password).toBe('password')
-    })
-
-    it('can clear password', () => {
-      store.clearPassword()
-      expect(store.password).toBe('')
-    })
-
     it('can have token', () => {
       store.setToken('token')
       expect(store.token).toBe('token')
@@ -41,11 +31,11 @@ describe('stores', () => {
     it('sets status object as Map', () => {
       store.setStatus({
         username: 'Bob',
-        applications: [1, 2]
+        application_history: [1, 2]
       })
       expect(store.status.get('username')).toBe('Bob')
-      expect(store.status.get('applications')[0]).toBe(1)
-      expect(store.status.get('applications')[1]).toBe(2)
+      expect(store.status.get('application_history')[0]).toBe(1)
+      expect(store.status.get('application_history')[1]).toBe(2)
     })
 
     it('fetches status', async () => {
