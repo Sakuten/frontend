@@ -12,6 +12,7 @@ import QrReader from 'react-qr-reader'
     return (
       <div>
         { this.isLoading && <p>Loading</p> }
+        { this.isLegacyMode && <button onClick={this.onImgSubmit}>Submit an Image</button> }
         <div style={{display: this.isLoading ? 'none' : 'block'}} >
           <QrReader
             onError={this.onError}
@@ -19,6 +20,7 @@ import QrReader from 'react-qr-reader'
             onLoad={this.onLoad}
             legacyMode={this.isLegacyMode}
             style={{ width: '30%' }}
+            ref='reader'
           />
         </div>
       </div>
@@ -36,6 +38,11 @@ import QrReader from 'react-qr-reader'
       this.props.onError(error)
     }
     this.isLegacyMode = true
+  }
+
+  @action.bound
+  onImgSubmit () {
+    this.refs.reader.openImageDialog()
   }
 }
 
