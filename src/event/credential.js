@@ -18,9 +18,20 @@ export class CredentialObject {
     this.store.credential.setToken('')
   }
 
-  onChangeSecretId = (secretId) => {
-    secretId = secretId.trim()
-    this.store.credential.setSecretId(secretId)
+  onQRError = (error) => {
+    this.store.error.addError(error)
+  }
+
+  onQRScan = (scanUri) => {
+    if (scanUri) {
+      const match = /^https:\/\/sakuten.jp\/lottery\/login\?sid=(.+)$/.exec(scanUri)
+      if (!match) {
+        this.store.error.addError('Invalid QR Code')
+        return
+      }
+
+      this.store.credential.setSecretId(match[1])
+    }
   }
 
   onChangeRecaptchaResponse = (recaptchaResponse) => {
