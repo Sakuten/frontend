@@ -24,7 +24,7 @@ export class CredentialObject {
 
   onQRScan = (scanUri) => {
     if (scanUri) {
-      const match = /^https:\/\/sakuten.jp\/lottery\/login\?sid=(.+)$/.exec(scanUri)
+      const match = /^https:\/\/sakuten.jp\/lottery\/login\?sid=([a-zA-Z0-9_-]+)$/.exec(scanUri)
       if (!match) {
         this.store.error.addError('Invalid QR Code')
         return
