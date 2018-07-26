@@ -14,14 +14,16 @@ import QrReader from 'react-qr-reader'
         { this.isLoading && <p>Loading</p> }
         { this.isLegacyMode && <button onClick={this.onImgSubmit}>Submit an Image</button> }
         <div style={{display: this.isLoading ? 'none' : 'block'}} >
-          <QrReader
-            onError={this.onError}
-            onScan={this.props.onScan}
-            onLoad={this.onLoad}
-            legacyMode={this.isLegacyMode}
-            style={{ width: '50%' }}
-            ref='reader'
-          />
+          { typeof Worker !== 'undefined' &&
+            <QrReader
+              onError={this.onError}
+              onScan={this.props.onScan}
+              onLoad={this.onLoad}
+              legacyMode={this.isLegacyMode}
+              style={{ width: '50%' }}
+              ref='reader'
+            />
+          }
         </div>
       </div>
     )
