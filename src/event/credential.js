@@ -31,11 +31,17 @@ export class CredentialObject {
       }
 
       this.store.credential.setSecretId(match[1])
+      if (this.store.credential.isAbleToAuthenicate) {
+        this.onLogin()
+      }
     }
   }
 
   onChangeRecaptchaResponse = (recaptchaResponse) => {
     recaptchaResponse = recaptchaResponse.trim()
     this.store.credential.setRecaptchaResponse(recaptchaResponse)
+    if (this.store.credential.isAbleToAuthenicate) {
+      this.onLogin()
+    }
   }
 }

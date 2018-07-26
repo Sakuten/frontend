@@ -13,6 +13,10 @@ export class CredentialObject {
     return this.token.length !== 0
   }
 
+  @computed get isAbleToAuthenicate () {
+    return this.secretId.length !== 0 && this.recaptchaResponse.length !== 0
+  }
+
   @action.bound setSecretId (secretId) {
     this.secretId = secretId
   }
