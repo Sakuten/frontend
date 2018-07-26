@@ -19,7 +19,7 @@ import QrReader from 'react-qr-reader'
             onScan={this.props.onScan}
             onLoad={this.onLoad}
             legacyMode={this.isLegacyMode}
-            style={{ width: '30%' }}
+            style={{ width: '50%' }}
             ref='reader'
           />
         </div>
