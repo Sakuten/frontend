@@ -3,14 +3,18 @@ import { observer } from 'mobx-react'
 
 import QrReader from 'react-qr-reader'
 
-const QRReader = ({onError, onScan}) => (
-  <div>
-    <QrReader
-      onError={onError}
-      onScan={onScan}
-      style={{ width: '30%' }}
-    />
-  </div>
-)
+@observer class QRReader extends React.Component {
+  render () {
+    return (
+      <div>
+        <QrReader
+          onError={this.props.onError}
+          onScan={this.props.onScan}
+          style={{ width: '30%' }}
+        />
+      </div>
+    )
+  }
+}
 
-export default observer(QRReader)
+export default QRReader
