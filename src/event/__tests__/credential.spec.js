@@ -9,9 +9,14 @@ describe('events', () => {
       event = new CredentialObject(new Store())
     })
 
-    it('changes secretId', () => {
-      event.onChangeSecretId('secretId')
-      expect(event.store.credential.secretId).toBe('secretId')
+    it('changes secretId on scan', () => {
+      event.onQRScan('https://sakuten.jp/lottery/login?sid=abcd')
+      expect(event.store.credential.secretId).toBe('abcd')
+    })
+
+    it('don\'t changes secretId on invalid scan', () => {
+      event.onQRScan('https://sakuten.jp/')
+      expect(event.store.credential.secretId.length).toBe(0)
     })
 
     it('clears the token in logout', () => {
