@@ -1,7 +1,7 @@
 import React from 'react'
 import { inject, observer } from 'mobx-react'
 import ReCAPTCHA from 'react-google-recaptcha'
-import QrReader from 'react-qr-reader'
+import QRReader from '../component/QRReader'
 
 const LoginView = ({credential, event}) => {
   const {
@@ -20,10 +20,9 @@ const LoginView = ({credential, event}) => {
             sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
             onChange={onChangeRecaptchaResponse}
           />
-          : <QrReader
+          : <QRReader
             onError={onQRError}
             onScan={onQRScan}
-            style={{ width: '30%' }}
           />
       }
       <button data-test='loginview-login' onClick={onLogin}>Login</button>
