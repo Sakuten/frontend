@@ -7,8 +7,7 @@ const LoginView = ({credential, event}) => {
   const {
     onQRError,
     onQRScan,
-    onChangeRecaptchaResponse,
-    onLogin
+    onChangeRecaptchaResponse
   } = event.credential
 
   return (
@@ -25,7 +24,6 @@ const LoginView = ({credential, event}) => {
             onScan={onQRScan}
           />
       }
-      <button data-test='loginview-login' onClick={onLogin}>Login</button>
     </div>
   )
 }
