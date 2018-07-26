@@ -16,6 +16,7 @@ const LoginView = ({credential, event}) => {
       <QrReader
         onError={onQRError}
         onScan={onQRScan}
+        style={{ width: '30%' }}
       />
       <ReCAPTCHA
         size='normal'
