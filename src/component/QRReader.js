@@ -14,7 +14,7 @@ import QrReader from 'react-qr-reader'
         { this.isLoading && <p>Loading</p> }
         { this.isLegacyMode && <button onClick={this.onImgSubmit}>Submit an Image</button> }
         <div style={{display: this.isLoading ? 'none' : 'block'}} >
-          { typeof global === 'undefined' &&
+          { window.navigator.userAgent.indexOf('jsdom') === -1 &&
             <QrReader
               onError={this.onError}
               onScan={this.props.onScan}
