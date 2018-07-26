@@ -17,9 +17,9 @@ ShallowWrapper {
             "application": ApplicationObject {},
             "credential": CredentialObject {
               "recaptchaResponse": "",
+              "secretId": "",
               "status": Object {},
               "token": "",
-              "username": "",
               Symbol(mobx did run lazy initializers): true,
               Symbol(mobx administration): ObservableObjectAdministration$$1 {
                 "defaultEnhancer": [Function],
@@ -35,7 +35,7 @@ ShallowWrapper {
                 "name": "CredentialObject@1",
                 "target": [Circular],
                 "values": Map {
-                  "username" => "",
+                  "secretId" => "",
                   "recaptchaResponse" => "",
                   "token" => "",
                   "status" => Map {},
@@ -57,16 +57,16 @@ ShallowWrapper {
         },
         "credential": CredentialObject {
           "onChangeRecaptchaResponse": [Function],
-          "onChangeUsername": [Function],
+          "onChangeSecretId": [Function],
           "onLogin": [Function],
           "onLogout": [Function],
           "store": Store {
             "application": ApplicationObject {},
             "credential": CredentialObject {
               "recaptchaResponse": "",
+              "secretId": "",
               "status": Object {},
               "token": "",
-              "username": "",
               Symbol(mobx did run lazy initializers): true,
               Symbol(mobx administration): ObservableObjectAdministration$$1 {
                 "defaultEnhancer": [Function],
@@ -82,7 +82,7 @@ ShallowWrapper {
                 "name": "CredentialObject@1",
                 "target": [Circular],
                 "values": Map {
-                  "username" => "",
+                  "secretId" => "",
                   "recaptchaResponse" => "",
                   "token" => "",
                   "status" => Map {},
@@ -106,9 +106,9 @@ ShallowWrapper {
           "application": ApplicationObject {},
           "credential": CredentialObject {
             "recaptchaResponse": "",
+            "secretId": "",
             "status": Object {},
             "token": "",
-            "username": "",
             Symbol(mobx did run lazy initializers): true,
             Symbol(mobx administration): ObservableObjectAdministration$$1 {
               "defaultEnhancer": [Function],
@@ -124,7 +124,7 @@ ShallowWrapper {
               "name": "CredentialObject@1",
               "target": [Circular],
               "values": Map {
-                "username" => "",
+                "secretId" => "",
                 "recaptchaResponse" => "",
                 "token" => "",
                 "status" => Map {},
@@ -150,9 +150,9 @@ ShallowWrapper {
       credential={
         CredentialObject {
           "recaptchaResponse": "",
+          "secretId": "",
           "status": Object {},
           "token": "",
-          "username": "",
           Symbol(mobx did run lazy initializers): true,
           Symbol(mobx administration): ObservableObjectAdministration$$1 {
             "defaultEnhancer": [Function],
@@ -168,7 +168,7 @@ ShallowWrapper {
             "name": "CredentialObject@1",
             "target": [Circular],
             "values": Map {
-              "username" => "",
+              "secretId" => "",
               "recaptchaResponse" => "",
               "token" => "",
               "status" => Map {},
@@ -193,9 +193,9 @@ ShallowWrapper {
     "props": Object {
       "credential": CredentialObject {
         "recaptchaResponse": "",
+        "secretId": "",
         "status": Object {},
         "token": "",
-        "username": "",
         Symbol(mobx did run lazy initializers): true,
         Symbol(mobx administration): ObservableObjectAdministration$$1 {
           "defaultEnhancer": [Function],
@@ -211,7 +211,7 @@ ShallowWrapper {
           "name": "CredentialObject@1",
           "target": [Circular],
           "values": Map {
-            "username" => "",
+            "secretId" => "",
             "recaptchaResponse" => "",
             "token" => "",
             "status" => Map {},
@@ -232,9 +232,9 @@ ShallowWrapper {
       "props": Object {
         "credential": CredentialObject {
           "recaptchaResponse": "",
+          "secretId": "",
           "status": Object {},
           "token": "",
-          "username": "",
           Symbol(mobx did run lazy initializers): true,
           Symbol(mobx administration): ObservableObjectAdministration$$1 {
             "defaultEnhancer": [Function],
@@ -250,7 +250,7 @@ ShallowWrapper {
             "name": "CredentialObject@1",
             "target": [Circular],
             "values": Map {
-              "username" => "",
+              "secretId" => "",
               "recaptchaResponse" => "",
               "token" => "",
               "status" => Map {},

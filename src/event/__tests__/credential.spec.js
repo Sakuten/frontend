@@ -9,9 +9,9 @@ describe('events', () => {
       event = new CredentialObject(new Store())
     })
 
-    it('changes username', () => {
-      event.onChangeUsername('username')
-      expect(event.store.credential.username).toBe('username')
+    it('changes secretId', () => {
+      event.onChangeSecretId('secretId')
+      expect(event.store.credential.secretId).toBe('secretId')
     })
 
     it('clears the token in logout', () => {

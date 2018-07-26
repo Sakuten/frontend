@@ -20,7 +20,7 @@ const setup = (propOverrides, storeOverrides, eventOverrides, isShallow = true) 
     wrapper,
     store,
     event,
-    usernameInput: wrapper.find('[data-test="loginview-username"]'),
+    secretIdInput: wrapper.find('[data-test="loginview-secretId"]'),
     loginButton: wrapper.find('[data-test="loginview-login"]')
   }
 }
@@ -32,9 +32,9 @@ describe('containers', () => {
       expect(wrapper).toMatchSnapshot()
     })
 
-    it('renders username stored in store', () => {
-      const { usernameInput } = setup({}, {credential: {username: 'username'}}, {}, false)
-      expect(usernameInput.props().value).toBe('username')
+    it('renders secretId stored in store', () => {
+      const { secretIdInput } = setup({}, {credential: {secretId: 'secretId'}}, {}, false)
+      expect(secretIdInput.props().value).toBe('secretId')
     })
   })
 })

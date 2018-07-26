@@ -6,7 +6,7 @@ export class CredentialObject {
   }
 
   onLogin = async () => {
-    const response = await authenicate(this.store.credential.username, this.store.credential.recaptchaResponse)
+    const response = await authenicate(this.store.credential.secretId, this.store.credential.recaptchaResponse)
     const json = response.data
     if ('token' in json) {
       this.store.credential.setToken(json.token)
@@ -18,9 +18,9 @@ export class CredentialObject {
     this.store.credential.setToken('')
   }
 
-  onChangeUsername = (username) => {
-    username = username.trim()
-    this.store.credential.setUsername(username)
+  onChangeSecretId = (secretId) => {
+    secretId = secretId.trim()
+    this.store.credential.setSecretId(secretId)
   }
 
   onChangeRecaptchaResponse = (recaptchaResponse) => {

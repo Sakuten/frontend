@@ -4,14 +4,14 @@ import ReCAPTCHA from 'react-google-recaptcha'
 
 const LoginView = ({credential, event}) => {
   const {
-    onChangeUsername,
+    onChangeSecretId,
     onChangeRecaptchaResponse,
     onLogin
   } = event.credential
 
   return (
     <div data-test='loginview'>
-      <input data-test='loginview-username' type='text' name='username' value={credential.username} onChange={e => onChangeUsername(e.target.value)} />
+      <input data-test='loginview-secretId' type='text' name='secret_id' value={credential.secretId} onChange={e => onChangeSecretId(e.target.value)} />
       <ReCAPTCHA
         size='normal'
         sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
