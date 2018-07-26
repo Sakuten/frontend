@@ -5,10 +5,11 @@ import ReCAPTCHA from 'react-google-recaptcha'
 const LoginView = ({credential, event}) => {
   const {
     onChangeUsername,
-    onExpireRecaptchaResponse,
     onChangeRecaptchaResponse,
     onLogin
   } = event.credential
+
+  let captcha
 
   return (
     <div data-test='loginview'>
@@ -17,7 +18,8 @@ const LoginView = ({credential, event}) => {
         size='normal'
         sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
         onChange={onChangeRecaptchaResponse}
-        onExpired={onExpireRecaptchaResponse}
+        onExpired={() => captcha.reset()}
+        ref={(el) => { captcha = el }}
       />
       <button data-test='loginview-login' onClick={onLogin}>Login</button>
     </div>
