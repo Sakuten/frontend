@@ -14,11 +14,6 @@ describe('events', () => {
       expect(event.store.credential.username).toBe('username')
     })
 
-    it('changes password', () => {
-      event.onChangePassword('password')
-      expect(event.store.credential.password).toBe('password')
-    })
-
     it('clears the token in logout', () => {
       event.onLogout()
       expect(event.store.credential.token.length).toBe(0)
@@ -27,11 +22,6 @@ describe('events', () => {
     it('can login', async () => {
       await event.onLogin()
       expect(event.store.credential.token.length).not.toBe(0)
-    })
-
-    it('clears password in login', async () => {
-      await event.onLogin()
-      expect(event.store.credential.password.length).toBe(0)
     })
 
     it('fetches status in login', async () => {
