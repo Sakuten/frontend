@@ -24,7 +24,6 @@ export class CredentialObject {
   }
 
   onChangeRecaptchaResponse = (recaptchaResponse) => {
-    recaptchaResponse = recaptchaResponse.trim()
     this.store.credential.setRecaptchaResponse(recaptchaResponse)
   }
 }
