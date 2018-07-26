@@ -23,6 +23,10 @@ export class CredentialObject {
     this.store.credential.setUsername(username)
   }
 
+  onExpireRecaptchaResponse = () => {
+    this.store.credential.setRecaptchaResponse('')
+  }
+
   onChangeRecaptchaResponse = (recaptchaResponse) => {
     this.store.credential.setRecaptchaResponse(recaptchaResponse)
   }
