@@ -9,6 +9,8 @@ const LoginView = ({credential, event}) => {
     onLogin
   } = event.credential
 
+  let captcha
+
   return (
     <div data-test='loginview'>
       <input data-test='loginview-username' type='text' name='username' value={credential.username} onChange={e => onChangeUsername(e.target.value)} />
@@ -16,6 +18,8 @@ const LoginView = ({credential, event}) => {
         size='normal'
         sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
         onChange={onChangeRecaptchaResponse}
+        onExpired={() => captcha.reset()}
+        ref={(el) => { captcha = el }}
       />
       <button data-test='loginview-login' onClick={onLogin}>Login</button>
     </div>
