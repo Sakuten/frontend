@@ -20,8 +20,8 @@ const setup = (propOverrides, storeOverrides, eventOverrides, isShallow = true) 
     wrapper,
     store,
     event,
-    usernameInput: wrapper.find('[data-test="loginview-username"]'),
-    loginButton: wrapper.find('[data-test="loginview-login"]')
+    ReCAPTCHA: wrapper.find('ReCAPTCHA'),
+    QRReader: wrapper.find('QRReader')
   }
 }
 
@@ -32,9 +32,16 @@ describe('containers', () => {
       expect(wrapper).toMatchSnapshot()
     })
 
-    it('renders username stored in store', () => {
-      const { usernameInput } = setup({}, {credential: {username: 'username'}}, {}, false)
-      expect(usernameInput.props().value).toBe('username')
+    it('renders reCAPTCHA when secret id is set in the store', () => {
+      const { QRReader, ReCAPTCHA } = setup({}, {credential: {secretId: 'secretId'}}, {}, false)
+      expect(ReCAPTCHA).toHaveLength(1)
+      expect(QRReader).toHaveLength(0)
+    })
+
+    it('renders QRReader when secret id is not set in the store', () => {
+      const { QRReader, ReCAPTCHA } = setup({}, {credential: {secretId: ''}}, {}, false)
+      expect(ReCAPTCHA).toHaveLength(0)
+      expect(QRReader).toHaveLength(1)
     })
   })
 })

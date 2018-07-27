@@ -17,6 +17,6 @@ export const getStatus = (token) => new Promise((resolve, reject) => {
       }
     ],
     'id': 3,
-    'username': 'example1'
+    'secret_id': 'example1'
   }))
 })

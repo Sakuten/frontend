@@ -8,9 +8,9 @@ describe('stores', () => {
       store = new CredentialObject()
     })
 
-    it('can have username', () => {
-      store.setUsername('username')
-      expect(store.username).toBe('username')
+    it('can have secretId', () => {
+      store.setSecretId('secretId')
+      expect(store.secretId).toBe('secretId')
     })
 
     it('can have token', () => {
@@ -30,10 +30,10 @@ describe('stores', () => {
 
     it('sets status object as Map', () => {
       store.setStatus({
-        username: 'Bob',
+        secretId: 'Bob',
         application_history: [1, 2]
       })
-      expect(store.status.get('username')).toBe('Bob')
+      expect(store.status.get('secretId')).toBe('Bob')
       expect(store.status.get('application_history')[0]).toBe(1)
       expect(store.status.get('application_history')[1]).toBe(2)
     })
