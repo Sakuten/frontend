@@ -6,10 +6,10 @@ export class CredentialObject {
     this.store = store
 
     reaction(
-      () => this.store.credential.token,
-      token => {
+      () => this.store.credential.isLoggedIn,
+      isLoggedIn => {
         if (this.store.router.history) {
-          this.store.router.history.push(this.store.credential.isLoggedIn ? '/lottery' : '/lottery/login')
+          this.store.router.history.push(isLoggedIn ? '/lottery' : '/lottery/login')
         }
       }
     )
