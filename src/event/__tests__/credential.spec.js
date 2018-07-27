@@ -43,7 +43,7 @@ describe('events', () => {
       event.store.router.history = {
         push: mock
       }
-      event.store.credential.token = "token"
+      event.store.credential.token = 'token'
       await event.onLogout()
       expect(mock).toHaveBeenCalledWith('/lottery/login')
     })
