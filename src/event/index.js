@@ -8,5 +8,9 @@ export class Event {
     this.error = new ErrorObject(store)
     this.credential = new CredentialObject(store)
     this.application = new ApplicationObject(store)
+
+    // This can cause network error, to be caught in ErrorObject
+    // So fetchStatus() have to be placed in here
+    if (this.store.credential.isLoggedIn) { this.store.fetchStatus() }
   }
 }
