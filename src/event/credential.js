@@ -12,10 +12,16 @@ export class CredentialObject {
       this.store.credential.setToken(json.token)
       await this.store.fetchStatus()
     } else { throw Error('Invalid response returned') }
+
+    // Avoid in testing
+    if (this.store.router.history) { this.store.router.history.push('/lottery') }
   }
 
   onLogout = () => {
     this.store.credential.setToken('')
+
+    // Avoid in testing
+    if (this.store.router.history) { this.store.router.history.push('/lottery/login') }
   }
 
   onQRError = (error) => {
@@ -38,7 +44,6 @@ export class CredentialObject {
   }
 
   onChangeRecaptchaResponse = (recaptchaResponse) => {
-    recaptchaResponse = recaptchaResponse.trim()
     this.store.credential.setRecaptchaResponse(recaptchaResponse)
     if (this.store.credential.isAbleToAuthenicate) {
       this.onLogin()

@@ -10,6 +10,8 @@ const LoginView = ({credential, event}) => {
     onChangeRecaptchaResponse
   } = event.credential
 
+  let captcha
+
   return (
     <div data-test='loginview'>
       {
@@ -18,6 +20,8 @@ const LoginView = ({credential, event}) => {
             size='normal'
             sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
             onChange={onChangeRecaptchaResponse}
+            onExpired={() => captcha.reset()}
+            ref={(el) => { captcha = el }}
           />
           : <QRReader
             onError={onQRError}
