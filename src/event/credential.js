@@ -1,8 +1,18 @@
 import {authenicate} from '../api/operation'
+import {reaction} from 'mobx'
 
 export class CredentialObject {
   constructor (store) {
     this.store = store
+
+    reaction(
+      () => this.store.credential.token,
+      token => {
+        if (this.store.router.history) {
+          this.store.router.history.push(this.store.credential.isLoggedIn ? '/lottery' : '/lottery/login')
+        }
+      }
+    )
   }
 
   onLogin = async () => {
@@ -12,16 +22,10 @@ export class CredentialObject {
       this.store.credential.setToken(json.token)
       await this.store.fetchStatus()
     } else { throw Error('Invalid response returned') }
-
-    // Avoid in testing
-    if (this.store.router.history) { this.store.router.history.push('/lottery') }
   }
 
   onLogout = () => {
     this.store.credential.setToken('')
-
-    // Avoid in testing
-    if (this.store.router.history) { this.store.router.history.push('/lottery/login') }
   }
 
   onChangeUsername = (username) => {

@@ -17,8 +17,6 @@ export class ErrorObject {
   onError = (message) => {
     if ('message' in message && message['message'] === 'Unauthorized') {
       this.store.credential.setToken('')
-      // Avoid in testing
-      if (this.store.router.history) { this.store.router.history.push('/lottery/login') }
     }
     this.store.error.addError(message)
   }
