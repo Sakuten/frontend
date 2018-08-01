@@ -6,26 +6,47 @@ export class CredentialObject {
   }
 
   onLogin = async () => {
-    const response = await authenicate(this.store.credential.username, this.store.credential.password)
+    const response = await authenicate(this.store.credential.secretId, this.store.credential.recaptchaResponse)
     const json = response.data
     if ('token' in json) {
       this.store.credential.setToken(json.token)
-      this.store.credential.clearPassword()
-      await this.store.credential.fetchStatus()
+      await this.store.fetchStatus()
     } else { throw Error('Invalid response returned') }
+
+    // Avoid in testing
+    if (this.store.router.history) { this.store.router.history.push('/lottery') }
   }
 
   onLogout = () => {
     this.store.credential.setToken('')
+
+    // Avoid in testing
+    if (this.store.router.history) { this.store.router.history.push('/lottery/login') }
   }
 
-  onChangeUsername = (username) => {
-    username = username.trim()
-    this.store.credential.setUsername(username)
+  onQRError = (error) => {
+    this.store.error.addError(error)
   }
 
-  onChangePassword = (password) => {
-    password = password.trim()
-    this.store.credential.setPassword(password)
+  onQRScan = (scanUri) => {
+    if (scanUri) {
+      const match = /^https:\/\/sakuten.jp\/lottery\/login\?sid=([a-zA-Z0-9_-]+)$/.exec(scanUri)
+      if (!match) {
+        this.store.error.addError('Invalid QR Code')
+        return
+      }
+
+      this.store.credential.setSecretId(match[1])
+      if (this.store.credential.isAbleToAuthenicate) {
+        this.onLogin()
+      }
+    }
+  }
+
+  onChangeRecaptchaResponse = (recaptchaResponse) => {
+    this.store.credential.setRecaptchaResponse(recaptchaResponse)
+    if (this.store.credential.isAbleToAuthenicate) {
+      this.onLogin()
+    }
   }
 }

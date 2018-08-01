@@ -1,12 +1,12 @@
 import {fetchApi} from '../request'
 
-export const authenicate = (username, password) => fetchApi('auth/', {
+export const authenicate = (secretId, recaptchaResponse) => fetchApi('auth/', {
   method: 'post',
   headers: {
     'Content-Type': 'application/json'
   },
   data: {
-    password: password,
-    username: username
+    id: secretId,
+    'g-recaptcha-response': recaptchaResponse
   }
 })

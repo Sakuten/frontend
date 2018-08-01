@@ -26,13 +26,13 @@ describe('events', () => {
 
     it('applies to lottery', async () => {
       await event.onApply()
-      const applications = event.store.credential.status.get('applications')
+      const applications = event.store.credential.status.get('application_history')
       expect(applications).toBeDefined()
     })
 
     it('cancels lottery', async () => {
       await event.onCancel()
-      const applications = event.store.credential.status.get('applications')
+      const applications = event.store.credential.status.get('application_history')
       expect(applications).toBeDefined()
     })
   })

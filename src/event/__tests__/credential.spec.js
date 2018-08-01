@@ -9,14 +9,14 @@ describe('events', () => {
       event = new CredentialObject(new Store())
     })
 
-    it('changes username', () => {
-      event.onChangeUsername('username')
-      expect(event.store.credential.username).toBe('username')
+    it('changes secretId on scan', () => {
+      event.onQRScan('https://sakuten.jp/lottery/login?sid=abcd')
+      expect(event.store.credential.secretId).toBe('abcd')
     })
 
-    it('changes password', () => {
-      event.onChangePassword('password')
-      expect(event.store.credential.password).toBe('password')
+    it('don\'t changes secretId on invalid scan', () => {
+      event.onQRScan('https://sakuten.jp/')
+      expect(event.store.credential.secretId.length).toBe(0)
     })
 
     it('clears the token in logout', () => {
@@ -29,14 +29,27 @@ describe('events', () => {
       expect(event.store.credential.token.length).not.toBe(0)
     })
 
-    it('clears password in login', async () => {
-      await event.onLogin()
-      expect(event.store.credential.password.length).toBe(0)
-    })
-
     it('fetches status in login', async () => {
       await event.onLogin()
       expect(event.store.credential.status.size).not.toBe(0)
+    })
+
+    it('redirects to /lottery in login', async () => {
+      const mock = jest.fn()
+      event.store.router.history = {
+        push: mock
+      }
+      await event.onLogin()
+      expect(mock).toHaveBeenCalledWith('/lottery')
+    })
+
+    it('redirects to /lottery/login in logout', async () => {
+      const mock = jest.fn()
+      event.store.router.history = {
+        push: mock
+      }
+      await event.onLogout()
+      expect(mock).toHaveBeenCalledWith('/lottery/login')
     })
   })
 })
