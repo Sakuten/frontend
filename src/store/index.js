@@ -9,10 +9,9 @@ export class Store {
     this.application = new ApplicationObject()
     this.router = new RouterStore()
     this.error = new ErrorObject()
-
-    if (this.credential.isLoggedIn) { this.fetchStatus() }
   }
 
+  // Called in Event's constructor
   fetchStatus = async () => {
     await Promise.all([
       this.credential.fetchStatus(),

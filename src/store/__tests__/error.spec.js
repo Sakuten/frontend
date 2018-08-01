@@ -1,5 +1,4 @@
 import { ErrorObject } from '../error'
-import axios from 'axios'
 
 describe('stores', () => {
   describe('ErrorObject', () => {
@@ -15,14 +14,6 @@ describe('stores', () => {
       expect(store.errorList.length).toBe(2)
       expect(store.errorList[0]).toBe('Error1')
       expect(store.errorList[1]).toBe('Error2')
-    })
-
-    /* eslint handle-callback-err: "off" */
-    it('catches network errors', async () => {
-      await axios.get('http://dummy.invalid/')
-        .catch(error => {
-          expect(store.errorList.length).toBe(1)
-        })
     })
   })
 })
