@@ -1,0 +1,15 @@
+{
+  "extends": ["standard", "standard-react"],
+  "parserOptions": {
+    "ecmaVersion": 8
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "react/prop-types": "off"
+  },
+  "env": {
+    "browser": true,
+    "jest": true,
+    "es6": true
+  }
+}
