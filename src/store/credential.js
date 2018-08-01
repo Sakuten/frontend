@@ -1,30 +1,30 @@
 import { observable, computed, action } from 'mobx'
 import {getStatus} from '../api/operation'
+import qs from 'querystring'
 
 const savedToken = localStorage.getItem('Token')
+const paramSecretId = qs.parse(location.search.substr(1)).sid
 
 export class CredentialObject {
-  @observable password = ''
-  @observable username = ''
+  @observable secretId = paramSecretId || ''
+  @observable recaptchaResponse = ''
   @observable token = savedToken || ''
   @observable status = new Map()
-
-  constructor () {
-    if (savedToken) {
-      this.fetchStatus()
-    }
-  }
 
   @computed get isLoggedIn () {
     return this.token.length !== 0
   }
 
-  @action.bound setUsername (username) {
-    this.username = username
+  @computed get isAbleToAuthenicate () {
+    return this.secretId.length !== 0 && this.recaptchaResponse.length !== 0
   }
 
-  @action.bound setPassword (password) {
-    this.password = password
+  @action.bound setSecretId (secretId) {
+    this.secretId = secretId
+  }
+
+  @action.bound setRecaptchaResponse (recaptchaResponse) {
+    this.recaptchaResponse = recaptchaResponse
   }
 
   @action.bound setToken (token) {
@@ -38,12 +38,8 @@ export class CredentialObject {
     })
   }
 
-  @action.bound clearPassword () {
-    this.password = ''
-  }
-
   @action.bound async fetchStatus () {
     const response = await getStatus(this.token)
-    this.setStatus(response.data.status)
+    this.setStatus(response.data)
   }
 }

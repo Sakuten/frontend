@@ -28,6 +28,11 @@ describe('stores', () => {
       expect(store.lotteryList).toEqual([1, 2])
     })
 
+    it('can have application list', () => {
+      store.setApplicationList([1, 2])
+      expect(store.applicationList).toEqual([1, 2])
+    })
+
     it('fetches lottery list', async () => {
       await store.fetchLotteryList()
       expect(store.lotteryList.length).not.toBe(0)
@@ -36,6 +41,11 @@ describe('stores', () => {
     it('fetches classroom list', async () => {
       await store.fetchClassroomList()
       expect(store.classroomList.length).not.toBe(0)
+    })
+
+    it('fetches application list', async () => {
+      await store.fetchApplicationList('')
+      expect(store.applicationList.length).not.toBe(0)
     })
   })
 })

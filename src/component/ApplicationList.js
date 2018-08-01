@@ -7,7 +7,7 @@ const ApplicationList = ({list, onCancel}) => (
       list ? list.map((c, i) =>
         <div data-test='applicationlist-application' key={i}>
           {JSON.stringify(c)}
-          <button data-test='applicationlist-cancel' onClick={() => onCancel(c.lottery_id)}>Cancel</button>
+          <button data-test='applicationlist-cancel' onClick={() => onCancel(c.id)}>Cancel</button>
         </div>
       ) : null
     }

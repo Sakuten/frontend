@@ -6,16 +6,28 @@ const setup = propOverrides => {
   const props = Object.assign({
     list: [
       {
-        'id': 24,
-        'lottery_id': 1,
-        'status': null,
-        'user_id': 3
+        'id': 1,
+        'lottery': {
+          'classroom_id': 1,
+          'done': false,
+          'id': 1,
+          'index': 0,
+          'name': '5A.0',
+          'winners': []
+        },
+        'status': 'pending'
       },
       {
-        'id': 25,
-        'lottery_id': 2,
-        'status': null,
-        'user_id': 3
+        'id': 2,
+        'lottery': {
+          'classroom_id': 1,
+          'done': false,
+          'id': 2,
+          'index': 0,
+          'name': '5A.0',
+          'winners': []
+        },
+        'status': 'pending'
       }
     ],
     onCancel: jest.fn()
@@ -53,9 +65,9 @@ describe('components', () => {
       expect(cancelButton.length).toBe(2)
     })
 
-    it('calls onCancel with lottery id when cancel button is clicked', () => {
+    it('calls onCancel with application id when cancel button is clicked', () => {
       const mock = jest.fn()
-      const { cancelButton } = setup({list: [{lottery_id: 1}], onCancel: mock})
+      const { cancelButton } = setup({list: [{id: 1}], onCancel: mock})
       cancelButton.at(0).simulate('click')
       expect(mock).toBeCalledWith(1)
     })
