@@ -84,11 +84,12 @@ ShallowWrapper {
                 "name": "CredentialObject@3",
                 "target": [Circular],
                 "values": Map {
-                  "username" => "",
+                  "secretId" => "",
                   "recaptchaResponse" => "",
                   "token" => "",
                   "status" => Map {},
                   "isLoggedIn" => false,
+                  "isAbleToAuthenicate" => false,
                 },
               },
             },
@@ -110,9 +111,9 @@ ShallowWrapper {
             "application": ApplicationObject {},
             "credential": CredentialObject {
               "recaptchaResponse": "",
+              "secretId": "",
               "status": Object {},
               "token": "",
-              "username": "",
               Symbol(mobx did run lazy initializers): true,
               Symbol(mobx administration): ObservableObjectAdministration$$1 {
                 "defaultEnhancer": [Function],
