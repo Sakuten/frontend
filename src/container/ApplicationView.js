@@ -9,7 +9,8 @@ import LotterySelect from '../component/LotterySelect'
 
 const ApplicationView = ({user, application, event}) => {
   const {
-    onLogout
+    onLogout,
+    onQRError
   } = event.credential
 
   const {
@@ -29,7 +30,7 @@ const ApplicationView = ({user, application, event}) => {
       <ClassroomSelect list={application.classroomList} value={application.classroom} onChange={onChangeClassroom} />
       <LotterySelect classroom={application.classroom} list={application.lotteryList} value={application.lottery} onChange={onChangeLottery} />
       <GroupMemberList list={application.groupMemberList} onRemove={onRemoveGroupMember} />
-      <GroupMemberButton onClick={onAddGroupMember} />
+      <GroupMemberButton onAdd={onAddGroupMember} onError={onQRError} />
       <button onClick={onApply}>Apply</button>
       <h2>Your Applications</h2>
       <ApplicationList list={application.applicationList} onCancel={onCancel} />
