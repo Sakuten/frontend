@@ -21,8 +21,12 @@ export class ApplicationObject {
     this.store.application.setLottery(lottery)
   }
 
-  onAddGroupMember = (secret_id) => {
-    this.store.application.AddGroupMember(secret_id)
+  onAddGroupMember = (secretId) => {
+    this.store.application.addGroupMember(secretId)
+  }
+
+  onRemoveGroupMember = (idx) => {
+    this.store.application.removeGroupMemberWithIdx(idx)
   }
 
   onApply = async () => {

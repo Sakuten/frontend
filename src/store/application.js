@@ -19,12 +19,12 @@ export class ApplicationObject {
     this.lottery = lotteryId
   }
 
-  @action.bound addGroupMember (secret_id) {
-    this.groupMemberList.push(secret_id)
+  @action.bound addGroupMember (secretId) {
+    this.groupMemberList.push(secretId)
   }
 
-  @action.bound removeGroupMemberWithId (secret_id) {
-    this.groupMemberList.splice(this.groupMemberList.indexOf(secret_id), 1)
+  @action.bound removeGroupMemberWithId (secretId) {
+    this.groupMemberList.splice(this.groupMemberList.indexOf(secretId), 1)
   }
 
   @action.bound removeGroupMemberWithIdx (idx) {

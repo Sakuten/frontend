@@ -4,9 +4,9 @@ import { observer } from 'mobx-react'
 const GroupMemberList = ({list, onRemove}) => (
   <div>
     {
-      list ? list.map((secret_id, i) =>
+      list ? list.map((secretId, i) =>
         <div data-test='groupmemberlist-member' key={i}>
-          {secret_id}
+          {secretId}
           <button data-test='groupmemberlist-remove' onClick={() => onRemove(i)}>Remove</button>
         </div>
       ) : null
