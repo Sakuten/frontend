@@ -22,6 +22,10 @@ export class ApplicationObject {
   }
 
   onAddGroupMember = (secretId) => {
+    if (this.store.credential.status.get('secret_id') === secretId) {
+      this.store.error.addError('You can\'t add yourself as a member')
+      return
+    }
     this.store.application.addGroupMember(secretId)
   }
 
