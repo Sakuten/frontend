@@ -1,4 +1,5 @@
 import {authenicate} from '../api/operation'
+import {extractId} from '../util/extractId'
 import {reaction} from 'mobx'
 
 export class CredentialObject {
@@ -34,13 +35,13 @@ export class CredentialObject {
 
   onQRScan = (scanUri) => {
     if (scanUri) {
-      const match = /\/lottery\/login\?sid=([a-zA-Z0-9_-]+)$/.exec(scanUri)
-      if (!match) {
+      const secretId = extractId(scanUri)
+      if (!secretId) {
         this.store.error.addError('Invalid QR Code')
         return
       }
 
-      this.store.credential.setSecretId(match[1])
+      this.store.credential.setSecretId(secretId)
       if (this.store.credential.isAbleToAuthenicate) {
         this.onLogin()
       }

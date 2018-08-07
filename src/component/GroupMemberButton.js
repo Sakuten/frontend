@@ -2,6 +2,8 @@ import React from 'react'
 import { observable, action } from 'mobx'
 import { observer } from 'mobx-react'
 
+import {extractId} from '../util/extractId'
+
 import QRReader from '../component/QRReader'
 
 @observer class GroupMemberButton extends React.Component {
@@ -32,13 +34,13 @@ import QRReader from '../component/QRReader'
   @action.bound
   onScan (scanUri) {
     if (scanUri) {
-      const match = /\/lottery\/login\?sid=([a-zA-Z0-9_-]+)$/.exec(scanUri)
-      if (!match) {
+      const secretId = extractId(scanUri)
+      if (!secretId) {
         this.store.error.addError('Invalid QR Code')
         return
       }
 
-      this.props.onAdd(match[1])
+      this.props.onAdd(secretId)
       this.isScanning = false
     }
   }
