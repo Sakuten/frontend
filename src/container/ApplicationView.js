@@ -30,7 +30,7 @@ const ApplicationView = ({user, application, event}) => {
       <ClassroomSelect list={application.classroomList} value={application.classroom} onChange={onChangeClassroom} />
       <LotterySelect classroom={application.classroom} list={application.lotteryList} value={application.lottery} onChange={onChangeLottery} />
       <GroupMemberList list={application.groupMemberList} onRemove={onRemoveGroupMember} />
-      <GroupMemberButton onAdd={onAddGroupMember} onError={onQRError} />
+      <GroupMemberButton onAdd={onAddGroupMember} onError={onQRError}>Add a new member</GroupMemberButton>
       <button onClick={onApply}>Apply</button>
       <h2>Your Applications</h2>
       <ApplicationList list={application.applicationList} onCancel={onCancel} />

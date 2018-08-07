@@ -18,7 +18,7 @@ import QRReader from '../component/QRReader'
               onError={this.onError}
               onScan={this.onScan}
             />
-            : <button onClick={this.onClick} >Add member</button>
+            : <button onClick={this.onClick} >{this.props.children}</button>
         }
       </div>
     )
