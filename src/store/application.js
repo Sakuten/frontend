@@ -4,6 +4,7 @@ import {getClassrooms, getLotteries, getApplications} from '../api/operation'
 export class ApplicationObject {
   @observable classroom = 1
   @observable lottery = 1
+  @observable groupMemberList = []
 
   @observable classroomList = []
   @observable lotteryList = []
@@ -16,6 +17,18 @@ export class ApplicationObject {
 
   @action.bound setLottery (lotteryId) {
     this.lottery = lotteryId
+  }
+
+  @action.bound addGroupMember (secret_id) {
+    this.groupMemberList.push(secret_id)
+  }
+
+  @action.bound removeGroupMemberWithId (secret_id) {
+    this.groupMemberList.splice(this.groupMemberList.indexOf(secret_id), 1)
+  }
+
+  @action.bound removeGroupMemberWithIdx (idx) {
+    this.groupMemberList.splice(idx, 1)
   }
 
   @action.bound setClassroomList (classroomList) {

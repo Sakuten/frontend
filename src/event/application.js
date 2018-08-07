@@ -21,6 +21,10 @@ export class ApplicationObject {
     this.store.application.setLottery(lottery)
   }
 
+  onAddGroupMember = (secret_id) => {
+    this.store.application.AddGroupMember(secret_id)
+  }
+
   onApply = async () => {
     await applyLottery(this.store.application.lottery, this.store.credential.token)
     await this.store.fetchStatus()
