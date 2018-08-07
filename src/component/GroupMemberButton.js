@@ -39,6 +39,7 @@ import QRReader from '../component/QRReader'
       }
 
       this.props.onAdd(match[1])
+      this.isScanning = false
     }
   }
 
