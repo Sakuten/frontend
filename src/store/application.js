@@ -23,11 +23,11 @@ export class ApplicationObject {
     this.groupMemberList.push(secretId)
   }
 
-  @action.bound removeGroupMemberWithId (secretId) {
+  @action.bound removeGroupMemberById (secretId) {
     this.groupMemberList.splice(this.groupMemberList.indexOf(secretId), 1)
   }
 
-  @action.bound removeGroupMemberWithIdx (idx) {
+  @action.bound removeGroupMemberByIdx (idx) {
     this.groupMemberList.splice(idx, 1)
   }
 

@@ -26,7 +26,7 @@ export class ApplicationObject {
   }
 
   onRemoveGroupMember = (idx) => {
-    this.store.application.removeGroupMemberWithIdx(idx)
+    this.store.application.removeGroupMemberByIdx(idx)
   }
 
   onApply = async () => {
