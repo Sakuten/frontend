@@ -8,10 +8,12 @@ ShallowWrapper {
     event={
       Event {
         "application": ApplicationObject {
+          "onAddGroupMember": [Function],
           "onApply": [Function],
           "onCancel": [Function],
           "onChangeClassroom": [Function],
           "onChangeLottery": [Function],
+          "onRemoveGroupMember": [Function],
           "onUpdate": [Function],
           "store": Store {
             "application": ApplicationObject {},

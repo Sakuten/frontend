@@ -1,0 +1,336 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components GroupMemberList render 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <GroupMemberList
+    list={
+      Array [
+        "secret_id1",
+        "secret_id2",
+        "secret_id3",
+      ]
+    }
+    onRemove={[MockFunction]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          data-test="groupmemberlist-member"
+        >
+          secret_id1
+          <button
+            data-test="groupmemberlist-remove"
+            onClick={[Function]}
+          >
+            Remove
+          </button>
+        </div>,
+        <div
+          data-test="groupmemberlist-member"
+        >
+          secret_id2
+          <button
+            data-test="groupmemberlist-remove"
+            onClick={[Function]}
+          >
+            Remove
+          </button>
+        </div>,
+        <div
+          data-test="groupmemberlist-member"
+        >
+          secret_id3
+          <button
+            data-test="groupmemberlist-remove"
+            onClick={[Function]}
+          >
+            Remove
+          </button>
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "0",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "secret_id1",
+            <button
+              data-test="groupmemberlist-remove"
+              onClick={[Function]}
+            >
+              Remove
+            </button>,
+          ],
+          "data-test": "groupmemberlist-member",
+        },
+        "ref": null,
+        "rendered": Array [
+          "secret_id1",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Remove",
+              "data-test": "groupmemberlist-remove",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Remove",
+            "type": "button",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": "1",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "secret_id2",
+            <button
+              data-test="groupmemberlist-remove"
+              onClick={[Function]}
+            >
+              Remove
+            </button>,
+          ],
+          "data-test": "groupmemberlist-member",
+        },
+        "ref": null,
+        "rendered": Array [
+          "secret_id2",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Remove",
+              "data-test": "groupmemberlist-remove",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Remove",
+            "type": "button",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": "2",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "secret_id3",
+            <button
+              data-test="groupmemberlist-remove"
+              onClick={[Function]}
+            >
+              Remove
+            </button>,
+          ],
+          "data-test": "groupmemberlist-member",
+        },
+        "ref": null,
+        "rendered": Array [
+          "secret_id3",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Remove",
+              "data-test": "groupmemberlist-remove",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Remove",
+            "type": "button",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            data-test="groupmemberlist-member"
+          >
+            secret_id1
+            <button
+              data-test="groupmemberlist-remove"
+              onClick={[Function]}
+            >
+              Remove
+            </button>
+          </div>,
+          <div
+            data-test="groupmemberlist-member"
+          >
+            secret_id2
+            <button
+              data-test="groupmemberlist-remove"
+              onClick={[Function]}
+            >
+              Remove
+            </button>
+          </div>,
+          <div
+            data-test="groupmemberlist-member"
+          >
+            secret_id3
+            <button
+              data-test="groupmemberlist-remove"
+              onClick={[Function]}
+            >
+              Remove
+            </button>
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "0",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "secret_id1",
+              <button
+                data-test="groupmemberlist-remove"
+                onClick={[Function]}
+              >
+                Remove
+              </button>,
+            ],
+            "data-test": "groupmemberlist-member",
+          },
+          "ref": null,
+          "rendered": Array [
+            "secret_id1",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Remove",
+                "data-test": "groupmemberlist-remove",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Remove",
+              "type": "button",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "1",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "secret_id2",
+              <button
+                data-test="groupmemberlist-remove"
+                onClick={[Function]}
+              >
+                Remove
+              </button>,
+            ],
+            "data-test": "groupmemberlist-member",
+          },
+          "ref": null,
+          "rendered": Array [
+            "secret_id2",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Remove",
+                "data-test": "groupmemberlist-remove",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Remove",
+              "type": "button",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "2",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "secret_id3",
+              <button
+                data-test="groupmemberlist-remove"
+                onClick={[Function]}
+              >
+                Remove
+              </button>,
+            ],
+            "data-test": "groupmemberlist-member",
+          },
+          "ref": null,
+          "rendered": Array [
+            "secret_id3",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Remove",
+                "data-test": "groupmemberlist-remove",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Remove",
+              "type": "button",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

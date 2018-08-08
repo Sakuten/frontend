@@ -21,8 +21,24 @@ export class ApplicationObject {
     this.store.application.setLottery(lottery)
   }
 
+  onAddGroupMember = (secretId) => {
+    if (this.store.credential.status.get('secret_id') === secretId) {
+      this.store.error.addError('You can\'t add yourself as a member')
+      return
+    }
+    if (this.store.application.groupMemberList.indexOf(secretId) !== -1) {
+      this.store.error.addError('The user is already in the member list')
+      return
+    }
+    this.store.application.addGroupMember(secretId)
+  }
+
+  onRemoveGroupMember = (idx) => {
+    this.store.application.removeGroupMemberByIdx(idx)
+  }
+
   onApply = async () => {
-    await applyLottery(this.store.application.lottery, this.store.credential.token)
+    await applyLottery(this.store.application.lottery, this.store.application.groupMemberList, this.store.credential.token)
     await this.store.fetchStatus()
   }
 

@@ -1,6 +1,6 @@
 import { responsify } from '../../../util/responsify'
 
-export const applyLottery = (lotteryId, token) => new Promise((resolve, reject) => {
+export const applyLottery = (lotteryId, gropuMembers, token) => new Promise((resolve, reject) => {
   resolve(responsify({
     'id': 4,
     'lottery': {
@@ -11,6 +11,7 @@ export const applyLottery = (lotteryId, token) => new Promise((resolve, reject) 
       'name': '5A.1',
       'winners': []
     },
-    'status': 'pending'
+    'status': 'pending',
+    'group_members': []
   }))
 })

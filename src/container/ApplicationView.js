@@ -2,19 +2,24 @@ import React from 'react'
 import { inject, observer } from 'mobx-react'
 
 import ApplicationList from '../component/ApplicationList'
+import GroupMemberList from '../component/GroupMemberList'
+import GroupMemberButton from '../component/GroupMemberButton'
 import ClassroomSelect from '../component/ClassroomSelect'
 import LotterySelect from '../component/LotterySelect'
 
 const ApplicationView = ({user, application, event}) => {
   const {
-    onLogout
+    onLogout,
+    onQRError
   } = event.credential
 
   const {
     onChangeClassroom,
     onChangeLottery,
     onApply,
-    onCancel
+    onCancel,
+    onAddGroupMember,
+    onRemoveGroupMember
   } = event.application
 
   return (
@@ -24,6 +29,8 @@ const ApplicationView = ({user, application, event}) => {
       <h2>Apply</h2>
       <ClassroomSelect list={application.classroomList} value={application.classroom} onChange={onChangeClassroom} />
       <LotterySelect classroom={application.classroom} list={application.lotteryList} value={application.lottery} onChange={onChangeLottery} />
+      <GroupMemberList list={application.groupMemberList} onRemove={onRemoveGroupMember} />
+      <GroupMemberButton onAdd={onAddGroupMember} onError={onQRError}>Add a new member</GroupMemberButton>
       <button onClick={onApply}>Apply</button>
       <h2>Your Applications</h2>
       <ApplicationList list={application.applicationList} onCancel={onCancel} />
