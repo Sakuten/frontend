@@ -25,12 +25,12 @@ describe('events', () => {
     })
 
     it('adds a group member', () => {
-      event.onAddGroupMember("secret_id")
-      expect(event.store.application.groupMemberList).toEqual(["secret_id"])
+      event.onAddGroupMember('secret_id')
+      expect(event.store.application.groupMemberList).toEqual(['secret_id'])
     })
 
     it('removes a group member', () => {
-      event.onAddGroupMember("secret_id")
+      event.onAddGroupMember('secret_id')
       event.onRemoveGroupMember(0)
       expect(event.store.application.groupMemberList).toEqual([])
     })

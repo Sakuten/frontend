@@ -7,7 +7,7 @@ const setup = propOverrides => {
     list: [
       'secret_id1',
       'secret_id2',
-      'secret_id3',
+      'secret_id3'
     ],
     onRemove: jest.fn()
   }, propOverrides)
