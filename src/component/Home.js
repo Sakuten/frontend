@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import React from 'react'
 import {Link} from 'react-router-dom'
+import FullWidth from '../util/fullwidth.js'
 import cloud from '../cloud.svg'
 import week from '../week.svg'
 import sousaku from '../sousaku.svg'
@@ -64,7 +65,7 @@ const Container = styled.div`
 `
 
 const Home = () => (
-  <div>
+  <FullWidth>
     <UpperHeading>
       <Title src={week} />
     </UpperHeading>
@@ -84,7 +85,7 @@ const Home = () => (
         </Link>
       </Button>
     </Container>
-  </div>
+  </FullWidth>
 )
 
 export default Home
