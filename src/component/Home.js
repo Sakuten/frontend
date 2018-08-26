@@ -52,6 +52,7 @@ const Cloud = styled.div`
   position: absolute;
   width: 40vw;
   left: -10%;
+  z-index: 20;
   top: -60%;
 `
 
