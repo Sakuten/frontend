@@ -65,6 +65,13 @@ const Cloud = styled.div`
   top: -60%;
 `
 
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+`
+
 const Home = () => (
   <div>
     <UpperHeading>
@@ -77,7 +84,7 @@ const Home = () => (
       </Cloud>
       <SubTitle>創作展</SubTitle>
     </LowerHeading>
-    <div className='container is-fluid'>
+    <Container>
       <Button>
         <Link data-test='home-login' to='/lottery/login'>
           <ButtonText>
@@ -86,7 +93,7 @@ const Home = () => (
           </ButtonText>
         </Link>
       </Button>
-    </div>
+    </Container>
   </div>
 )
 
