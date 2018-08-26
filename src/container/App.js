@@ -11,6 +11,9 @@ import bg from '../sakuten.jpg'
 const Container = styled.div`
   background-image: url(${bg});
   background-size: cover;
+
+  width: 100vw;
+  height: 100vh;
 `
 
 const Heading = styled.header`
