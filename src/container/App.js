@@ -20,7 +20,7 @@ const Heading = styled.header`
   display: block;
   color: #000;
   z-index: 1;
-  margin: 10px;
+  padding: 10px;
   font-size: 2rem;
   font-family: 'Roboto Condensed';
 `
