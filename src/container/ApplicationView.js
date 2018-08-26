@@ -15,6 +15,15 @@ const Selection = styled.div`
   padding: 30px;
 `
 
+const Title = styled.h3`
+  font-size: 1.5rem;
+  color: #000;
+`
+
+const Indent = styled.div`
+  margin: 10px;
+`
+
 const ApplicationView = ({user, application, event}) => {
   const {
     onQRError
@@ -32,10 +41,19 @@ const ApplicationView = ({user, application, event}) => {
   return (
     <div data-test='applicationview'>
       <Selection>
-        <ClassroomSelect list={application.classroomList} value={application.classroom} onChange={onChangeClassroom} />
-        <LotterySelect classroom={application.classroom} list={application.lotteryList} value={application.lottery} onChange={onChangeLottery} />
-        <GroupMemberList list={application.groupMemberList} onRemove={onRemoveGroupMember} />
-        <GroupMemberButton onAdd={onAddGroupMember} onError={onQRError}>Add a new member</GroupMemberButton>
+        <Title>クラス選択</Title>
+        <Indent>
+          <ClassroomSelect list={application.classroomList} value={application.classroom} onChange={onChangeClassroom} />
+        </Indent>
+        <Title>時間選択</Title>
+        <Indent>
+          <LotterySelect classroom={application.classroom} list={application.lotteryList} value={application.lottery} onChange={onChangeLottery} />
+        </Indent>
+        <Title>一緒に応募する</Title>
+        <Indent>
+          <GroupMemberList list={application.groupMemberList} onRemove={onRemoveGroupMember} />
+          <GroupMemberButton onAdd={onAddGroupMember} onError={onQRError}>Add a new member</GroupMemberButton>
+        </Indent>
       </Selection>
       <button onClick={onApply}>Apply</button>
       <h2>Your Applications</h2>

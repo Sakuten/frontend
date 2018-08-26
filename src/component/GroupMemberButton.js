@@ -1,16 +1,10 @@
 import React from 'react'
 import { observable, action } from 'mobx'
 import { observer } from 'mobx-react'
-import styled from 'styled-components'
 
 import {extractId} from '../util/extractId'
 
 import QRReader from '../component/QRReader'
-
-const Title = styled.h3`
-  font-size: 1.5rem;
-  color: #000;
-`
 
 @observer class GroupMemberButton extends React.Component {
   @observable isScanning = false
@@ -18,7 +12,6 @@ const Title = styled.h3`
   render () {
     return (
       <div>
-        <Title>複数人応募</Title>
         {
           this.isScanning
             ? <QRReader
