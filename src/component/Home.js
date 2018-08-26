@@ -7,14 +7,14 @@ import sousaku from '../sousaku.svg'
 
 const UpperHeading = styled.div`
   position: relative;
-  height: ${props => props.theme.heading_height}rem;
+  height: ${props => props.theme.header_height}rem;
   background-color: ${props => props.theme.header_color_upper};
   color: white;
 `
 
 const LowerHeading = styled.div`
   position: relative;
-  height: ${props => props.theme.heading_height}rem;
+  height: ${props => props.theme.header_height}rem;
   background-color: ${props => props.theme.header_color_lower};
   color: white;
 `
@@ -25,7 +25,7 @@ const Title = styled.img`
   bottom: 20%;
   z-index: 10;
 
-  height: ${props => props.theme.heading_height - 2.5}rem;
+  height: ${props => props.theme.header_height - 2.5}rem;
 `
 
 const SubTitle = styled.img`
@@ -33,7 +33,7 @@ const SubTitle = styled.img`
   right: 30%;
   bottom: 20%;
 
-  height: ${props => props.theme.heading_height - 2.5}rem;
+  height: ${props => props.theme.header_height - 2.5}rem;
 `
 
 const Button = styled.div`
