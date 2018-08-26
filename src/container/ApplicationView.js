@@ -8,6 +8,8 @@ import GroupMemberButton from '../component/GroupMemberButton'
 import ClassroomSelect from '../component/ClassroomSelect'
 import LotterySelect from '../component/LotterySelect'
 
+import cloud from '../cloud.svg'
+
 const Button = styled.button`
   padding: 20px;
   margin: 20px 0;
@@ -41,6 +43,13 @@ const Container = styled.div`
   margin-top: 20px;
 `
 
+const Cloud = styled.div`
+  position: absolute;
+  width: 60vw;
+  right: -20%;
+  z-index: 20;
+`
+
 const ApplicationView = ({user, application, event}) => {
   const {
     onQRError
@@ -57,6 +66,9 @@ const ApplicationView = ({user, application, event}) => {
 
   return (
     <Container data-test='applicationview'>
+      <Cloud>
+        <img src={cloud} />
+      </Cloud>
       <Selection>
         <Title>クラス選択</Title>
         <Indent>
