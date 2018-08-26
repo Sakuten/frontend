@@ -23,8 +23,9 @@ const Title = styled.img`
   position: absolute;
   right: 5%;
   bottom: 20%;
+  z-index: 10;
 
-  height: ${props => props.theme.heading_height - 1.5}rem;
+  height: ${props => props.theme.heading_height - 2.5}rem;
 `
 
 const SubTitle = styled.img`
@@ -32,7 +33,7 @@ const SubTitle = styled.img`
   right: 30%;
   bottom: 20%;
 
-  height: ${props => props.theme.heading_height - 1.5}rem;
+  height: ${props => props.theme.heading_height - 2.5}rem;
 `
 
 const Button = styled.div`

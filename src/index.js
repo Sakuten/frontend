@@ -21,7 +21,7 @@ const browserHistory = createBrowserHistory()
 const history = syncHistoryWithStore(browserHistory, store.router)
 
 const theme = {
-  heading_height: 4.5
+  heading_height: 5.5
 }
 
 ReactDOM.render(
