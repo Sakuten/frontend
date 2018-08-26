@@ -4,12 +4,16 @@ import {Link} from 'react-router-dom'
 
 const UpperHeading = styled.div`
   position: relative;
-  height: 3rem;
+  height: 4rem;
+  background-color: #e84393;
+  color: white;
 `
 
 const LowerHeading = styled.div`
   position: relative;
-  height: 3rem;
+  height: 4rem;
+  background-color: #fd79a8;
+  color: white;
 `
 
 const BackgroundText = styled.h3`
@@ -18,7 +22,7 @@ const BackgroundText = styled.h3`
   top: 0;
 
   font-size: 1.5rem;
-  color: #636e72;
+  color: #dfe6e9;
   margin: 0 20px;
 `
 
@@ -27,17 +31,19 @@ const Title = styled.h1`
   right: 10%;
   top: 0;
 
-  font-size: 2rem;
-  font-weight: bold;
+  font-family: serif;
+  font-size: 3rem;
+  font-weight: 400;
 `
 
 const SubTitle = styled.h2`
   position: absolute;
-  right: 10%;
+  left: 10%;
   top: 0;
 
-  font-size: 2rem;
-  font-weight: bold;
+  font-family: serif;
+  font-size: 3rem;
+  font-weight: 400;
 `
 
 const Button = styled.div`
