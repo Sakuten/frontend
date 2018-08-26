@@ -9,18 +9,23 @@ import Home from '../component/Home'
 import styled from 'styled-components'
 import bg from '../sakuten.jpg'
 
-const Container = styled.div`
+const Background = styled.div`
   background-image: url(${bg});
   background-size: cover;
 
   width: 100vw;
   height: 100vh;
 
+  position: fixed;
+  z-index: -10;
+  top: 0;
+`
+
+const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
 
-  position: fixed;
   overflow-x: scroll;
 `
 
@@ -40,6 +45,7 @@ const App = ({store, event}) => {
   return (
     <div location={location}>
       <Heading>KOISHIKAWA</Heading>
+      <Background />
       <Container>
         <Route exact path='/' component={Home} />
         <Route path='/lottery/login' render={() => store.credential.isLoggedIn ? <Redirect to='/lottery' /> : <LoginView credential={store.credential} />} />

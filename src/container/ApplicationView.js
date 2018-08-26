@@ -37,6 +37,10 @@ const Indent = styled.div`
   margin: 10px;
 `
 
+const Container = styled.div`
+  margin-top: 20px;
+`
+
 const ApplicationView = ({user, application, event}) => {
   const {
     onQRError
@@ -52,7 +56,7 @@ const ApplicationView = ({user, application, event}) => {
   } = event.application
 
   return (
-    <div data-test='applicationview'>
+    <Container data-test='applicationview'>
       <Selection>
         <Title>クラス選択</Title>
         <Indent>
@@ -75,7 +79,7 @@ const ApplicationView = ({user, application, event}) => {
           <ApplicationList list={application.applicationList} onCancel={onCancel} />
         </Indent>
       </Selection>
-    </div>
+    </Container>
   )
 }
 
