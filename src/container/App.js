@@ -13,15 +13,30 @@ const Container = styled.div`
   background-size: cover;
 `
 
+const Heading = styled.header`
+  background-color: #e84393;
+  position: fixed;
+  width: 100%;
+  display: block;
+  color: #000;
+  z-index: 1;
+  margin: 10px;
+  font-size: 2rem;
+  font-family: 'Roboto Condensed';
+`
+
 const App = ({store, event}) => {
   const { location } = store.router
   return (
-    <Container location={location}>
-      <Route exact path='/' component={Home} />
-      <Route path='/lottery/login' render={() => store.credential.isLoggedIn ? <Redirect to='/lottery' /> : <LoginView credential={store.credential} />} />
-      <Route exact path='/lottery' render={() => store.credential.isLoggedIn ? <ApplicationView user={store.credential.status} application={store.application} /> : <Redirect to='/lottery/login' />} />
-      <ErrorList list={store.error.errorList} />
-    </Container>
+    <div>
+      <Heading>KOISHIKAWA</Heading>
+      <Container location={location}>
+        <Route exact path='/' component={Home} />
+        <Route path='/lottery/login' render={() => store.credential.isLoggedIn ? <Redirect to='/lottery' /> : <LoginView credential={store.credential} />} />
+        <Route exact path='/lottery' render={() => store.credential.isLoggedIn ? <ApplicationView user={store.credential.status} application={store.application} /> : <Redirect to='/lottery/login' />} />
+        <ErrorList list={store.error.errorList} />
+      </Container>
+    </div>
   )
 }
 

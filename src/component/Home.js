@@ -19,16 +19,6 @@ const LowerHeading = styled.div`
   color: white;
 `
 
-const BackgroundText = styled.h3`
-  position: absolute;
-  left: 10%;
-  top: 0;
-
-  font-size: 1.5rem;
-  color: #dfe6e9;
-  margin: 0 20px;
-`
-
 const Title = styled.img`
   position: absolute;
   right: 5%;
@@ -73,7 +63,6 @@ const Container = styled.div`
 const Home = () => (
   <div>
     <UpperHeading>
-      <BackgroundText>KOISHIKAWA</BackgroundText>
       <Title src={week} />
     </UpperHeading>
     <LowerHeading>
