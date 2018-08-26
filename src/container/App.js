@@ -14,7 +14,7 @@ const Container = styled.div`
 `
 
 const Heading = styled.header`
-  background-color: #e84393;
+  background-color: rgb(237, 106, 141);
   position: fixed;
   width: 100%;
   display: block;
