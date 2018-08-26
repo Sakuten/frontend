@@ -52,7 +52,7 @@ const ApplicationView = ({user, application, event}) => {
         <Title>一緒に応募する</Title>
         <Indent>
           <GroupMemberList list={application.groupMemberList} onRemove={onRemoveGroupMember} />
-          <GroupMemberButton onAdd={onAddGroupMember} onError={onQRError}>Add a new member</GroupMemberButton>
+          <GroupMemberButton onAdd={onAddGroupMember} onError={onQRError}>他の人を追加</GroupMemberButton>
         </Indent>
       </Selection>
       <button onClick={onApply}>Apply</button>
