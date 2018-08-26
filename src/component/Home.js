@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import React from 'react'
 import {Link} from 'react-router-dom'
+import cloud from '../cloud.svg'
 
 const UpperHeading = styled.div`
   position: relative;
@@ -57,6 +58,13 @@ const ButtonText = styled.div`
   color: white;
 `
 
+const Cloud = styled.div`
+  position: absolute;
+  width: 30vw;
+  left: -10%;
+  top: -50%;
+`
+
 const Home = () => (
   <div>
     <UpperHeading>
@@ -64,6 +72,9 @@ const Home = () => (
       <Title>行事週間</Title>
     </UpperHeading>
     <LowerHeading>
+      <Cloud>
+        <img src={cloud} />
+      </Cloud>
       <SubTitle>創作展</SubTitle>
     </LowerHeading>
     <div className='container is-fluid'>
