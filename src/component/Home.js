@@ -39,7 +39,7 @@ const Title = styled.h1`
 
 const SubTitle = styled.h2`
   position: absolute;
-  left: 10%;
+  right: 30%;
   top: 0;
 
   font-family: serif;
