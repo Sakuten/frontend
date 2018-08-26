@@ -23,7 +23,8 @@ const history = syncHistoryWithStore(browserHistory, store.router)
 const theme = {
   header_height: 5.5,
   header_color_upper: 'rgb(237, 106, 141)',
-  header_color_lower: 'rgb(241, 156, 187)'
+  header_color_lower: 'rgb(241, 156, 187)',
+  button_color: 'rgb(94, 205, 156)'
 }
 
 ReactDOM.render(

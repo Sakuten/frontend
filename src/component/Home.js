@@ -38,13 +38,14 @@ const SubTitle = styled.img`
 
 const Button = styled.div`
   margin: 0 32px;
-  background-color: #00cec9;
+  background-color: ${props => props.theme.button_color};
 `
 
 const ButtonText = styled.div`
   padding: 30px;
   text-align: center;
-  color: white;
+  color: #000;
+  font-size: 1.5rem;
 `
 
 const Cloud = styled.div`
