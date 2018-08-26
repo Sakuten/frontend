@@ -8,6 +8,19 @@ import GroupMemberButton from '../component/GroupMemberButton'
 import ClassroomSelect from '../component/ClassroomSelect'
 import LotterySelect from '../component/LotterySelect'
 
+const Button = styled.button`
+  padding: 20px;
+  margin: 20px 0;
+  text-align: center;
+  line-height: 2rem;
+  font-size: 2rem;
+  background-color: ${props => props.theme.button_color};
+  -webkit-appearance: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+`
+
 const Selection = styled.div`
   background-color: ${props => props.theme.button_color};
   width: 80vw;
@@ -55,7 +68,7 @@ const ApplicationView = ({user, application, event}) => {
           <GroupMemberButton onAdd={onAddGroupMember} onError={onQRError}>他の人を追加</GroupMemberButton>
         </Indent>
       </Selection>
-      <button onClick={onApply}>Apply</button>
+      <Button onClick={onApply}>申し込む</Button>
       <h2>Your Applications</h2>
       <ApplicationList list={application.applicationList} onCancel={onCancel} />
     </div>
