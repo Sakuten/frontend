@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import React from 'react'
 import {Link} from 'react-router-dom'
 import cloud from '../cloud.svg'
+import week from '../week.svg'
+import sousaku from '../sousaku.svg'
 
 const UpperHeading = styled.div`
   position: relative;
@@ -27,24 +29,20 @@ const BackgroundText = styled.h3`
   margin: 0 20px;
 `
 
-const Title = styled.h1`
+const Title = styled.img`
   position: absolute;
   right: 10%;
   top: 0;
 
-  font-family: serif;
-  font-size: ${props => props.theme.heading_height - 1}rem;
-  font-weight: 400;
+  height: ${props => props.theme.heading_height - 1}rem;
 `
 
-const SubTitle = styled.h2`
+const SubTitle = styled.img`
   position: absolute;
   right: 30%;
   top: 0;
 
-  font-family: serif;
-  font-size: ${props => props.theme.heading_height - 1}rem;
-  font-weight: 400;
+  height: ${props => props.theme.heading_height - 1}rem;
 `
 
 const Button = styled.div`
@@ -76,13 +74,13 @@ const Home = () => (
   <div>
     <UpperHeading>
       <BackgroundText>KOISHIKAWA</BackgroundText>
-      <Title>行事週間</Title>
+      <Title src={week} />
     </UpperHeading>
     <LowerHeading>
       <Cloud>
         <img src={cloud} />
       </Cloud>
-      <SubTitle>創作展</SubTitle>
+      <SubTitle src={sousaku} />
     </LowerHeading>
     <Container>
       <Button>
