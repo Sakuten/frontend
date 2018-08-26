@@ -60,9 +60,9 @@ const ButtonText = styled.div`
 
 const Cloud = styled.div`
   position: absolute;
-  width: 30vw;
+  width: 40vw;
   left: -10%;
-  top: -50%;
+  top: -60%;
 `
 
 const Home = () => (
