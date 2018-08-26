@@ -1,13 +1,13 @@
-import React from 'react';
-import { observer } from 'mobx-react';
+import React from 'react'
+import { observer } from 'mobx-react'
 
 const ApplicationList = ({list, onCancel}) => (
   <div>
     {
-      list ? list.map(c =>
-        <div>
+      list ? list.map((c, i) =>
+        <div data-test='applicationlist-application' key={i}>
           {JSON.stringify(c)}
-          <button onClick={() => onCancel(c.lottery_id)}>Cancel</button>
+          <button data-test='applicationlist-cancel' onClick={() => onCancel(c.id)}>Cancel</button>
         </div>
       ) : null
     }
@@ -15,4 +15,3 @@ const ApplicationList = ({list, onCancel}) => (
 )
 
 export default observer(ApplicationList)
-

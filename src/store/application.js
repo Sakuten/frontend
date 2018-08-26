@@ -1,42 +1,60 @@
-import { observable, computed, action } from 'mobx';
-import {fetchApi} from '../util/api'
+import { observable, action } from 'mobx'
+import {getClassrooms, getLotteries, getApplications} from '../api/operation'
 
 export class ApplicationObject {
   @observable classroom = 1
   @observable lottery = 1
+  @observable groupMemberList = []
 
-  @observable classroom_list = []
-  @observable lottery_list = []
+  @observable classroomList = []
+  @observable lotteryList = []
 
-  @action.bound setClassroom(classroom_id) {
-    this.classroom = classroom_id
+  @observable applicationList = []
+
+  @action.bound setClassroom (classroomId) {
+    this.classroom = classroomId
   }
 
-  @action.bound setLottery(lottery_id) {
-    this.lottery = lottery_id
+  @action.bound setLottery (lotteryId) {
+    this.lottery = lotteryId
   }
 
-  @action.bound setClassroomList(classroom_list) {
-    this.classroom_list = classroom_list
+  @action.bound addGroupMember (secretId) {
+    this.groupMemberList.push(secretId)
   }
 
-  @action.bound setLotteryList(lottery_list) {
-    this.lottery_list = lottery_list
+  @action.bound removeGroupMemberById (secretId) {
+    this.groupMemberList.splice(this.groupMemberList.indexOf(secretId), 1)
   }
 
-  @action.bound fetchClassroomList() {
-    fetchApi('api/classrooms', {})
-      .then(response => {
-        this.setClassroomList(response.data.classrooms)
-      })
+  @action.bound removeGroupMemberByIdx (idx) {
+    this.groupMemberList.splice(idx, 1)
   }
 
-  @action.bound fetchLotteryList() {
-    fetchApi('api/lotteries', {})
-      .then(response => {
-        this.setLotteryList(response.data.lotteries)
-      })
+  @action.bound setClassroomList (classroomList) {
+    this.classroomList = classroomList
+  }
+
+  @action.bound setLotteryList (lotteryList) {
+    this.lotteryList = lotteryList
+  }
+
+  @action.bound setApplicationList (applicationList) {
+    this.applicationList = applicationList
+  }
+
+  @action.bound async fetchClassroomList () {
+    const response = await getClassrooms()
+    this.setClassroomList(response.data)
+  }
+
+  @action.bound async fetchLotteryList () {
+    const response = await getLotteries()
+    this.setLotteryList(response.data)
+  }
+
+  @action.bound async fetchApplicationList (token) {
+    const response = await getApplications(token)
+    this.setApplicationList(response.data)
   }
 }
-
-

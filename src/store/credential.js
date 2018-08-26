@@ -1,53 +1,45 @@
-import { observable, computed, action } from 'mobx';
-import {fetchApi} from '../util/api'
+import { observable, computed, action } from 'mobx'
+import {getStatus} from '../api/operation'
+import qs from 'querystring'
 
 const savedToken = localStorage.getItem('Token')
+const paramSecretId = qs.parse(location.search.substr(1)).sid
 
 export class CredentialObject {
-  @observable password = ""
-  @observable username = ""
-  @observable token = savedToken || ""
+  @observable secretId = paramSecretId || ''
+  @observable recaptchaResponse = ''
+  @observable token = savedToken || ''
   @observable status = new Map()
 
-  @computed get isLoggedIn() {
+  @computed get isLoggedIn () {
     return this.token.length !== 0
   }
 
-  @action.bound setUsername(username) {
-    this.username = username
+  @computed get isAbleToAuthenicate () {
+    return this.secretId.length !== 0 && this.recaptchaResponse.length !== 0
   }
 
-  @action.bound setPassword(password) {
-    this.password = password
+  @action.bound setSecretId (secretId) {
+    this.secretId = secretId
   }
 
-  @action.bound setToken(token) {
+  @action.bound setRecaptchaResponse (recaptchaResponse) {
+    this.recaptchaResponse = recaptchaResponse
+  }
+
+  @action.bound setToken (token) {
     localStorage.setItem('Token', token)
     this.token = token
   }
 
-  @action.bound setStatus(obj) {
+  @action.bound setStatus (obj) {
     Object.keys(obj).forEach(key => {
-          this.status.set(key, obj[key]);
-      });
-  }
-
-  @action.bound clearPassword() {
-    this.password = ''
-  }
-
-  @action.bound fetchStatus() {
-    fetchApi(`api/status`, {
-      method: 'get',
-      headers: {
-        'Authorization': 'Bearer ' + this.token
-      }
+      this.status.set(key, obj[key])
     })
-      .then(response => {
-        this.setStatus(response.data.status)
-      })
   }
 
+  @action.bound async fetchStatus () {
+    const response = await getStatus(this.token)
+    this.setStatus(response.data)
+  }
 }
-
-

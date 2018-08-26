@@ -1,0 +1,265 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components ApplicationList render 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ApplicationList
+    list={
+      Array [
+        Object {
+          "id": 1,
+          "lottery": Object {
+            "classroom_id": 1,
+            "done": false,
+            "id": 1,
+            "index": 0,
+            "name": "5A.0",
+            "winners": Array [],
+          },
+          "status": "pending",
+        },
+        Object {
+          "id": 2,
+          "lottery": Object {
+            "classroom_id": 1,
+            "done": false,
+            "id": 2,
+            "index": 0,
+            "name": "5A.0",
+            "winners": Array [],
+          },
+          "status": "pending",
+        },
+      ]
+    }
+    onCancel={[MockFunction]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          data-test="applicationlist-application"
+        >
+          {"id":1,"lottery":{"classroom_id":1,"done":false,"id":1,"index":0,"name":"5A.0","winners":[]},"status":"pending"}
+          <button
+            data-test="applicationlist-cancel"
+            onClick={[Function]}
+          >
+            Cancel
+          </button>
+        </div>,
+        <div
+          data-test="applicationlist-application"
+        >
+          {"id":2,"lottery":{"classroom_id":1,"done":false,"id":2,"index":0,"name":"5A.0","winners":[]},"status":"pending"}
+          <button
+            data-test="applicationlist-cancel"
+            onClick={[Function]}
+          >
+            Cancel
+          </button>
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "0",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "{\\"id\\":1,\\"lottery\\":{\\"classroom_id\\":1,\\"done\\":false,\\"id\\":1,\\"index\\":0,\\"name\\":\\"5A.0\\",\\"winners\\":[]},\\"status\\":\\"pending\\"}",
+            <button
+              data-test="applicationlist-cancel"
+              onClick={[Function]}
+            >
+              Cancel
+            </button>,
+          ],
+          "data-test": "applicationlist-application",
+        },
+        "ref": null,
+        "rendered": Array [
+          "{\\"id\\":1,\\"lottery\\":{\\"classroom_id\\":1,\\"done\\":false,\\"id\\":1,\\"index\\":0,\\"name\\":\\"5A.0\\",\\"winners\\":[]},\\"status\\":\\"pending\\"}",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Cancel",
+              "data-test": "applicationlist-cancel",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Cancel",
+            "type": "button",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": "1",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "{\\"id\\":2,\\"lottery\\":{\\"classroom_id\\":1,\\"done\\":false,\\"id\\":2,\\"index\\":0,\\"name\\":\\"5A.0\\",\\"winners\\":[]},\\"status\\":\\"pending\\"}",
+            <button
+              data-test="applicationlist-cancel"
+              onClick={[Function]}
+            >
+              Cancel
+            </button>,
+          ],
+          "data-test": "applicationlist-application",
+        },
+        "ref": null,
+        "rendered": Array [
+          "{\\"id\\":2,\\"lottery\\":{\\"classroom_id\\":1,\\"done\\":false,\\"id\\":2,\\"index\\":0,\\"name\\":\\"5A.0\\",\\"winners\\":[]},\\"status\\":\\"pending\\"}",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Cancel",
+              "data-test": "applicationlist-cancel",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Cancel",
+            "type": "button",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            data-test="applicationlist-application"
+          >
+            {"id":1,"lottery":{"classroom_id":1,"done":false,"id":1,"index":0,"name":"5A.0","winners":[]},"status":"pending"}
+            <button
+              data-test="applicationlist-cancel"
+              onClick={[Function]}
+            >
+              Cancel
+            </button>
+          </div>,
+          <div
+            data-test="applicationlist-application"
+          >
+            {"id":2,"lottery":{"classroom_id":1,"done":false,"id":2,"index":0,"name":"5A.0","winners":[]},"status":"pending"}
+            <button
+              data-test="applicationlist-cancel"
+              onClick={[Function]}
+            >
+              Cancel
+            </button>
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "0",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "{\\"id\\":1,\\"lottery\\":{\\"classroom_id\\":1,\\"done\\":false,\\"id\\":1,\\"index\\":0,\\"name\\":\\"5A.0\\",\\"winners\\":[]},\\"status\\":\\"pending\\"}",
+              <button
+                data-test="applicationlist-cancel"
+                onClick={[Function]}
+              >
+                Cancel
+              </button>,
+            ],
+            "data-test": "applicationlist-application",
+          },
+          "ref": null,
+          "rendered": Array [
+            "{\\"id\\":1,\\"lottery\\":{\\"classroom_id\\":1,\\"done\\":false,\\"id\\":1,\\"index\\":0,\\"name\\":\\"5A.0\\",\\"winners\\":[]},\\"status\\":\\"pending\\"}",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Cancel",
+                "data-test": "applicationlist-cancel",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Cancel",
+              "type": "button",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "1",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "{\\"id\\":2,\\"lottery\\":{\\"classroom_id\\":1,\\"done\\":false,\\"id\\":2,\\"index\\":0,\\"name\\":\\"5A.0\\",\\"winners\\":[]},\\"status\\":\\"pending\\"}",
+              <button
+                data-test="applicationlist-cancel"
+                onClick={[Function]}
+              >
+                Cancel
+              </button>,
+            ],
+            "data-test": "applicationlist-application",
+          },
+          "ref": null,
+          "rendered": Array [
+            "{\\"id\\":2,\\"lottery\\":{\\"classroom_id\\":1,\\"done\\":false,\\"id\\":2,\\"index\\":0,\\"name\\":\\"5A.0\\",\\"winners\\":[]},\\"status\\":\\"pending\\"}",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Cancel",
+                "data-test": "applicationlist-cancel",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Cancel",
+              "type": "button",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

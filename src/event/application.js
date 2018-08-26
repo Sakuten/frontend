@@ -1,8 +1,8 @@
-import {fetchApi} from '../util/api'
+import {applyLottery, cancelLottery} from '../api/operation'
 
 export class ApplicationObject {
-  constructor(store) {
-    this.store = store;
+  constructor (store) {
+    this.store = store
     this.onUpdate()
   }
 
@@ -21,24 +21,29 @@ export class ApplicationObject {
     this.store.application.setLottery(lottery)
   }
 
+  onAddGroupMember = (secretId) => {
+    if (this.store.credential.status.get('secret_id') === secretId) {
+      this.store.error.addError('You can\'t add yourself as a member')
+      return
+    }
+    if (this.store.application.groupMemberList.indexOf(secretId) !== -1) {
+      this.store.error.addError('The user is already in the member list')
+      return
+    }
+    this.store.application.addGroupMember(secretId)
+  }
+
+  onRemoveGroupMember = (idx) => {
+    this.store.application.removeGroupMemberByIdx(idx)
+  }
+
   onApply = async () => {
-   await fetchApi(`api/lotteries/${this.store.application.lottery}/apply`, {
-      method: 'put',
-      headers: {
-        'Authorization': 'Bearer ' + this.store.credential.token
-      }
-    })
-    await this.store.credential.fetchStatus()
+    await applyLottery(this.store.application.lottery, this.store.application.groupMemberList, this.store.credential.token)
+    await this.store.fetchStatus()
   }
 
   onCancel = async (id) => {
-    await fetchApi(`api/lotteries/${id}/apply`, {
-      method: 'delete',
-      headers: {
-        'Authorization': 'Bearer ' + this.store.credential.token
-      }
-    })
-    await this.store.credential.fetchStatus()
+    await cancelLottery(id, this.store.credential.token)
+    await this.store.fetchStatus()
   }
 }
-

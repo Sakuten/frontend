@@ -1,41 +1,57 @@
-import {fetchApi} from '../util/api'
+import {authenicate} from '../api/operation'
+import {extractId} from '../util/extractId'
+import {reaction} from 'mobx'
 
 export class CredentialObject {
-  constructor(store) {
-    this.store = store;
+  constructor (store) {
+    this.store = store
+
+    reaction(
+      () => this.store.credential.isLoggedIn,
+      isLoggedIn => {
+        if (this.store.router.history) {
+          this.store.router.history.push(isLoggedIn ? '/lottery' : '/lottery/login')
+        }
+      }
+    )
   }
 
-  onLogin = () => {
-    fetchApi('auth/', {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      data: {
-        password: this.store.credential.password,
-        username: this.store.credential.username
-      }
-    }).then(async (response) => {
-      const json = response.data
-      if ('token' in json) {
-        this.store.credential.setToken(json.token)
-        this.store.credential.clearPassword()
-        this.store.credential.fetchStatus()
-      } else { throw Error('Invalid response returned') }
-    })
+  onLogin = async () => {
+    const response = await authenicate(this.store.credential.secretId, this.store.credential.recaptchaResponse)
+    const json = response.data
+    if ('token' in json) {
+      this.store.credential.setToken(json.token)
+      await this.store.fetchStatus()
+    } else { throw Error('Invalid response returned') }
   }
 
   onLogout = () => {
     this.store.credential.setToken('')
   }
 
-  onChangeUsername = (username) => {
-    username = username.trim()
-    this.store.credential.setUsername(username)
+  onQRError = (error) => {
+    this.store.error.addError(error)
   }
 
-  onChangePassword = (password) => {
-    password = password.trim()
-    this.store.credential.setPassword(password)
+  onQRScan = (scanUri) => {
+    if (scanUri) {
+      const secretId = extractId(scanUri)
+      if (!secretId) {
+        this.store.error.addError('Invalid QR Code')
+        return
+      }
+
+      this.store.credential.setSecretId(secretId)
+      if (this.store.credential.isAbleToAuthenicate) {
+        this.onLogin()
+      }
+    }
+  }
+
+  onChangeRecaptchaResponse = (recaptchaResponse) => {
+    this.store.credential.setRecaptchaResponse(recaptchaResponse)
+    if (this.store.credential.isAbleToAuthenicate) {
+      this.onLogin()
+    }
   }
 }
