@@ -74,7 +74,7 @@ const ApplicationView = ({user, application, event}) => {
       </Selection>
       <Button onClick={onApply}>申し込む</Button>
       <Selection>
-        <Title>あなたの応募した抽選</Title>
+        <Title>応募一覧</Title>
         <Indent>
           <ApplicationList list={application.applicationList} onCancel={onCancel} />
         </Indent>
