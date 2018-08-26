@@ -5,13 +5,16 @@ import styled from 'styled-components'
 const Title = styled.h3`
   font-size: 1.5rem;
   color: #000;
+`
+
+const SelectWrap = styled.div`
   margin: 10px;
 `
 
 const ClassroomSelect = ({list, value, onChange}) => (
   <div>
     <Title>クラス選択</Title>
-    <div className='select'>
+    <SelectWrap className='select'>
       <select data-test='classroom-select' name='classrooms' value={value} onChange={e => onChange(e.target.value)}>
         {
           list.map(c =>
@@ -19,7 +22,7 @@ const ClassroomSelect = ({list, value, onChange}) => (
           )
         }
       </select>
-    </div>
+    </SelectWrap>
   </div>
 )
 

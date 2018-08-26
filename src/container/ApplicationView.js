@@ -12,6 +12,7 @@ const Selection = styled.div`
   background-color: ${props => props.theme.button_color};
   width: 80vw;
   height: 70%;
+  padding: 30px;
 `
 
 const ApplicationView = ({user, application, event}) => {
