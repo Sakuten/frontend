@@ -5,14 +5,14 @@ import cloud from '../cloud.svg'
 
 const UpperHeading = styled.div`
   position: relative;
-  height: 4rem;
+  height: ${props => props.theme.heading_height}rem;
   background-color: #e84393;
   color: white;
 `
 
 const LowerHeading = styled.div`
   position: relative;
-  height: 4rem;
+  height: ${props => props.theme.heading_height}rem;
   background-color: #fd79a8;
   color: white;
 `
@@ -33,7 +33,7 @@ const Title = styled.h1`
   top: 0;
 
   font-family: serif;
-  font-size: 3rem;
+  font-size: ${props => props.theme.heading_height - 1}rem;
   font-weight: 400;
 `
 
@@ -43,7 +43,7 @@ const SubTitle = styled.h2`
   top: 0;
 
   font-family: serif;
-  font-size: 3rem;
+  font-size: ${props => props.theme.heading_height - 1}rem;
   font-weight: 400;
 `
 
