@@ -8,14 +8,14 @@ import sousaku from '../sousaku.svg'
 const UpperHeading = styled.div`
   position: relative;
   height: ${props => props.theme.heading_height}rem;
-  background-color: rgb(237, 106, 141);
+  background-color: ${props => props.theme.header_color_upper};
   color: white;
 `
 
 const LowerHeading = styled.div`
   position: relative;
   height: ${props => props.theme.heading_height}rem;
-  background-color: rgb(241, 156, 187);
+  background-color: ${props => props.theme.header_color_lower};
   color: white;
 `
 
