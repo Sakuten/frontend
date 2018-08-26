@@ -1,8 +1,13 @@
 import React from 'react'
 import { observable, action } from 'mobx'
 import { observer } from 'mobx-react'
+import styled from 'styled-components'
 
 import QrReader from 'react-qr-reader'
+
+const Container = styled.div`
+  width: 100%;
+`
 
 @observer class QRReader extends React.Component {
   @observable isLoading = true
@@ -10,7 +15,7 @@ import QrReader from 'react-qr-reader'
 
   render () {
     return (
-      <div>
+      <Container>
         { this.isLoading && <p>Loading</p> }
         { this.isLegacyMode && <button onClick={this.onImgSubmit}>Submit an Image</button> }
         <div style={{display: this.isLoading ? 'none' : 'block'}} >
@@ -20,12 +25,11 @@ import QrReader from 'react-qr-reader'
               onScan={this.props.onScan}
               onLoad={this.onLoad}
               legacyMode={this.isLegacyMode}
-              style={{ width: '50%' }}
               ref='reader'
             />
           }
         </div>
-      </div>
+      </Container>
     )
   }
 

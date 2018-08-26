@@ -2,6 +2,16 @@ import React from 'react'
 import { inject, observer } from 'mobx-react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import QRReader from '../component/QRReader'
+import styled from 'styled-components'
+
+const Container = styled.div`
+  width: 90vw;
+  height: 90vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 
 const LoginView = ({credential, event}) => {
   const {
@@ -13,7 +23,7 @@ const LoginView = ({credential, event}) => {
   let captcha
 
   return (
-    <div data-test='loginview' className='container'>
+    <Container data-test='loginview'>
       {
         credential.secretId
           ? <ReCAPTCHA
@@ -28,7 +38,7 @@ const LoginView = ({credential, event}) => {
             onScan={onQRScan}
           />
       }
-    </div>
+    </Container>
   )
 }
 
