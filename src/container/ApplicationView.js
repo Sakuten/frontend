@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import { inject, observer } from 'mobx-react'
 
 import ApplicationList from '../component/ApplicationList'
@@ -7,9 +8,14 @@ import GroupMemberButton from '../component/GroupMemberButton'
 import ClassroomSelect from '../component/ClassroomSelect'
 import LotterySelect from '../component/LotterySelect'
 
+const Selection = styled.div`
+  background-color: ${props => props.theme.button_color};
+  width: 80vw;
+  height: 70%;
+`
+
 const ApplicationView = ({user, application, event}) => {
   const {
-    onLogout,
     onQRError
   } = event.credential
 
@@ -24,13 +30,12 @@ const ApplicationView = ({user, application, event}) => {
 
   return (
     <div data-test='applicationview'>
-      <h1 data-test='applicationview-title'>Logged in as {user.get('secret_id')}</h1>
-      <button onClick={onLogout}>Logout</button>
-      <h2>Apply</h2>
-      <ClassroomSelect list={application.classroomList} value={application.classroom} onChange={onChangeClassroom} />
-      <LotterySelect classroom={application.classroom} list={application.lotteryList} value={application.lottery} onChange={onChangeLottery} />
-      <GroupMemberList list={application.groupMemberList} onRemove={onRemoveGroupMember} />
-      <GroupMemberButton onAdd={onAddGroupMember} onError={onQRError}>Add a new member</GroupMemberButton>
+      <Selection>
+        <ClassroomSelect list={application.classroomList} value={application.classroom} onChange={onChangeClassroom} />
+        <LotterySelect classroom={application.classroom} list={application.lotteryList} value={application.lottery} onChange={onChangeLottery} />
+        <GroupMemberList list={application.groupMemberList} onRemove={onRemoveGroupMember} />
+        <GroupMemberButton onAdd={onAddGroupMember} onError={onQRError}>Add a new member</GroupMemberButton>
+      </Selection>
       <button onClick={onApply}>Apply</button>
       <h2>Your Applications</h2>
       <ApplicationList list={application.applicationList} onCancel={onCancel} />
