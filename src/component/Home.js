@@ -31,18 +31,18 @@ const BackgroundText = styled.h3`
 
 const Title = styled.img`
   position: absolute;
-  right: 10%;
-  top: 0;
+  right: 5%;
+  bottom: 20%;
 
-  height: ${props => props.theme.heading_height - 1}rem;
+  height: ${props => props.theme.heading_height - 1.5}rem;
 `
 
 const SubTitle = styled.img`
   position: absolute;
   right: 30%;
-  top: 0;
+  bottom: 20%;
 
-  height: ${props => props.theme.heading_height - 1}rem;
+  height: ${props => props.theme.heading_height - 1.5}rem;
 `
 
 const Button = styled.div`
