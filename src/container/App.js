@@ -10,6 +10,7 @@ import bg from '../sakuten.jpg'
 
 const Container = styled.div`
   background-image: url(${bg});
+  background-size: cover;
 `
 
 const App = ({store, event}) => {
