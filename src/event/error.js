@@ -20,4 +20,8 @@ export class ErrorObject {
     }
     this.store.error.addError(message)
   }
+
+  onDelete = (idx) => {
+    this.store.error.deleteError(idx)
+  }
 }

@@ -42,6 +42,10 @@ const Heading = withRouter(styled.header`
 
 const App = ({store, event}) => {
   const { location } = store.router
+  const {
+    onDelete
+  } = event.error
+
   return (
     <div location={location}>
       <Heading>KOISHIKAWA</Heading>
@@ -50,7 +54,7 @@ const App = ({store, event}) => {
         <Route exact path='/' component={Home} />
         <Route path='/lottery/login' render={() => store.credential.isLoggedIn ? <Redirect to='/lottery' /> : <LoginView credential={store.credential} />} />
         <Route exact path='/lottery' render={() => store.credential.isLoggedIn ? <ApplicationView user={store.credential.status} application={store.application} /> : <Redirect to='/lottery/login' />} />
-        <ErrorList list={store.error.errorList} />
+        <ErrorList list={store.error.errorList} onDelete={onDelete} />
       </Container>
     </div>
   )
