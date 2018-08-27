@@ -3,7 +3,7 @@ import { observer } from 'mobx-react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-  position: absolute;
+  position: fixed;
   bottom: 5%;
   width: 90vw;
 `
