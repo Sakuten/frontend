@@ -44,7 +44,8 @@ const Heading = withRouter(styled.header`
 `)
 
 const Outer = styled.div`
-  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
 `
 
 const App = ({store, event}) => {
