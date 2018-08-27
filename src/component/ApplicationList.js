@@ -11,7 +11,7 @@ const Tag = styled.span.attrs({
 const ApplicationList = ({list, onCancel}) => (
   <div>
     {
-      list ? list.map((c, i) =>
+      list.length !== 0 ? list.map((c, i) =>
         <div data-test='applicationlist-application' key={i}>
           <div className='card'>
             <header className='card-header'>
@@ -25,7 +25,7 @@ const ApplicationList = ({list, onCancel}) => (
             </footer>
           </div>
         </div>
-      ) : null
+      ) : 'まだどのクラスにも応募していません。'
     }
   </div>
 )
