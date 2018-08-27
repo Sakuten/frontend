@@ -1,9 +1,15 @@
 import React from 'react'
 import { observer } from 'mobx-react'
-// import styled from 'styled-components'
+import styled from 'styled-components'
+
+const Container = styled.div`
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+`
 
 const ErrorList = ({list, onDelete}) => (
-  <div data-test='errorlist'>
+  <Container data-test='errorlist'>
     {
       list.map((c, i) =>
         <article data-test='errorlist-error' className='message is-danger' key={i} >
@@ -17,7 +23,7 @@ const ErrorList = ({list, onDelete}) => (
         </article>
       )
     }
-  </div>
+  </Container>
 )
 
 export default observer(ErrorList)
