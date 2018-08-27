@@ -15,6 +15,9 @@ RUN cd /opt \
     && ln -s yarn-1.7.0/bin/yarn /bin/yarn
 
 WORKDIR /code
+
+ENV ADDITIONAL_CSS_BUILD_OPTS="--include-path /node_modules"
+
 ENTRYPOINT ["prehook", "node -v", "--", \
             "prehook", "yarn install --modules-folder /node_modules", "--", \
             "yarn", "run"]

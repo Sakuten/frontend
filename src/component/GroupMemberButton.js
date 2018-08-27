@@ -14,11 +14,14 @@ import QRReader from '../component/QRReader'
       <div>
         {
           this.isScanning
-            ? <QRReader
-              onError={this.onError}
-              onScan={this.onScan}
-            />
-            : <button data-test='groupmemberbutton-button' onClick={this.onClick} >{this.props.children}</button>
+            ? <div>
+              <QRReader
+                onError={this.onError}
+                onScan={this.onScan}
+              />
+              <button className='button' data-test='groupmemberbutton-cancel' onClick={this.onCancel} >キャンセル</button>
+            </div>
+            : <button className='button' data-test='groupmemberbutton-button' onClick={this.onClick} >{this.props.children}</button>
         }
       </div>
     )
@@ -48,6 +51,11 @@ import QRReader from '../component/QRReader'
   @action.bound
   onClick () {
     this.isScanning = true
+  }
+
+  @action.bound
+  onCancel () {
+    this.isScanning = false
   }
 }
 

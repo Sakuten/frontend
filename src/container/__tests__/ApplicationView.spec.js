@@ -32,12 +32,6 @@ describe('containers', () => {
       expect(wrapper).toMatchSnapshot()
     })
 
-    it('renders user id', async () => {
-      const { store, title } = setup({}, {}, {}, false)
-      await store.fetchStatus()
-      expect(title.text()).toBe('Logged in as example1')
-    })
-
     it('renders classroom options', async () => {
       const { event, wrapper } = setup({}, {}, {}, false)
       await event.application.onUpdate()

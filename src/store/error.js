@@ -6,4 +6,8 @@ export class ErrorObject {
   @action.bound addError (message) {
     this.errorList.push(message)
   }
+
+  @action.bound deleteError (idx) {
+    this.errorList.splice(idx, 1)
+  }
 }

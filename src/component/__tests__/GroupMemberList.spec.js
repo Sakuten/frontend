@@ -18,7 +18,8 @@ const setup = propOverrides => {
     props,
     wrapper,
     member: wrapper.find('[data-test="groupmemberlist-member"]'),
-    removeButton: wrapper.find('[data-test="groupmemberlist-remove"]')
+    removeButton: wrapper.find('[data-test="groupmemberlist-remove"]'),
+    notfound: wrapper.find('[data-test="groupmemberlist-notfound"]')
   }
 }
 
@@ -29,9 +30,9 @@ describe('components', () => {
       expect(wrapper).toMatchSnapshot()
     })
 
-    it('renders nothing without list', () => {
-      const { member } = setup({list: null})
-      expect(member.length).toBe(0)
+    it('renders a message when the list was empty', () => {
+      const { notfound } = setup({list: []})
+      expect(notfound.length).toBe(1)
     })
 
     it('renders two members', () => {
