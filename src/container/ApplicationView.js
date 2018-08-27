@@ -8,6 +8,8 @@ import GroupMemberButton from '../component/GroupMemberButton'
 import ClassroomSelect from '../component/ClassroomSelect'
 import LotterySelect from '../component/LotterySelect'
 
+import Triangle from '../util/triangle'
+
 import cloud from '../cloud.svg'
 
 const Button = styled.button`
@@ -21,6 +23,8 @@ const Button = styled.button`
   border: none;
   cursor: pointer;
   width: 100%;
+
+  position: relative;
 `
 
 const Selection = styled.div`
@@ -84,7 +88,10 @@ const ApplicationView = ({user, application, event}) => {
           <GroupMemberButton onAdd={onAddGroupMember} onError={onQRError}>他の人を追加</GroupMemberButton>
         </Indent>
       </Selection>
-      <Button onClick={onApply}>申し込む</Button>
+      <Button onClick={onApply}>
+        <Triangle />
+        申し込む
+      </Button>
       <Selection>
         <Title>応募一覧</Title>
         <Indent>

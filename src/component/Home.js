@@ -1,22 +1,12 @@
 import styled from 'styled-components'
 import React from 'react'
 import {Link} from 'react-router-dom'
-import FullWidth from '../util/fullwidth.js'
+import FullWidth from '../util/fullwidth'
+import Triangle from '../util/triangle'
+
 import cloud from '../cloud.svg'
 import week from '../week.svg'
 import sousaku from '../sousaku.svg'
-
-const Triangle = styled.div`
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 25px 0 25px 43.3px;
-  border-color: transparent transparent transparent #ffffff;
-
-  position: absolute;
-  bottom: 30%;
-  left: 5%;
-`
 
 const UpperHeading = styled.div`
   position: relative;
