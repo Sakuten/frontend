@@ -14,7 +14,7 @@ const ErrorList = ({list, onDelete}) => (
       list.map((c, i) =>
         <article data-test='errorlist-error' className='message is-danger' key={i} >
           <div className='message-header'>
-            <p>Danger</p>
+            <p>エラーが発生しました</p>
             <button className='delete' aria-label='delete' onClick={() => onDelete(i)} />
           </div>
           <div className='message-body'>

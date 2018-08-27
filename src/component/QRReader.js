@@ -13,7 +13,7 @@ import QrReader from 'react-qr-reader'
     return (
       <FullWidth>
         { this.isLoading && <p>Loading</p> }
-        { this.isLegacyMode && <button onClick={this.onImgSubmit}>Submit an Image</button> }
+        { this.isLegacyMode && <button onClick={this.onImgSubmit}>QRコードの画像を選択する</button> }
         <div style={{display: this.isLoading ? 'none' : 'block'}} >
           { window.navigator.userAgent.indexOf('jsdom') === -1 &&
             <QrReader
