@@ -23,22 +23,24 @@ const LoginView = ({credential, event}) => {
   let captcha
 
   return (
-    <Container data-test='loginview'>
-      {
-        credential.secretId
-          ? <ReCAPTCHA
-            size='normal'
-            sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
-            onChange={onChangeRecaptchaResponse}
-            onExpired={() => captcha.reset()}
-            ref={(el) => { captcha = el }}
-          />
-          : <QRReader
-            onError={onQRError}
-            onScan={onQRScan}
-          />
-      }
-    </Container>
+    <div data-test='loginview'>
+      <Container>
+        {
+          credential.secretId
+            ? <ReCAPTCHA
+              size='normal'
+              sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
+              onChange={onChangeRecaptchaResponse}
+              onExpired={() => captcha.reset()}
+              ref={(el) => { captcha = el }}
+            />
+            : <QRReader
+              onError={onQRError}
+              onScan={onQRScan}
+            />
+        }
+      </Container>
+    </div>
   )
 }
 

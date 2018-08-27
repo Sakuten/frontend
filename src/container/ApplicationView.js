@@ -69,36 +69,38 @@ const ApplicationView = ({user, application, event}) => {
   } = event.application
 
   return (
-    <Container data-test='applicationview'>
-      <Cloud>
-        <img src={cloud} />
-      </Cloud>
-      <Selection>
-        <Title>クラス選択</Title>
-        <Indent>
-          <ClassroomSelect list={application.classroomList} value={application.classroom} onChange={onChangeClassroom} />
-        </Indent>
-        <Title>時間選択</Title>
-        <Indent>
-          <LotterySelect classroom={application.classroom} list={application.lotteryList} value={application.lottery} onChange={onChangeLottery} />
-        </Indent>
-        <Title>一緒に応募する</Title>
-        <Indent>
-          <GroupMemberList list={application.groupMemberList} onRemove={onRemoveGroupMember} />
-          <GroupMemberButton onAdd={onAddGroupMember} onError={onQRError}>他の人を追加</GroupMemberButton>
-        </Indent>
-      </Selection>
-      <Button onClick={onApply}>
-        <Triangle />
-        申し込む
-      </Button>
-      <Selection>
-        <Title>応募一覧</Title>
-        <Indent>
-          <ApplicationList list={application.applicationList} onCancel={onCancel} />
-        </Indent>
-      </Selection>
-    </Container>
+    <div data-test='applicationview'>
+      <Container>
+        <Cloud>
+          <img src={cloud} />
+        </Cloud>
+        <Selection>
+          <Title>クラス選択</Title>
+          <Indent>
+            <ClassroomSelect list={application.classroomList} value={application.classroom} onChange={onChangeClassroom} />
+          </Indent>
+          <Title>時間選択</Title>
+          <Indent>
+            <LotterySelect classroom={application.classroom} list={application.lotteryList} value={application.lottery} onChange={onChangeLottery} />
+          </Indent>
+          <Title>一緒に応募する</Title>
+          <Indent>
+            <GroupMemberList list={application.groupMemberList} onRemove={onRemoveGroupMember} />
+            <GroupMemberButton onAdd={onAddGroupMember} onError={onQRError}>他の人を追加</GroupMemberButton>
+          </Indent>
+        </Selection>
+        <Button onClick={onApply}>
+          <Triangle />
+          申し込む
+        </Button>
+        <Selection>
+          <Title>応募一覧</Title>
+          <Indent>
+            <ApplicationList list={application.applicationList} onCancel={onCancel} />
+          </Indent>
+        </Selection>
+      </Container>
+    </div>
   )
 }
 
