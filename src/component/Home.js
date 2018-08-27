@@ -6,6 +6,18 @@ import cloud from '../cloud.svg'
 import week from '../week.svg'
 import sousaku from '../sousaku.svg'
 
+const Triangle = styled.div`
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 25px 0 25px 43.3px;
+  border-color: transparent transparent transparent #ffffff;
+
+  position: absolute;
+  bottom: 30%;
+  left: 5%;
+`
+
 const UpperHeading = styled.div`
   position: relative;
   height: ${props => props.theme.header_height}rem;
@@ -40,6 +52,8 @@ const SubTitle = styled.img`
 const Button = styled.div`
   margin: 0 32px;
   background-color: ${props => props.theme.button_color};
+
+  position: relative;
 `
 
 const ButtonText = styled.div`
@@ -47,6 +61,9 @@ const ButtonText = styled.div`
   text-align: center;
   color: #000;
   font-size: 1.5rem;
+
+  /* To bring text in front of triangle */
+  position: relative;
 `
 
 const Cloud = styled.div`
@@ -78,6 +95,7 @@ const Home = () => (
     <Container>
       <Button>
         <Link data-test='home-login' to='/lottery/login'>
+          <Triangle />
           <ButtonText>
             <h3>QRコード読み取り</h3>
             <p>(カメラが起動します)</p>
