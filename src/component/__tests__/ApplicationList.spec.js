@@ -39,7 +39,8 @@ const setup = propOverrides => {
     props,
     wrapper,
     application: wrapper.find('[data-test="applicationlist-application"]'),
-    cancelButton: wrapper.find('[data-test="applicationlist-cancel"]')
+    cancelButton: wrapper.find('[data-test="applicationlist-cancel"]'),
+    notfound: wrapper.find('[data-test="applicationlist-notfound"]')
   }
 }
 
@@ -50,9 +51,9 @@ describe('components', () => {
       expect(wrapper).toMatchSnapshot()
     })
 
-    it('renders nothing without list', () => {
-      const { application } = setup({list: null})
-      expect(application.length).toBe(0)
+    it('renders a message when the list was empty', () => {
+      const { notfound } = setup({list: []})
+      expect(notfound.length).toBe(1)
     })
 
     it('renders two applications', () => {

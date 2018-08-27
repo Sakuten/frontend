@@ -25,7 +25,7 @@ const ApplicationList = ({list, onCancel}) => (
             </footer>
           </div>
         </div>
-      ) : 'まだどのクラスにも応募していません。'
+      ) : <span data-test='applicationlist-notfound'>まだどのクラスにも応募していません。</span>
     }
   </div>
 )

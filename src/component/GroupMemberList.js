@@ -9,7 +9,7 @@ const GroupMemberList = ({list, onRemove}) => (
           {secretId}
           <button data-test='groupmemberlist-remove' onClick={() => onRemove(i)}>Remove</button>
         </div>
-      ) : '一緒に応募する人はいません。'
+      ) : <span data-test='groupmemberlist-notfound'>一緒に応募する人はいません。</span>
     }
   </div>
 )
