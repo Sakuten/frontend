@@ -26,7 +26,10 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
 
+  min-height: 100vh;
+
   overflow-x: scroll;
+  overflow-y: hidden;
 `
 
 const Heading = withRouter(styled.header`
@@ -40,6 +43,10 @@ const Heading = withRouter(styled.header`
   font-family: 'Roboto Condensed';
 `)
 
+const Outer = styled.div`
+  overflow: none;
+`
+
 const App = ({store, event}) => {
   const { location } = store.router
   const {
@@ -47,7 +54,7 @@ const App = ({store, event}) => {
   } = event.error
 
   return (
-    <div location={location}>
+    <Outer location={location}>
       <Heading>KOISHIKAWA</Heading>
       <Background />
       <Container>
@@ -56,7 +63,7 @@ const App = ({store, event}) => {
         <Route exact path='/lottery' render={() => store.credential.isLoggedIn ? <ApplicationView user={store.credential.status} application={store.application} /> : <Redirect to='/lottery/login' />} />
         <ErrorList list={store.error.errorList} onDelete={onDelete} />
       </Container>
-    </div>
+    </Outer>
   )
 }
 

@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const Container = styled.div`
   position: absolute;
   bottom: 5%;
-  right: 5%;
+  width: 90vw;
 `
 
 const ErrorList = ({list, onDelete}) => (
