@@ -68,7 +68,7 @@ describe('components', () => {
 
     it('calls onCancel with application id when cancel button is clicked', () => {
       const mock = jest.fn()
-      const { cancelButton } = setup({list: [{id: 1, lottery: {name: "5A.0"}}], onCancel: mock})
+      const { cancelButton } = setup({list: [{id: 1, lottery: {name: '5A.0'}}], onCancel: mock})
       cancelButton.at(0).simulate('click')
       expect(mock).toBeCalledWith(1)
     })
