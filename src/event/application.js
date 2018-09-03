@@ -1,4 +1,4 @@
-import {applyLottery, cancelLottery} from '../api/operation'
+import {getPublicId, applyLottery, cancelLottery} from '../api/operation'
 
 export class ApplicationObject {
   constructor (store) {
@@ -21,7 +21,7 @@ export class ApplicationObject {
     this.store.application.setLottery(lottery)
   }
 
-  onAddGroupMember = (secretId) => {
+  onAddGroupMember = async (secretId) => {
     if (this.store.credential.status.get('secret_id') === secretId) {
       this.store.error.addError('You can\'t add yourself as a member')
       return
@@ -30,7 +30,8 @@ export class ApplicationObject {
       this.store.error.addError('The user is already in the member list')
       return
     }
-    this.store.application.addGroupMember(secretId)
+    const publicId = await getPublicId(secretId, this.store.credential.token)
+    this.store.application.addGroupMember(secretId, publicId)
   }
 
   onRemoveGroupMember = (idx) => {
