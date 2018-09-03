@@ -2,6 +2,7 @@ import React from 'react'
 import { inject, observer } from 'mobx-react'
 import { Route, Redirect } from 'react-router'
 import { withRouter } from 'react-router-dom'
+import { loadReCaptcha } from 'react-recaptcha-v3'
 import LoginView from './LoginView'
 import ApplicationView from './ApplicationView'
 import ErrorList from '../component/ErrorList'
@@ -51,6 +52,10 @@ const Outer = styled.div`
 @inject('event')
 @observer
 class App extends React.Component {
+  componentDidMount () {
+    loadReCaptcha(process.env.REACT_APP_RECAPTCHA_KEY)
+  }
+
   render () {
     const { location } = this.props.store.router
     const {
