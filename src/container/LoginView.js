@@ -28,7 +28,6 @@ class LoginView extends React.Component {
         <Container>
           {
             this.props.credential.secretId
-
               ? <ReCaptcha
                 sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
                 action='login'
