@@ -1,6 +1,6 @@
 import React from 'react'
 import { inject, observer } from 'mobx-react'
-import ReCAPTCHA from 'react-google-recaptcha'
+import { ReCaptcha } from 'react-recaptcha-v3'
 import QRReader from '../component/QRReader'
 import styled from 'styled-components'
 
@@ -23,19 +23,16 @@ class LoginView extends React.Component {
       onChangeRecaptchaResponse
     } = this.props.event.credential
 
-    let captcha
-
     return (
       <div data-test='loginview'>
         <Container>
           {
             this.props.credential.secretId
-              ? <ReCAPTCHA
-                size='normal'
+
+              ? <ReCaptcha
                 sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
-                onChange={onChangeRecaptchaResponse}
-                onExpired={() => captcha.reset()}
-                ref={(el) => { captcha = el }}
+                action='action_name'
+                verifyCallback={onChangeRecaptchaResponse}
               />
               : <QRReader
                 onError={onQRError}
