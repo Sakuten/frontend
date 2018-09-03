@@ -31,7 +31,7 @@ class LoginView extends React.Component {
 
               ? <ReCaptcha
                 sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
-                action='action_name'
+                action='login'
                 verifyCallback={onChangeRecaptchaResponse}
               />
               : <QRReader
