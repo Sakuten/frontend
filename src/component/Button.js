@@ -25,13 +25,19 @@ const ButtonText = styled.div`
   position: relative;
 `
 
-export default ({to, children}) => (
-  <Button>
-    <Link to={to} data-test='button-link'>
+export default ({to, children}) => {
+  const content = (
+    <div>
       <Triangle />
       <ButtonText data-test='button-text'>
         {children}
       </ButtonText>
-    </Link>
-  </Button>
-)
+    </div>
+  )
+
+  return (
+    <Button>
+      {to ? <Link to={to} data-test='button-link'>{content}</Link> : content}
+    </Button>
+  )
+}
