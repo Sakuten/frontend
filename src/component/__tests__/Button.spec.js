@@ -11,7 +11,7 @@ const setup = (propOverrides, children) => {
     props,
     wrapper,
     text: wrapper.find('[data-test="button-text"]'),
-    link: wrapper.find('[data-test="button-link"]'),
+    link: wrapper.find('[data-test="button-link"]')
   }
 }
 
