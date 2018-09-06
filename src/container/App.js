@@ -7,6 +7,7 @@ import ApplicationView from './ApplicationView'
 import ErrorList from '../component/ErrorList'
 import Home from '../component/Home'
 import styled from 'styled-components'
+import logo from '../header.svg'
 import bg from '../sakuten.jpg'
 
 const Background = styled.div`
@@ -56,7 +57,7 @@ const App = ({store, event}) => {
 
   return (
     <Outer location={location}>
-      <Heading>KOISHIKAWA</Heading>
+      <Heading><img src={logo} /></Heading>
       <Background />
       <Container>
         <Route exact path='/' component={Home} />
