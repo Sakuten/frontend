@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import React from 'react'
 import {Link} from 'react-router-dom'
+import { darken } from 'polished'
+
 import FullWidth from '../util/fullwidth'
 import Triangle from '../util/triangle'
 
@@ -44,6 +46,9 @@ const Button = styled.div`
   background-color: ${props => props.theme.button_color};
 
   position: relative;
+
+  border-radius: 4px;
+  box-shadow:0px 6px 0px 0px ${props => darken(0.2, props.theme.button_color)};
 `
 
 const ButtonText = styled.div`
