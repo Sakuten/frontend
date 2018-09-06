@@ -7,22 +7,19 @@ import GroupMemberList from '../component/GroupMemberList'
 import GroupMemberButton from '../component/GroupMemberButton'
 import ClassroomSelect from '../component/ClassroomSelect'
 import LotterySelect from '../component/LotterySelect'
-
-import Triangle from '../util/triangle'
+import Button from '../component/Button'
 
 import cloud from '../cloud.svg'
 
-const Button = styled.button`
+const ButtonWrap = styled.button`
   padding: 20px;
   margin: 20px 0;
   text-align: center;
   line-height: 2rem;
   font-size: 2rem;
-  background-color: ${props => props.theme.button_color};
-  -webkit-appearance: none;
   border: none;
-  cursor: pointer;
   width: 100%;
+  background-color: transparent;
 
   position: relative;
 `
@@ -89,10 +86,11 @@ const ApplicationView = ({user, application, event}) => {
             <GroupMemberButton onAdd={onAddGroupMember} onError={onQRError}>他の人を追加</GroupMemberButton>
           </Indent>
         </Selection>
-        <Button onClick={onApply}>
-          <Triangle />
-          申し込む
-        </Button>
+        <ButtonWrap onClick={onApply}>
+          <Button>
+            申し込む
+          </Button>
+        </ButtonWrap>
         <Selection>
           <Title>応募一覧</Title>
           <Indent>
