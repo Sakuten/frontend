@@ -24,7 +24,7 @@ const ButtonWrap = styled.button`
 `
 
 const Selection = styled.div`
-  background-color: ${props => props.theme.button_color};
+  background-color: ${props => props.theme.header_color_lower};
   width: 80vw;
   height: 70%;
   padding: 30px;
