@@ -66,7 +66,7 @@ const Home = () => (
       <SubTitle src={sousaku} />
     </LowerHeading>
     <Container>
-      <Button to='/lottery/login'>
+      <Button to='/lottery/login' data-test="home-login">
         <h3>QRコード読み取り</h3>
         <p>(カメラが起動します)</p>
       </Button>
