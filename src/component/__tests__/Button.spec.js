@@ -24,7 +24,7 @@ describe('components', () => {
 
     it('renders a children', () => {
       const { text } = setup({}, <p>Hello, World</p>)
-      expect(text.text()).toBe('Hello, World')
+      expect(text.children().text()).toBe('Hello, World')
     })
 
     it('links to \'to\' prop', () => {
