@@ -6,8 +6,8 @@ import { darken } from 'polished'
 import Triangle from '../util/triangle'
 
 const Button = styled.div`
-  margin: 0 32px;
   background-color: ${props => props.theme.button_color};
+  width: 100%;
 
   position: relative;
 

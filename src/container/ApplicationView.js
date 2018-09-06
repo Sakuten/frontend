@@ -12,7 +12,6 @@ import Button from '../component/Button'
 import cloud from '../cloud.svg'
 
 const ButtonWrap = styled.button`
-  padding: 20px;
   margin: 20px 0;
   text-align: center;
   line-height: 2rem;
