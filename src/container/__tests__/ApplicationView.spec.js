@@ -38,12 +38,6 @@ describe('containers', () => {
       expect(wrapper.render().find('[data-test="classroom-option"]').length).toBe(8)
     })
 
-    it('renders lottery options', async () => {
-      const { event, wrapper } = setup({}, {}, {}, false)
-      await event.application.onUpdate()
-      expect(wrapper.render().find('[data-test="lottery-option"]').length).toBe(4)
-    })
-
     it('renders application list', async () => {
       const { store, wrapper } = setup({}, {}, {}, false)
       await store.fetchStatus()

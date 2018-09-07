@@ -6,7 +6,7 @@ import ApplicationList from '../component/ApplicationList'
 import GroupMemberList from '../component/GroupMemberList'
 import GroupMemberButton from '../component/GroupMemberButton'
 import ClassroomSelect from '../component/ClassroomSelect'
-import LotterySelect from '../component/LotterySelect'
+import LotteryView from '../component/LotteryView'
 import Button from '../component/Button'
 
 import cloud from '../cloud.svg'
@@ -75,9 +75,9 @@ const ApplicationView = ({user, application, event}) => {
           <Indent>
             <ClassroomSelect list={application.classroomList} value={application.classroom} onChange={onChangeClassroom} />
           </Indent>
-          <Title>時間選択</Title>
+          <Title>応募する公演</Title>
           <Indent>
-            <LotterySelect classroom={application.classroom} list={application.lotteryList} value={application.lottery} onChange={onChangeLottery} />
+            <LotteryView classroom={application.classroom} list={application.lotteryList} value={application.lottery} onChange={onChangeLottery} />
           </Indent>
           <Title>一緒に応募する</Title>
           <Indent>
