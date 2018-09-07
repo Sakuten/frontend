@@ -1,7 +1,7 @@
 import React from 'react'
 import { observer } from 'mobx-react'
 
-const LotterySelect = ({list, value, classroom, onChange}) => (
+const LotterySelect = ({list, classroom}) => (
   <div>
     {
       list.length !== 0 ? list

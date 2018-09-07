@@ -57,7 +57,6 @@ const ApplicationView = ({user, application, event}) => {
 
   const {
     onChangeClassroom,
-    onChangeLottery,
     onApply,
     onCancel,
     onAddGroupMember,
@@ -77,7 +76,7 @@ const ApplicationView = ({user, application, event}) => {
           </Indent>
           <Title>応募する公演</Title>
           <Indent>
-            <LotteryView classroom={application.classroom} list={application.lotteryList} value={application.lottery} onChange={onChangeLottery} />
+            <LotteryView classroom={application.classroom} list={application.lotteryList} />
           </Indent>
           <Title>一緒に応募する</Title>
           <Indent>

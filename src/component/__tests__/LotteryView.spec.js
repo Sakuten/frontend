@@ -20,7 +20,6 @@ const setup = propOverrides => {
         'name': '5B.0'
       }
     ],
-    value: 3,
     classroom: 1,
     onChange: jest.fn()
   }, propOverrides)
