@@ -12,7 +12,7 @@ const Button = styled.div`
   position: relative;
 
   border-radius: 4px;
-  box-shadow:0px 6px 0px 0px ${props => darken(0.2, props.theme.button_color)};
+  box-shadow:0px 6px 0px 0px ${props => props.theme.button_color && darken(0.2, props.theme.button_color)};
 `
 
 const ButtonText = styled.div`
