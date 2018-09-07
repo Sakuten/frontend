@@ -1,7 +1,7 @@
 import React from 'react'
 import { observer } from 'mobx-react'
 
-const LotterySelect = ({list, classroom, onChange}) => (
+const LotteryView = ({list, classroom, onChange}) => (
   <div>
     {
       list.length !== 0 ? list
@@ -14,4 +14,4 @@ const LotterySelect = ({list, classroom, onChange}) => (
   </div>
 )
 
-export default observer(LotterySelect)
+export default observer(LotteryView)

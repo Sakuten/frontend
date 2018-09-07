@@ -3,7 +3,7 @@
 exports[`components LotteryView render 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <LotterySelect
+  Symbol(enzyme.__unrendered__): <LotteryView
     classroom={1}
     list={
       Array [
@@ -23,7 +23,21 @@ ShallowWrapper {
         },
       ]
     }
-    onChange={[MockFunction]}
+    onChange={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            4,
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
