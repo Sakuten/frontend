@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import LotterySelect from '../LotterySelect'
+import LotteryView from '../LotteryView'
 
 const setup = propOverrides => {
   const props = Object.assign({
@@ -39,7 +39,7 @@ const setup = propOverrides => {
     onChange: jest.fn()
   }, propOverrides)
 
-  const wrapper = shallow(<LotterySelect {...props} />)
+  const wrapper = shallow(<LotteryView {...props} />)
 
   return {
     props,
@@ -50,7 +50,7 @@ const setup = propOverrides => {
 }
 
 describe('components', () => {
-  describe('LotterySelect', () => {
+  describe('LotteryView', () => {
     it('render', () => {
       const { wrapper } = setup()
       expect(wrapper).toMatchSnapshot()
