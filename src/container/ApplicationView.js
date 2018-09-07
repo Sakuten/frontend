@@ -75,7 +75,7 @@ const ApplicationView = ({user, application, event}) => {
           <Indent>
             <ClassroomSelect list={application.classroomList} value={application.classroom} onChange={onChangeClassroom} />
           </Indent>
-          <Title>時間選択</Title>
+          <Title>応募する公演</Title>
           <Indent>
             <LotterySelect classroom={application.classroom} list={application.lotteryList} value={application.lottery} onChange={onChangeLottery} />
           </Indent>
