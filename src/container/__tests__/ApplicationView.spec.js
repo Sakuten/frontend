@@ -41,7 +41,7 @@ describe('containers', () => {
     it('renders lottery options', async () => {
       const { event, wrapper } = setup({}, {}, {}, false)
       await event.application.onUpdate()
-      expect(wrapper.render().find('[data-test="lottery-option"]').length).toBe(4)
+      expect(wrapper.render().find('[data-test="lottery-option"]').length).toBe(1)
     })
 
     it('renders application list', async () => {
