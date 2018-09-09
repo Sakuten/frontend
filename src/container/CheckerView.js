@@ -1,7 +1,8 @@
 import React from 'react'
-import { inject, observer } from 'mobx-react'
+import { action, observable, inject, observer } from 'mobx-react'
 import QRReader from '../component/QRReader'
 import ClassroomSelect from '../component/ClassroomSelect'
+import {extractId} from '../util/extractId'
 import styled from 'styled-components'
 
 import {checkSecretIdStatus} from '../api/operation'
@@ -44,7 +45,7 @@ class CheckerView extends React.Component {
   }
 
   @action.bound
-  onQRScan (scanUri) {
+  async onQRScan (scanUri) {
     if (scanUri) {
       const secretId = extractId(scanUri)
       if (!secretId) {
