@@ -18,23 +18,29 @@ const Container = styled.div`
 @inject('event')
 @observer
 class CheckerView extends React.Component {
+  @observable classroom = 0
+
   render () {
     const {
       onQRError
     } = this.props.event.credential
 
     return (
-      <div data-test='loginview'>
+      <div data-test='checkerview'>
+        <ClassroomSelect list={this.props.store.application.classroomList} value={this.classroom} onChange={this.onChangeClassroom} />
         <Container>
-          {
-            <QRReader
-              onError={onQRError}
-              onScan={this.onQRScan}
-            />
-          }
+          <QRReader
+            onError={onQRError}
+            onScan={this.onQRScan}
+          />
         </Container>
       </div>
     )
+  }
+
+  @action.bound
+  onChangeClassroom (classroom) {
+    this.classroom = classroom
   }
 
   @action.bound
