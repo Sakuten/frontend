@@ -40,10 +40,16 @@ export class ApplicationObject {
   onApply = async () => {
     await applyLottery(this.store.application.lottery, this.store.application.groupMemberList, this.store.credential.token)
     await this.store.fetchStatus()
+    if (this.store.credential.isUsedByStaff) {
+      this.store.credential.setToken('')
+    }
   }
 
   onCancel = async (id) => {
     await cancelLottery(id, this.store.credential.token)
     await this.store.fetchStatus()
+    if (this.store.credential.isUsedByStaff) {
+      this.store.credential.setToken('')
+    }
   }
 }
