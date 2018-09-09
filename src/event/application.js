@@ -36,7 +36,6 @@ export class ApplicationObject {
     }
     const resp = await getPublicId(secretId, this.store.credential.token)
     this.store.application.addGroupMember(secretId, resp.data['public_id'])
-    this.store.application.addGroupMember(secretId)
   }
 
   onRemoveGroupMember = (idx) => {
