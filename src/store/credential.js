@@ -34,7 +34,7 @@ export class CredentialObject {
     this.token = token
   }
 
-  @action.bound logout() {
+  @action.bound logout () {
     this.setToken('')
     this.setSecretId('')
     this.setRecaptchaResponse('')
