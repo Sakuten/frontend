@@ -2,11 +2,13 @@ import React from 'react'
 import { inject, observer } from 'mobx-react'
 import { Route, Redirect } from 'react-router'
 import { withRouter } from 'react-router-dom'
+import { loadReCaptcha } from 'react-recaptcha-v3'
 import LoginView from './LoginView'
 import ApplicationView from './ApplicationView'
 import ErrorList from '../component/ErrorList'
 import Home from '../component/Home'
 import styled from 'styled-components'
+import logo from '../header.svg'
 import bg from '../sakuten.jpg'
 
 const Background = styled.div`
@@ -48,24 +50,32 @@ const Outer = styled.div`
   position: relative;
 `
 
-const App = ({store, event}) => {
-  const { location } = store.router
-  const {
-    onDelete
-  } = event.error
+@inject('event')
+@observer
+class App extends React.Component {
+  componentDidMount () {
+    loadReCaptcha(process.env.REACT_APP_RECAPTCHA_KEY)
+  }
 
-  return (
-    <Outer location={location}>
-      <Heading>KOISHIKAWA</Heading>
-      <Background />
-      <Container>
-        <Route exact path='/' component={Home} />
-        <Route path='/lottery/login' render={() => store.credential.isLoggedIn ? <Redirect to='/lottery' /> : <LoginView credential={store.credential} />} />
-        <Route exact path='/lottery' render={() => store.credential.isLoggedIn ? <ApplicationView user={store.credential.status} application={store.application} /> : <Redirect to='/lottery/login' />} />
-        <ErrorList list={store.error.errorList} onDelete={onDelete} />
-      </Container>
-    </Outer>
-  )
+  render () {
+    const { location } = this.props.store.router
+    const {
+      onDelete
+    } = this.props.event.error
+
+    return (
+      <Outer location={location}>
+        <Heading><img src={logo} /></Heading>
+        <Background />
+        <Container>
+          <Route exact path='/' component={Home} />
+          <Route path='/lottery/login' render={() => this.props.store.credential.isLoggedIn ? <Redirect to='/lottery' /> : <LoginView credential={this.props.store.credential} />} />
+          <Route exact path='/lottery' render={() => this.props.store.credential.isLoggedIn ? <ApplicationView user={this.props.store.credential.status} application={this.props.store.application} /> : <Redirect to='/lottery/login' />} />
+          <ErrorList list={this.props.store.error.errorList} onDelete={onDelete} />
+        </Container>
+      </Outer>
+    )
+  }
 }
 
-export default inject('event')(observer(App))
+export default App

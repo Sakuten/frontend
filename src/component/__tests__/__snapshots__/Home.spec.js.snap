@@ -33,23 +33,17 @@ ShallowWrapper {
           />
         </styled.div>,
         <styled.div>
-          <styled.div>
-            <Link
-              data-test="home-login"
-              replace={false}
-              to="/lottery/login"
-            >
-              <styled.div />
-              <styled.div>
-                <h3>
-                  QRコード読み取り
-                </h3>
-                <p>
-                  (カメラが起動します)
-                </p>
-              </styled.div>
-            </Link>
-          </styled.div>
+          <Unknown
+            data-test="home-login"
+            to="/lottery/login"
+          >
+            <h3>
+              QRコード読み取り
+            </h3>
+            <p>
+              (カメラが起動します)
+            </p>
+          </Unknown>
         </styled.div>,
       ],
     },
@@ -138,122 +132,60 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": <styled.div>
-            <Link
-              data-test="home-login"
-              replace={false}
-              to="/lottery/login"
-            >
-              <styled.div />
-              <styled.div>
-                <h3>
-                  QRコード読み取り
-                </h3>
-                <p>
-                  (カメラが起動します)
-                </p>
-              </styled.div>
-            </Link>
-          </styled.div>,
+          "children": <Unknown
+            data-test="home-login"
+            to="/lottery/login"
+          >
+            <h3>
+              QRコード読み取り
+            </h3>
+            <p>
+              (カメラが起動します)
+            </p>
+          </Unknown>,
         },
         "ref": null,
         "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
-            "children": <Link
-              data-test="home-login"
-              replace={false}
-              to="/lottery/login"
-            >
-              <styled.div />
-              <styled.div>
-                <h3>
-                  QRコード読み取り
-                </h3>
-                <p>
-                  (カメラが起動します)
-                </p>
-              </styled.div>
-            </Link>,
+            "children": Array [
+              <h3>
+                QRコード読み取り
+              </h3>,
+              <p>
+                (カメラが起動します)
+              </p>,
+            ],
+            "data-test": "home-login",
+            "to": "/lottery/login",
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": Array [
-                <styled.div />,
-                <styled.div>
-                  <h3>
-                    QRコード読み取り
-                  </h3>
-                  <p>
-                    (カメラが起動します)
-                  </p>
-                </styled.div>,
-              ],
-              "data-test": "home-login",
-              "replace": false,
-              "to": "/lottery/login",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "QRコード読み取り",
+              },
+              "ref": null,
+              "rendered": "QRコード読み取り",
+              "type": "h3",
             },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {},
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "(カメラが起動します)",
               },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "children": Array [
-                    <h3>
-                      QRコード読み取り
-                    </h3>,
-                    <p>
-                      (カメラが起動します)
-                    </p>,
-                  ],
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "QRコード読み取り",
-                    },
-                    "ref": null,
-                    "rendered": "QRコード読み取り",
-                    "type": "h3",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "(カメラが起動します)",
-                    },
-                    "ref": null,
-                    "rendered": "(カメラが起動します)",
-                    "type": "p",
-                  },
-                ],
-                "type": [Function],
-              },
-            ],
-            "type": [Function],
-          },
+              "ref": null,
+              "rendered": "(カメラが起動します)",
+              "type": "p",
+            },
+          ],
           "type": [Function],
         },
         "type": [Function],
@@ -284,23 +216,17 @@ ShallowWrapper {
             />
           </styled.div>,
           <styled.div>
-            <styled.div>
-              <Link
-                data-test="home-login"
-                replace={false}
-                to="/lottery/login"
-              >
-                <styled.div />
-                <styled.div>
-                  <h3>
-                    QRコード読み取り
-                  </h3>
-                  <p>
-                    (カメラが起動します)
-                  </p>
-                </styled.div>
-              </Link>
-            </styled.div>
+            <Unknown
+              data-test="home-login"
+              to="/lottery/login"
+            >
+              <h3>
+                QRコード読み取り
+              </h3>
+              <p>
+                (カメラが起動します)
+              </p>
+            </Unknown>
           </styled.div>,
         ],
       },
@@ -389,122 +315,60 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": <styled.div>
-              <Link
-                data-test="home-login"
-                replace={false}
-                to="/lottery/login"
-              >
-                <styled.div />
-                <styled.div>
-                  <h3>
-                    QRコード読み取り
-                  </h3>
-                  <p>
-                    (カメラが起動します)
-                  </p>
-                </styled.div>
-              </Link>
-            </styled.div>,
+            "children": <Unknown
+              data-test="home-login"
+              to="/lottery/login"
+            >
+              <h3>
+                QRコード読み取り
+              </h3>
+              <p>
+                (カメラが起動します)
+              </p>
+            </Unknown>,
           },
           "ref": null,
           "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "class",
+            "nodeType": "function",
             "props": Object {
-              "children": <Link
-                data-test="home-login"
-                replace={false}
-                to="/lottery/login"
-              >
-                <styled.div />
-                <styled.div>
-                  <h3>
-                    QRコード読み取り
-                  </h3>
-                  <p>
-                    (カメラが起動します)
-                  </p>
-                </styled.div>
-              </Link>,
+              "children": Array [
+                <h3>
+                  QRコード読み取り
+                </h3>,
+                <p>
+                  (カメラが起動します)
+                </p>,
+              ],
+              "data-test": "home-login",
+              "to": "/lottery/login",
             },
             "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": Array [
-                  <styled.div />,
-                  <styled.div>
-                    <h3>
-                      QRコード読み取り
-                    </h3>
-                    <p>
-                      (カメラが起動します)
-                    </p>
-                  </styled.div>,
-                ],
-                "data-test": "home-login",
-                "replace": false,
-                "to": "/lottery/login",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "QRコード読み取り",
+                },
+                "ref": null,
+                "rendered": "QRコード読み取り",
+                "type": "h3",
               },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {},
-                  "ref": null,
-                  "rendered": null,
-                  "type": [Function],
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "(カメラが起動します)",
                 },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "children": Array [
-                      <h3>
-                        QRコード読み取り
-                      </h3>,
-                      <p>
-                        (カメラが起動します)
-                      </p>,
-                    ],
-                  },
-                  "ref": null,
-                  "rendered": Array [
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "QRコード読み取り",
-                      },
-                      "ref": null,
-                      "rendered": "QRコード読み取り",
-                      "type": "h3",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "(カメラが起動します)",
-                      },
-                      "ref": null,
-                      "rendered": "(カメラが起動します)",
-                      "type": "p",
-                    },
-                  ],
-                  "type": [Function],
-                },
-              ],
-              "type": [Function],
-            },
+                "ref": null,
+                "rendered": "(カメラが起動します)",
+                "type": "p",
+              },
+            ],
             "type": [Function],
           },
           "type": [Function],

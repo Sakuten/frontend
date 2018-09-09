@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import React from 'react'
-import {Link} from 'react-router-dom'
+
 import FullWidth from '../util/fullwidth'
-import Triangle from '../util/triangle'
+import Button from './Button'
 
 import cloud from '../cloud.svg'
 import week from '../week.svg'
@@ -39,23 +39,6 @@ const SubTitle = styled.img`
   height: ${props => props.theme.header_height - 2.5}rem;
 `
 
-const Button = styled.div`
-  margin: 0 32px;
-  background-color: ${props => props.theme.button_color};
-
-  position: relative;
-`
-
-const ButtonText = styled.div`
-  padding: 30px;
-  text-align: center;
-  color: #000;
-  font-size: 1.5rem;
-
-  /* To bring text in front of triangle */
-  position: relative;
-`
-
 const Cloud = styled.div`
   position: absolute;
   width: 40vw;
@@ -83,14 +66,9 @@ const Home = () => (
       <SubTitle src={sousaku} />
     </LowerHeading>
     <Container>
-      <Button>
-        <Link data-test='home-login' to='/lottery/login'>
-          <Triangle />
-          <ButtonText>
-            <h3>QRコード読み取り</h3>
-            <p>(カメラが起動します)</p>
-          </ButtonText>
-        </Link>
+      <Button to='/lottery/login' data-test='home-login'>
+        <h3>QRコード読み取り</h3>
+        <p>(カメラが起動します)</p>
       </Button>
     </Container>
   </FullWidth>

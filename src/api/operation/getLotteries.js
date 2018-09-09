@@ -1,3 +1,3 @@
 import {fetchApi} from '../request'
 
-export const getLotteries = () => fetchApi(`lotteries`, {})
+export const getLotteries = () => fetchApi(`lotteries/available`, {})
