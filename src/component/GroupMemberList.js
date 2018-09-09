@@ -6,6 +6,7 @@ const PublicIDWrap = styled.span`
   width: 3rem;
   font-size: 1rem;
   margin: 0 5px;
+  flex-grow: 3;
 `
 
 const Container = styled.div`
