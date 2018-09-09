@@ -24,9 +24,10 @@ describe('events', () => {
       expect(event.store.application.lottery).toBe(2)
     })
 
-    it('adds a group member', () => {
-      event.onAddGroupMember('secret_id')
+    it('adds a group member', async () => {
+      await event.onAddGroupMember('secret_id')
       expect(event.store.application.groupMemberList).toEqual(['secret_id'])
+      expect(event.store.application.groupMemberPublicIdList).toEqual(['ABCD'])
     })
 
     it('removes a group member', () => {
