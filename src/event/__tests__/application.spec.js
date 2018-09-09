@@ -46,5 +46,17 @@ describe('events', () => {
       const applications = event.store.credential.status.get('application_history')
       expect(applications).toBeDefined()
     })
+
+    it('logouts on apply when used by staff', async () => {
+      event.store.credential.isUsedByStaff = true
+      await event.onApply()
+      expect(event.store.credential.isLoggedIn).toBe(false)
+    })
+
+    it('logouts on cancel when used by staff', async () => {
+      event.store.credential.isUsedByStaff = true
+      await event.onCancel()
+      expect(event.store.credential.isLoggedIn).toBe(false)
+    })
   })
 })
