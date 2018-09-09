@@ -4,6 +4,7 @@ import { observer } from 'mobx-react'
 
 const PublicIDWrap = styled.span`
   width: 3rem;
+  display: inline-block;
 `
 
 const GroupMemberList = ({list, onRemove}) => (
