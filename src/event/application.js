@@ -30,8 +30,8 @@ export class ApplicationObject {
       this.store.error.addError('The user is already in the member list')
       return
     }
-    const publicId = await getPublicId(secretId, this.store.credential.token)
-    this.store.application.addGroupMember(secretId, publicId)
+    const resp = await getPublicId(secretId, this.store.credential.token)
+    this.store.application.addGroupMember(secretId, resp.data['public_id'])
   }
 
   onRemoveGroupMember = (idx) => {
