@@ -5,7 +5,6 @@ export class ApplicationObject {
   @observable classroom = 1
   @observable lottery = 1
   @observable groupMemberList = []
-  @observable groupMemberPublicIdList = []
 
   @observable classroomList = []
   @observable lotteryList = []
@@ -21,18 +20,16 @@ export class ApplicationObject {
   }
 
   @action.bound addGroupMember (secretId, publicId) {
-    this.groupMemberList.push(secretId)
-    this.groupMemberPublicIdList.push(publicId)
+    this.groupMemberList.push([secretId, publicId])
   }
 
-  @action.bound removeGroupMemberById (secretId) {
-    const idx = this.groupMemberList.indexOf(secretId)
+  @action.bound removeGroupMemberById (secretId, publicId) {
+    const idx = this.groupMemberList.indexOf([secretId, publicId])
     this.removeGroupMemberByIdx(idx)
   }
 
   @action.bound removeGroupMemberByIdx (idx) {
     this.groupMemberList.splice(idx, 1)
-    this.groupMemberPublicIdList.splice(idx, 1)
   }
 
   @action.bound setClassroomList (classroomList) {
