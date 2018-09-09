@@ -68,7 +68,7 @@ class App extends React.Component {
         <Heading><img src={logo} /></Heading>
         <Background />
         <Container>
-          <Route exact path='/' component={Home} />
+          <Route exact path='/' render={() => <Home isUsedByStaff={this.props.store.credential.isUsedByStaff} />} />
           <Route path='/lottery/login' render={() => this.props.store.credential.isLoggedIn ? <Redirect to='/lottery' /> : <LoginView credential={this.props.store.credential} />} />
           <Route exact path='/lottery' render={() => this.props.store.credential.isLoggedIn ? <ApplicationView credential={this.props.store.credential} application={this.props.store.application} /> : <Redirect to='/lottery/login' />} />
           <ErrorList list={this.props.store.error.errorList} onDelete={onDelete} />
