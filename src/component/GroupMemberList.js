@@ -7,7 +7,7 @@ const GroupMemberList = ({list, onRemove}) => (
       list.length !== 0 ? list.map((publicId, i) =>
         <div data-test='groupmemberlist-member' key={i}>
           {publicId}
-          <button data-test='groupmemberlist-remove' onClick={() => onRemove(i)}>Remove</button>
+          <button data-test='groupmemberlist-remove' onClick={() => onRemove(i)}>キャンセル</button>
         </div>
       ) : <span data-test='groupmemberlist-notfound'>一緒に応募する人はいません。</span>
     }
