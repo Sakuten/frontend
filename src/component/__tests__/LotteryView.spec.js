@@ -49,7 +49,7 @@ describe('components', () => {
 
     it('renders with human-readable messages', () => {
       const { lottery } = setup()
-      expect(lottery.at(0).text()).toBe('第1公演')
+      expect(lottery.at(0).text()).toBe('第2公演')
     })
 
     it('renders only in same classroom', () => {
