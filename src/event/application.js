@@ -39,7 +39,7 @@ export class ApplicationObject {
   }
 
   onApply = async () => {
-    await applyLottery(this.store.application.lottery, this.store.application.groupMemberList, this.store.credential.token)
+    await applyLottery(this.store.application.lottery, this.store.application.groupMemberList.map(pair => pair[0]), this.store.credential.token)
     await this.store.fetchStatus()
   }
 
