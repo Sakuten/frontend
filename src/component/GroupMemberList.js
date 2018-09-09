@@ -4,11 +4,12 @@ import { observer } from 'mobx-react'
 
 const PublicIDWrap = styled.span`
   width: 3rem;
-  display: inline-block;
 `
 
 const Container = styled.div`
   margin: 5px;
+  display: flex;
+  align-items: center;
 `
 
 const GroupMemberList = ({list, onRemove}) => (
