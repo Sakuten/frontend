@@ -21,7 +21,7 @@ const GroupMemberList = ({list, onRemove}) => (
       list.length !== 0 ? list.map((publicId, i) =>
         <Container data-test='groupmemberlist-member' key={i}>
           <PublicIDWrap>
-            {publicId}
+            確認用ID: {publicId}
           </PublicIDWrap>
           <button className='button is-danger' data-test='groupmemberlist-remove' onClick={() => onRemove(i)}>削除</button>
         </Container>
