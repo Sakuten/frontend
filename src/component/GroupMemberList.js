@@ -4,6 +4,7 @@ import { observer } from 'mobx-react'
 
 const PublicIDWrap = styled.span`
   width: 3rem;
+  font-size: 1rem;
 `
 
 const Container = styled.div`
