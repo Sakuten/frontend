@@ -19,6 +19,17 @@ describe('stores', () => {
       expect(localStorage.getItem('Token')).toBe('token')
     })
 
+    it('can logout', () => {
+      store.setSecretId('secretId')
+      store.setRecaptchaResponse('rr')
+      store.setToken('token')
+      store.logout()
+
+      expect(store.secretId).toBe('')
+      expect(store.recaptchaResponse).toBe('')
+      expect(store.token).toBe('')
+    })
+
     it('checks if logged in when token is set', () => {
       store.setToken('token')
       expect(store.isLoggedIn).toBe(true)
