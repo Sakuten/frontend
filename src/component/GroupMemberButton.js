@@ -21,7 +21,7 @@ import QRReader from '../component/QRReader'
               />
               <button className='button' data-test='groupmemberbutton-cancel' onClick={this.onCancel} >キャンセル</button>
             </div>
-            : <button className='button' data-test='groupmemberbutton-button' onClick={this.onClick} >{this.props.children}</button>
+            : <button className='button' data-test='groupmemberbutton-button' onClick={this.onClick} disabled={this.props.disabled}>{this.props.children}</button>
         }
       </div>
     )
