@@ -21,6 +21,10 @@ export class CredentialObject {
     return this.secretId.length !== 0 && this.recaptchaResponse.length !== 0
   }
 
+  @computed get isLoggedInAsChecker () {
+    return this.status.get('kind') === 'checker'
+  }
+
   @action.bound setSecretId (secretId) {
     this.secretId = secretId
   }
