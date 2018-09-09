@@ -29,6 +29,16 @@ describe('events', () => {
       expect(event.store.application.groupMemberList).toEqual([['secret_id', 'ABCD']])
     })
 
+    it('can\'t add group member when there is already 3', () => {
+      event.onAddGroupMember('secret_id1')
+      event.onAddGroupMember('secret_id2')
+      event.onAddGroupMember('secret_id3')
+
+      event.onAddGroupMember('secret_id4')
+      expect(event.store.error.errorList).toHaveLength(1)
+      expect(event.store.application.groupMemberList).toHaveLength(3)
+    })
+
     it('removes a group member', () => {
       event.onAddGroupMember('secret_id', 'public_id')
       event.onRemoveGroupMember(0)
@@ -45,6 +55,18 @@ describe('events', () => {
       await event.onCancel()
       const applications = event.store.credential.status.get('application_history')
       expect(applications).toBeDefined()
+    })
+
+    it('logouts on apply when used by staff', async () => {
+      event.store.credential.isUsedByStaff = true
+      await event.onApply()
+      expect(event.store.credential.isLoggedIn).toBe(false)
+    })
+
+    it('logouts on cancel when used by staff', async () => {
+      event.store.credential.isUsedByStaff = true
+      await event.onCancel()
+      expect(event.store.credential.isLoggedIn).toBe(false)
     })
   })
 })

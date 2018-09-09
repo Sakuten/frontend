@@ -54,7 +54,7 @@ const Container = styled.div`
   height: calc(100vh - ${props => props.theme.header_height * 2}rem);
 `
 
-const Home = () => (
+const Home = ({isUsedByStaff}) => (
   <FullWidth>
     <UpperHeading>
       <Title src={week} />
@@ -66,7 +66,7 @@ const Home = () => (
       <SubTitle src={sousaku} />
     </LowerHeading>
     <Container>
-      <Button to='/lottery/login' data-test='home-login'>
+      <Button to={{pathname: '/lottery/login', search: isUsedByStaff && '?staff'}} data-test='home-login'>
         <h3>QRコード読み取り</h3>
         <p>(カメラが起動します)</p>
       </Button>

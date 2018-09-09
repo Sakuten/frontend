@@ -30,8 +30,13 @@ export class ApplicationObject {
       this.store.error.addError('The user is already in the member list')
       return
     }
+    if (!this.store.application.isAbleToAddGroupMember) {
+      this.store.error.addError('Too many group members')
+      return
+    }
     const resp = await getPublicId(secretId, this.store.credential.token)
     this.store.application.addGroupMember(secretId, resp.data['public_id'])
+    this.store.application.addGroupMember(secretId)
   }
 
   onRemoveGroupMember = (idx) => {
@@ -41,10 +46,16 @@ export class ApplicationObject {
   onApply = async () => {
     await applyLottery(this.store.application.lottery, this.store.application.groupMemberList.map(pair => pair[0]), this.store.credential.token)
     await this.store.fetchStatus()
+    if (this.store.credential.isUsedByStaff) {
+      this.store.credential.logout()
+    }
   }
 
   onCancel = async (id) => {
     await cancelLottery(id, this.store.credential.token)
     await this.store.fetchStatus()
+    if (this.store.credential.isUsedByStaff) {
+      this.store.credential.logout()
+    }
   }
 }

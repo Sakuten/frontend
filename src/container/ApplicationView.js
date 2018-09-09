@@ -50,8 +50,9 @@ const Cloud = styled.div`
   z-index: 20;
 `
 
-const ApplicationView = ({user, application, event}) => {
+const ApplicationView = ({credential, application, event}) => {
   const {
+    onLogout,
     onQRError
   } = event.credential
 
@@ -82,7 +83,7 @@ const ApplicationView = ({user, application, event}) => {
           <Title>一緒に応募する</Title>
           <Indent>
             <GroupMemberList list={application.groupMemberList.map(pair => pair[1])} onRemove={onRemoveGroupMember} />
-            <GroupMemberButton onAdd={onAddGroupMember} onError={onQRError}>他の人を追加</GroupMemberButton>
+            <GroupMemberButton onAdd={onAddGroupMember} onError={onQRError} disabled={!application.isAbleToAddGroupMember}>他の人を追加</GroupMemberButton>
           </Indent>
         </Selection>
         <ButtonWrap onClick={onApply}>
@@ -90,6 +91,14 @@ const ApplicationView = ({user, application, event}) => {
             申し込む
           </Button>
         </ButtonWrap>
+        {
+          credential.isUsedByStaff &&
+          <ButtonWrap onClick={onLogout}>
+            <Button>
+              ログアウト
+            </Button>
+          </ButtonWrap>
+        }
         <Selection>
           <Title>応募一覧</Title>
           <Indent>

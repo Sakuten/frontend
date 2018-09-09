@@ -17,6 +17,7 @@ ShallowWrapper {
           "store": Store {
             "application": ApplicationObject {},
             "credential": CredentialObject {
+              "isUsedByStaff": false,
               "recaptchaResponse": "",
               "secretId": "",
               "status": Object {},
@@ -40,6 +41,7 @@ ShallowWrapper {
                   "recaptchaResponse" => "",
                   "token" => "",
                   "status" => Map {},
+                  "isUsedByStaff" => false,
                   "isLoggedIn" => false,
                   "isAbleToAuthenicate" => false,
                 },
@@ -66,6 +68,7 @@ ShallowWrapper {
           "store": Store {
             "application": ApplicationObject {},
             "credential": CredentialObject {
+              "isUsedByStaff": false,
               "recaptchaResponse": "",
               "secretId": "",
               "status": Object {},
@@ -89,6 +92,7 @@ ShallowWrapper {
                   "recaptchaResponse" => "",
                   "token" => "",
                   "status" => Map {},
+                  "isUsedByStaff" => false,
                   "isLoggedIn" => false,
                   "isAbleToAuthenicate" => false,
                 },
@@ -112,6 +116,7 @@ ShallowWrapper {
           "store": Store {
             "application": ApplicationObject {},
             "credential": CredentialObject {
+              "isUsedByStaff": false,
               "recaptchaResponse": "",
               "secretId": "",
               "status": Object {},
@@ -135,6 +140,7 @@ ShallowWrapper {
                   "recaptchaResponse" => "",
                   "token" => "",
                   "status" => Map {},
+                  "isUsedByStaff" => false,
                   "isLoggedIn" => false,
                   "isAbleToAuthenicate" => false,
                 },
@@ -155,6 +161,7 @@ ShallowWrapper {
         "store": Store {
           "application": ApplicationObject {},
           "credential": CredentialObject {
+            "isUsedByStaff": false,
             "recaptchaResponse": "",
             "secretId": "",
             "status": Object {},
@@ -178,6 +185,7 @@ ShallowWrapper {
                 "recaptchaResponse" => "",
                 "token" => "",
                 "status" => Map {},
+                "isUsedByStaff" => false,
                 "isLoggedIn" => false,
                 "isAbleToAuthenicate" => false,
               },
@@ -200,6 +208,7 @@ ShallowWrapper {
     <inject-LoginView-with-event
       credential={
         CredentialObject {
+          "isUsedByStaff": false,
           "recaptchaResponse": "",
           "secretId": "",
           "status": Object {},
@@ -223,6 +232,7 @@ ShallowWrapper {
               "recaptchaResponse" => "",
               "token" => "",
               "status" => Map {},
+              "isUsedByStaff" => false,
               "isLoggedIn" => false,
               "isAbleToAuthenicate" => false,
             },
@@ -244,6 +254,7 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "credential": CredentialObject {
+        "isUsedByStaff": false,
         "recaptchaResponse": "",
         "secretId": "",
         "status": Object {},
@@ -267,6 +278,7 @@ ShallowWrapper {
             "recaptchaResponse" => "",
             "token" => "",
             "status" => Map {},
+            "isUsedByStaff" => false,
             "isLoggedIn" => false,
             "isAbleToAuthenicate" => false,
           },
@@ -284,6 +296,7 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "credential": CredentialObject {
+          "isUsedByStaff": false,
           "recaptchaResponse": "",
           "secretId": "",
           "status": Object {},
@@ -307,6 +320,7 @@ ShallowWrapper {
               "recaptchaResponse" => "",
               "token" => "",
               "status" => Map {},
+              "isUsedByStaff" => false,
               "isLoggedIn" => false,
               "isAbleToAuthenicate" => false,
             },

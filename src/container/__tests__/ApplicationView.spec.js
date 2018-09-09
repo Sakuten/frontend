@@ -10,7 +10,7 @@ const setup = (propOverrides, storeOverrides, eventOverrides, isShallow = true) 
   const store = deepAssign(new Store(), storeOverrides)
   const event = deepAssign(new Event(store), eventOverrides)
   const props = Object.assign({
-    user: store.credential.status,
+    credential: store.credential,
     application: store.application
   }, propOverrides)
 
