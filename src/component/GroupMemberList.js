@@ -4,9 +4,9 @@ import { observer } from 'mobx-react'
 const GroupMemberList = ({list, onRemove}) => (
   <div>
     {
-      list.length !== 0 ? list.map((secretId, i) =>
+      list.length !== 0 ? list.map((publicId, i) =>
         <div data-test='groupmemberlist-member' key={i}>
-          {secretId}
+          {publicId}
           <button data-test='groupmemberlist-remove' onClick={() => onRemove(i)}>Remove</button>
         </div>
       ) : <span data-test='groupmemberlist-notfound'>一緒に応募する人はいません。</span>
