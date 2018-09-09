@@ -50,8 +50,9 @@ const Cloud = styled.div`
   z-index: 20;
 `
 
-const ApplicationView = ({user, application, event}) => {
+const ApplicationView = ({credential, application, event}) => {
   const {
+    onLogout,
     onQRError
   } = event.credential
 
@@ -90,6 +91,14 @@ const ApplicationView = ({user, application, event}) => {
             申し込む
           </Button>
         </ButtonWrap>
+        {
+          credential.isUsedByStaff &&
+          <ButtonWrap onClick={onLogout}>
+            <Button>
+              ログアウト
+            </Button>
+          </ButtonWrap>
+        }
         <Selection>
           <Title>応募一覧</Title>
           <Indent>

@@ -4,12 +4,14 @@ import qs from 'querystring'
 
 const savedToken = localStorage.getItem('Token')
 const paramSecretId = qs.parse(location.search.substr(1)).sid
+const isUsedByStaff = 'staff' in qs.parse(location.search.substr(1))
 
 export class CredentialObject {
   @observable secretId = paramSecretId || ''
   @observable recaptchaResponse = ''
   @observable token = savedToken || ''
   @observable status = new Map()
+  @observable isUsedByStaff = isUsedByStaff
 
   @computed get isLoggedIn () {
     return this.token.length !== 0
@@ -30,6 +32,12 @@ export class CredentialObject {
   @action.bound setToken (token) {
     localStorage.setItem('Token', token)
     this.token = token
+  }
+
+  @action.bound logout () {
+    this.setToken('')
+    this.setSecretId('')
+    this.setRecaptchaResponse('')
   }
 
   @action.bound setStatus (obj) {
