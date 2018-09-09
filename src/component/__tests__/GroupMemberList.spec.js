@@ -5,9 +5,9 @@ import GroupMemberList from '../GroupMemberList'
 const setup = propOverrides => {
   const props = Object.assign({
     list: [
-      'secret_id1',
-      'secret_id2',
-      'secret_id3'
+      'public_id1',
+      'public_id2',
+      'public_id3'
     ],
     onRemove: jest.fn()
   }, propOverrides)
