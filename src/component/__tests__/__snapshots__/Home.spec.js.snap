@@ -35,7 +35,12 @@ ShallowWrapper {
         <styled.div>
           <Unknown
             data-test="home-login"
-            to="/lottery/login"
+            to={
+              Object {
+                "pathname": "/lottery/login",
+                "search": undefined,
+              }
+            }
           >
             <h3>
               QRコード読み取り
@@ -134,7 +139,12 @@ ShallowWrapper {
         "props": Object {
           "children": <Unknown
             data-test="home-login"
-            to="/lottery/login"
+            to={
+              Object {
+                "pathname": "/lottery/login",
+                "search": undefined,
+              }
+            }
           >
             <h3>
               QRコード読み取り
@@ -159,7 +169,10 @@ ShallowWrapper {
               </p>,
             ],
             "data-test": "home-login",
-            "to": "/lottery/login",
+            "to": Object {
+              "pathname": "/lottery/login",
+              "search": undefined,
+            },
           },
           "ref": null,
           "rendered": Array [
@@ -218,7 +231,12 @@ ShallowWrapper {
           <styled.div>
             <Unknown
               data-test="home-login"
-              to="/lottery/login"
+              to={
+                Object {
+                  "pathname": "/lottery/login",
+                  "search": undefined,
+                }
+              }
             >
               <h3>
                 QRコード読み取り
@@ -317,7 +335,12 @@ ShallowWrapper {
           "props": Object {
             "children": <Unknown
               data-test="home-login"
-              to="/lottery/login"
+              to={
+                Object {
+                  "pathname": "/lottery/login",
+                  "search": undefined,
+                }
+              }
             >
               <h3>
                 QRコード読み取り
@@ -342,7 +365,10 @@ ShallowWrapper {
                 </p>,
               ],
               "data-test": "home-login",
-              "to": "/lottery/login",
+              "to": Object {
+                "pathname": "/lottery/login",
+                "search": undefined,
+              },
             },
             "ref": null,
             "rendered": Array [
