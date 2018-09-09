@@ -7,16 +7,20 @@ const PublicIDWrap = styled.span`
   display: inline-block;
 `
 
+const Container = styled.div`
+  margin: 5px;
+`
+
 const GroupMemberList = ({list, onRemove}) => (
   <div>
     {
       list.length !== 0 ? list.map((publicId, i) =>
-        <div data-test='groupmemberlist-member' key={i}>
+        <Container data-test='groupmemberlist-member' key={i}>
           <PublicIDWrap>
             {publicId}
           </PublicIDWrap>
           <button className='button is-danger is-outlined' data-test='groupmemberlist-remove' onClick={() => onRemove(i)}>削除</button>
-        </div>
+        </Container>
       ) : <span data-test='groupmemberlist-notfound'>一緒に応募する人はいません。</span>
     }
   </div>
