@@ -1,4 +1,4 @@
-import { observable, action } from 'mobx'
+import { observable, computed, action } from 'mobx'
 import {getClassrooms, getLotteries, getApplications} from '../api/operation'
 
 export class ApplicationObject {
@@ -10,6 +10,10 @@ export class ApplicationObject {
   @observable lotteryList = []
 
   @observable applicationList = []
+
+  @computed get isAbleToAddGroupMember () {
+    return this.groupMemberList.length < 3
+  }
 
   @action.bound setClassroom (classroomId) {
     this.classroom = classroomId

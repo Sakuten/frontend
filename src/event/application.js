@@ -30,7 +30,7 @@ export class ApplicationObject {
       this.store.error.addError('The user is already in the member list')
       return
     }
-    if (this.store.application.groupMemberList.length >= 3) {
+    if (!this.store.application.isAbleToAddGroupMember) {
       this.store.error.addError('Too many group members')
       return
     }
