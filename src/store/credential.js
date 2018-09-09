@@ -34,6 +34,12 @@ export class CredentialObject {
     this.token = token
   }
 
+  @action.bound logout() {
+    this.setToken('')
+    this.setSecretId('')
+    this.setRecaptchaResponse('')
+  }
+
   @action.bound setStatus (obj) {
     Object.keys(obj).forEach(key => {
       this.status.set(key, obj[key])
