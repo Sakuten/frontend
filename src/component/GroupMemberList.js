@@ -19,7 +19,7 @@ const GroupMemberList = ({list, onRemove}) => (
           <PublicIDWrap>
             {publicId}
           </PublicIDWrap>
-          <button className='button is-danger is-outlined' data-test='groupmemberlist-remove' onClick={() => onRemove(i)}>削除</button>
+          <button className='button is-danger' data-test='groupmemberlist-remove' onClick={() => onRemove(i)}>削除</button>
         </Container>
       ) : <span data-test='groupmemberlist-notfound'>一緒に応募する人はいません。</span>
     }
