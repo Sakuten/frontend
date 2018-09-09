@@ -82,7 +82,7 @@ const ApplicationView = ({credential, application, event}) => {
           </Indent>
           <Title>一緒に応募する</Title>
           <Indent>
-            <GroupMemberList list={application.groupMemberList} onRemove={onRemoveGroupMember} />
+            <GroupMemberList list={application.groupMemberList.map(pair => pair[1])} onRemove={onRemoveGroupMember} />
             <GroupMemberButton onAdd={onAddGroupMember} onError={onQRError} disabled={!application.isAbleToAddGroupMember}>他の人を追加</GroupMemberButton>
           </Indent>
         </Selection>

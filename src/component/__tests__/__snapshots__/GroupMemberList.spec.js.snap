@@ -6,9 +6,9 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <GroupMemberList
     list={
       Array [
-        "secret_id1",
-        "secret_id2",
-        "secret_id3",
+        "public_id1",
+        "public_id2",
+        "public_id3",
       ]
     }
     onRemove={[MockFunction]}
@@ -29,7 +29,7 @@ ShallowWrapper {
         <div
           data-test="groupmemberlist-member"
         >
-          secret_id1
+          public_id1
           <button
             data-test="groupmemberlist-remove"
             onClick={[Function]}
@@ -40,7 +40,7 @@ ShallowWrapper {
         <div
           data-test="groupmemberlist-member"
         >
-          secret_id2
+          public_id2
           <button
             data-test="groupmemberlist-remove"
             onClick={[Function]}
@@ -51,7 +51,7 @@ ShallowWrapper {
         <div
           data-test="groupmemberlist-member"
         >
-          secret_id3
+          public_id3
           <button
             data-test="groupmemberlist-remove"
             onClick={[Function]}
@@ -69,7 +69,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            "secret_id1",
+            "public_id1",
             <button
               data-test="groupmemberlist-remove"
               onClick={[Function]}
@@ -81,7 +81,7 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
-          "secret_id1",
+          "public_id1",
           Object {
             "instance": null,
             "key": undefined,
@@ -104,7 +104,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            "secret_id2",
+            "public_id2",
             <button
               data-test="groupmemberlist-remove"
               onClick={[Function]}
@@ -116,7 +116,7 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
-          "secret_id2",
+          "public_id2",
           Object {
             "instance": null,
             "key": undefined,
@@ -139,7 +139,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            "secret_id3",
+            "public_id3",
             <button
               data-test="groupmemberlist-remove"
               onClick={[Function]}
@@ -151,7 +151,7 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
-          "secret_id3",
+          "public_id3",
           Object {
             "instance": null,
             "key": undefined,
@@ -181,7 +181,7 @@ ShallowWrapper {
           <div
             data-test="groupmemberlist-member"
           >
-            secret_id1
+            public_id1
             <button
               data-test="groupmemberlist-remove"
               onClick={[Function]}
@@ -192,7 +192,7 @@ ShallowWrapper {
           <div
             data-test="groupmemberlist-member"
           >
-            secret_id2
+            public_id2
             <button
               data-test="groupmemberlist-remove"
               onClick={[Function]}
@@ -203,7 +203,7 @@ ShallowWrapper {
           <div
             data-test="groupmemberlist-member"
           >
-            secret_id3
+            public_id3
             <button
               data-test="groupmemberlist-remove"
               onClick={[Function]}
@@ -221,7 +221,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "secret_id1",
+              "public_id1",
               <button
                 data-test="groupmemberlist-remove"
                 onClick={[Function]}
@@ -233,7 +233,7 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            "secret_id1",
+            "public_id1",
             Object {
               "instance": null,
               "key": undefined,
@@ -256,7 +256,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "secret_id2",
+              "public_id2",
               <button
                 data-test="groupmemberlist-remove"
                 onClick={[Function]}
@@ -268,7 +268,7 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            "secret_id2",
+            "public_id2",
             Object {
               "instance": null,
               "key": undefined,
@@ -291,7 +291,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "secret_id3",
+              "public_id3",
               <button
                 data-test="groupmemberlist-remove"
                 onClick={[Function]}
@@ -303,7 +303,7 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            "secret_id3",
+            "public_id3",
             Object {
               "instance": null,
               "key": undefined,

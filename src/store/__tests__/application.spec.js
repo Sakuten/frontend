@@ -19,23 +19,23 @@ describe('stores', () => {
     })
 
     it('can add a group member', () => {
-      store.addGroupMember('secret_id1')
-      store.addGroupMember('secret_id2')
-      expect(store.groupMemberList).toEqual(['secret_id1', 'secret_id2'])
+      store.addGroupMember('secret_id1', 'public_id1')
+      store.addGroupMember('secret_id2', 'public_id2')
+      expect(store.groupMemberList).toEqual([['secret_id1', 'public_id1'], ['secret_id2', 'public_id2']])
     })
 
     it('can remove a group member by id', () => {
-      store.addGroupMember('secret_id1')
-      store.addGroupMember('secret_id2')
-      store.removeGroupMemberById('secret_id2')
-      expect(store.groupMemberList).toEqual(['secret_id1'])
+      store.addGroupMember('secret_id1', 'public_id1')
+      store.addGroupMember('secret_id2', 'public_id2')
+      store.removeGroupMemberById('secret_id2', 'public_id2')
+      expect(store.groupMemberList).toEqual([['secret_id1', 'public_id1']])
     })
 
     it('can remove a group member by index', () => {
-      store.addGroupMember('secret_id1')
-      store.addGroupMember('secret_id2')
+      store.addGroupMember('secret_id1', 'public_id1')
+      store.addGroupMember('secret_id2', 'public_id2')
       store.removeGroupMemberByIdx(1)
-      expect(store.groupMemberList).toEqual(['secret_id1'])
+      expect(store.groupMemberList).toEqual([['secret_id1', 'public_id1']])
     })
 
     it('can have classroom list', () => {
