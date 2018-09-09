@@ -28,6 +28,8 @@ export class CredentialObject {
 
   onLogout = () => {
     this.store.credential.setToken('')
+    this.store.credential.setSecretId('')
+    this.store.credential.setRecaptchaResponse('')
   }
 
   onQRError = (error) => {
