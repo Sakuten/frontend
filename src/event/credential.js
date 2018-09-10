@@ -10,7 +10,7 @@ export class CredentialObject {
       () => this.store.credential.isLoggedIn,
       isLoggedIn => {
         if (this.store.router.history) {
-          const urlBase = isLoggedIn ? '/lottery' : '/lottery/login'
+          const urlBase = isLoggedIn ? this.store.credential.isLoggedInAsChecker ? '/checker' : '/lottery' : '/lottery/login'
           this.store.router.history.push(urlBase + (this.store.credential.isUsedByStaff ? '?staff' : ''))
         }
       }

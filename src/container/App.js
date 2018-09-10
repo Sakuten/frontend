@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom'
 import { loadReCaptcha } from 'react-recaptcha-v3'
 import LoginView from './LoginView'
 import ApplicationView from './ApplicationView'
+import CheckerView from './CheckerView'
 import ErrorList from '../component/ErrorList'
 import Home from '../component/Home'
 import styled from 'styled-components'
@@ -69,6 +70,7 @@ class App extends React.Component {
         <Background />
         <Container>
           <Route exact path='/' render={() => <Home isUsedByStaff={this.props.store.credential.isUsedByStaff} />} />
+          <Route exact path='/checker' render={() => this.props.store.credential.isLoggedInAsChecker ? <CheckerView store={this.props.store} /> : <Redirect to='/lottery/login' />} />
           <Route path='/lottery/login' render={() => this.props.store.credential.isLoggedIn ? <Redirect to='/lottery' /> : <LoginView credential={this.props.store.credential} />} />
           <Route exact path='/lottery' render={() => this.props.store.credential.isLoggedIn ? <ApplicationView credential={this.props.store.credential} application={this.props.store.application} /> : <Redirect to='/lottery/login' />} />
           <ErrorList list={this.props.store.error.errorList} onDelete={onDelete} />
