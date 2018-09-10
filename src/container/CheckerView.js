@@ -83,9 +83,17 @@ class CheckerView extends React.Component {
         this.props.event.error.onError('Invalid QR Code')
         return
       }
-      const resp = await checkSecretIdStatus(this.classroom, secretId, this.props.store.credential.token)
+
+      let status
+      try {
+        const resp = await checkSecretIdStatus(this.classroom, secretId, this.props.store.credential.token)
+        status = resp.data['status']
+      } catch (e) {
+        status = e.response.data.code === 19 ? '応募していません' : JSON.stringify(e.response.data)
+      }
+
       runInAction('updating the state', () => {
-        this.lastStatus = resp.data['status']
+        this.lastStatus = status
         this.isModalOpen = true
       })
     }
