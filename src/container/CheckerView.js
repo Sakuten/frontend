@@ -25,6 +25,10 @@ const Container = styled.div`
   align-items: center;
 `
 
+const Title = styled.h2`
+  font-size: 3rem;
+`
+
 @inject('event')
 @observer
 class CheckerView extends React.Component {
@@ -40,6 +44,7 @@ class CheckerView extends React.Component {
 
     return (
       <div data-test='checkerview'>
+        <Title>チェッカー</Title>
         <ClassroomSelect list={this.props.store.application.classroomList} value={this.classroom} onChange={this.onChangeClassroom} />
         <Container>
           <QRReader
