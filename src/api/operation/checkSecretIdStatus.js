@@ -1,6 +1,6 @@
 import {fetchApi} from '../request'
 
-export const checkSecretId = (classroomId, secretId, token) =>
+export const checkSecretIdStatus = (classroomId, secretId, token) =>
   fetchApi(`/checker/${classroomId}/${secretId}`, {
     method: 'get',
     headers: {
