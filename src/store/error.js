@@ -8,6 +8,10 @@ export class ErrorObject {
     this.ignoreErrorCodeList.push(code)
   }
 
+  @action.bound removeErrorCodeToIgnore (code) {
+    this.ignoreErrorCodeList.splice(this.ignoreErrorCodeList.indexOf(code), 1)
+  }
+
   @action.bound addError (message) {
     if ('code' in message && this.ignoreErrorCodeList.indexOf(message.code) !== -1) {
       return
