@@ -8,7 +8,7 @@ import {extractId} from '../util/extractId'
 import styled from 'styled-components'
 import Button from '../component/Button'
 
-import {checkSecretIdStatus} from '../api/operation'
+import {getPublicId, checkSecretIdStatus} from '../api/operation'
 
 const TagWrapper = styled.div`
   display: flex;
@@ -34,7 +34,7 @@ const Title = styled.h2`
 class CheckerView extends React.Component {
   @observable classroom = 1
   @observable lastStatus = ''
-  @observable isModalOpen = false
+  @observable publicId = ''
 
   render () {
     const {
@@ -52,15 +52,11 @@ class CheckerView extends React.Component {
             onScan={this.onQRScan}
           />
         </Container>
-        <div className={`modal ${this.isModalOpen ? 'is-active' : ''}`}>
-          <div className='modal-background' />
-          <div className='modal-content'>
-            <TagWrapper>
-              <StatusTag status={this.lastStatus} className='is-large' />
-            </TagWrapper>
-          </div>
-          <button onClick={this.onCloseModal} className='modal-close is-large' aria-label='close' />
-        </div>
+        <TagWrapper>
+          <StatusTag status={this.lastStatus} className='is-large'>
+            {this.publicId}
+          </StatusTag>
+        </TagWrapper>
         <button onClick={onLogout}>
           <Button>
             ログアウト
@@ -73,11 +69,6 @@ class CheckerView extends React.Component {
   @action.bound
   onChangeClassroom (classroom) {
     this.classroom = classroom
-  }
-
-  @action.bound
-  onCloseModal () {
-    this.isModalOpen = false
   }
 
   @action.bound
@@ -97,9 +88,11 @@ class CheckerView extends React.Component {
         status = e.response.data.code === 19 ? '応募していません' : JSON.stringify(e.response.data)
       }
 
+      const resp = await getPublicId(secretId, this.props.store.credential.token)
+
       runInAction('updating the state', () => {
         this.lastStatus = status
-        this.isModalOpen = true
+        this.publicId = resp.data['public_id']
       })
     }
   }
