@@ -3,6 +3,7 @@ import {getStatus} from '../api/operation'
 import qs from 'querystring'
 
 const savedToken = localStorage.getItem('Token')
+const savedKind = localStorage.getItem('Kind')
 const paramSecretId = qs.parse(location.search.substr(1)).sid
 const isUsedByStaff = 'staff' in qs.parse(location.search.substr(1))
 
@@ -10,15 +11,9 @@ export class CredentialObject {
   @observable secretId = paramSecretId || ''
   @observable recaptchaResponse = ''
   @observable token = savedToken || ''
+  @observable kind = savedKind || ''
   @observable status = new Map()
   @observable isUsedByStaff = isUsedByStaff
-
-  constructor () {
-    const cachedStatus = localStorage.getItem('Status')
-    if (cachedStatus) {
-      this.setStatus(JSON.parse(cachedStatus))
-    }
-  }
 
   @computed get isLoggedIn () {
     return this.token.length !== 0
@@ -29,7 +24,7 @@ export class CredentialObject {
   }
 
   @computed get isLoggedInAsChecker () {
-    return this.status.get('kind') === 'checker'
+    return this.kind === 'checker'
   }
 
   @action.bound setSecretId (secretId) {
@@ -45,17 +40,23 @@ export class CredentialObject {
     this.token = token
   }
 
+  @action.bound setKind (kind) {
+    localStorage.setItem('Kind', kind)
+    this.kind = kind
+  }
+
   @action.bound logout () {
     this.setToken('')
+    this.setKind('')
     this.setSecretId('')
     this.setRecaptchaResponse('')
   }
 
   @action.bound setStatus (obj) {
-    localStorage.setItem('Status', JSON.stringify(obj))
     Object.keys(obj).forEach(key => {
       this.status.set(key, obj[key])
     })
+    this.setKind(this.status.get('kind'))
   }
 
   @action.bound async fetchStatus () {
