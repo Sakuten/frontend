@@ -1,5 +1,5 @@
 import React from 'react'
-import { observable, action } from 'mobx'
+import { observable, action, runInAction } from 'mobx'
 import { inject, observer } from 'mobx-react'
 import QRReader from '../component/QRReader'
 import ClassroomSelect from '../component/ClassroomSelect'
@@ -75,8 +75,10 @@ class CheckerView extends React.Component {
         return
       }
       const resp = await checkSecretIdStatus(this.classroom, secretId, this.props.store.credential.token)
-      this.lastStatus = resp.data['status']
-      this.isModalOpen = true
+      runInAction('updating the state', () => {
+        this.lastStatus = resp.data['status']
+        this.isModalOpen = true
+      })
     }
   }
 }
