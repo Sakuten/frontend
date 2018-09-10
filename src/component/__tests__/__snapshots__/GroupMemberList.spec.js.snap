@@ -26,39 +26,57 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <div
+        <styled.div
           data-test="groupmemberlist-member"
         >
-          public_id1
+          <styled.span>
+            確認用ID: 
+            <b>
+              public_id1
+            </b>
+          </styled.span>
           <button
+            className="button is-danger"
             data-test="groupmemberlist-remove"
             onClick={[Function]}
           >
-            Remove
+            削除
           </button>
-        </div>,
-        <div
+        </styled.div>,
+        <styled.div
           data-test="groupmemberlist-member"
         >
-          public_id2
+          <styled.span>
+            確認用ID: 
+            <b>
+              public_id2
+            </b>
+          </styled.span>
           <button
+            className="button is-danger"
             data-test="groupmemberlist-remove"
             onClick={[Function]}
           >
-            Remove
+            削除
           </button>
-        </div>,
-        <div
+        </styled.div>,
+        <styled.div
           data-test="groupmemberlist-member"
         >
-          public_id3
+          <styled.span>
+            確認用ID: 
+            <b>
+              public_id3
+            </b>
+          </styled.span>
           <button
+            className="button is-danger"
             data-test="groupmemberlist-remove"
             onClick={[Function]}
           >
-            Remove
+            削除
           </button>
-        </div>,
+        </styled.div>,
       ],
     },
     "ref": null,
@@ -66,107 +84,212 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": "0",
-        "nodeType": "host",
+        "nodeType": "class",
         "props": Object {
           "children": Array [
-            "public_id1",
+            <styled.span>
+              確認用ID: 
+              <b>
+                public_id1
+              </b>
+            </styled.span>,
             <button
+              className="button is-danger"
               data-test="groupmemberlist-remove"
               onClick={[Function]}
             >
-              Remove
+              削除
             </button>,
           ],
           "data-test": "groupmemberlist-member",
         },
         "ref": null,
         "rendered": Array [
-          "public_id1",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                "確認用ID: ",
+                <b>
+                  public_id1
+                </b>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "確認用ID: ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "public_id1",
+                },
+                "ref": null,
+                "rendered": "public_id1",
+                "type": "b",
+              },
+            ],
+            "type": [Function],
+          },
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Remove",
+              "children": "削除",
+              "className": "button is-danger",
               "data-test": "groupmemberlist-remove",
               "onClick": [Function],
             },
             "ref": null,
-            "rendered": "Remove",
+            "rendered": "削除",
             "type": "button",
           },
         ],
-        "type": "div",
+        "type": [Function],
       },
       Object {
         "instance": null,
         "key": "1",
-        "nodeType": "host",
+        "nodeType": "class",
         "props": Object {
           "children": Array [
-            "public_id2",
+            <styled.span>
+              確認用ID: 
+              <b>
+                public_id2
+              </b>
+            </styled.span>,
             <button
+              className="button is-danger"
               data-test="groupmemberlist-remove"
               onClick={[Function]}
             >
-              Remove
+              削除
             </button>,
           ],
           "data-test": "groupmemberlist-member",
         },
         "ref": null,
         "rendered": Array [
-          "public_id2",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                "確認用ID: ",
+                <b>
+                  public_id2
+                </b>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "確認用ID: ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "public_id2",
+                },
+                "ref": null,
+                "rendered": "public_id2",
+                "type": "b",
+              },
+            ],
+            "type": [Function],
+          },
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Remove",
+              "children": "削除",
+              "className": "button is-danger",
               "data-test": "groupmemberlist-remove",
               "onClick": [Function],
             },
             "ref": null,
-            "rendered": "Remove",
+            "rendered": "削除",
             "type": "button",
           },
         ],
-        "type": "div",
+        "type": [Function],
       },
       Object {
         "instance": null,
         "key": "2",
-        "nodeType": "host",
+        "nodeType": "class",
         "props": Object {
           "children": Array [
-            "public_id3",
+            <styled.span>
+              確認用ID: 
+              <b>
+                public_id3
+              </b>
+            </styled.span>,
             <button
+              className="button is-danger"
               data-test="groupmemberlist-remove"
               onClick={[Function]}
             >
-              Remove
+              削除
             </button>,
           ],
           "data-test": "groupmemberlist-member",
         },
         "ref": null,
         "rendered": Array [
-          "public_id3",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                "確認用ID: ",
+                <b>
+                  public_id3
+                </b>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "確認用ID: ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "public_id3",
+                },
+                "ref": null,
+                "rendered": "public_id3",
+                "type": "b",
+              },
+            ],
+            "type": [Function],
+          },
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Remove",
+              "children": "削除",
+              "className": "button is-danger",
               "data-test": "groupmemberlist-remove",
               "onClick": [Function],
             },
             "ref": null,
-            "rendered": "Remove",
+            "rendered": "削除",
             "type": "button",
           },
         ],
-        "type": "div",
+        "type": [Function],
       },
     ],
     "type": "div",
@@ -178,39 +301,57 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <div
+          <styled.div
             data-test="groupmemberlist-member"
           >
-            public_id1
+            <styled.span>
+              確認用ID: 
+              <b>
+                public_id1
+              </b>
+            </styled.span>
             <button
+              className="button is-danger"
               data-test="groupmemberlist-remove"
               onClick={[Function]}
             >
-              Remove
+              削除
             </button>
-          </div>,
-          <div
+          </styled.div>,
+          <styled.div
             data-test="groupmemberlist-member"
           >
-            public_id2
+            <styled.span>
+              確認用ID: 
+              <b>
+                public_id2
+              </b>
+            </styled.span>
             <button
+              className="button is-danger"
               data-test="groupmemberlist-remove"
               onClick={[Function]}
             >
-              Remove
+              削除
             </button>
-          </div>,
-          <div
+          </styled.div>,
+          <styled.div
             data-test="groupmemberlist-member"
           >
-            public_id3
+            <styled.span>
+              確認用ID: 
+              <b>
+                public_id3
+              </b>
+            </styled.span>
             <button
+              className="button is-danger"
               data-test="groupmemberlist-remove"
               onClick={[Function]}
             >
-              Remove
+              削除
             </button>
-          </div>,
+          </styled.div>,
         ],
       },
       "ref": null,
@@ -218,107 +359,212 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": "0",
-          "nodeType": "host",
+          "nodeType": "class",
           "props": Object {
             "children": Array [
-              "public_id1",
+              <styled.span>
+                確認用ID: 
+                <b>
+                  public_id1
+                </b>
+              </styled.span>,
               <button
+                className="button is-danger"
                 data-test="groupmemberlist-remove"
                 onClick={[Function]}
               >
-                Remove
+                削除
               </button>,
             ],
             "data-test": "groupmemberlist-member",
           },
           "ref": null,
           "rendered": Array [
-            "public_id1",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  "確認用ID: ",
+                  <b>
+                    public_id1
+                  </b>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "確認用ID: ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "public_id1",
+                  },
+                  "ref": null,
+                  "rendered": "public_id1",
+                  "type": "b",
+                },
+              ],
+              "type": [Function],
+            },
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Remove",
+                "children": "削除",
+                "className": "button is-danger",
                 "data-test": "groupmemberlist-remove",
                 "onClick": [Function],
               },
               "ref": null,
-              "rendered": "Remove",
+              "rendered": "削除",
               "type": "button",
             },
           ],
-          "type": "div",
+          "type": [Function],
         },
         Object {
           "instance": null,
           "key": "1",
-          "nodeType": "host",
+          "nodeType": "class",
           "props": Object {
             "children": Array [
-              "public_id2",
+              <styled.span>
+                確認用ID: 
+                <b>
+                  public_id2
+                </b>
+              </styled.span>,
               <button
+                className="button is-danger"
                 data-test="groupmemberlist-remove"
                 onClick={[Function]}
               >
-                Remove
+                削除
               </button>,
             ],
             "data-test": "groupmemberlist-member",
           },
           "ref": null,
           "rendered": Array [
-            "public_id2",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  "確認用ID: ",
+                  <b>
+                    public_id2
+                  </b>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "確認用ID: ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "public_id2",
+                  },
+                  "ref": null,
+                  "rendered": "public_id2",
+                  "type": "b",
+                },
+              ],
+              "type": [Function],
+            },
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Remove",
+                "children": "削除",
+                "className": "button is-danger",
                 "data-test": "groupmemberlist-remove",
                 "onClick": [Function],
               },
               "ref": null,
-              "rendered": "Remove",
+              "rendered": "削除",
               "type": "button",
             },
           ],
-          "type": "div",
+          "type": [Function],
         },
         Object {
           "instance": null,
           "key": "2",
-          "nodeType": "host",
+          "nodeType": "class",
           "props": Object {
             "children": Array [
-              "public_id3",
+              <styled.span>
+                確認用ID: 
+                <b>
+                  public_id3
+                </b>
+              </styled.span>,
               <button
+                className="button is-danger"
                 data-test="groupmemberlist-remove"
                 onClick={[Function]}
               >
-                Remove
+                削除
               </button>,
             ],
             "data-test": "groupmemberlist-member",
           },
           "ref": null,
           "rendered": Array [
-            "public_id3",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  "確認用ID: ",
+                  <b>
+                    public_id3
+                  </b>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "確認用ID: ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "public_id3",
+                  },
+                  "ref": null,
+                  "rendered": "public_id3",
+                  "type": "b",
+                },
+              ],
+              "type": [Function],
+            },
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Remove",
+                "children": "削除",
+                "className": "button is-danger",
                 "data-test": "groupmemberlist-remove",
                 "onClick": [Function],
               },
               "ref": null,
-              "rendered": "Remove",
+              "rendered": "削除",
               "type": "button",
             },
           ],
-          "type": "div",
+          "type": [Function],
         },
       ],
       "type": "div",
