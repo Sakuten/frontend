@@ -15,7 +15,7 @@ export class Store {
   fetchStatus = async () => {
     await Promise.all([
       this.credential.fetchStatus(),
-      this.application.fetchApplicationList(this.credential.token)
+      this.credential.isLoggedInAsChecker || this.application.fetchApplicationList(this.credential.token)
     ])
   }
 }
