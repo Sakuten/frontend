@@ -80,6 +80,11 @@ class CheckerView extends React.Component {
         return
       }
 
+      runInAction('updating the state', () => {
+        this.lastStatus = '取得中'
+        this.publicId = ''
+      })
+
       let status
       this.props.store.error.addErrorCodeToIgnore([19, 6])
       try {
