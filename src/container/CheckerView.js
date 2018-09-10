@@ -80,7 +80,7 @@ class CheckerView extends React.Component {
     if (scanUri) {
       const secretId = extractId(scanUri)
       if (!secretId) {
-        this.store.error.addError('Invalid QR Code')
+        this.props.event.error.onError('Invalid QR Code')
         return
       }
       const resp = await checkSecretIdStatus(this.classroom, secretId, this.props.store.credential.token)
