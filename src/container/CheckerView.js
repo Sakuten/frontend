@@ -3,11 +3,18 @@ import { observable, action, runInAction } from 'mobx'
 import { inject, observer } from 'mobx-react'
 import QRReader from '../component/QRReader'
 import ClassroomSelect from '../component/ClassroomSelect'
+import StatusTag from '../component/StatusTag'
 import {extractId} from '../util/extractId'
 import styled from 'styled-components'
 import Button from '../component/Button'
 
 import {checkSecretIdStatus} from '../api/operation'
+
+const TagWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 
 const Container = styled.div`
   width: 90vw;
@@ -43,7 +50,9 @@ class CheckerView extends React.Component {
         <div className={`modal ${this.isModalOpen ? 'is-active' : ''}`}>
           <div className='modal-background' />
           <div className='modal-content'>
-            {this.lastStatus}
+            <TagWrapper>
+              <StatusTag status={this.lastStatus} />
+            </TagWrapper>
           </div>
           <button onClick={this.onCloseModal} className='modal-close is-large' aria-label='close' />
         </div>
