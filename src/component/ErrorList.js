@@ -9,10 +9,10 @@ const Container = styled.div`
   z-index: 10;
 `
 
-const ErrorList = ({list, onDelete, ignoreList}) => (
+const ErrorList = ({list, onDelete}) => (
   <Container data-test='errorlist'>
     {
-      list.filter((c) => !('code' in c && c.code in ignoreList)).map((c, i) =>
+      list.map((c, i) =>
         <article data-test='errorlist-error' className='message is-danger' key={i} >
           <div className='message-header'>
             <p>エラーが発生しました</p>
