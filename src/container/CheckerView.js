@@ -1,9 +1,11 @@
 import React from 'react'
-import { action, observable, inject, observer } from 'mobx-react'
+import { observable, action } from 'mobx'
+import { inject, observer } from 'mobx-react'
 import QRReader from '../component/QRReader'
 import ClassroomSelect from '../component/ClassroomSelect'
 import {extractId} from '../util/extractId'
 import styled from 'styled-components'
+import Button from '../component/Button'
 
 import {checkSecretIdStatus} from '../api/operation'
 
@@ -20,10 +22,13 @@ const Container = styled.div`
 @observer
 class CheckerView extends React.Component {
   @observable classroom = 0
+  @observable lastStatus = ''
+  @observable isModalOpen = false
 
   render () {
     const {
-      onQRError
+      onQRError,
+      onLogout
     } = this.props.event.credential
 
     return (
@@ -35,6 +40,18 @@ class CheckerView extends React.Component {
             onScan={this.onQRScan}
           />
         </Container>
+        <div className={`modal ${this.isModalOpen ? 'is-active' : ''}`}>
+          <div className='modal-background' />
+          <div className='modal-content'>
+            {this.lastStatus}
+          </div>
+          <button onClick={this.onCloseModal} className='modal-close is-large' aria-label='close' />
+        </div>
+        <button onClick={onLogout}>
+          <Button>
+            ログアウト
+          </Button>
+        </button>
       </div>
     )
   }
@@ -45,6 +62,11 @@ class CheckerView extends React.Component {
   }
 
   @action.bound
+  onCloseModal () {
+    this.isModalOpen = false
+  }
+
+  @action.bound
   async onQRScan (scanUri) {
     if (scanUri) {
       const secretId = extractId(scanUri)
@@ -52,7 +74,9 @@ class CheckerView extends React.Component {
         this.store.error.addError('Invalid QR Code')
         return
       }
-      await checkSecretIdStatus()
+      const resp = await checkSecretIdStatus(this.classroom, secretId, this.props.store.credential.token)
+      this.lastStatus = resp.data['status']
+      this.isModalOpen = true
     }
   }
 }
