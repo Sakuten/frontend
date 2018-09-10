@@ -16,7 +16,7 @@ export class CredentialObject {
   @observable isUsedByStaff = isUsedByStaff
 
   @computed get isLoggedIn () {
-    return this.token.length !== 0
+    return this.token.length !== 0 && this.kind.length !== 0
   }
 
   @computed get isAbleToAuthenicate () {
