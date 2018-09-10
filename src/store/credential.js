@@ -13,6 +13,13 @@ export class CredentialObject {
   @observable status = new Map()
   @observable isUsedByStaff = isUsedByStaff
 
+  constructor () {
+    const cachedStatus = localStorage.getItem('Status')
+    if (cachedStatus) {
+      this.setStatus(JSON.parse(cachedStatus))
+    }
+  }
+
   @computed get isLoggedIn () {
     return this.token.length !== 0
   }
@@ -45,6 +52,7 @@ export class CredentialObject {
   }
 
   @action.bound setStatus (obj) {
+    localStorage.setItem('Status', JSON.stringify(obj))
     Object.keys(obj).forEach(key => {
       this.status.set(key, obj[key])
     })
