@@ -56,7 +56,7 @@ class CheckerView extends React.Component {
           <div className='modal-background' />
           <div className='modal-content'>
             <TagWrapper>
-              <StatusTag status={this.lastStatus} />
+              <StatusTag status={this.lastStatus} className='is-large' />
             </TagWrapper>
           </div>
           <button onClick={this.onCloseModal} className='modal-close is-large' aria-label='close' />
