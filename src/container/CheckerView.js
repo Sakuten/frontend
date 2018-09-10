@@ -21,7 +21,7 @@ const Container = styled.div`
 @inject('event')
 @observer
 class CheckerView extends React.Component {
-  @observable classroom = 0
+  @observable classroom = 1
   @observable lastStatus = ''
   @observable isModalOpen = false
 
