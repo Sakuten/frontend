@@ -81,8 +81,7 @@ class CheckerView extends React.Component {
       }
 
       let status
-      this.props.store.error.addErrorCodeToIgnore(19)
-      this.props.store.error.addErrorCodeToIgnore(6)
+      this.props.store.error.addErrorCodeToIgnore([19, 6])
       try {
         const resp = await checkSecretIdStatus(this.classroom, secretId, this.props.store.credential.token)
         status = resp.data['status']
@@ -93,8 +92,7 @@ class CheckerView extends React.Component {
         }
         status = codeStatuses[e.response.data.code] || JSON.stringify(e.response.data)
       }
-      this.props.store.error.removeErrorCodeToIgnore(6)
-      this.props.store.error.removeErrorCodeToIgnore(19)
+      this.props.store.error.removeErrorCodeToIgnore([19, 6])
 
       const resp = await getPublicId(secretId, this.props.store.credential.token)
 
