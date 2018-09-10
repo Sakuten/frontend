@@ -8,8 +8,14 @@ const Tag = styled.span.attrs({
   margin: 0.75rem;
 `
 
+const tags = {
+  'pending': <Tag className='is-dark'>発表をお待ちください</Tag>,
+  'won': <Tag className='is-success'>当選しました。</Tag>,
+  'lose': <Tag className='is-danger'>落選しました。</Tag>
+}
+
 const StatusTag = ({status}) => (
-  status === 'pending' ? <Tag className='is-dark'>発表をお待ちください</Tag> : status === 'won' ? <Tag className='is-success'>当選しました。</Tag> : <Tag className='is-danger'>落選しました。</Tag>
+  tags[status] || <Tag>{status}</Tag>
 )
 
 export default observer(StatusTag)
