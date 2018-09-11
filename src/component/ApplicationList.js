@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import StatusTag from './StatusTag'
 
 const TagWrapper = styled.span`
-  margin: 10px;
+  margin: 0.75rem;
 `
 
 const ApplicationList = ({list, onCancel}) => (
