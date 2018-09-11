@@ -36,6 +36,11 @@ class CheckerView extends React.Component {
   @observable lastStatus = 'スキャンしてください'
   @observable publicId = ''
 
+  constructor () {
+    super()
+    this.lastScan = ''
+  }
+
   render () {
     const {
       onQRError,
@@ -72,6 +77,10 @@ class CheckerView extends React.Component {
   @action.bound
   async onQRScan (scanUri) {
     if (scanUri) {
+      if (this.lastScan === scanUri) {
+        return
+      }
+      this.lastScan = scanUri
       const secretId = extractId(scanUri)
       if (!secretId) {
         this.props.event.error.onError('Invalid QR Code')
