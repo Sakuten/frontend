@@ -8,8 +8,6 @@ import {extractId} from '../util/extractId'
 import styled from 'styled-components'
 import Button from '../component/Button'
 
-import {getPublicId, checkSecretIdStatus} from '../api/operation'
-
 const TagWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -81,29 +79,7 @@ class CheckerView extends React.Component {
         this.props.event.error.onError('Invalid QR Code')
         return
       }
-
-      this.props.store.checker.setLastStatus('取得中')
-      this.props.store.checker.setPublicId('')
-
-      const status = await this.props.store.error.ignoring([19, 6], (callback) => {
-        return checkSecretIdStatus(this.props.store.checker.classroom, secretId, this.props.store.credential.token)
-          .then(resp => {
-            return resp.data['status']
-          })
-          .catch(e => {
-            const codeStatuses = {
-              19: '応募していません',
-              6: '時間外です'
-            }
-            return codeStatuses[e.response.data.code] || JSON.stringify(e.response.data)
-          })
-          .then(callback)
-      })
-
-      const resp = await getPublicId(secretId, this.props.store.credential.token)
-
-      this.props.store.checker.setLastStatus(status)
-      this.props.store.checker.setPublicId(resp.data['public_id'])
+      this.props.event.checker.onQRScan(secretId)
     }
   }
 }
