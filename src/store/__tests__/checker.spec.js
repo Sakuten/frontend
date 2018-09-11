@@ -22,5 +22,6 @@ describe('stores', () => {
       store.setPublicId(2)
       expect(store.publicId).toBe(2)
     })
+  })
 })
 
