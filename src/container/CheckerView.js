@@ -25,46 +25,37 @@ const Title = styled.h2`
   font-size: 3rem;
 `
 
-@inject('event')
-@observer
-class CheckerView extends React.Component {
-  constructor () {
-    super()
-    this.lastScan = ''
-  }
+const CheckerView = ({store, event}) => {
+  const {
+    onChangeClassroom,
+    onQRScan
+  } = event.checker
 
-  render () {
-    const {
-      onChangeClassroom,
-      onQRScan
-    } = this.props.event.checker
+  const {
+    onQRError,
+    onLogout
+  } = event.credential
 
-    const {
-      onQRError,
-      onLogout
-    } = this.props.event.credential
-
-    return (
-      <div data-test='checkerview'>
-        <Title>チェッカー</Title>
-        <ClassroomSelect list={this.props.store.application.classroomList} value={this.props.store.checker.classroom} onChange={onChangeClassroom} />
-        <Container>
-          <QRReader
-            onError={onQRError}
-            onScan={onQRScan}
-          />
-        </Container>
-        <TagWrapper>
-          <StatusTag status={this.props.store.checker.lastStatus} className='is-large' left={this.props.store.checker.publicId} />
-        </TagWrapper>
-        <button onClick={onLogout}>
-          <Button>
-            ログアウト
-          </Button>
-        </button>
-      </div>
-    )
-  }
+  return (
+    <div data-test='checkerview'>
+      <Title>チェッカー</Title>
+      <ClassroomSelect list={store.application.classroomList} value={store.checker.classroom} onChange={onChangeClassroom} />
+      <Container>
+        <QRReader
+          onError={onQRError}
+          onScan={onQRScan}
+        />
+      </Container>
+      <TagWrapper>
+        <StatusTag status={store.checker.lastStatus} className='is-large' left={store.checker.publicId} />
+      </TagWrapper>
+      <button onClick={onLogout}>
+        <Button>
+          ログアウト
+        </Button>
+      </button>
+    </div>
+  )
 }
 
-export default CheckerView
+export default inject('event')(observer(CheckerView))
