@@ -39,6 +39,10 @@ class CheckerView extends React.Component {
 
   render () {
     const {
+      onChangeClassroom
+    } = this.props.event.checker
+
+    const {
       onQRError,
       onLogout
     } = this.props.event.credential
@@ -46,7 +50,7 @@ class CheckerView extends React.Component {
     return (
       <div data-test='checkerview'>
         <Title>チェッカー</Title>
-        <ClassroomSelect list={this.props.store.application.classroomList} value={this.props.store.checker.classroom} onChange={this.onChangeClassroom} />
+        <ClassroomSelect list={this.props.store.application.classroomList} value={this.props.store.checker.classroom} onChange={onChangeClassroom} />
         <Container>
           <QRReader
             onError={onQRError}
@@ -63,11 +67,6 @@ class CheckerView extends React.Component {
         </button>
       </div>
     )
-  }
-
-  @action.bound
-  onChangeClassroom (classroom) {
-    this.props.store.checker.setClassroom(classroom)
   }
 
   @action.bound
