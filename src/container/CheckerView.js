@@ -53,9 +53,7 @@ class CheckerView extends React.Component {
           />
         </Container>
         <TagWrapper>
-          <StatusTag status={this.lastStatus} className='is-large'>
-            {this.publicId}
-          </StatusTag>
+          <StatusTag status={this.lastStatus} className='is-large' left={this.publicId} />
         </TagWrapper>
         <button onClick={onLogout}>
           <Button>
