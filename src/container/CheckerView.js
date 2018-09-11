@@ -84,7 +84,7 @@ class CheckerView extends React.Component {
       })
 
       const status = await this.props.store.error.ignoring([19, 6], () => {
-        return checkSecretIdStatus(this.clessroom, secretId, this.props.store.credential.token)
+        return checkSecretIdStatus(this.classroom, secretId, this.props.store.credential.token)
           .then(resp => {
             return resp.data['status']
           })
