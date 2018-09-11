@@ -61,10 +61,10 @@ ShallowWrapper {
               >
                 5A.0
               </p>
-              <styled.span
-                className="is-dark"
-              >
-                発表をお待ちください
+              <styled.span>
+                <StatusTag
+                  status="pending"
+                />
               </styled.span>
             </header>
             <footer
@@ -94,10 +94,10 @@ ShallowWrapper {
               >
                 5A.0
               </p>
-              <styled.span
-                className="is-dark"
-              >
-                発表をお待ちください
+              <styled.span>
+                <StatusTag
+                  status="pending"
+                />
               </styled.span>
             </header>
             <footer
@@ -133,10 +133,10 @@ ShallowWrapper {
               >
                 5A.0
               </p>
-              <styled.span
-                className="is-dark"
-              >
-                発表をお待ちください
+              <styled.span>
+                <StatusTag
+                  status="pending"
+                />
               </styled.span>
             </header>
             <footer
@@ -168,10 +168,10 @@ ShallowWrapper {
                 >
                   5A.0
                 </p>
-                <styled.span
-                  className="is-dark"
-                >
-                  発表をお待ちください
+                <styled.span>
+                  <StatusTag
+                    status="pending"
+                  />
                 </styled.span>
               </header>,
               <footer
@@ -201,10 +201,10 @@ ShallowWrapper {
                   >
                     5A.0
                   </p>,
-                  <styled.span
-                    className="is-dark"
-                  >
-                    発表をお待ちください
+                  <styled.span>
+                    <StatusTag
+                      status="pending"
+                    />
                   </styled.span>,
                 ],
                 "className": "card-header",
@@ -228,11 +228,22 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": "発表をお待ちください",
-                    "className": "is-dark",
+                    "children": <StatusTag
+                      status="pending"
+                    />,
                   },
                   "ref": null,
-                  "rendered": "発表をお待ちください",
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "status": "pending",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
                   "type": [Function],
                 },
               ],
@@ -290,10 +301,10 @@ ShallowWrapper {
               >
                 5A.0
               </p>
-              <styled.span
-                className="is-dark"
-              >
-                発表をお待ちください
+              <styled.span>
+                <StatusTag
+                  status="pending"
+                />
               </styled.span>
             </header>
             <footer
@@ -325,10 +336,10 @@ ShallowWrapper {
                 >
                   5A.0
                 </p>
-                <styled.span
-                  className="is-dark"
-                >
-                  発表をお待ちください
+                <styled.span>
+                  <StatusTag
+                    status="pending"
+                  />
                 </styled.span>
               </header>,
               <footer
@@ -358,10 +369,10 @@ ShallowWrapper {
                   >
                     5A.0
                   </p>,
-                  <styled.span
-                    className="is-dark"
-                  >
-                    発表をお待ちください
+                  <styled.span>
+                    <StatusTag
+                      status="pending"
+                    />
                   </styled.span>,
                 ],
                 "className": "card-header",
@@ -385,11 +396,22 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": "発表をお待ちください",
-                    "className": "is-dark",
+                    "children": <StatusTag
+                      status="pending"
+                    />,
                   },
                   "ref": null,
-                  "rendered": "発表をお待ちください",
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "status": "pending",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
                   "type": [Function],
                 },
               ],
@@ -455,10 +477,10 @@ ShallowWrapper {
                 >
                   5A.0
                 </p>
-                <styled.span
-                  className="is-dark"
-                >
-                  発表をお待ちください
+                <styled.span>
+                  <StatusTag
+                    status="pending"
+                  />
                 </styled.span>
               </header>
               <footer
@@ -488,10 +510,10 @@ ShallowWrapper {
                 >
                   5A.0
                 </p>
-                <styled.span
-                  className="is-dark"
-                >
-                  発表をお待ちください
+                <styled.span>
+                  <StatusTag
+                    status="pending"
+                  />
                 </styled.span>
               </header>
               <footer
@@ -527,10 +549,10 @@ ShallowWrapper {
                 >
                   5A.0
                 </p>
-                <styled.span
-                  className="is-dark"
-                >
-                  発表をお待ちください
+                <styled.span>
+                  <StatusTag
+                    status="pending"
+                  />
                 </styled.span>
               </header>
               <footer
@@ -562,10 +584,10 @@ ShallowWrapper {
                   >
                     5A.0
                   </p>
-                  <styled.span
-                    className="is-dark"
-                  >
-                    発表をお待ちください
+                  <styled.span>
+                    <StatusTag
+                      status="pending"
+                    />
                   </styled.span>
                 </header>,
                 <footer
@@ -595,10 +617,10 @@ ShallowWrapper {
                     >
                       5A.0
                     </p>,
-                    <styled.span
-                      className="is-dark"
-                    >
-                      発表をお待ちください
+                    <styled.span>
+                      <StatusTag
+                        status="pending"
+                      />
                     </styled.span>,
                   ],
                   "className": "card-header",
@@ -622,11 +644,22 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "class",
                     "props": Object {
-                      "children": "発表をお待ちください",
-                      "className": "is-dark",
+                      "children": <StatusTag
+                        status="pending"
+                      />,
                     },
                     "ref": null,
-                    "rendered": "発表をお待ちください",
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "status": "pending",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
                     "type": [Function],
                   },
                 ],
@@ -684,10 +717,10 @@ ShallowWrapper {
                 >
                   5A.0
                 </p>
-                <styled.span
-                  className="is-dark"
-                >
-                  発表をお待ちください
+                <styled.span>
+                  <StatusTag
+                    status="pending"
+                  />
                 </styled.span>
               </header>
               <footer
@@ -719,10 +752,10 @@ ShallowWrapper {
                   >
                     5A.0
                   </p>
-                  <styled.span
-                    className="is-dark"
-                  >
-                    発表をお待ちください
+                  <styled.span>
+                    <StatusTag
+                      status="pending"
+                    />
                   </styled.span>
                 </header>,
                 <footer
@@ -752,10 +785,10 @@ ShallowWrapper {
                     >
                       5A.0
                     </p>,
-                    <styled.span
-                      className="is-dark"
-                    >
-                      発表をお待ちください
+                    <styled.span>
+                      <StatusTag
+                        status="pending"
+                      />
                     </styled.span>,
                   ],
                   "className": "card-header",
@@ -779,11 +812,22 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "class",
                     "props": Object {
-                      "children": "発表をお待ちください",
-                      "className": "is-dark",
+                      "children": <StatusTag
+                        status="pending"
+                      />,
                     },
                     "ref": null,
-                    "rendered": "発表をお待ちください",
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "status": "pending",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
                     "type": [Function],
                   },
                 ],
