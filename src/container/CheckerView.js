@@ -33,7 +33,7 @@ const Title = styled.h2`
 @observer
 class CheckerView extends React.Component {
   @observable classroom = 1
-  @observable lastStatus = ''
+  @observable lastStatus = 'スキャンしてください'
   @observable publicId = ''
 
   render () {
