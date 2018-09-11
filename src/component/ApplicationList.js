@@ -1,6 +1,12 @@
 import React from 'react'
 import { observer } from 'mobx-react'
+import styled from 'styled-components'
+
 import StatusTag from './StatusTag'
+
+const TagWrapper = styled.span`
+  margin: 10px;
+`
 
 const ApplicationList = ({list, onCancel}) => (
   <div>
@@ -12,7 +18,9 @@ const ApplicationList = ({list, onCancel}) => (
               <p className='card-header-title'>
                 {c.lottery.name}
               </p>
-              <StatusTag status={c.status} />
+              <TagWrapper>
+                <StatusTag status={c.status} />
+              </TagWrapper>
             </header>
             <footer className='card-footer'>
               <a className='card-footer-item has-text-danger' data-test='applicationlist-cancel' onClick={() => onCancel(c.id)}>キャンセル</a>
