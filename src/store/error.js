@@ -4,15 +4,13 @@ export class ErrorObject {
   @observable errorList = []
   @observable ignoreErrorCodeList = []
 
-  @action.bound addErrorCodeToIgnore (code) {
+  @action.bound ignoring (code, proc) {
     if (Array.isArray(code)) {
       this.ignoreErrorCodeList.push(...code)
     } else {
       this.ignoreErrorCodeList.push(code)
     }
-  }
-
-  @action.bound removeErrorCodeToIgnore (code) {
+    proc()
     const del = (c) => this.ignoreErrorCodeList.splice(this.ignoreErrorCodeList.indexOf(c), 1)
     if (Array.isArray(code)) {
       code.map(c => del(c))
