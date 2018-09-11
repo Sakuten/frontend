@@ -16,6 +16,60 @@ ShallowWrapper {
           "onUpdate": [Function],
           "store": Store {
             "application": ApplicationObject {},
+            "checker": CheckerObject {},
+            "credential": CredentialObject {
+              "isUsedByStaff": false,
+              "kind": "",
+              "recaptchaResponse": "",
+              "secretId": "",
+              "status": Object {},
+              "token": "",
+              Symbol(mobx did run lazy initializers): true,
+              Symbol(mobx administration): ObservableObjectAdministration$$1 {
+                "defaultEnhancer": [Function],
+                "keysAtom": Atom$$1 {
+                  "diffValue": 0,
+                  "isBeingObserved": false,
+                  "isPendingUnobservation": false,
+                  "lastAccessedBy": 0,
+                  "lowestObserverState": 2,
+                  "name": "CredentialObject@3.keys",
+                  "observers": Set {},
+                },
+                "name": "CredentialObject@3",
+                "target": [Circular],
+                "values": Map {
+                  "secretId" => "",
+                  "recaptchaResponse" => "",
+                  "token" => "",
+                  "kind" => "",
+                  "status" => Map {},
+                  "isUsedByStaff" => false,
+                  "isLoggedIn" => false,
+                  "isAbleToAuthenicate" => false,
+                  "isLoggedInAsChecker" => false,
+                },
+              },
+            },
+            "error": ErrorObject {},
+            "fetchStatus": [Function],
+            "router": RouterStore {
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "history": null,
+              "push": [Function],
+              "replace": [Function],
+            },
+          },
+        },
+        "checker": CheckerObject {
+          "lastScan": "",
+          "onChangeClassroom": [Function],
+          "onQRScan": [Function],
+          "store": Store {
+            "application": ApplicationObject {},
+            "checker": CheckerObject {},
             "credential": CredentialObject {
               "isUsedByStaff": false,
               "kind": "",
@@ -70,6 +124,7 @@ ShallowWrapper {
           "onQRScan": [Function],
           "store": Store {
             "application": ApplicationObject {},
+            "checker": CheckerObject {},
             "credential": CredentialObject {
               "isUsedByStaff": false,
               "kind": "",
@@ -121,6 +176,7 @@ ShallowWrapper {
           "onError": [Function],
           "store": Store {
             "application": ApplicationObject {},
+            "checker": CheckerObject {},
             "credential": CredentialObject {
               "isUsedByStaff": false,
               "kind": "",
@@ -169,6 +225,7 @@ ShallowWrapper {
         },
         "store": Store {
           "application": ApplicationObject {},
+          "checker": CheckerObject {},
           "credential": CredentialObject {
             "isUsedByStaff": false,
             "kind": "",
