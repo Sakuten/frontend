@@ -87,16 +87,17 @@ class CheckerView extends React.Component {
 
       let status
       this.props.store.error.ignoring([19, 6], () => {
-        try {
-          const resp = await checkSecretIdStatus(this.classroom, secretId, this.props.store.credential.token)
-          status = resp.data['status']
-        } catch (e) {
-          const codeStatuses = {
-            19: '応募していません',
-            6: '時間外です'
-          }
-          status = codeStatuses[e.response.data.code] || JSON.stringify(e.response.data)
-        }
+        checkSecretIdStatus(this.clessroom, secretId, this.props.store.credential.token)
+          .then(resp => {
+            status = resp.data['status']
+          })
+          .catch(e => {
+            const codeStatuses = {
+              19: '応募していません',
+              6: '時間外です'
+            }
+            status = codeStatuses[e.response.data.code] || JSON.stringify(e.response.data)
+          })
       })
 
       const resp = await getPublicId(secretId, this.props.store.credential.token)
