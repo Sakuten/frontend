@@ -10,13 +10,14 @@ export class ErrorObject {
     } else {
       this.ignoreErrorCodeList.push(code)
     }
-    proc()
+    const ret = proc()
     const del = (c) => this.ignoreErrorCodeList.splice(this.ignoreErrorCodeList.indexOf(c), 1)
     if (Array.isArray(code)) {
       code.map(c => del(c))
     } else {
       del(code)
     }
+    return ret
   }
 
   @action.bound addError (message) {
