@@ -23,7 +23,7 @@ export class ErrorObject {
   }
 
   @action.bound addError (message) {
-    if ('code' in message && this.ignoreErrorCodeList.indexOf(message.code) !== -1) {
+    if (typeof message === 'object' && 'code' in message && this.ignoreErrorCodeList.indexOf(message.code) !== -1) {
       return
     }
     this.errorList.push(message)
