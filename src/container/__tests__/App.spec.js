@@ -28,6 +28,7 @@ const setup = (propOverrides, storeOverrides, path = '/', isShallow = true) => {
     wrapper,
     store,
     applicationView: wrapper.find('[data-test="applicationview"]'),
+    checkerView: wrapper.find('[data-test="checkerview"]'),
     loginView: wrapper.find('[data-test="loginview"]')
   }
 }
@@ -37,6 +38,13 @@ describe('containers', () => {
     it('render', () => {
       const { wrapper } = setup()
       expect(wrapper).toMatchSnapshot()
+    })
+
+    it('renders CheckerView when it is logged in as checker', () => {
+      const { checkerView, loginView, applicationView } = setup({}, {credential: {token: 'token', kind: 'checker'}}, '/checker', false)
+      expect(applicationView.length).toBe(0)
+      expect(loginView.length).toBe(0)
+      expect(checkerView.length).toBe(1)
     })
 
     it('renders ApplicationView when it is logged in', () => {
@@ -59,6 +67,11 @@ describe('containers', () => {
     it('redirects from /lottery/login to /lottery when it is logged in', () => {
       const { wrapper } = setup({}, {credential: {token: 'token', kind: 'normal'}}, '/lottery/login', false)
       expect(wrapper.find('Redirect').prop('to')).toBe('/lottery')
+    })
+
+    it('redirects from /lottery to /checker when it is logged in as checker', () => {
+      const { wrapper } = setup({}, {credential: {token: 'token', kind: 'checker'}}, '/lottery', false)
+      expect(wrapper.find('Redirect').prop('to')).toBe('/checker')
     })
   })
 })
