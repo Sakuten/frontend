@@ -83,7 +83,7 @@ class CheckerView extends React.Component {
         this.publicId = ''
       })
 
-      const status = await this.props.store.error.ignoring([19, 6], () => {
+      const status = await this.props.store.error.ignoring([19, 6], (callback) => {
         return checkSecretIdStatus(this.classroom, secretId, this.props.store.credential.token)
           .then(resp => {
             return resp.data['status']
@@ -95,6 +95,7 @@ class CheckerView extends React.Component {
             }
             return codeStatuses[e.response.data.code] || JSON.stringify(e.response.data)
           })
+          .then(callback)
       })
 
       const resp = await getPublicId(secretId, this.props.store.credential.token)
