@@ -11,11 +11,11 @@ const StatusTag = ({status, className, left}) => {
   const tagInfo = tags[status] || ['', status]
   return (
     left
-      ? <div className='tags has-addons'>
-        <span className={`tag is-dark ${className}`}>{left}</span>
-        <span className={`tag ${className} ${tagInfo[0]}`}>{tagInfo[1]}</span>
+      ? <div className='tags has-addons' data-test='statustag-tags'>
+        <span data-test='statustag-left' className={`tag is-dark ${className}`}>{left}</span>
+        <span data-test='statustag-primary' className={`tag ${className} ${tagInfo[0]}`}>{tagInfo[1]}</span>
       </div>
-      : <span className={`tag ${className} ${tagInfo[0]}`}>{tagInfo[1]}</span>
+      : <span data-test='statustag-primary' className={`tag ${className} ${tagInfo[0]}`}>{tagInfo[1]}</span>
   )
 }
 
