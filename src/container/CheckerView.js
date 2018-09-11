@@ -1,10 +1,8 @@
 import React from 'react'
-import { action } from 'mobx'
 import { inject, observer } from 'mobx-react'
 import QRReader from '../component/QRReader'
 import ClassroomSelect from '../component/ClassroomSelect'
 import StatusTag from '../component/StatusTag'
-import {extractId} from '../util/extractId'
 import styled from 'styled-components'
 import Button from '../component/Button'
 
@@ -37,7 +35,8 @@ class CheckerView extends React.Component {
 
   render () {
     const {
-      onChangeClassroom
+      onChangeClassroom,
+      onQRScan
     } = this.props.event.checker
 
     const {
@@ -52,7 +51,7 @@ class CheckerView extends React.Component {
         <Container>
           <QRReader
             onError={onQRError}
-            onScan={this.onQRScan}
+            onScan={onQRScan}
           />
         </Container>
         <TagWrapper>
@@ -65,22 +64,6 @@ class CheckerView extends React.Component {
         </button>
       </div>
     )
-  }
-
-  @action.bound
-  async onQRScan (scanUri) {
-    if (scanUri) {
-      if (this.lastScan === scanUri) {
-        return
-      }
-      this.lastScan = scanUri
-      const secretId = extractId(scanUri)
-      if (!secretId) {
-        this.props.event.error.onError('Invalid QR Code')
-        return
-      }
-      this.props.event.checker.onQRScan(secretId)
-    }
   }
 }
 
