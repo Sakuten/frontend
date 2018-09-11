@@ -1,5 +1,6 @@
 import {CredentialObject} from './credential'
 import {ApplicationObject} from './application'
+import {CheckerObject} from './checker'
 import { RouterStore } from 'mobx-react-router'
 import {ErrorObject} from './error'
 
@@ -7,6 +8,7 @@ export class Store {
   constructor () {
     this.credential = new CredentialObject()
     this.application = new ApplicationObject()
+    this.checker = new CheckerObject()
     this.router = new RouterStore()
     this.error = new ErrorObject()
   }

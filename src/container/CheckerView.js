@@ -1,5 +1,5 @@
 import React from 'react'
-import { observable, action, runInAction } from 'mobx'
+import { action } from 'mobx'
 import { inject, observer } from 'mobx-react'
 import QRReader from '../component/QRReader'
 import ClassroomSelect from '../component/ClassroomSelect'
@@ -32,10 +32,6 @@ const Title = styled.h2`
 @inject('event')
 @observer
 class CheckerView extends React.Component {
-  @observable classroom = 1
-  @observable lastStatus = 'スキャンしてください'
-  @observable publicId = ''
-
   constructor () {
     super()
     this.lastScan = ''
@@ -50,7 +46,7 @@ class CheckerView extends React.Component {
     return (
       <div data-test='checkerview'>
         <Title>チェッカー</Title>
-        <ClassroomSelect list={this.props.store.application.classroomList} value={this.classroom} onChange={this.onChangeClassroom} />
+        <ClassroomSelect list={this.props.store.application.classroomList} value={this.props.store.checker.classroom} onChange={this.onChangeClassroom} />
         <Container>
           <QRReader
             onError={onQRError}
@@ -58,7 +54,7 @@ class CheckerView extends React.Component {
           />
         </Container>
         <TagWrapper>
-          <StatusTag status={this.lastStatus} className='is-large' left={this.publicId} />
+          <StatusTag status={this.props.store.checker.lastStatus} className='is-large' left={this.props.store.checker.publicId} />
         </TagWrapper>
         <button onClick={onLogout}>
           <Button>
@@ -71,7 +67,7 @@ class CheckerView extends React.Component {
 
   @action.bound
   onChangeClassroom (classroom) {
-    this.classroom = classroom
+    this.props.store.checker.setClassroom(classroom)
   }
 
   @action.bound
@@ -87,13 +83,11 @@ class CheckerView extends React.Component {
         return
       }
 
-      runInAction('updating the state', () => {
-        this.lastStatus = '取得中'
-        this.publicId = ''
-      })
+      this.props.store.checker.setLastStatus('取得中')
+      this.props.store.checker.setPublicId('')
 
       const status = await this.props.store.error.ignoring([19, 6], (callback) => {
-        return checkSecretIdStatus(this.classroom, secretId, this.props.store.credential.token)
+        return checkSecretIdStatus(this.props.store.checker.classroom, secretId, this.props.store.credential.token)
           .then(resp => {
             return resp.data['status']
           })
@@ -109,10 +103,8 @@ class CheckerView extends React.Component {
 
       const resp = await getPublicId(secretId, this.props.store.credential.token)
 
-      runInAction('updating the state', () => {
-        this.lastStatus = status
-        this.publicId = resp.data['public_id']
-      })
+      this.props.store.checker.setLastStatus(status)
+      this.props.store.checker.setPublicId(resp.data['public_id'])
     }
   }
 }
