@@ -13,9 +13,9 @@ export class Store {
 
   // Called in Event's constructor
   fetchStatus = async () => {
-    await Promise.all([
-      this.credential.fetchStatus(),
-      this.credential.isLoggedInAsChecker || this.application.fetchApplicationList(this.credential.token)
-    ])
+    await this.credential.fetchStatus()
+    if (!this.credential.isLoggedInAsChecker) {
+      await this.application.fetchApplicationList(this.credential.token)
+    }
   }
 }
