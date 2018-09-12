@@ -15,7 +15,7 @@ export class ErrorObject {
   }
 
   onError = (code, message) => {
-    if (message === 'Unauthorized') {
+    if (code === 0) {
       this.store.credential.setToken('')
     }
     this.store.error.addError(code, message)
