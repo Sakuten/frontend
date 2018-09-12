@@ -16,14 +16,14 @@ const ErrorList = ({list, onDelete}) => (
       list.map((c, i) => {
         const error = errors[c.code]
         const levelToMessage = {
-          'internal': '内部エラーが発生しました',
-          'error': 'エラーが発生しました',
-          'notice': '警告'
+          'internal': ['is-danger', '内部エラーが発生しました'],
+          'error': ['is-warning', '失敗しました'],
+          'notice': ['is-info', '情報']
         }
         return (
-          <article data-test='errorlist-error' className='message is-danger' key={i} >
+          <article data-test='errorlist-error' className={`message ${levelToMessage[error.level][0]}`} key={i} >
             <div data-test='errorlist-error-header' className='message-header'>
-              <p>{levelToMessage[error.level]}</p>
+              <p>{levelToMessage[error.level][1]}</p>
               <button className='delete' aria-label='delete' onClick={() => onDelete(i)} />
             </div>
             <div data-test='errorlist-error-body' className='message-body'>
