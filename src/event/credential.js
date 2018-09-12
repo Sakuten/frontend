@@ -23,6 +23,9 @@ export class CredentialObject {
     if ('token' in json) {
       this.store.credential.setToken(json.token)
       await this.store.fetchStatus()
+      if (this.store.credential.isLoggedInAsChecker) {
+        this.store.router.history.push('?staff')
+      }
     } else { throw Error('Invalid response returned') }
   }
 
