@@ -7,9 +7,11 @@ ShallowWrapper {
     list={
       Array [
         Object {
+          "code": 0,
           "message": "Error 1",
         },
         Object {
+          "code": 1,
           "message": "Error 2",
         },
       ]
@@ -36,7 +38,7 @@ ShallowWrapper {
             className="message-header"
           >
             <p>
-              エラーが発生しました
+              警告
             </p>
             <button
               aria-label="delete"
@@ -47,7 +49,7 @@ ShallowWrapper {
           <div
             className="message-body"
           >
-            {"message":"Error 1"}
+            ログインしていません
           </div>
         </article>,
         <article
@@ -58,7 +60,7 @@ ShallowWrapper {
             className="message-header"
           >
             <p>
-              エラーが発生しました
+              内部エラーが発生しました
             </p>
             <button
               aria-label="delete"
@@ -69,7 +71,7 @@ ShallowWrapper {
           <div
             className="message-body"
           >
-            {"message":"Error 2"}
+            グループメンバーのカードが正しくありません。
           </div>
         </article>,
       ],
@@ -87,7 +89,7 @@ ShallowWrapper {
               className="message-header"
             >
               <p>
-                エラーが発生しました
+                警告
               </p>
               <button
                 aria-label="delete"
@@ -98,7 +100,7 @@ ShallowWrapper {
             <div
               className="message-body"
             >
-              {"message":"Error 1"}
+              ログインしていません
             </div>,
           ],
           "className": "message is-danger",
@@ -113,7 +115,7 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <p>
-                  エラーが発生しました
+                  警告
                 </p>,
                 <button
                   aria-label="delete"
@@ -130,10 +132,10 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "エラーが発生しました",
+                  "children": "警告",
                 },
                 "ref": null,
-                "rendered": "エラーが発生しました",
+                "rendered": "警告",
                 "type": "p",
               },
               Object {
@@ -157,11 +159,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "{\\"message\\":\\"Error 1\\"}",
+              "children": "ログインしていません",
               "className": "message-body",
             },
             "ref": null,
-            "rendered": "{\\"message\\":\\"Error 1\\"}",
+            "rendered": "ログインしていません",
             "type": "div",
           },
         ],
@@ -177,7 +179,7 @@ ShallowWrapper {
               className="message-header"
             >
               <p>
-                エラーが発生しました
+                内部エラーが発生しました
               </p>
               <button
                 aria-label="delete"
@@ -188,7 +190,7 @@ ShallowWrapper {
             <div
               className="message-body"
             >
-              {"message":"Error 2"}
+              グループメンバーのカードが正しくありません。
             </div>,
           ],
           "className": "message is-danger",
@@ -203,7 +205,7 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <p>
-                  エラーが発生しました
+                  内部エラーが発生しました
                 </p>,
                 <button
                   aria-label="delete"
@@ -220,10 +222,10 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "エラーが発生しました",
+                  "children": "内部エラーが発生しました",
                 },
                 "ref": null,
-                "rendered": "エラーが発生しました",
+                "rendered": "内部エラーが発生しました",
                 "type": "p",
               },
               Object {
@@ -247,11 +249,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "{\\"message\\":\\"Error 2\\"}",
+              "children": "グループメンバーのカードが正しくありません。",
               "className": "message-body",
             },
             "ref": null,
-            "rendered": "{\\"message\\":\\"Error 2\\"}",
+            "rendered": "グループメンバーのカードが正しくありません。",
             "type": "div",
           },
         ],
@@ -275,7 +277,7 @@ ShallowWrapper {
               className="message-header"
             >
               <p>
-                エラーが発生しました
+                警告
               </p>
               <button
                 aria-label="delete"
@@ -286,7 +288,7 @@ ShallowWrapper {
             <div
               className="message-body"
             >
-              {"message":"Error 1"}
+              ログインしていません
             </div>
           </article>,
           <article
@@ -297,7 +299,7 @@ ShallowWrapper {
               className="message-header"
             >
               <p>
-                エラーが発生しました
+                内部エラーが発生しました
               </p>
               <button
                 aria-label="delete"
@@ -308,7 +310,7 @@ ShallowWrapper {
             <div
               className="message-body"
             >
-              {"message":"Error 2"}
+              グループメンバーのカードが正しくありません。
             </div>
           </article>,
         ],
@@ -326,7 +328,7 @@ ShallowWrapper {
                 className="message-header"
               >
                 <p>
-                  エラーが発生しました
+                  警告
                 </p>
                 <button
                   aria-label="delete"
@@ -337,7 +339,7 @@ ShallowWrapper {
               <div
                 className="message-body"
               >
-                {"message":"Error 1"}
+                ログインしていません
               </div>,
             ],
             "className": "message is-danger",
@@ -352,7 +354,7 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   <p>
-                    エラーが発生しました
+                    警告
                   </p>,
                   <button
                     aria-label="delete"
@@ -369,10 +371,10 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "エラーが発生しました",
+                    "children": "警告",
                   },
                   "ref": null,
-                  "rendered": "エラーが発生しました",
+                  "rendered": "警告",
                   "type": "p",
                 },
                 Object {
@@ -396,11 +398,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "{\\"message\\":\\"Error 1\\"}",
+                "children": "ログインしていません",
                 "className": "message-body",
               },
               "ref": null,
-              "rendered": "{\\"message\\":\\"Error 1\\"}",
+              "rendered": "ログインしていません",
               "type": "div",
             },
           ],
@@ -416,7 +418,7 @@ ShallowWrapper {
                 className="message-header"
               >
                 <p>
-                  エラーが発生しました
+                  内部エラーが発生しました
                 </p>
                 <button
                   aria-label="delete"
@@ -427,7 +429,7 @@ ShallowWrapper {
               <div
                 className="message-body"
               >
-                {"message":"Error 2"}
+                グループメンバーのカードが正しくありません。
               </div>,
             ],
             "className": "message is-danger",
@@ -442,7 +444,7 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   <p>
-                    エラーが発生しました
+                    内部エラーが発生しました
                   </p>,
                   <button
                     aria-label="delete"
@@ -459,10 +461,10 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "エラーが発生しました",
+                    "children": "内部エラーが発生しました",
                   },
                   "ref": null,
-                  "rendered": "エラーが発生しました",
+                  "rendered": "内部エラーが発生しました",
                   "type": "p",
                 },
                 Object {
@@ -486,11 +488,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "{\\"message\\":\\"Error 2\\"}",
+                "children": "グループメンバーのカードが正しくありません。",
                 "className": "message-body",
               },
               "ref": null,
-              "rendered": "{\\"message\\":\\"Error 2\\"}",
+              "rendered": "グループメンバーのカードが正しくありません。",
               "type": "div",
             },
           ],

@@ -9,11 +9,11 @@ describe('stores', () => {
     })
 
     it('creates new errors', () => {
-      store.addError('Error1')
-      store.addError('Error2')
+      store.addError(0, 'Error1')
+      store.addError(1, 'Error2')
       expect(store.errorList.length).toBe(2)
-      expect(store.errorList[0]).toBe('Error1')
-      expect(store.errorList[1]).toBe('Error2')
+      expect(store.errorList[0]).toEqual({code: 0, message: 'Error1'})
+      expect(store.errorList[1]).toEqual({code: 1, message: 'Error2'})
     })
   })
 })

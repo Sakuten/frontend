@@ -20,7 +20,7 @@ describe('events', () => {
 
     it('clears token when unauthorized', () => {
       event.store.credential.token = 'token'
-      event.onError({'message': 'Unauthorized'})
+      event.onError(0, 'Unauthorized')
       expect(event.store.credential.token.length).toBe(0)
     })
   })

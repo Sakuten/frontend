@@ -5,8 +5,8 @@ import ErrorList from '../ErrorList'
 const setup = propOverrides => {
   const props = Object.assign({
     list: [
-      { message: 'Error 1' },
-      { message: 'Error 2' }]
+      { code: 0, message: 'Error 1' },
+      { code: 1, message: 'Error 2' }]
   }, propOverrides)
 
   const wrapper = shallow(<ErrorList {...props} />)
