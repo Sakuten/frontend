@@ -17,6 +17,7 @@ export const getStatus = (token) => new Promise((resolve, reject) => {
       }
     ],
     'id': 3,
-    'secret_id': 'example1'
+    'secret_id': 'example1',
+    'kind': 'normal'
   }))
 })

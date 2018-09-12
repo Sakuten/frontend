@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`containers ApplicationView render 1`] = `
+exports[`containers CheckerView render 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Provider
@@ -269,40 +269,53 @@ ShallowWrapper {
       }
     }
   >
-    <inject-ApplicationView-with-event
-      application={ApplicationObject {}}
-      credential={
-        CredentialObject {
-          "kind": "",
-          "recaptchaResponse": "",
-          "secretId": "",
-          "status": Object {},
-          "token": "",
-          Symbol(mobx did run lazy initializers): true,
-          Symbol(mobx administration): ObservableObjectAdministration$$1 {
-            "defaultEnhancer": [Function],
-            "keysAtom": Atom$$1 {
-              "diffValue": 0,
-              "isBeingObserved": false,
-              "isPendingUnobservation": false,
-              "lastAccessedBy": 0,
-              "lowestObserverState": 2,
-              "name": "CredentialObject@3.keys",
-              "observers": Set {},
+    <inject-CheckerView-with-event
+      store={
+        Store {
+          "application": ApplicationObject {},
+          "checker": CheckerObject {},
+          "credential": CredentialObject {
+            "kind": "",
+            "recaptchaResponse": "",
+            "secretId": "",
+            "status": Object {},
+            "token": "",
+            Symbol(mobx did run lazy initializers): true,
+            Symbol(mobx administration): ObservableObjectAdministration$$1 {
+              "defaultEnhancer": [Function],
+              "keysAtom": Atom$$1 {
+                "diffValue": 0,
+                "isBeingObserved": false,
+                "isPendingUnobservation": false,
+                "lastAccessedBy": 0,
+                "lowestObserverState": 2,
+                "name": "CredentialObject@3.keys",
+                "observers": Set {},
+              },
+              "name": "CredentialObject@3",
+              "target": [Circular],
+              "values": Map {
+                "secretId" => "",
+                "recaptchaResponse" => "",
+                "token" => "",
+                "kind" => "",
+                "status" => Map {},
+                "isUsedByStaff" => false,
+                "isLoggedIn" => false,
+                "isAbleToAuthenicate" => false,
+                "isLoggedInAsChecker" => false,
+              },
             },
-            "name": "CredentialObject@3",
-            "target": [Circular],
-            "values": Map {
-              "secretId" => "",
-              "recaptchaResponse" => "",
-              "token" => "",
-              "kind" => "",
-              "status" => Map {},
-              "isUsedByStaff" => false,
-              "isLoggedIn" => false,
-              "isAbleToAuthenicate" => false,
-              "isLoggedInAsChecker" => false,
-            },
+          },
+          "error": ErrorObject {},
+          "fetchStatus": [Function],
+          "router": RouterStore {
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "history": null,
+            "push": [Function],
+            "replace": [Function],
           },
         }
       }
@@ -320,52 +333,9 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "application": ApplicationObject {},
-      "credential": CredentialObject {
-        "kind": "",
-        "recaptchaResponse": "",
-        "secretId": "",
-        "status": Object {},
-        "token": "",
-        Symbol(mobx did run lazy initializers): true,
-        Symbol(mobx administration): ObservableObjectAdministration$$1 {
-          "defaultEnhancer": [Function],
-          "keysAtom": Atom$$1 {
-            "diffValue": 0,
-            "isBeingObserved": false,
-            "isPendingUnobservation": false,
-            "lastAccessedBy": 0,
-            "lowestObserverState": 2,
-            "name": "CredentialObject@3.keys",
-            "observers": Set {},
-          },
-          "name": "CredentialObject@3",
-          "target": [Circular],
-          "values": Map {
-            "secretId" => "",
-            "recaptchaResponse" => "",
-            "token" => "",
-            "kind" => "",
-            "status" => Map {},
-            "isUsedByStaff" => false,
-            "isLoggedIn" => false,
-            "isAbleToAuthenicate" => false,
-            "isLoggedInAsChecker" => false,
-          },
-        },
-      },
-    },
-    "ref": null,
-    "rendered": null,
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
+      "store": Store {
         "application": ApplicationObject {},
+        "checker": CheckerObject {},
         "credential": CredentialObject {
           "kind": "",
           "recaptchaResponse": "",
@@ -397,6 +367,75 @@ ShallowWrapper {
               "isAbleToAuthenicate" => false,
               "isLoggedInAsChecker" => false,
             },
+          },
+        },
+        "error": ErrorObject {},
+        "fetchStatus": [Function],
+        "router": RouterStore {
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "history": null,
+          "push": [Function],
+          "replace": [Function],
+        },
+      },
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "store": Store {
+          "application": ApplicationObject {},
+          "checker": CheckerObject {},
+          "credential": CredentialObject {
+            "kind": "",
+            "recaptchaResponse": "",
+            "secretId": "",
+            "status": Object {},
+            "token": "",
+            Symbol(mobx did run lazy initializers): true,
+            Symbol(mobx administration): ObservableObjectAdministration$$1 {
+              "defaultEnhancer": [Function],
+              "keysAtom": Atom$$1 {
+                "diffValue": 0,
+                "isBeingObserved": false,
+                "isPendingUnobservation": false,
+                "lastAccessedBy": 0,
+                "lowestObserverState": 2,
+                "name": "CredentialObject@3.keys",
+                "observers": Set {},
+              },
+              "name": "CredentialObject@3",
+              "target": [Circular],
+              "values": Map {
+                "secretId" => "",
+                "recaptchaResponse" => "",
+                "token" => "",
+                "kind" => "",
+                "status" => Map {},
+                "isUsedByStaff" => false,
+                "isLoggedIn" => false,
+                "isAbleToAuthenicate" => false,
+                "isLoggedInAsChecker" => false,
+              },
+            },
+          },
+          "error": ErrorObject {},
+          "fetchStatus": [Function],
+          "router": RouterStore {
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "history": null,
+            "push": [Function],
+            "replace": [Function],
           },
         },
       },

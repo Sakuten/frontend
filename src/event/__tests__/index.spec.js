@@ -8,6 +8,8 @@ describe('events', () => {
       expect(event).toBeDefined()
       expect(event.credential).toBeDefined()
       expect(event.application).toBeDefined()
+      expect(event.error).toBeDefined()
+      expect(event.checker).toBeDefined()
     })
   })
 })

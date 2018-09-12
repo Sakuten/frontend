@@ -32,6 +32,7 @@ describe('stores', () => {
 
     it('checks if logged in when token is set', () => {
       store.setToken('token')
+      store.setKind('normal')
       expect(store.isLoggedIn).toBe(true)
     })
 

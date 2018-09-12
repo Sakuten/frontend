@@ -49,6 +49,7 @@ describe('events', () => {
         push: mock
       }
       event.store.credential.token = 'token'
+      event.store.credential.kind = 'normal'
       await event.onLogout()
       expect(mock).toHaveBeenCalledWith('/lottery/login')
     })

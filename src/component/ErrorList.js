@@ -6,6 +6,7 @@ const Container = styled.div`
   position: fixed;
   bottom: 5%;
   width: 90vw;
+  z-index: 10;
 `
 
 const ErrorList = ({list, onDelete}) => (

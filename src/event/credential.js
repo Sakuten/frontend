@@ -10,7 +10,7 @@ export class CredentialObject {
       () => this.store.credential.isLoggedIn,
       isLoggedIn => {
         if (this.store.router.history) {
-          const urlBase = isLoggedIn ? '/lottery' : '/lottery/login'
+          const urlBase = isLoggedIn ? this.store.credential.isLoggedInAsChecker ? '/checker' : '/lottery' : '/lottery/login'
           this.store.router.history.push(urlBase + (this.store.credential.isUsedByStaff ? '?staff' : ''))
         }
       }
@@ -23,6 +23,9 @@ export class CredentialObject {
     if ('token' in json) {
       this.store.credential.setToken(json.token)
       await this.store.fetchStatus()
+      if (this.store.credential.isLoggedInAsChecker) {
+        this.store.router.history.push('?staff')
+      }
     } else { throw Error('Invalid response returned') }
   }
 
