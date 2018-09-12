@@ -17,7 +17,7 @@ const setup = propOverrides => {
     wrapper,
     error: wrapper.find('[data-test="errorlist-error"]'),
     header: wrapper.find('[data-test="errorlist-error-header"]'),
-    body: wrapper.find('[data-test="errorlist-error-body"]'),
+    body: wrapper.find('[data-test="errorlist-error-body"]')
   }
 }
 
