@@ -86,5 +86,21 @@
   "21": {
     "translation": "4人以上の同時応募はできません。",
     "level": "error"
+  },
+  "101": {
+    "translation": "読み取りに失敗しました。もう一度お試しください。",
+    "level": "notice"
+  },
+  "102": {
+    "translation": "あなた自身をメンバーとして追加することはできません",
+    "level": "error"
+  },
+  "103": {
+    "translation": "すでに追加されているメンバーです",
+    "level": "error"
+  },
+  "104": {
+    "translation": "4人以上の同時応募はできません。",
+    "level": "error"
   }
 }
