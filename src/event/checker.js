@@ -19,7 +19,7 @@ export class CheckerObject {
       this.lastScan = scanUri
       const secretId = extractId(scanUri)
       if (!secretId) {
-        this.store.error.addError('Invalid QR Code')
+        this.store.error.addError(101, 'Invalid QR Code')
         return
       }
 
