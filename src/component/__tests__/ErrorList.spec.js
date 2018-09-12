@@ -1,6 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import ErrorList from '../ErrorList'
+import errors from '../../errors.json'
 
 const setup = propOverrides => {
   const props = Object.assign({
@@ -14,7 +15,9 @@ const setup = propOverrides => {
   return {
     props,
     wrapper,
-    error: wrapper.find('[data-test="errorlist-error"]')
+    error: wrapper.find('[data-test="errorlist-error"]'),
+    header: wrapper.find('[data-test="errorlist-error-header"]'),
+    body: wrapper.find('[data-test="errorlist-error-body"]'),
   }
 }
 
@@ -28,6 +31,12 @@ describe('components', () => {
     it('renders two errors', () => {
       const { error } = setup()
       expect(error.length).toBe(2)
+    })
+
+    it('renders correct error message', () => {
+      const { body } = setup()
+      expect(body.at(0).text()).toBe(errors['0'].translation)
+      expect(body.at(1).text()).toBe(errors['1'].translation)
     })
   })
 })

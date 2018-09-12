@@ -22,11 +22,11 @@ const ErrorList = ({list, onDelete}) => (
         }
         return (
           <article data-test='errorlist-error' className='message is-danger' key={i} >
-            <div className='message-header'>
+            <div data-test='errorlist-error-header' className='message-header'>
               <p>{levelToMessage[error.level]}</p>
               <button className='delete' aria-label='delete' onClick={() => onDelete(i)} />
             </div>
-            <div className='message-body'>
+            <div data-test='errorlist-error-body' className='message-body'>
               {error.translation}
             </div>
           </article>

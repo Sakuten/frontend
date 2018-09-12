@@ -36,6 +36,7 @@ ShallowWrapper {
         >
           <div
             className="message-header"
+            data-test="errorlist-error-header"
           >
             <p>
               警告
@@ -48,6 +49,7 @@ ShallowWrapper {
           </div>
           <div
             className="message-body"
+            data-test="errorlist-error-body"
           >
             ログインしていません
           </div>
@@ -58,6 +60,7 @@ ShallowWrapper {
         >
           <div
             className="message-header"
+            data-test="errorlist-error-header"
           >
             <p>
               内部エラーが発生しました
@@ -70,6 +73,7 @@ ShallowWrapper {
           </div>
           <div
             className="message-body"
+            data-test="errorlist-error-body"
           >
             グループメンバーのカードが正しくありません。
           </div>
@@ -87,6 +91,7 @@ ShallowWrapper {
           "children": Array [
             <div
               className="message-header"
+              data-test="errorlist-error-header"
             >
               <p>
                 警告
@@ -99,6 +104,7 @@ ShallowWrapper {
             </div>,
             <div
               className="message-body"
+              data-test="errorlist-error-body"
             >
               ログインしていません
             </div>,
@@ -124,6 +130,7 @@ ShallowWrapper {
                 />,
               ],
               "className": "message-header",
+              "data-test": "errorlist-error-header",
             },
             "ref": null,
             "rendered": Array [
@@ -161,6 +168,7 @@ ShallowWrapper {
             "props": Object {
               "children": "ログインしていません",
               "className": "message-body",
+              "data-test": "errorlist-error-body",
             },
             "ref": null,
             "rendered": "ログインしていません",
@@ -177,6 +185,7 @@ ShallowWrapper {
           "children": Array [
             <div
               className="message-header"
+              data-test="errorlist-error-header"
             >
               <p>
                 内部エラーが発生しました
@@ -189,6 +198,7 @@ ShallowWrapper {
             </div>,
             <div
               className="message-body"
+              data-test="errorlist-error-body"
             >
               グループメンバーのカードが正しくありません。
             </div>,
@@ -214,6 +224,7 @@ ShallowWrapper {
                 />,
               ],
               "className": "message-header",
+              "data-test": "errorlist-error-header",
             },
             "ref": null,
             "rendered": Array [
@@ -251,6 +262,7 @@ ShallowWrapper {
             "props": Object {
               "children": "グループメンバーのカードが正しくありません。",
               "className": "message-body",
+              "data-test": "errorlist-error-body",
             },
             "ref": null,
             "rendered": "グループメンバーのカードが正しくありません。",
@@ -275,6 +287,7 @@ ShallowWrapper {
           >
             <div
               className="message-header"
+              data-test="errorlist-error-header"
             >
               <p>
                 警告
@@ -287,6 +300,7 @@ ShallowWrapper {
             </div>
             <div
               className="message-body"
+              data-test="errorlist-error-body"
             >
               ログインしていません
             </div>
@@ -297,6 +311,7 @@ ShallowWrapper {
           >
             <div
               className="message-header"
+              data-test="errorlist-error-header"
             >
               <p>
                 内部エラーが発生しました
@@ -309,6 +324,7 @@ ShallowWrapper {
             </div>
             <div
               className="message-body"
+              data-test="errorlist-error-body"
             >
               グループメンバーのカードが正しくありません。
             </div>
@@ -326,6 +342,7 @@ ShallowWrapper {
             "children": Array [
               <div
                 className="message-header"
+                data-test="errorlist-error-header"
               >
                 <p>
                   警告
@@ -338,6 +355,7 @@ ShallowWrapper {
               </div>,
               <div
                 className="message-body"
+                data-test="errorlist-error-body"
               >
                 ログインしていません
               </div>,
@@ -363,6 +381,7 @@ ShallowWrapper {
                   />,
                 ],
                 "className": "message-header",
+                "data-test": "errorlist-error-header",
               },
               "ref": null,
               "rendered": Array [
@@ -400,6 +419,7 @@ ShallowWrapper {
               "props": Object {
                 "children": "ログインしていません",
                 "className": "message-body",
+                "data-test": "errorlist-error-body",
               },
               "ref": null,
               "rendered": "ログインしていません",
@@ -416,6 +436,7 @@ ShallowWrapper {
             "children": Array [
               <div
                 className="message-header"
+                data-test="errorlist-error-header"
               >
                 <p>
                   内部エラーが発生しました
@@ -428,6 +449,7 @@ ShallowWrapper {
               </div>,
               <div
                 className="message-body"
+                data-test="errorlist-error-body"
               >
                 グループメンバーのカードが正しくありません。
               </div>,
@@ -453,6 +475,7 @@ ShallowWrapper {
                   />,
                 ],
                 "className": "message-header",
+                "data-test": "errorlist-error-header",
               },
               "ref": null,
               "rendered": Array [
@@ -490,6 +513,7 @@ ShallowWrapper {
               "props": Object {
                 "children": "グループメンバーのカードが正しくありません。",
                 "className": "message-body",
+                "data-test": "errorlist-error-body",
               },
               "ref": null,
               "rendered": "グループメンバーのカードが正しくありません。",
