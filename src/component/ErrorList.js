@@ -16,7 +16,7 @@ const ErrorList = ({list, onDelete}) => (
       list.map((c, i) => {
         const error = errors[c.code]
         const levelToMessage = {
-          'fault': '内部エラーが発生しました',
+          'internal': '内部エラーが発生しました',
           'error': 'エラーが発生しました',
           'notice': '警告'
         }
