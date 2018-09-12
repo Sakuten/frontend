@@ -1,0 +1,90 @@
+{
+  "00": {
+    "translation": "ログインしていません",
+    "level": "notice"
+  },
+  "01": {
+    "translation": "グループメンバーのカードが正しくありません。",
+    "level": "fault"
+  },
+  "02": {
+    "translation": "不正なリクエストが検出されました",
+    "level": "fault"
+  },
+  "03": {
+    "translation": "ログインに失敗しました。もう一度お試しください。",
+    "level": "error"
+  },
+  "04": {
+    "translation": "不正なログインが検出されました",
+    "level": "fault"
+  },
+  "05": {
+    "translation": "ユーザーが見つかりません",
+    "level": "fault"
+  },
+  "06": {
+    "translation": "現在は受けつけておりません。",
+    "level": "notice"
+  },
+  "07": {
+    "translation": "見つかりません",
+    "level": "error"
+  },
+  "08": {
+    "translation": "グループメンバーの中に、すでにこの時間帯で応募している人がいます",
+    "level": "error"
+  },
+  "09": {
+    "translation": "グループメンバーの中に、すでにこの抽選に応募している人がいます",
+    "level": "error"
+  },
+  "10": {
+    "translation": "すでに終わった応募をキャンセルすることはできません。",
+    "level": "error"
+  },
+  "11": {
+    "translation": "この抽選への応募は、現在は受けつけておりません。",
+    "level": "error"
+  },
+  "12": {
+    "translation": "まだ抽選が行われていません。",
+    "level": "notice"
+  },
+  "13": {
+    "translation": "不正なリクエストが検出されました",
+    "level": "fault"
+  },
+  "14": {
+    "translation": "現在は受けつけておりません。",
+    "level": "error"
+  },
+  "15": {
+    "translation": "不正なリクエストが検出されました",
+    "level": "fault"
+  },
+  "16": {
+    "translation": "すでに応募しています",
+    "level": "error"
+  },
+  "17": {
+    "translation": "すでにこの時間帯で応募しています",
+    "level": "error"
+  },
+  "18": {
+    "translation": "現在は受けつけておりません。",
+    "level": "fault"
+  },
+  "19": {
+    "translation": "応募していません。",
+    "level": "error"
+  },
+  "20": {
+    "translation": "内部エラーが発生しました。もう一度お試しください。",
+    "level": "fault"
+  },
+  "21": {
+    "translation": "4人以上の同時応募はできません。",
+    "level": "error"
+  }
+}
