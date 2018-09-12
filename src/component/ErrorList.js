@@ -20,10 +20,11 @@ const ErrorList = ({list, onDelete}) => (
           'error': ['is-warning', '失敗しました'],
           'notice': ['is-info', '情報']
         }
+        const msg = levelToMessage[error.level]
         return (
-          <article data-test='errorlist-error' className={`message ${levelToMessage[error.level][0]}`} key={i} >
+          <article data-test='errorlist-error' className={`message ${msg[0]}`} key={i} >
             <div data-test='errorlist-error-header' className='message-header'>
-              <p>{levelToMessage[error.level][1]}</p>
+              <p>{msg[1]}</p>
               <button className='delete' aria-label='delete' onClick={() => onDelete(i)} />
             </div>
             <div data-test='errorlist-error-body' className='message-body'>
