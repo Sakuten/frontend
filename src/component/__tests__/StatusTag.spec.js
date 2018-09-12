@@ -30,10 +30,9 @@ describe('components', () => {
     ${'won'}  | ${'当選しました。'}
     ${'lose'}  | ${'落選しました。'}
     `('translates a passed status', ({status, result}) => {
-      const { primary } = setup({status})
-      expect(primary.text()).toBe(result)
-    })
-
+  const { primary } = setup({status})
+  expect(primary.text()).toBe(result)
+})
 
     it('renders a passed unknown status', () => {
       const { primary } = setup({status: 'Unknown Status Yeah'})
