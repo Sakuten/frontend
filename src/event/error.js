@@ -8,17 +8,17 @@ export class ErrorObject {
       response => response,
       error => {
         const message = error.response ? error.response.data : (error.request ? error.request : error.message)
-        this.onError(message)
+        this.onError(message.code, message.message)
         return Promise.reject(error)
       }
     )
   }
 
-  onError = (message) => {
-    if ('message' in message && message['message'] === 'Unauthorized') {
+  onError = (code, message) => {
+    if (message === 'Unauthorized') {
       this.store.credential.setToken('')
     }
-    this.store.error.addError(message)
+    this.store.error.addError(code, message)
   }
 
   onDelete = (idx) => {

@@ -22,11 +22,11 @@ export class ErrorObject {
     return proc(deleter)
   }
 
-  @action.bound addError (message) {
-    if (typeof message === 'object' && 'code' in message && this.ignoreErrorCodeList.indexOf(message.code) !== -1) {
+  @action.bound addError (code, message) {
+    if (this.ignoreErrorCodeList.indexOf(code) !== -1) {
       return
     }
-    this.errorList.push(message)
+    this.errorList.push({code: code, message: message})
   }
 
   @action.bound deleteError (idx) {
