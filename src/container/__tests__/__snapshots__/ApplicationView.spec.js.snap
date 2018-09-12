@@ -18,7 +18,6 @@ ShallowWrapper {
             "application": ApplicationObject {},
             "checker": CheckerObject {},
             "credential": CredentialObject {
-              "isUsedByStaff": false,
               "kind": "",
               "recaptchaResponse": "",
               "secretId": "",
@@ -71,7 +70,6 @@ ShallowWrapper {
             "application": ApplicationObject {},
             "checker": CheckerObject {},
             "credential": CredentialObject {
-              "isUsedByStaff": false,
               "kind": "",
               "recaptchaResponse": "",
               "secretId": "",
@@ -126,7 +124,6 @@ ShallowWrapper {
             "application": ApplicationObject {},
             "checker": CheckerObject {},
             "credential": CredentialObject {
-              "isUsedByStaff": false,
               "kind": "",
               "recaptchaResponse": "",
               "secretId": "",
@@ -178,7 +175,6 @@ ShallowWrapper {
             "application": ApplicationObject {},
             "checker": CheckerObject {},
             "credential": CredentialObject {
-              "isUsedByStaff": false,
               "kind": "",
               "recaptchaResponse": "",
               "secretId": "",
@@ -227,7 +223,6 @@ ShallowWrapper {
           "application": ApplicationObject {},
           "checker": CheckerObject {},
           "credential": CredentialObject {
-            "isUsedByStaff": false,
             "kind": "",
             "recaptchaResponse": "",
             "secretId": "",
@@ -278,7 +273,6 @@ ShallowWrapper {
       application={ApplicationObject {}}
       credential={
         CredentialObject {
-          "isUsedByStaff": false,
           "kind": "",
           "recaptchaResponse": "",
           "secretId": "",
@@ -328,7 +322,6 @@ ShallowWrapper {
     "props": Object {
       "application": ApplicationObject {},
       "credential": CredentialObject {
-        "isUsedByStaff": false,
         "kind": "",
         "recaptchaResponse": "",
         "secretId": "",
@@ -374,7 +367,6 @@ ShallowWrapper {
       "props": Object {
         "application": ApplicationObject {},
         "credential": CredentialObject {
-          "isUsedByStaff": false,
           "kind": "",
           "recaptchaResponse": "",
           "secretId": "",

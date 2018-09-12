@@ -58,13 +58,17 @@ describe('events', () => {
     })
 
     it('logouts on apply when used by staff', async () => {
-      event.store.credential.isUsedByStaff = true
+      Object.defineProperty(event.store.credential, 'isUsedByStaff', {
+        get: () => true
+      })
       await event.onApply()
       expect(event.store.credential.isLoggedIn).toBe(false)
     })
 
     it('logouts on cancel when used by staff', async () => {
-      event.store.credential.isUsedByStaff = true
+      Object.defineProperty(event.store.credential, 'isUsedByStaff', {
+        get: () => true
+      })
       await event.onCancel()
       expect(event.store.credential.isLoggedIn).toBe(false)
     })
