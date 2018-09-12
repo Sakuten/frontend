@@ -9,9 +9,7 @@ import {Event} from '../../event'
 const setup = (propOverrides, storeOverrides, eventOverrides, isShallow = true) => {
   const store = deepAssign(new Store(), storeOverrides)
   const event = deepAssign(new Event(store), eventOverrides)
-  const props = Object.assign({
-    credential: store.credential
-  }, propOverrides)
+  const props = Object.assign({store}, propOverrides)
 
   const wrapper = (isShallow ? shallow : mount)(<Provider event={event}><CheckerView {...props} /></Provider>)
 
