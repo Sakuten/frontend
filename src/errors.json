@@ -102,5 +102,9 @@
   "104": {
     "translation": "4人以上の同時応募はできません。",
     "level": "error"
+  },
+  "105": {
+    "translation": "ネットワークエラー",
+    "level": "fault"
   }
 }

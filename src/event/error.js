@@ -8,7 +8,11 @@ export class ErrorObject {
       response => response,
       error => {
         const message = error.response ? error.response.data : (error.request ? error.request : error.message)
-        this.onError(message.code, message.message)
+        if (typeof message === 'object' && 'code' in message) {
+          this.onError(message.code, message)
+        } else {
+          this.onError(105, message)
+        }
         return Promise.reject(error)
       }
     )
