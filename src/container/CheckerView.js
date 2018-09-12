@@ -49,7 +49,7 @@ const CheckerView = ({store, event}) => {
       <TagWrapper>
         <StatusTag status={store.checker.lastStatus} className='is-large' left={store.checker.publicId} />
       </TagWrapper>
-      <button onClick={onLogout}>
+      <button data-test='checkerview-button' onClick={onLogout}>
         <Button>
           ログアウト
         </Button>

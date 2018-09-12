@@ -17,7 +17,8 @@ const setup = (propOverrides, storeOverrides, eventOverrides, isShallow = true) 
     props,
     wrapper,
     store,
-    event
+    event,
+    button: wrapper.find('[data-test="checkerview-button"]')
   }
 }
 
@@ -26,6 +27,12 @@ describe('containers', () => {
     it('render', () => {
       const { wrapper } = setup()
       expect(wrapper).toMatchSnapshot()
+    })
+
+    it('logouts when logout button is clicked', () => {
+      const { button, store } = setup({}, {}, {}, false)
+      button.simulate('click')
+      expect(store.credential.isLoggedIn).toBe(false)
     })
   })
 })
