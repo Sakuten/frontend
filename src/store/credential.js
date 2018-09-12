@@ -5,7 +5,6 @@ import qs from 'querystring'
 const savedToken = localStorage.getItem('Token')
 const savedKind = localStorage.getItem('Kind')
 const paramSecretId = qs.parse(location.search.substr(1)).sid
-const isUsedByStaff = 'staff' in qs.parse(location.search.substr(1))
 
 export class CredentialObject {
   @observable secretId = paramSecretId || ''
@@ -13,7 +12,10 @@ export class CredentialObject {
   @observable token = savedToken || ''
   @observable kind = savedKind || ''
   @observable status = new Map()
-  @observable isUsedByStaff = isUsedByStaff
+
+  @computed get isUsedByStaff () {
+    return 'staff' in qs.parse(location.search.substr(1))
+  }
 
   @computed get isLoggedIn () {
     return this.token.length !== 0 && this.kind.length !== 0
