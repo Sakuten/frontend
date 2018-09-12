@@ -1,6 +1,7 @@
 import React from 'react'
 import { observer } from 'mobx-react'
 import styled from 'styled-components'
+import errors from '../errors.json'
 
 const Container = styled.div`
   position: fixed;
@@ -12,17 +13,25 @@ const Container = styled.div`
 const ErrorList = ({list, onDelete}) => (
   <Container data-test='errorlist'>
     {
-      list.map((c, i) =>
-        <article data-test='errorlist-error' className='message is-danger' key={i} >
-          <div className='message-header'>
-            <p>エラーが発生しました</p>
-            <button className='delete' aria-label='delete' onClick={() => onDelete(i)} />
-          </div>
-          <div className='message-body'>
-            {JSON.stringify(c)}
-          </div>
-        </article>
-      )
+      list.map((c, i) => {
+        const error = errors[c.code]
+        const levelToMessage = {
+          'fault': '内部エラーが発生しました',
+          'error': 'エラーが発生しました',
+          'notice': '警告'
+        }
+        return (
+          <article data-test='errorlist-error' className='message is-danger' key={i} >
+            <div className='message-header'>
+              <p>{levelToMessage[error.level]}</p>
+              <button className='delete' aria-label='delete' onClick={() => onDelete(i)} />
+            </div>
+            <div className='message-body'>
+              {error.translation}
+            </div>
+          </article>
+        )
+      })
     }
   </Container>
 )
