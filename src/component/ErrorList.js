@@ -30,9 +30,9 @@ const ErrorList = ({list, onDelete}) => (
               <span>
                 {error.translation}
               </span>
-              <button className='button is-info' onClick={() => onDelete(i)}>
+              {error.level !== 'internal' && <button className='button is-info' onClick={() => onDelete(i)}>
                 OK
-              </button>
+              </button>}
             </div>
           </article>
         )
