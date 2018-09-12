@@ -22,9 +22,9 @@ const ApplicationList = ({list, onCancel}) => (
                 <StatusTag status={c.status} />
               </TagWrapper>
             </header>
-            <footer className='card-footer'>
+            {c.status === 'pending' && <footer className='card-footer'>
               <a className='card-footer-item has-text-danger' data-test='applicationlist-cancel' onClick={() => onCancel(c.id)}>キャンセル</a>
-            </footer>
+            </footer>}
           </div>
         </div>
       ) : <span data-test='applicationlist-notfound'>まだどのクラスにも応募していません。</span>
