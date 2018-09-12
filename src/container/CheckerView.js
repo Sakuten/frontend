@@ -10,6 +10,8 @@ const TagWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  margin: 10px;
 `
 
 const Container = styled.div`
@@ -19,6 +21,8 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  padding: 10px;
 `
 
 const Title = styled.h2`
