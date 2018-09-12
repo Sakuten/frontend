@@ -27,7 +27,12 @@ const ErrorList = ({list, onDelete}) => (
               <button className='delete' aria-label='delete' onClick={() => onDelete(i)} />
             </div>
             <div data-test='errorlist-error-body' className='message-body'>
-              {error.translation}
+              <span>
+                {error.translation}
+              </span>
+              <button className='button is-info' onClick={() => onDelete(i)}>
+                OK
+              </button>
             </div>
           </article>
         )
