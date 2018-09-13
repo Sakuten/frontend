@@ -37,8 +37,9 @@ describe('components', () => {
 
     it('renders correct error message', () => {
       const { body } = setup()
-      expect(body.at(0).text()).toBe(errors['0'].translation)
-      expect(body.at(1).text()).toBe(errors['1'].translation)
+      // children() because of styled-components
+      expect(body.at(0).children().text()).toBe(errors['0'].translation)
+      expect(body.at(1).children().text()).toBe(errors['1'].translation)
     })
 
     it('closes when clicked', () => {

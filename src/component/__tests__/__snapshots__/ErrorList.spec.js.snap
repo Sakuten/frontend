@@ -48,14 +48,14 @@ ShallowWrapper {
               onClick={[Function]}
             />
           </div>
-          <div
+          <styled.div
             className="message-body"
           >
-            <span
+            <styled.span
               data-test="errorlist-error-body"
             >
               ログインしていません
-            </span>
+            </styled.span>
             <button
               className="button is-info"
               data-test="errorlist-error-ok-button"
@@ -63,7 +63,7 @@ ShallowWrapper {
             >
               OK
             </button>
-          </div>
+          </styled.div>
         </article>,
         <article
           className="message is-danger"
@@ -83,15 +83,15 @@ ShallowWrapper {
               onClick={[Function]}
             />
           </div>
-          <div
+          <styled.div
             className="message-body"
           >
-            <span
+            <styled.span
               data-test="errorlist-error-body"
             >
               グループメンバーのカードが正しくありません。
-            </span>
-          </div>
+            </styled.span>
+          </styled.div>
         </article>,
       ],
       "data-test": "errorlist",
@@ -118,14 +118,14 @@ ShallowWrapper {
                 onClick={[Function]}
               />
             </div>,
-            <div
+            <styled.div
               className="message-body"
             >
-              <span
+              <styled.span
                 data-test="errorlist-error-body"
               >
                 ログインしていません
-              </span>
+              </styled.span>
               <button
                 className="button is-info"
                 data-test="errorlist-error-ok-button"
@@ -133,7 +133,7 @@ ShallowWrapper {
               >
                 OK
               </button>
-            </div>,
+            </styled.div>,
           ],
           "className": "message is-info",
           "data-test": "errorlist-error",
@@ -192,14 +192,14 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "host",
+            "nodeType": "class",
             "props": Object {
               "children": Array [
-                <span
+                <styled.span
                   data-test="errorlist-error-body"
                 >
                   ログインしていません
-                </span>,
+                </styled.span>,
                 <button
                   className="button is-info"
                   data-test="errorlist-error-ok-button"
@@ -215,14 +215,14 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "host",
+                "nodeType": "class",
                 "props": Object {
                   "children": "ログインしていません",
                   "data-test": "errorlist-error-body",
                 },
                 "ref": null,
                 "rendered": "ログインしていません",
-                "type": "span",
+                "type": [Function],
               },
               Object {
                 "instance": null,
@@ -239,7 +239,7 @@ ShallowWrapper {
                 "type": "button",
               },
             ],
-            "type": "div",
+            "type": [Function],
           },
         ],
         "type": "article",
@@ -264,15 +264,15 @@ ShallowWrapper {
                 onClick={[Function]}
               />
             </div>,
-            <div
+            <styled.div
               className="message-body"
             >
-              <span
+              <styled.span
                 data-test="errorlist-error-body"
               >
                 グループメンバーのカードが正しくありません。
-              </span>
-            </div>,
+              </styled.span>
+            </styled.div>,
           ],
           "className": "message is-danger",
           "data-test": "errorlist-error",
@@ -331,14 +331,14 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "host",
+            "nodeType": "class",
             "props": Object {
               "children": Array [
-                <span
+                <styled.span
                   data-test="errorlist-error-body"
                 >
                   グループメンバーのカードが正しくありません。
-                </span>,
+                </styled.span>,
                 false,
               ],
               "className": "message-body",
@@ -348,18 +348,18 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "host",
+                "nodeType": "class",
                 "props": Object {
                   "children": "グループメンバーのカードが正しくありません。",
                   "data-test": "errorlist-error-body",
                 },
                 "ref": null,
                 "rendered": "グループメンバーのカードが正しくありません。",
-                "type": "span",
+                "type": [Function],
               },
               false,
             ],
-            "type": "div",
+            "type": [Function],
           },
         ],
         "type": "article",
@@ -392,14 +392,14 @@ ShallowWrapper {
                 onClick={[Function]}
               />
             </div>
-            <div
+            <styled.div
               className="message-body"
             >
-              <span
+              <styled.span
                 data-test="errorlist-error-body"
               >
                 ログインしていません
-              </span>
+              </styled.span>
               <button
                 className="button is-info"
                 data-test="errorlist-error-ok-button"
@@ -407,7 +407,7 @@ ShallowWrapper {
               >
                 OK
               </button>
-            </div>
+            </styled.div>
           </article>,
           <article
             className="message is-danger"
@@ -427,15 +427,15 @@ ShallowWrapper {
                 onClick={[Function]}
               />
             </div>
-            <div
+            <styled.div
               className="message-body"
             >
-              <span
+              <styled.span
                 data-test="errorlist-error-body"
               >
                 グループメンバーのカードが正しくありません。
-              </span>
-            </div>
+              </styled.span>
+            </styled.div>
           </article>,
         ],
         "data-test": "errorlist",
@@ -462,14 +462,14 @@ ShallowWrapper {
                   onClick={[Function]}
                 />
               </div>,
-              <div
+              <styled.div
                 className="message-body"
               >
-                <span
+                <styled.span
                   data-test="errorlist-error-body"
                 >
                   ログインしていません
-                </span>
+                </styled.span>
                 <button
                   className="button is-info"
                   data-test="errorlist-error-ok-button"
@@ -477,7 +477,7 @@ ShallowWrapper {
                 >
                   OK
                 </button>
-              </div>,
+              </styled.div>,
             ],
             "className": "message is-info",
             "data-test": "errorlist-error",
@@ -536,14 +536,14 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "class",
               "props": Object {
                 "children": Array [
-                  <span
+                  <styled.span
                     data-test="errorlist-error-body"
                   >
                     ログインしていません
-                  </span>,
+                  </styled.span>,
                   <button
                     className="button is-info"
                     data-test="errorlist-error-ok-button"
@@ -559,14 +559,14 @@ ShallowWrapper {
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "host",
+                  "nodeType": "class",
                   "props": Object {
                     "children": "ログインしていません",
                     "data-test": "errorlist-error-body",
                   },
                   "ref": null,
                   "rendered": "ログインしていません",
-                  "type": "span",
+                  "type": [Function],
                 },
                 Object {
                   "instance": null,
@@ -583,7 +583,7 @@ ShallowWrapper {
                   "type": "button",
                 },
               ],
-              "type": "div",
+              "type": [Function],
             },
           ],
           "type": "article",
@@ -608,15 +608,15 @@ ShallowWrapper {
                   onClick={[Function]}
                 />
               </div>,
-              <div
+              <styled.div
                 className="message-body"
               >
-                <span
+                <styled.span
                   data-test="errorlist-error-body"
                 >
                   グループメンバーのカードが正しくありません。
-                </span>
-              </div>,
+                </styled.span>
+              </styled.div>,
             ],
             "className": "message is-danger",
             "data-test": "errorlist-error",
@@ -675,14 +675,14 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "host",
+              "nodeType": "class",
               "props": Object {
                 "children": Array [
-                  <span
+                  <styled.span
                     data-test="errorlist-error-body"
                   >
                     グループメンバーのカードが正しくありません。
-                  </span>,
+                  </styled.span>,
                   false,
                 ],
                 "className": "message-body",
@@ -692,18 +692,18 @@ ShallowWrapper {
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "host",
+                  "nodeType": "class",
                   "props": Object {
                     "children": "グループメンバーのカードが正しくありません。",
                     "data-test": "errorlist-error-body",
                   },
                   "ref": null,
                   "rendered": "グループメンバーのカードが正しくありません。",
-                  "type": "span",
+                  "type": [Function],
                 },
                 false,
               ],
-              "type": "div",
+              "type": [Function],
             },
           ],
           "type": "article",
