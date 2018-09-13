@@ -31,7 +31,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <article
-          className="message is-danger"
+          className="message is-info"
           data-test="errorlist-error"
         >
           <div
@@ -39,11 +39,12 @@ ShallowWrapper {
             data-test="errorlist-error-header"
           >
             <p>
-              警告
+              情報
             </p>
             <button
               aria-label="delete"
               className="delete"
+              data-test="errorlist-error-close-button"
               onClick={[Function]}
             />
           </div>
@@ -51,7 +52,16 @@ ShallowWrapper {
             className="message-body"
             data-test="errorlist-error-body"
           >
-            ログインしていません
+            <span>
+              ログインしていません
+            </span>
+            <button
+              className="button is-info"
+              data-test="errorlist-error-ok-button"
+              onClick={[Function]}
+            >
+              OK
+            </button>
           </div>
         </article>,
         <article
@@ -68,6 +78,7 @@ ShallowWrapper {
             <button
               aria-label="delete"
               className="delete"
+              data-test="errorlist-error-close-button"
               onClick={[Function]}
             />
           </div>
@@ -75,7 +86,9 @@ ShallowWrapper {
             className="message-body"
             data-test="errorlist-error-body"
           >
-            グループメンバーのカードが正しくありません。
+            <span>
+              グループメンバーのカードが正しくありません。
+            </span>
           </div>
         </article>,
       ],
@@ -94,11 +107,12 @@ ShallowWrapper {
               data-test="errorlist-error-header"
             >
               <p>
-                警告
+                情報
               </p>
               <button
                 aria-label="delete"
                 className="delete"
+                data-test="errorlist-error-close-button"
                 onClick={[Function]}
               />
             </div>,
@@ -106,10 +120,19 @@ ShallowWrapper {
               className="message-body"
               data-test="errorlist-error-body"
             >
-              ログインしていません
+              <span>
+                ログインしていません
+              </span>
+              <button
+                className="button is-info"
+                data-test="errorlist-error-ok-button"
+                onClick={[Function]}
+              >
+                OK
+              </button>
             </div>,
           ],
-          "className": "message is-danger",
+          "className": "message is-info",
           "data-test": "errorlist-error",
         },
         "ref": null,
@@ -121,11 +144,12 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <p>
-                  警告
+                  情報
                 </p>,
                 <button
                   aria-label="delete"
                   className="delete"
+                  data-test="errorlist-error-close-button"
                   onClick={[Function]}
                 />,
               ],
@@ -139,10 +163,10 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "警告",
+                  "children": "情報",
                 },
                 "ref": null,
-                "rendered": "警告",
+                "rendered": "情報",
                 "type": "p",
               },
               Object {
@@ -152,6 +176,7 @@ ShallowWrapper {
                 "props": Object {
                   "aria-label": "delete",
                   "className": "delete",
+                  "data-test": "errorlist-error-close-button",
                   "onClick": [Function],
                 },
                 "ref": null,
@@ -166,12 +191,49 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "ログインしていません",
+              "children": Array [
+                <span>
+                  ログインしていません
+                </span>,
+                <button
+                  className="button is-info"
+                  data-test="errorlist-error-ok-button"
+                  onClick={[Function]}
+                >
+                  OK
+                </button>,
+              ],
               "className": "message-body",
               "data-test": "errorlist-error-body",
             },
             "ref": null,
-            "rendered": "ログインしていません",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "ログインしていません",
+                },
+                "ref": null,
+                "rendered": "ログインしていません",
+                "type": "span",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "OK",
+                  "className": "button is-info",
+                  "data-test": "errorlist-error-ok-button",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "OK",
+                "type": "button",
+              },
+            ],
             "type": "div",
           },
         ],
@@ -193,6 +255,7 @@ ShallowWrapper {
               <button
                 aria-label="delete"
                 className="delete"
+                data-test="errorlist-error-close-button"
                 onClick={[Function]}
               />
             </div>,
@@ -200,7 +263,9 @@ ShallowWrapper {
               className="message-body"
               data-test="errorlist-error-body"
             >
-              グループメンバーのカードが正しくありません。
+              <span>
+                グループメンバーのカードが正しくありません。
+              </span>
             </div>,
           ],
           "className": "message is-danger",
@@ -220,6 +285,7 @@ ShallowWrapper {
                 <button
                   aria-label="delete"
                   className="delete"
+                  data-test="errorlist-error-close-button"
                   onClick={[Function]}
                 />,
               ],
@@ -246,6 +312,7 @@ ShallowWrapper {
                 "props": Object {
                   "aria-label": "delete",
                   "className": "delete",
+                  "data-test": "errorlist-error-close-button",
                   "onClick": [Function],
                 },
                 "ref": null,
@@ -260,12 +327,30 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "グループメンバーのカードが正しくありません。",
+              "children": Array [
+                <span>
+                  グループメンバーのカードが正しくありません。
+                </span>,
+                false,
+              ],
               "className": "message-body",
               "data-test": "errorlist-error-body",
             },
             "ref": null,
-            "rendered": "グループメンバーのカードが正しくありません。",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "グループメンバーのカードが正しくありません。",
+                },
+                "ref": null,
+                "rendered": "グループメンバーのカードが正しくありません。",
+                "type": "span",
+              },
+              false,
+            ],
             "type": "div",
           },
         ],
@@ -282,7 +367,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <article
-            className="message is-danger"
+            className="message is-info"
             data-test="errorlist-error"
           >
             <div
@@ -290,11 +375,12 @@ ShallowWrapper {
               data-test="errorlist-error-header"
             >
               <p>
-                警告
+                情報
               </p>
               <button
                 aria-label="delete"
                 className="delete"
+                data-test="errorlist-error-close-button"
                 onClick={[Function]}
               />
             </div>
@@ -302,7 +388,16 @@ ShallowWrapper {
               className="message-body"
               data-test="errorlist-error-body"
             >
-              ログインしていません
+              <span>
+                ログインしていません
+              </span>
+              <button
+                className="button is-info"
+                data-test="errorlist-error-ok-button"
+                onClick={[Function]}
+              >
+                OK
+              </button>
             </div>
           </article>,
           <article
@@ -319,6 +414,7 @@ ShallowWrapper {
               <button
                 aria-label="delete"
                 className="delete"
+                data-test="errorlist-error-close-button"
                 onClick={[Function]}
               />
             </div>
@@ -326,7 +422,9 @@ ShallowWrapper {
               className="message-body"
               data-test="errorlist-error-body"
             >
-              グループメンバーのカードが正しくありません。
+              <span>
+                グループメンバーのカードが正しくありません。
+              </span>
             </div>
           </article>,
         ],
@@ -345,11 +443,12 @@ ShallowWrapper {
                 data-test="errorlist-error-header"
               >
                 <p>
-                  警告
+                  情報
                 </p>
                 <button
                   aria-label="delete"
                   className="delete"
+                  data-test="errorlist-error-close-button"
                   onClick={[Function]}
                 />
               </div>,
@@ -357,10 +456,19 @@ ShallowWrapper {
                 className="message-body"
                 data-test="errorlist-error-body"
               >
-                ログインしていません
+                <span>
+                  ログインしていません
+                </span>
+                <button
+                  className="button is-info"
+                  data-test="errorlist-error-ok-button"
+                  onClick={[Function]}
+                >
+                  OK
+                </button>
               </div>,
             ],
-            "className": "message is-danger",
+            "className": "message is-info",
             "data-test": "errorlist-error",
           },
           "ref": null,
@@ -372,11 +480,12 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   <p>
-                    警告
+                    情報
                   </p>,
                   <button
                     aria-label="delete"
                     className="delete"
+                    data-test="errorlist-error-close-button"
                     onClick={[Function]}
                   />,
                 ],
@@ -390,10 +499,10 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "警告",
+                    "children": "情報",
                   },
                   "ref": null,
-                  "rendered": "警告",
+                  "rendered": "情報",
                   "type": "p",
                 },
                 Object {
@@ -403,6 +512,7 @@ ShallowWrapper {
                   "props": Object {
                     "aria-label": "delete",
                     "className": "delete",
+                    "data-test": "errorlist-error-close-button",
                     "onClick": [Function],
                   },
                   "ref": null,
@@ -417,12 +527,49 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "ログインしていません",
+                "children": Array [
+                  <span>
+                    ログインしていません
+                  </span>,
+                  <button
+                    className="button is-info"
+                    data-test="errorlist-error-ok-button"
+                    onClick={[Function]}
+                  >
+                    OK
+                  </button>,
+                ],
                 "className": "message-body",
                 "data-test": "errorlist-error-body",
               },
               "ref": null,
-              "rendered": "ログインしていません",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "ログインしていません",
+                  },
+                  "ref": null,
+                  "rendered": "ログインしていません",
+                  "type": "span",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "OK",
+                    "className": "button is-info",
+                    "data-test": "errorlist-error-ok-button",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "OK",
+                  "type": "button",
+                },
+              ],
               "type": "div",
             },
           ],
@@ -444,6 +591,7 @@ ShallowWrapper {
                 <button
                   aria-label="delete"
                   className="delete"
+                  data-test="errorlist-error-close-button"
                   onClick={[Function]}
                 />
               </div>,
@@ -451,7 +599,9 @@ ShallowWrapper {
                 className="message-body"
                 data-test="errorlist-error-body"
               >
-                グループメンバーのカードが正しくありません。
+                <span>
+                  グループメンバーのカードが正しくありません。
+                </span>
               </div>,
             ],
             "className": "message is-danger",
@@ -471,6 +621,7 @@ ShallowWrapper {
                   <button
                     aria-label="delete"
                     className="delete"
+                    data-test="errorlist-error-close-button"
                     onClick={[Function]}
                   />,
                 ],
@@ -497,6 +648,7 @@ ShallowWrapper {
                   "props": Object {
                     "aria-label": "delete",
                     "className": "delete",
+                    "data-test": "errorlist-error-close-button",
                     "onClick": [Function],
                   },
                   "ref": null,
@@ -511,12 +663,30 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "グループメンバーのカードが正しくありません。",
+                "children": Array [
+                  <span>
+                    グループメンバーのカードが正しくありません。
+                  </span>,
+                  false,
+                ],
                 "className": "message-body",
                 "data-test": "errorlist-error-body",
               },
               "ref": null,
-              "rendered": "グループメンバーのカードが正しくありません。",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "グループメンバーのカードが正しくありません。",
+                  },
+                  "ref": null,
+                  "rendered": "グループメンバーのカードが正しくありません。",
+                  "type": "span",
+                },
+                false,
+              ],
               "type": "div",
             },
           ],
