@@ -25,13 +25,13 @@ const ErrorList = ({list, onDelete}) => (
           <article data-test='errorlist-error' className={`message ${msg[0]}`} key={i} >
             <div data-test='errorlist-error-header' className='message-header'>
               <p>{msg[1]}</p>
-              <button className='delete' aria-label='delete' onClick={() => onDelete(i)} />
+              <button data-test='errorlist-error-close-button' className='delete' aria-label='delete' onClick={() => onDelete(i)} />
             </div>
-            <div data-test='errorlist-error-body' className='message-body'>
-              <span>
+            <div className='message-body'>
+              <span data-test='errorlist-error-body'>
                 {error.translation}
               </span>
-              {error.level !== 'internal' && <button className='button is-info' onClick={() => onDelete(i)}>
+              {error.level !== 'internal' && <button data-test='errorlist-error-ok-button' className='button is-info' onClick={() => onDelete(i)}>
                 OK
               </button>}
             </div>

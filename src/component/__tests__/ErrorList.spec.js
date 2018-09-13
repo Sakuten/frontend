@@ -17,7 +17,9 @@ const setup = propOverrides => {
     wrapper,
     error: wrapper.find('[data-test="errorlist-error"]'),
     header: wrapper.find('[data-test="errorlist-error-header"]'),
-    body: wrapper.find('[data-test="errorlist-error-body"]')
+    body: wrapper.find('[data-test="errorlist-error-body"]'),
+    okButtton: wrapper.find('[data-test="errorlist-error-ok-button"]'),
+    closeButton: wrapper.find('[data-test="errorlist-error-close-button"]')
   }
 }
 
@@ -37,6 +39,13 @@ describe('components', () => {
       const { body } = setup()
       expect(body.at(0).text()).toBe(errors['0'].translation)
       expect(body.at(1).text()).toBe(errors['1'].translation)
+    })
+
+    it('closes when clicked', () => {
+      const mock = jest.fn()
+      const { closeButton } = setup({onDelete: mock})
+      closeButton.at(0).simulate('click')
+      expect(mock).toBeCalled()
     })
   })
 })
