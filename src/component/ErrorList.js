@@ -10,25 +10,41 @@ const Container = styled.div`
   z-index: 10;
 `
 
+const MessageContainer = styled.div.attrs({
+  className: 'message-body'
+})`
+  display: flex;
+`
+
+const MessageBody = styled.span`
+  flex-grow: 1;
+`
+
 const ErrorList = ({list, onDelete}) => (
   <Container data-test='errorlist'>
     {
       list.map((c, i) => {
         const error = errors[c.code]
         const levelToMessage = {
-          'internal': '内部エラーが発生しました',
-          'error': 'エラーが発生しました',
-          'notice': '警告'
+          'internal': ['is-danger', '内部エラーが発生しました'],
+          'error': ['is-warning', '失敗しました'],
+          'notice': ['is-info', '情報']
         }
+        const msg = levelToMessage[error.level]
         return (
-          <article data-test='errorlist-error' className='message is-danger' key={i} >
+          <article data-test='errorlist-error' className={`message ${msg[0]}`} key={i} >
             <div data-test='errorlist-error-header' className='message-header'>
-              <p>{levelToMessage[error.level]}</p>
-              <button className='delete' aria-label='delete' onClick={() => onDelete(i)} />
+              <p>{msg[1]}</p>
+              <button data-test='errorlist-error-close-button' className='delete' aria-label='delete' onClick={() => onDelete(i)} />
             </div>
-            <div data-test='errorlist-error-body' className='message-body'>
-              {error.translation}
-            </div>
+            <MessageContainer className='message-body'>
+              <MessageBody data-test='errorlist-error-body'>
+                {error.translation}
+              </MessageBody>
+              {error.level !== 'internal' && <button data-test='errorlist-error-ok-button' className='button is-info' onClick={() => onDelete(i)}>
+                OK
+              </button>}
+            </MessageContainer>
           </article>
         )
       })
