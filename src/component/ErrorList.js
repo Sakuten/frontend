@@ -10,6 +10,16 @@ const Container = styled.div`
   z-index: 10;
 `
 
+const MessageContainer = styled.div.attrs({
+  className: 'message-body'
+})`
+  display: flex;
+`
+
+const MessageBody = styled.span`
+  flex-grow: 1;
+`
+
 const ErrorList = ({list, onDelete}) => (
   <Container data-test='errorlist'>
     {
@@ -27,14 +37,14 @@ const ErrorList = ({list, onDelete}) => (
               <p>{msg[1]}</p>
               <button data-test='errorlist-error-close-button' className='delete' aria-label='delete' onClick={() => onDelete(i)} />
             </div>
-            <div className='message-body'>
-              <span data-test='errorlist-error-body'>
+            <MessageContainer className='message-body'>
+              <MessageBody data-test='errorlist-error-body'>
                 {error.translation}
-              </span>
+              </MessageBody>
               {error.level !== 'internal' && <button data-test='errorlist-error-ok-button' className='button is-info' onClick={() => onDelete(i)}>
                 OK
               </button>}
-            </div>
+            </MessageContainer>
           </article>
         )
       })
