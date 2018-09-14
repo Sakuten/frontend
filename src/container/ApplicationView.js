@@ -59,11 +59,14 @@ const ApplicationView = ({credential, application, event}) => {
   const {
     onChangeClassroom,
     onChangeLottery,
-    onApply,
-    onCancel,
     onAddGroupMember,
     onRemoveGroupMember
   } = event.application
+
+  const {
+    onApplyLottery,
+    onCancelApplication
+  } = event
 
   return (
     <div data-test='applicationview'>
@@ -86,7 +89,7 @@ const ApplicationView = ({credential, application, event}) => {
             <GroupMemberButton onAdd={onAddGroupMember} onError={onQRError} disabled={!application.isAbleToAddGroupMember}>他の人を追加</GroupMemberButton>
           </Indent>
         </Selection>
-        <ButtonWrap onClick={onApply}>
+        <ButtonWrap onClick={onApplyLottery}>
           <Button>
             申し込む
           </Button>
@@ -102,7 +105,7 @@ const ApplicationView = ({credential, application, event}) => {
         <Selection>
           <Title>応募一覧</Title>
           <Indent>
-            <ApplicationList list={application.applicationList} onCancel={onCancel} />
+            <ApplicationList list={application.applicationList} onCancel={onCancelApplication} />
           </Indent>
         </Selection>
       </Container>

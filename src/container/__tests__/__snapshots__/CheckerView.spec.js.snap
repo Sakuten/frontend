@@ -8,8 +8,6 @@ ShallowWrapper {
       Event {
         "application": ApplicationObject {
           "onAddGroupMember": [Function],
-          "onApply": [Function],
-          "onCancel": [Function],
           "onChangeClassroom": [Function],
           "onChangeLottery": [Function],
           "onRemoveGroupMember": [Function],
@@ -50,6 +48,7 @@ ShallowWrapper {
                 },
               },
             },
+            "dialog": DialogObject {},
             "error": ErrorObject {},
             "fetchStatus": [Function],
             "router": RouterStore {
@@ -102,6 +101,7 @@ ShallowWrapper {
                 },
               },
             },
+            "dialog": DialogObject {},
             "error": ErrorObject {},
             "fetchStatus": [Function],
             "router": RouterStore {
@@ -156,6 +156,59 @@ ShallowWrapper {
                 },
               },
             },
+            "dialog": DialogObject {},
+            "error": ErrorObject {},
+            "fetchStatus": [Function],
+            "router": RouterStore {
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "history": null,
+              "push": [Function],
+              "replace": [Function],
+            },
+          },
+        },
+        "dialog": DialogObject {
+          "onClose": [Function],
+          "onOpen": [Function],
+          "store": Store {
+            "application": ApplicationObject {},
+            "checker": CheckerObject {},
+            "credential": CredentialObject {
+              "kind": "",
+              "recaptchaResponse": "",
+              "secretId": "",
+              "status": Object {},
+              "token": "",
+              Symbol(mobx did run lazy initializers): true,
+              Symbol(mobx administration): ObservableObjectAdministration$$1 {
+                "defaultEnhancer": [Function],
+                "keysAtom": Atom$$1 {
+                  "diffValue": 0,
+                  "isBeingObserved": false,
+                  "isPendingUnobservation": false,
+                  "lastAccessedBy": 0,
+                  "lowestObserverState": 2,
+                  "name": "CredentialObject@3.keys",
+                  "observers": Set {},
+                },
+                "name": "CredentialObject@3",
+                "target": [Circular],
+                "values": Map {
+                  "secretId" => "",
+                  "recaptchaResponse" => "",
+                  "token" => "",
+                  "kind" => "",
+                  "status" => Map {},
+                  "isUsedByStaff" => false,
+                  "isLoggedIn" => false,
+                  "isAbleToAuthenicate" => false,
+                  "isLoggedInAsChecker" => false,
+                },
+              },
+            },
+            "dialog": DialogObject {},
             "error": ErrorObject {},
             "fetchStatus": [Function],
             "router": RouterStore {
@@ -207,6 +260,7 @@ ShallowWrapper {
                 },
               },
             },
+            "dialog": DialogObject {},
             "error": ErrorObject {},
             "fetchStatus": [Function],
             "router": RouterStore {
@@ -219,6 +273,8 @@ ShallowWrapper {
             },
           },
         },
+        "onApplyLottery": [Function],
+        "onCancelApplication": [Function],
         "store": Store {
           "application": ApplicationObject {},
           "checker": CheckerObject {},
@@ -255,6 +311,7 @@ ShallowWrapper {
               },
             },
           },
+          "dialog": DialogObject {},
           "error": ErrorObject {},
           "fetchStatus": [Function],
           "router": RouterStore {
@@ -307,6 +364,7 @@ ShallowWrapper {
               },
             },
           },
+          "dialog": DialogObject {},
           "error": ErrorObject {},
           "fetchStatus": [Function],
           "router": RouterStore {
@@ -369,6 +427,7 @@ ShallowWrapper {
             },
           },
         },
+        "dialog": DialogObject {},
         "error": ErrorObject {},
         "fetchStatus": [Function],
         "router": RouterStore {
@@ -427,6 +486,7 @@ ShallowWrapper {
               },
             },
           },
+          "dialog": DialogObject {},
           "error": ErrorObject {},
           "fetchStatus": [Function],
           "router": RouterStore {
