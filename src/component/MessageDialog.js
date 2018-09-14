@@ -1,7 +1,7 @@
 import React from 'react'
 import { observer } from 'mobx-react'
 
-const MessageDialog = ({title, content, buttonText, isOpen, onClose}) => (
+const MessageDialog = ({title, content, buttonText, isOpen, onClose, isButtonEnabled}) => (
   <div className={`modal ${isOpen ? 'is-active' : ''}`}>
     <div onClick={onClose} className='modal-background' />
     <div className='modal-card'>
@@ -13,7 +13,7 @@ const MessageDialog = ({title, content, buttonText, isOpen, onClose}) => (
         {content}
       </section>
       <footer className='modal-card-foot'>
-        <button onClick={onClose} className='button is-success'>{buttonText}</button>
+        <button disabled={!isButtonEnabled} onClick={onClose} className='button is-success'>{buttonText}</button>
       </footer>
     </div>
   </div>

@@ -2,6 +2,7 @@ import { observable, action } from 'mobx'
 
 export class DialogObject {
   @observable isOpen = false
+  @observable isButtonEnabled = false
   @observable content = ''
   @observable title = ''
   @observable buttonText = ''
@@ -28,5 +29,9 @@ export class DialogObject {
 
   @action.bound setButtonText (buttonText) {
     this.buttonText = buttonText
+  }
+
+  @action.bound setButtonEnabled (enabled) {
+    this.isButtonEnabled = enabled
   }
 }
