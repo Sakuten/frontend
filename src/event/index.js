@@ -2,6 +2,7 @@ import {CredentialObject} from './credential'
 import {ApplicationObject} from './application'
 import {CheckerObject} from './checker'
 import {ErrorObject} from './error'
+import {DialogObject} from './dialog'
 
 export class Event {
   constructor (store) {
@@ -9,6 +10,7 @@ export class Event {
     this.error = new ErrorObject(store)
     this.credential = new CredentialObject(store)
     this.application = new ApplicationObject(store)
+    this.dialog = new DialogObject(store)
     this.checker = new CheckerObject(store)
 
     // This can cause network error, to be caught in ErrorObject
