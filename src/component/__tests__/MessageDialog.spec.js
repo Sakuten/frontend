@@ -12,7 +12,7 @@ const setup = (propOverrides, children) => {
     wrapper,
     body: wrapper.find('[data-test="messagedialog-body"]'),
     title: wrapper.find('[data-test="messagedialog-title"]'),
-    button: wrapper.find('[data-test="messagedialog-button"]'),
+    button: wrapper.find('[data-test="messagedialog-button"]')
   }
 }
 
