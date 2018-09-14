@@ -33,7 +33,7 @@ export class Event {
   onCancelApplication = async (id) => {
     this.dialog.onOpen('キャンセルしています', 'しばらくお待ちください', 'お待ちください', false)
     await cancelLottery(id, this.store.credential.token)
-    this.dialog.onOpen('キャンセルしました', 'はい', 'OK')
+    this.dialog.onOpen('キャンセルしました', '応募は取り消されました', 'OK')
     await this.store.fetchStatus()
     if (this.store.credential.isUsedByStaff) {
       this.store.credential.logout()
