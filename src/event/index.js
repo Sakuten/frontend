@@ -22,7 +22,12 @@ export class Event {
 
   onApplyLottery = async () => {
     this.dialog.onOpen('応募しています', 'しばらくお待ちください', 'お待ちください', false)
-    await applyLottery(this.store.application.lottery, this.store.application.groupMemberList.map(pair => pair[0]), this.store.credential.token)
+    try {
+      await applyLottery(this.store.application.lottery, this.store.application.groupMemberList.map(pair => pair[0]), this.store.credential.token)
+    } catch (err) {
+      this.dialog.onClose()
+      throw err
+    }
     this.dialog.onOpen('応募しました', '発表をお待ちください', 'OK')
     await this.store.fetchStatus()
     if (this.store.credential.isUsedByStaff) {
@@ -32,7 +37,12 @@ export class Event {
 
   onCancelApplication = async (id) => {
     this.dialog.onOpen('キャンセルしています', 'しばらくお待ちください', 'お待ちください', false)
-    await cancelLottery(id, this.store.credential.token)
+    try {
+      await cancelLottery(id, this.store.credential.token)
+    } catch (err) {
+      this.dialog.onClose()
+      throw err
+    }
     this.dialog.onOpen('キャンセルしました', '応募は取り消されました', 'OK')
     await this.store.fetchStatus()
     if (this.store.credential.isUsedByStaff) {
