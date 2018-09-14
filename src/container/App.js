@@ -65,6 +65,10 @@ class App extends React.Component {
       onDelete
     } = this.props.event.error
 
+    const {
+      onClose
+    } = this.props.event.dialog
+
     return (
       <Outer location={location}>
         <Heading><img src={logo} /></Heading>
@@ -75,6 +79,7 @@ class App extends React.Component {
           <Route path='/lottery/login' render={() => this.props.store.credential.isLoggedIn ? <Redirect to='/lottery' /> : <LoginView credential={this.props.store.credential} />} />
           <Route exact path='/lottery' render={() => this.props.store.credential.isLoggedIn ? this.props.store.credential.isLoggedInAsChecker ? <Redirect to='/checker' /> : <ApplicationView credential={this.props.store.credential} application={this.props.store.application} /> : <Redirect to='/lottery/login' />} />
           <ErrorList list={this.props.store.error.errorList} onDelete={onDelete} />
+          <MessageDialog title={this.props.store.dialog.title} content={this.props.store.dialog.content} buttonText={this.props.store.dialog.buttonText} isOpen={this.props.store.dialog.isOpen} onClose={onClose} />
         </Container>
       </Outer>
     )
