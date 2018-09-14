@@ -9,7 +9,7 @@
   REACT_APP_API_SERVER = "https://sakuten-api-testflight.herokuapp.com"
   REACT_APP_STAGING_BUILD = "1"
 
-[context."feature/last-test-day"]
+[context.branch-deploy.environment]
   REACT_APP_API_SERVER = "https://api.sakuten.jp"
 
 [[redirects]]
