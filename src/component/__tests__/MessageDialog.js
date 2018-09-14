@@ -32,5 +32,12 @@ describe('components', () => {
       const { title } = setup({title: 'Hello'}, '')
       expect(title.text()).toBe('Hello')
     })
+
+    it('calls onClose when button is clicked', () => {
+      const mock = jest.fn()
+      const { button } = setup({onClose: mock})
+      button.simulate('click')
+      expect(mock).toBeCalled()
+    })
   })
 })
