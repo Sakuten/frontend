@@ -3,7 +3,7 @@ import { observer } from 'mobx-react'
 
 const MessageDialog = ({title, content, buttonText, isOpen, onClose}) => (
   <div className={`modal ${isOpen ? 'is-active' : ''}`}>
-    <div className='modal-background' />
+    <div onClick={onClose} className='modal-background' />
     <div className='modal-card'>
       <header className='modal-card-head'>
         <p className='modal-card-title'>{title}</p>
