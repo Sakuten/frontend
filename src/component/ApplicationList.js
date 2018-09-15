@@ -22,6 +22,11 @@ const ApplicationList = ({list, onCancel}) => (
                 <StatusTag status={c.status} />
               </TagWrapper>
             </header>
+            <div className='card-content'>
+              <div className='content'>
+                {c.status === 'pending' && <p>発表時間: <b>{c.lottery.end_of_drawing}</b></p>}
+              </div>
+            </div>
             {c.status === 'pending' && <footer className='card-footer'>
               <a className='card-footer-item has-text-danger' data-test='applicationlist-cancel' onClick={() => onCancel(c.id)}>キャンセル</a>
             </footer>}
