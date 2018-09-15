@@ -25,6 +25,7 @@ export class CredentialObject {
     const json = response.data
     if ('token' in json) {
       this.store.credential.setToken(json.token)
+      this.store.application.clearInputs()
       await this.store.fetchStatus()
       if (this.store.credential.isLoggedInAsChecker) {
         this.store.router.history.push('?staff')
