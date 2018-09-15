@@ -34,8 +34,8 @@ export class Event {
     const data = app.data
     const content = (
       <div>
-        <p>{data.lottery.name.slice(0, -2)}の第{data.lottery.index + 2}公演です。</p>
-        <p>{data.lottery.end_of_drawing}の結果発表をお待ちください。</p>
+        <p><b>{data.lottery.name.slice(0, -2)}</b>の<b>第{data.lottery.index + 2}公演</b>です。</p>
+        <p><b>{data.lottery.end_of_drawing}</b>の結果発表をお待ちください。</p>
       </div>
     )
     this.dialog.onOpen('応募しました', content, 'OK')
