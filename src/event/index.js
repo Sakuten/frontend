@@ -22,13 +22,15 @@ export class Event {
 
   onApplyLottery = async () => {
     this.dialog.onOpen('応募しています', 'しばらくお待ちください', 'お待ちください', false)
+    let app
     try {
-      await applyLottery(this.store.application.lottery, this.store.application.groupMemberList.map(pair => pair[0]), this.store.credential.token)
+      app = await applyLottery(this.store.application.lottery, this.store.application.groupMemberList.map(pair => pair[0]), this.store.credential.token)
     } catch (err) {
       this.dialog.onClose()
       throw err
     }
-    this.dialog.onOpen('応募しました', '発表をお待ちください', 'OK')
+    const data = app.data
+    this.dialog.onOpen('応募しました', `${data.lottery.end_of_drawing}の結果発表をお待ちください`, 'OK')
     await this.store.fetchStatus()
     if (this.store.credential.isUsedByStaff) {
       this.store.credential.logout()
