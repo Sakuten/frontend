@@ -4,7 +4,7 @@ import App from './container/App'
 import { Provider } from 'mobx-react'
 import createBrowserHistory from 'history/createBrowserHistory'
 import { syncHistoryWithStore } from 'mobx-react-router'
-import registerServiceWorker from './util/registerServiceWorker'
+import { unregister } from './util/registerServiceWorker'
 import { Router } from 'react-router'
 import {Store} from './store'
 import {Event} from './event'
@@ -36,4 +36,5 @@ ReactDOM.render(
     </ThemeProvider>
   </Provider>,
   document.getElementById('root'))
-registerServiceWorker()
+
+unregister()
