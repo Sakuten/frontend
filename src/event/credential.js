@@ -18,7 +18,10 @@ export class CredentialObject {
   }
 
   onLogin = async () => {
-    const response = await authenicate(this.store.credential.secretId, this.store.credential.recaptchaResponse)
+    const response = await authenicate(this.store.credential.secretId, this.store.credential.recaptchaResponse).catch(e => {
+      this.store.credential.logout()
+      return Promise.reject(e)
+    })
     const json = response.data
     if ('token' in json) {
       this.store.credential.setToken(json.token)

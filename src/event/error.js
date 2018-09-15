@@ -20,7 +20,7 @@ export class ErrorObject {
 
   onError = (code, message) => {
     if (code === 0) {
-      this.store.credential.setToken('')
+      this.store.credential.logout()
     }
     this.store.error.addError(code, message)
   }
