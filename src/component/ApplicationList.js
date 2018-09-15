@@ -16,7 +16,7 @@ const ApplicationList = ({list, onCancel}) => (
           <div className='card'>
             <header className='card-header'>
               <p className='card-header-title'>
-                {c.lottery.name}
+                {c.lottery.name.slice(0, -2)}
               </p>
               <TagWrapper>
                 <StatusTag status={c.status} />
@@ -24,6 +24,7 @@ const ApplicationList = ({list, onCancel}) => (
             </header>
             <div className='card-content'>
               <div className='content'>
+                第<b>{c.lottery.index + 2}</b>公演
                 {c.status === 'pending' && <p>発表時間: <b>{c.lottery.end_of_drawing}</b></p>}
                 {c.group_members.length !== 0 && <p>一緒に応募した人: <b>{c.group_members.map(m => m.public_id).join(', ')}</b></p>}
               </div>
