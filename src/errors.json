@@ -87,6 +87,10 @@
     "translation": "4人以上の同時応募はできません。",
     "level": "error"
   },
+  "22": {
+    "translation": "1日目に使用されたカードを2日目に使用することはできません。",
+    "level": "error"
+  },
   "101": {
     "translation": "読み取りに失敗しました。もう一度お試しください。",
     "level": "notice"
