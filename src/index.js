@@ -28,7 +28,7 @@ const theme = {
   button_color: 'rgb(94, 205, 156)'
 }
 
-setInterval(() => checkAndFetch(store), 5000)
+setInterval(() => checkAndFetch(store), 10000)
 
 ReactDOM.render(
   <Provider event={event} >
