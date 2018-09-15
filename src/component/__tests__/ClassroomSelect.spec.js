@@ -46,10 +46,10 @@ describe('components', () => {
       expect(option.length).toBe(2)
     })
 
-    it('renders with grade and name', () => {
+    it('renders with grade, name, and title', () => {
       const { option } = setup()
-      expect(option.at(0).text()).toBe('5 A')
-      expect(option.at(1).text()).toBe('5 B')
+      expect(option.at(0).text()).toBe('5A タイトル')
+      expect(option.at(1).text()).toBe('5B タイトル')
     })
 
     it('calls onChange with id when something is selected', () => {
