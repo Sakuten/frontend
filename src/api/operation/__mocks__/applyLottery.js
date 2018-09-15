@@ -8,9 +8,11 @@ export const applyLottery = (lotteryId, gropuMembers, token) => new Promise((res
       'done': false,
       'id': 2,
       'index': 1,
+      'end_of_drawing': '09:30:00',
       'name': '5A.1',
       'winners': []
     },
+    'is_rep': false,
     'status': 'pending',
     'group_members': []
   }))

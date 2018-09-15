@@ -10,9 +10,12 @@ export const getApplications = (token) => new Promise((resolve, reject) => {
         'id': 1,
         'index': 0,
         'name': '5A.0',
+        'end_of_drawing': '09:30:00',
         'winners': []
       },
-      'status': 'pending'
+      'is_rep': false,
+      'status': 'pending',
+      'group_members': []
     }
   ]))
 })
