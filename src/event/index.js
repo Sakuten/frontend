@@ -39,6 +39,8 @@ export class Event {
       </div>
     )
     this.dialog.onOpen('応募しました', content, 'OK')
+
+    this.store.application.clearInputs()
     await this.store.fetchStatus()
     if (this.store.credential.isUsedByStaff) {
       this.store.credential.logout()
