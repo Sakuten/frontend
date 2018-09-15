@@ -54,7 +54,7 @@ ShallowWrapper {
             <styled.span
               data-test="errorlist-error-body"
             >
-              ログインしていません
+              もう一度ログインしてください
             </styled.span>
             <button
               className="button is-info"
@@ -124,7 +124,7 @@ ShallowWrapper {
               <styled.span
                 data-test="errorlist-error-body"
               >
-                ログインしていません
+                もう一度ログインしてください
               </styled.span>
               <button
                 className="button is-info"
@@ -198,7 +198,7 @@ ShallowWrapper {
                 <styled.span
                   data-test="errorlist-error-body"
                 >
-                  ログインしていません
+                  もう一度ログインしてください
                 </styled.span>,
                 <button
                   className="button is-info"
@@ -217,11 +217,11 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "children": "ログインしていません",
+                  "children": "もう一度ログインしてください",
                   "data-test": "errorlist-error-body",
                 },
                 "ref": null,
-                "rendered": "ログインしていません",
+                "rendered": "もう一度ログインしてください",
                 "type": [Function],
               },
               Object {
@@ -398,7 +398,7 @@ ShallowWrapper {
               <styled.span
                 data-test="errorlist-error-body"
               >
-                ログインしていません
+                もう一度ログインしてください
               </styled.span>
               <button
                 className="button is-info"
@@ -468,7 +468,7 @@ ShallowWrapper {
                 <styled.span
                   data-test="errorlist-error-body"
                 >
-                  ログインしていません
+                  もう一度ログインしてください
                 </styled.span>
                 <button
                   className="button is-info"
@@ -542,7 +542,7 @@ ShallowWrapper {
                   <styled.span
                     data-test="errorlist-error-body"
                   >
-                    ログインしていません
+                    もう一度ログインしてください
                   </styled.span>,
                   <button
                     className="button is-info"
@@ -561,11 +561,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "children": "ログインしていません",
+                    "children": "もう一度ログインしてください",
                     "data-test": "errorlist-error-body",
                   },
                   "ref": null,
-                  "rendered": "ログインしていません",
+                  "rendered": "もう一度ログインしてください",
                   "type": [Function],
                 },
                 Object {
