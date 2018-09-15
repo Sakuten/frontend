@@ -11,12 +11,14 @@ ShallowWrapper {
           "id": 1,
           "index": 0,
           "name": "A",
+          "title": "タイトル",
         },
         Object {
           "grade": 5,
           "id": 2,
           "index": 1,
           "name": "B",
+          "title": "タイトル",
         },
       ]
     }
@@ -46,16 +48,18 @@ ShallowWrapper {
           value={1}
         >
           5
-           
           A
+           
+          タイトル
         </option>
         <option
           data-test="classroom-option"
           value={2}
         >
           5
-           
           B
+           
+          タイトル
         </option>
       </select>,
       "className": "select",
@@ -72,16 +76,18 @@ ShallowWrapper {
             value={1}
           >
             5
-             
             A
+             
+            タイトル
           </option>,
           <option
             data-test="classroom-option"
             value={2}
           >
             5
-             
             B
+             
+            タイトル
           </option>,
         ],
         "data-test": "classroom-select",
@@ -98,8 +104,9 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               5,
-              " ",
               "A",
+              " ",
+              "タイトル",
             ],
             "data-test": "classroom-option",
             "value": 1,
@@ -107,8 +114,9 @@ ShallowWrapper {
           "ref": null,
           "rendered": Array [
             5,
-            " ",
             "A",
+            " ",
+            "タイトル",
           ],
           "type": "option",
         },
@@ -119,8 +127,9 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               5,
-              " ",
               "B",
+              " ",
+              "タイトル",
             ],
             "data-test": "classroom-option",
             "value": 2,
@@ -128,8 +137,9 @@ ShallowWrapper {
           "ref": null,
           "rendered": Array [
             5,
-            " ",
             "B",
+            " ",
+            "タイトル",
           ],
           "type": "option",
         },
@@ -155,16 +165,18 @@ ShallowWrapper {
             value={1}
           >
             5
-             
             A
+             
+            タイトル
           </option>
           <option
             data-test="classroom-option"
             value={2}
           >
             5
-             
             B
+             
+            タイトル
           </option>
         </select>,
         "className": "select",
@@ -181,16 +193,18 @@ ShallowWrapper {
               value={1}
             >
               5
-               
               A
+               
+              タイトル
             </option>,
             <option
               data-test="classroom-option"
               value={2}
             >
               5
-               
               B
+               
+              タイトル
             </option>,
           ],
           "data-test": "classroom-select",
@@ -207,8 +221,9 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 5,
-                " ",
                 "A",
+                " ",
+                "タイトル",
               ],
               "data-test": "classroom-option",
               "value": 1,
@@ -216,8 +231,9 @@ ShallowWrapper {
             "ref": null,
             "rendered": Array [
               5,
-              " ",
               "A",
+              " ",
+              "タイトル",
             ],
             "type": "option",
           },
@@ -228,8 +244,9 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 5,
-                " ",
                 "B",
+                " ",
+                "タイトル",
               ],
               "data-test": "classroom-option",
               "value": 2,
@@ -237,8 +254,9 @@ ShallowWrapper {
             "ref": null,
             "rendered": Array [
               5,
-              " ",
               "B",
+              " ",
+              "タイトル",
             ],
             "type": "option",
           },
