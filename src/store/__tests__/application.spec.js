@@ -24,6 +24,19 @@ describe('stores', () => {
       expect(store.groupMemberList).toEqual([['secret_id1', 'public_id1'], ['secret_id2', 'public_id2']])
     })
 
+    it('can clear user inputs', () => {
+      const initialLottery = store.lottery
+      const initialClassroom = store.classroom
+      store.setClassroom(2)
+      store.setLottery(2)
+      store.addGroupMember('secret_id1', 'public_id1')
+      store.addGroupMember('secret_id2', 'public_id2')
+      store.clearInputs()
+      expect(store.lottery).toBe(initialLottery)
+      expect(store.classroom).toBe(initialClassroom)
+      expect(store.groupMemberList).toEqual([])
+    })
+
     it('can remove a group member by id', () => {
       store.addGroupMember('secret_id1', 'public_id1')
       store.addGroupMember('secret_id2', 'public_id2')
