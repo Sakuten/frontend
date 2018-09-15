@@ -8,12 +8,14 @@ const setup = propOverrides => {
       {
         'grade': 5,
         'id': 1,
+        'title': 'タイトル',
         'index': 0,
         'name': 'A'
       },
       {
         'grade': 5,
         'id': 2,
+        'title': 'タイトル',
         'index': 1,
         'name': 'B'
       }
