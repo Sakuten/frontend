@@ -13,9 +13,12 @@ const setup = propOverrides => {
           'id': 1,
           'index': 0,
           'name': '5A.0',
+          'end_of_drawing': '09:30:00',
           'winners': []
         },
-        'status': 'pending'
+        'is_rep': false,
+        'status': 'pending',
+        'group_members': []
       },
       {
         'id': 2,
@@ -25,9 +28,12 @@ const setup = propOverrides => {
           'id': 2,
           'index': 0,
           'name': '5A.0',
+          'end_of_drawing': '09:30:00',
           'winners': []
         },
-        'status': 'pending'
+        'is_rep': true,
+        'status': 'pending',
+        'group_members': [{'public_id': 'ABCD'}, {'public_id': 'EFGH'}]
       }
     ],
     onCancel: jest.fn()
@@ -40,6 +46,7 @@ const setup = propOverrides => {
     wrapper,
     application: wrapper.find('[data-test="applicationlist-application"]'),
     cancelButton: wrapper.find('[data-test="applicationlist-cancel"]'),
+    body: wrapper.find('[data-test="applicationlist-body"]'),
     notfound: wrapper.find('[data-test="applicationlist-notfound"]')
   }
 }
@@ -66,14 +73,27 @@ describe('components', () => {
       expect(cancelButton.length).toBe(2)
     })
 
+    it('renders two group members in the body of card', () => {
+      const { body } = setup()
+      console.log(body.at(1).text())
+      expect(body.at(1).text().includes('ABCD')).toBe(true)
+      expect(body.at(1).text().includes('EFGH')).toBe(true)
+    })
+
+    it('renders message only in is_rep application', () => {
+      const { body } = setup()
+      expect(body.at(0).text().includes('代表者')).toBe(false)
+      expect(body.at(1).text().includes('代表者')).toBe(true)
+    })
+
     it('renders no cancel button when status !== pending', () => {
-      const { cancelButton } = setup({list: [{id: 1, status: 'won', lottery: {name: '5A.0'}}]})
+      const { cancelButton } = setup({list: [{id: 1, status: 'won', group_members: [], lottery: {name: '5A.0'}}]})
       expect(cancelButton.length).toBe(0)
     })
 
     it('calls onCancel with application id when cancel button is clicked', () => {
       const mock = jest.fn()
-      const { cancelButton } = setup({list: [{id: 1, status: 'pending', lottery: {name: '5A.0'}}], onCancel: mock})
+      const { cancelButton } = setup({list: [{id: 1, status: 'pending', group_members: [], lottery: {name: '5A.0'}}], onCancel: mock})
       cancelButton.at(0).simulate('click')
       expect(mock).toBeCalledWith(1)
     })

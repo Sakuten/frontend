@@ -7,10 +7,13 @@ ShallowWrapper {
     list={
       Array [
         Object {
+          "group_members": Array [],
           "id": 1,
+          "is_rep": false,
           "lottery": Object {
             "classroom_id": 1,
             "done": false,
+            "end_of_drawing": "09:30:00",
             "id": 1,
             "index": 0,
             "name": "5A.0",
@@ -19,10 +22,20 @@ ShallowWrapper {
           "status": "pending",
         },
         Object {
+          "group_members": Array [
+            Object {
+              "public_id": "ABCD",
+            },
+            Object {
+              "public_id": "EFGH",
+            },
+          ],
           "id": 2,
+          "is_rep": true,
           "lottery": Object {
             "classroom_id": 1,
             "done": false,
+            "end_of_drawing": "09:30:00",
             "id": 2,
             "index": 0,
             "name": "5A.0",
@@ -59,7 +72,7 @@ ShallowWrapper {
               <p
                 className="card-header-title"
               >
-                5A.0
+                5A
               </p>
               <styled.span>
                 <StatusTag
@@ -67,6 +80,28 @@ ShallowWrapper {
                 />
               </styled.span>
             </header>
+            <div
+              className="card-content"
+            >
+              <div
+                className="content"
+                data-test="applicationlist-body"
+              >
+                <p>
+                  第
+                  <b>
+                    2
+                  </b>
+                  公演
+                </p>
+                <p>
+                  抽選結果発表: 
+                  <b>
+                    09:30:00
+                  </b>
+                </p>
+              </div>
+            </div>
             <footer
               className="card-footer"
             >
@@ -92,7 +127,7 @@ ShallowWrapper {
               <p
                 className="card-header-title"
               >
-                5A.0
+                5A
               </p>
               <styled.span>
                 <StatusTag
@@ -100,6 +135,37 @@ ShallowWrapper {
                 />
               </styled.span>
             </header>
+            <div
+              className="card-content"
+            >
+              <div
+                className="content"
+                data-test="applicationlist-body"
+              >
+                <p>
+                  第
+                  <b>
+                    2
+                  </b>
+                  公演
+                </p>
+                <p>
+                  抽選結果発表: 
+                  <b>
+                    09:30:00
+                  </b>
+                </p>
+                <p>
+                  団体応募代表者です
+                </p>
+                <p>
+                  一緒に応募した人: 
+                  <b>
+                    ABCD, EFGH
+                  </b>
+                </p>
+              </div>
+            </div>
             <footer
               className="card-footer"
             >
@@ -131,7 +197,7 @@ ShallowWrapper {
               <p
                 className="card-header-title"
               >
-                5A.0
+                5A
               </p>
               <styled.span>
                 <StatusTag
@@ -139,6 +205,28 @@ ShallowWrapper {
                 />
               </styled.span>
             </header>
+            <div
+              className="card-content"
+            >
+              <div
+                className="content"
+                data-test="applicationlist-body"
+              >
+                <p>
+                  第
+                  <b>
+                    2
+                  </b>
+                  公演
+                </p>
+                <p>
+                  抽選結果発表: 
+                  <b>
+                    09:30:00
+                  </b>
+                </p>
+              </div>
+            </div>
             <footer
               className="card-footer"
             >
@@ -166,7 +254,7 @@ ShallowWrapper {
                 <p
                   className="card-header-title"
                 >
-                  5A.0
+                  5A
                 </p>
                 <styled.span>
                   <StatusTag
@@ -174,6 +262,28 @@ ShallowWrapper {
                   />
                 </styled.span>
               </header>,
+              <div
+                className="card-content"
+              >
+                <div
+                  className="content"
+                  data-test="applicationlist-body"
+                >
+                  <p>
+                    第
+                    <b>
+                      2
+                    </b>
+                    公演
+                  </p>
+                  <p>
+                    抽選結果発表: 
+                    <b>
+                      09:30:00
+                    </b>
+                  </p>
+                </div>
+              </div>,
               <footer
                 className="card-footer"
               >
@@ -199,7 +309,7 @@ ShallowWrapper {
                   <p
                     className="card-header-title"
                   >
-                    5A.0
+                    5A
                   </p>,
                   <styled.span>
                     <StatusTag
@@ -216,11 +326,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "5A.0",
+                    "children": "5A",
                     "className": "card-header-title",
                   },
                   "ref": null,
-                  "rendered": "5A.0",
+                  "rendered": "5A",
                   "type": "p",
                 },
                 Object {
@@ -248,6 +358,126 @@ ShallowWrapper {
                 },
               ],
               "type": "header",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <div
+                  className="content"
+                  data-test="applicationlist-body"
+                >
+                  <p>
+                    第
+                    <b>
+                      2
+                    </b>
+                    公演
+                  </p>
+                  <p>
+                    抽選結果発表: 
+                    <b>
+                      09:30:00
+                    </b>
+                  </p>
+                </div>,
+                "className": "card-content",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <p>
+                      第
+                      <b>
+                        2
+                      </b>
+                      公演
+                    </p>,
+                    <p>
+                      抽選結果発表: 
+                      <b>
+                        09:30:00
+                      </b>
+                    </p>,
+                    false,
+                    false,
+                  ],
+                  "className": "content",
+                  "data-test": "applicationlist-body",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "第",
+                        <b>
+                          2
+                        </b>,
+                        "公演",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "第",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": 2,
+                        },
+                        "ref": null,
+                        "rendered": 2,
+                        "type": "b",
+                      },
+                      "公演",
+                    ],
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "抽選結果発表: ",
+                        <b>
+                          09:30:00
+                        </b>,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "抽選結果発表: ",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "09:30:00",
+                        },
+                        "ref": null,
+                        "rendered": "09:30:00",
+                        "type": "b",
+                      },
+                    ],
+                    "type": "p",
+                  },
+                  false,
+                  false,
+                ],
+                "type": "div",
+              },
+              "type": "div",
             },
             Object {
               "instance": null,
@@ -299,7 +529,7 @@ ShallowWrapper {
               <p
                 className="card-header-title"
               >
-                5A.0
+                5A
               </p>
               <styled.span>
                 <StatusTag
@@ -307,6 +537,37 @@ ShallowWrapper {
                 />
               </styled.span>
             </header>
+            <div
+              className="card-content"
+            >
+              <div
+                className="content"
+                data-test="applicationlist-body"
+              >
+                <p>
+                  第
+                  <b>
+                    2
+                  </b>
+                  公演
+                </p>
+                <p>
+                  抽選結果発表: 
+                  <b>
+                    09:30:00
+                  </b>
+                </p>
+                <p>
+                  団体応募代表者です
+                </p>
+                <p>
+                  一緒に応募した人: 
+                  <b>
+                    ABCD, EFGH
+                  </b>
+                </p>
+              </div>
+            </div>
             <footer
               className="card-footer"
             >
@@ -334,7 +595,7 @@ ShallowWrapper {
                 <p
                   className="card-header-title"
                 >
-                  5A.0
+                  5A
                 </p>
                 <styled.span>
                   <StatusTag
@@ -342,6 +603,37 @@ ShallowWrapper {
                   />
                 </styled.span>
               </header>,
+              <div
+                className="card-content"
+              >
+                <div
+                  className="content"
+                  data-test="applicationlist-body"
+                >
+                  <p>
+                    第
+                    <b>
+                      2
+                    </b>
+                    公演
+                  </p>
+                  <p>
+                    抽選結果発表: 
+                    <b>
+                      09:30:00
+                    </b>
+                  </p>
+                  <p>
+                    団体応募代表者です
+                  </p>
+                  <p>
+                    一緒に応募した人: 
+                    <b>
+                      ABCD, EFGH
+                    </b>
+                  </p>
+                </div>
+              </div>,
               <footer
                 className="card-footer"
               >
@@ -367,7 +659,7 @@ ShallowWrapper {
                   <p
                     className="card-header-title"
                   >
-                    5A.0
+                    5A
                   </p>,
                   <styled.span>
                     <StatusTag
@@ -384,11 +676,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "5A.0",
+                    "children": "5A",
                     "className": "card-header-title",
                   },
                   "ref": null,
-                  "rendered": "5A.0",
+                  "rendered": "5A",
                   "type": "p",
                 },
                 Object {
@@ -416,6 +708,180 @@ ShallowWrapper {
                 },
               ],
               "type": "header",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <div
+                  className="content"
+                  data-test="applicationlist-body"
+                >
+                  <p>
+                    第
+                    <b>
+                      2
+                    </b>
+                    公演
+                  </p>
+                  <p>
+                    抽選結果発表: 
+                    <b>
+                      09:30:00
+                    </b>
+                  </p>
+                  <p>
+                    団体応募代表者です
+                  </p>
+                  <p>
+                    一緒に応募した人: 
+                    <b>
+                      ABCD, EFGH
+                    </b>
+                  </p>
+                </div>,
+                "className": "card-content",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <p>
+                      第
+                      <b>
+                        2
+                      </b>
+                      公演
+                    </p>,
+                    <p>
+                      抽選結果発表: 
+                      <b>
+                        09:30:00
+                      </b>
+                    </p>,
+                    <p>
+                      団体応募代表者です
+                    </p>,
+                    <p>
+                      一緒に応募した人: 
+                      <b>
+                        ABCD, EFGH
+                      </b>
+                    </p>,
+                  ],
+                  "className": "content",
+                  "data-test": "applicationlist-body",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "第",
+                        <b>
+                          2
+                        </b>,
+                        "公演",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "第",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": 2,
+                        },
+                        "ref": null,
+                        "rendered": 2,
+                        "type": "b",
+                      },
+                      "公演",
+                    ],
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "抽選結果発表: ",
+                        <b>
+                          09:30:00
+                        </b>,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "抽選結果発表: ",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "09:30:00",
+                        },
+                        "ref": null,
+                        "rendered": "09:30:00",
+                        "type": "b",
+                      },
+                    ],
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "団体応募代表者です",
+                    },
+                    "ref": null,
+                    "rendered": "団体応募代表者です",
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "一緒に応募した人: ",
+                        <b>
+                          ABCD, EFGH
+                        </b>,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "一緒に応募した人: ",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "ABCD, EFGH",
+                        },
+                        "ref": null,
+                        "rendered": "ABCD, EFGH",
+                        "type": "b",
+                      },
+                    ],
+                    "type": "p",
+                  },
+                ],
+                "type": "div",
+              },
+              "type": "div",
             },
             Object {
               "instance": null,
@@ -475,7 +941,7 @@ ShallowWrapper {
                 <p
                   className="card-header-title"
                 >
-                  5A.0
+                  5A
                 </p>
                 <styled.span>
                   <StatusTag
@@ -483,6 +949,28 @@ ShallowWrapper {
                   />
                 </styled.span>
               </header>
+              <div
+                className="card-content"
+              >
+                <div
+                  className="content"
+                  data-test="applicationlist-body"
+                >
+                  <p>
+                    第
+                    <b>
+                      2
+                    </b>
+                    公演
+                  </p>
+                  <p>
+                    抽選結果発表: 
+                    <b>
+                      09:30:00
+                    </b>
+                  </p>
+                </div>
+              </div>
               <footer
                 className="card-footer"
               >
@@ -508,7 +996,7 @@ ShallowWrapper {
                 <p
                   className="card-header-title"
                 >
-                  5A.0
+                  5A
                 </p>
                 <styled.span>
                   <StatusTag
@@ -516,6 +1004,37 @@ ShallowWrapper {
                   />
                 </styled.span>
               </header>
+              <div
+                className="card-content"
+              >
+                <div
+                  className="content"
+                  data-test="applicationlist-body"
+                >
+                  <p>
+                    第
+                    <b>
+                      2
+                    </b>
+                    公演
+                  </p>
+                  <p>
+                    抽選結果発表: 
+                    <b>
+                      09:30:00
+                    </b>
+                  </p>
+                  <p>
+                    団体応募代表者です
+                  </p>
+                  <p>
+                    一緒に応募した人: 
+                    <b>
+                      ABCD, EFGH
+                    </b>
+                  </p>
+                </div>
+              </div>
               <footer
                 className="card-footer"
               >
@@ -547,7 +1066,7 @@ ShallowWrapper {
                 <p
                   className="card-header-title"
                 >
-                  5A.0
+                  5A
                 </p>
                 <styled.span>
                   <StatusTag
@@ -555,6 +1074,28 @@ ShallowWrapper {
                   />
                 </styled.span>
               </header>
+              <div
+                className="card-content"
+              >
+                <div
+                  className="content"
+                  data-test="applicationlist-body"
+                >
+                  <p>
+                    第
+                    <b>
+                      2
+                    </b>
+                    公演
+                  </p>
+                  <p>
+                    抽選結果発表: 
+                    <b>
+                      09:30:00
+                    </b>
+                  </p>
+                </div>
+              </div>
               <footer
                 className="card-footer"
               >
@@ -582,7 +1123,7 @@ ShallowWrapper {
                   <p
                     className="card-header-title"
                   >
-                    5A.0
+                    5A
                   </p>
                   <styled.span>
                     <StatusTag
@@ -590,6 +1131,28 @@ ShallowWrapper {
                     />
                   </styled.span>
                 </header>,
+                <div
+                  className="card-content"
+                >
+                  <div
+                    className="content"
+                    data-test="applicationlist-body"
+                  >
+                    <p>
+                      第
+                      <b>
+                        2
+                      </b>
+                      公演
+                    </p>
+                    <p>
+                      抽選結果発表: 
+                      <b>
+                        09:30:00
+                      </b>
+                    </p>
+                  </div>
+                </div>,
                 <footer
                   className="card-footer"
                 >
@@ -615,7 +1178,7 @@ ShallowWrapper {
                     <p
                       className="card-header-title"
                     >
-                      5A.0
+                      5A
                     </p>,
                     <styled.span>
                       <StatusTag
@@ -632,11 +1195,11 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "5A.0",
+                      "children": "5A",
                       "className": "card-header-title",
                     },
                     "ref": null,
-                    "rendered": "5A.0",
+                    "rendered": "5A",
                     "type": "p",
                   },
                   Object {
@@ -664,6 +1227,126 @@ ShallowWrapper {
                   },
                 ],
                 "type": "header",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <div
+                    className="content"
+                    data-test="applicationlist-body"
+                  >
+                    <p>
+                      第
+                      <b>
+                        2
+                      </b>
+                      公演
+                    </p>
+                    <p>
+                      抽選結果発表: 
+                      <b>
+                        09:30:00
+                      </b>
+                    </p>
+                  </div>,
+                  "className": "card-content",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <p>
+                        第
+                        <b>
+                          2
+                        </b>
+                        公演
+                      </p>,
+                      <p>
+                        抽選結果発表: 
+                        <b>
+                          09:30:00
+                        </b>
+                      </p>,
+                      false,
+                      false,
+                    ],
+                    "className": "content",
+                    "data-test": "applicationlist-body",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          "第",
+                          <b>
+                            2
+                          </b>,
+                          "公演",
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        "第",
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": 2,
+                          },
+                          "ref": null,
+                          "rendered": 2,
+                          "type": "b",
+                        },
+                        "公演",
+                      ],
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          "抽選結果発表: ",
+                          <b>
+                            09:30:00
+                          </b>,
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        "抽選結果発表: ",
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "09:30:00",
+                          },
+                          "ref": null,
+                          "rendered": "09:30:00",
+                          "type": "b",
+                        },
+                      ],
+                      "type": "p",
+                    },
+                    false,
+                    false,
+                  ],
+                  "type": "div",
+                },
+                "type": "div",
               },
               Object {
                 "instance": null,
@@ -715,7 +1398,7 @@ ShallowWrapper {
                 <p
                   className="card-header-title"
                 >
-                  5A.0
+                  5A
                 </p>
                 <styled.span>
                   <StatusTag
@@ -723,6 +1406,37 @@ ShallowWrapper {
                   />
                 </styled.span>
               </header>
+              <div
+                className="card-content"
+              >
+                <div
+                  className="content"
+                  data-test="applicationlist-body"
+                >
+                  <p>
+                    第
+                    <b>
+                      2
+                    </b>
+                    公演
+                  </p>
+                  <p>
+                    抽選結果発表: 
+                    <b>
+                      09:30:00
+                    </b>
+                  </p>
+                  <p>
+                    団体応募代表者です
+                  </p>
+                  <p>
+                    一緒に応募した人: 
+                    <b>
+                      ABCD, EFGH
+                    </b>
+                  </p>
+                </div>
+              </div>
               <footer
                 className="card-footer"
               >
@@ -750,7 +1464,7 @@ ShallowWrapper {
                   <p
                     className="card-header-title"
                   >
-                    5A.0
+                    5A
                   </p>
                   <styled.span>
                     <StatusTag
@@ -758,6 +1472,37 @@ ShallowWrapper {
                     />
                   </styled.span>
                 </header>,
+                <div
+                  className="card-content"
+                >
+                  <div
+                    className="content"
+                    data-test="applicationlist-body"
+                  >
+                    <p>
+                      第
+                      <b>
+                        2
+                      </b>
+                      公演
+                    </p>
+                    <p>
+                      抽選結果発表: 
+                      <b>
+                        09:30:00
+                      </b>
+                    </p>
+                    <p>
+                      団体応募代表者です
+                    </p>
+                    <p>
+                      一緒に応募した人: 
+                      <b>
+                        ABCD, EFGH
+                      </b>
+                    </p>
+                  </div>
+                </div>,
                 <footer
                   className="card-footer"
                 >
@@ -783,7 +1528,7 @@ ShallowWrapper {
                     <p
                       className="card-header-title"
                     >
-                      5A.0
+                      5A
                     </p>,
                     <styled.span>
                       <StatusTag
@@ -800,11 +1545,11 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "5A.0",
+                      "children": "5A",
                       "className": "card-header-title",
                     },
                     "ref": null,
-                    "rendered": "5A.0",
+                    "rendered": "5A",
                     "type": "p",
                   },
                   Object {
@@ -832,6 +1577,180 @@ ShallowWrapper {
                   },
                 ],
                 "type": "header",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <div
+                    className="content"
+                    data-test="applicationlist-body"
+                  >
+                    <p>
+                      第
+                      <b>
+                        2
+                      </b>
+                      公演
+                    </p>
+                    <p>
+                      抽選結果発表: 
+                      <b>
+                        09:30:00
+                      </b>
+                    </p>
+                    <p>
+                      団体応募代表者です
+                    </p>
+                    <p>
+                      一緒に応募した人: 
+                      <b>
+                        ABCD, EFGH
+                      </b>
+                    </p>
+                  </div>,
+                  "className": "card-content",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <p>
+                        第
+                        <b>
+                          2
+                        </b>
+                        公演
+                      </p>,
+                      <p>
+                        抽選結果発表: 
+                        <b>
+                          09:30:00
+                        </b>
+                      </p>,
+                      <p>
+                        団体応募代表者です
+                      </p>,
+                      <p>
+                        一緒に応募した人: 
+                        <b>
+                          ABCD, EFGH
+                        </b>
+                      </p>,
+                    ],
+                    "className": "content",
+                    "data-test": "applicationlist-body",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          "第",
+                          <b>
+                            2
+                          </b>,
+                          "公演",
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        "第",
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": 2,
+                          },
+                          "ref": null,
+                          "rendered": 2,
+                          "type": "b",
+                        },
+                        "公演",
+                      ],
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          "抽選結果発表: ",
+                          <b>
+                            09:30:00
+                          </b>,
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        "抽選結果発表: ",
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "09:30:00",
+                          },
+                          "ref": null,
+                          "rendered": "09:30:00",
+                          "type": "b",
+                        },
+                      ],
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "団体応募代表者です",
+                      },
+                      "ref": null,
+                      "rendered": "団体応募代表者です",
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          "一緒に応募した人: ",
+                          <b>
+                            ABCD, EFGH
+                          </b>,
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        "一緒に応募した人: ",
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "ABCD, EFGH",
+                          },
+                          "ref": null,
+                          "rendered": "ABCD, EFGH",
+                          "type": "b",
+                        },
+                      ],
+                      "type": "p",
+                    },
+                  ],
+                  "type": "div",
+                },
+                "type": "div",
               },
               Object {
                 "instance": null,
