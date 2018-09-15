@@ -26,6 +26,7 @@ const ApplicationList = ({list, onCancel}) => (
               <div className='content'>
                 <p>第<b>{c.lottery.index + 2}</b>公演</p>
                 {c.status === 'pending' && <p>発表時間: <b>{c.lottery.end_of_drawing}</b></p>}
+                {c.is_rep && <p>団体応募代表者です</p>}
                 {c.group_members.length !== 0 && <p>一緒に応募した人: <b>{c.group_members.map(m => m.public_id).join(', ')}</b></p>}
               </div>
             </div>
