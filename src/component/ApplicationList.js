@@ -25,6 +25,7 @@ const ApplicationList = ({list, onCancel}) => (
             <div className='card-content'>
               <div className='content'>
                 {c.status === 'pending' && <p>発表時間: <b>{c.lottery.end_of_drawing}</b></p>}
+                {c.group_members.length !== 0 && <p>一緒に応募した人: <b>{c.group_members.map(m => m.public_id).join(', ')}</b></p>}
               </div>
             </div>
             {c.status === 'pending' && <footer className='card-footer'>
