@@ -1,3 +1,5 @@
+import React from 'react'
+
 import {CredentialObject} from './credential'
 import {ApplicationObject} from './application'
 import {CheckerObject} from './checker'
@@ -30,7 +32,13 @@ export class Event {
       throw err
     }
     const data = app.data
-    this.dialog.onOpen('応募しました', `${data.lottery.end_of_drawing}の結果発表をお待ちください`, 'OK')
+    const content = (
+      <div>
+        <p>{data.lottery.name.slice(0, -2)}の第{data.lottery.index + 2}公演です。</p>
+        <p>{data.lottery.end_of_drawing}の結果発表をお待ちください。</p>
+      </div>
+    )
+    this.dialog.onOpen('応募しました', content, 'OK')
     await this.store.fetchStatus()
     if (this.store.credential.isUsedByStaff) {
       this.store.credential.logout()
