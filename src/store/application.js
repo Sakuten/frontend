@@ -15,6 +15,12 @@ export class ApplicationObject {
     return this.groupMemberList.length < 3
   }
 
+  @action.bound clearInputs () {
+    this.classroom = 1
+    this.lottery = 1
+    this.groupMemberList = []
+  }
+
   @action.bound setClassroom (classroomId) {
     this.classroom = classroomId
   }
