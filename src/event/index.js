@@ -1,3 +1,5 @@
+import React from 'react'
+
 import {CredentialObject} from './credential'
 import {ApplicationObject} from './application'
 import {CheckerObject} from './checker'
@@ -22,13 +24,21 @@ export class Event {
 
   onApplyLottery = async () => {
     this.dialog.onOpen('応募しています', 'しばらくお待ちください', 'お待ちください', false)
+    let app
     try {
-      await applyLottery(this.store.application.lottery, this.store.application.groupMemberList.map(pair => pair[0]), this.store.credential.token)
+      app = await applyLottery(this.store.application.lottery, this.store.application.groupMemberList.map(pair => pair[0]), this.store.credential.token)
     } catch (err) {
       this.dialog.onClose()
       throw err
     }
-    this.dialog.onOpen('応募しました', '発表をお待ちください', 'OK')
+    const data = app.data
+    const content = (
+      <div>
+        <p><b>{data.lottery.name.slice(0, -2)}</b>の<b>第{data.lottery.index + 2}公演</b>です。</p>
+        <p><b>{data.lottery.end_of_drawing}</b>の結果発表をお待ちください。</p>
+      </div>
+    )
+    this.dialog.onOpen('応募しました', content, 'OK')
     await this.store.fetchStatus()
     if (this.store.credential.isUsedByStaff) {
       this.store.credential.logout()
