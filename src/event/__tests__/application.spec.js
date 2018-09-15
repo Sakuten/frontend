@@ -24,16 +24,25 @@ describe('events', () => {
       expect(event.store.application.lottery).toBe(2)
     })
 
-    it('applies to lottery', async () => {
-      await event.onApply()
-      const applications = event.store.credential.status.get('application_history')
-      expect(applications).toBeDefined()
+    it('adds a group member', async () => {
+      await event.onAddGroupMember('secret_id')
+      expect(event.store.application.groupMemberList).toEqual([['secret_id', 'ABCD']])
     })
 
-    it('cancels lottery', async () => {
-      await event.onCancel()
-      const applications = event.store.credential.status.get('application_history')
-      expect(applications).toBeDefined()
+    it('can\'t add group member when there is already 3', async () => {
+      await event.onAddGroupMember('secret_id1')
+      await event.onAddGroupMember('secret_id2')
+      await event.onAddGroupMember('secret_id3')
+
+      await event.onAddGroupMember('secret_id4')
+      expect(event.store.error.errorList).toHaveLength(1)
+      expect(event.store.application.groupMemberList).toHaveLength(3)
+    })
+
+    it('removes a group member', async () => {
+      await event.onAddGroupMember('secret_id', 'public_id')
+      event.onRemoveGroupMember(0)
+      expect(event.store.application.groupMemberList).toEqual([])
     })
   })
 })

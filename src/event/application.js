@@ -1,4 +1,4 @@
-import {applyLottery, cancelLottery} from '../api/operation'
+import {getPublicId} from '../api/operation'
 
 export class ApplicationObject {
   constructor (store) {
@@ -21,13 +21,24 @@ export class ApplicationObject {
     this.store.application.setLottery(lottery)
   }
 
-  onApply = async () => {
-    await applyLottery(this.store.application.lottery, this.store.credential.token)
-    await this.store.fetchStatus()
+  onAddGroupMember = async (secretId) => {
+    if (this.store.credential.status.get('secret_id') === secretId) {
+      this.store.error.addError(102, 'You can\'t add yourself as a member')
+      return
+    }
+    if (this.store.application.groupMemberList.indexOf(secretId) !== -1) {
+      this.store.error.addError(103, 'The user is already in the member list')
+      return
+    }
+    if (!this.store.application.isAbleToAddGroupMember) {
+      this.store.error.addError(104, 'Too many group members')
+      return
+    }
+    const resp = await getPublicId(secretId, this.store.credential.token)
+    this.store.application.addGroupMember(secretId, resp.data['public_id'])
   }
 
-  onCancel = async (id) => {
-    await cancelLottery(id, this.store.credential.token)
-    await this.store.fetchStatus()
+  onRemoveGroupMember = (idx) => {
+    this.store.application.removeGroupMemberByIdx(idx)
   }
 }

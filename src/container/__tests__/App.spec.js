@@ -28,6 +28,7 @@ const setup = (propOverrides, storeOverrides, path = '/', isShallow = true) => {
     wrapper,
     store,
     applicationView: wrapper.find('[data-test="applicationview"]'),
+    checkerView: wrapper.find('[data-test="checkerview"]'),
     loginView: wrapper.find('[data-test="loginview"]')
   }
 }
@@ -39,14 +40,21 @@ describe('containers', () => {
       expect(wrapper).toMatchSnapshot()
     })
 
+    it('renders CheckerView when it is logged in as checker', () => {
+      const { checkerView, loginView, applicationView } = setup({}, {credential: {token: 'token', kind: 'checker'}}, '/checker', false)
+      expect(applicationView.length).toBe(0)
+      expect(loginView.length).toBe(0)
+      expect(checkerView.length).toBe(1)
+    })
+
     it('renders ApplicationView when it is logged in', () => {
-      const { loginView, applicationView } = setup({}, {credential: {token: 'token'}}, '/lottery', false)
+      const { loginView, applicationView } = setup({}, {credential: {token: 'token', kind: 'normal'}}, '/lottery', false)
       expect(applicationView.length).toBe(1)
       expect(loginView.length).toBe(0)
     })
 
     it('renders LoginView when it isn\'t logged in', () => {
-      const { loginView, applicationView } = setup({}, {credential: {token: ''}}, '/lottery/login', false)
+      const { loginView, applicationView } = setup({}, {credential: {token: '', kind: ''}}, '/lottery/login', false)
       expect(applicationView.length).toBe(0)
       expect(loginView.length).toBe(1)
     })
@@ -57,8 +65,13 @@ describe('containers', () => {
     })
 
     it('redirects from /lottery/login to /lottery when it is logged in', () => {
-      const { wrapper } = setup({}, {credential: {token: 'token'}}, '/lottery/login', false)
+      const { wrapper } = setup({}, {credential: {token: 'token', kind: 'normal'}}, '/lottery/login', false)
       expect(wrapper.find('Redirect').prop('to')).toBe('/lottery')
+    })
+
+    it('redirects from /lottery to /checker when it is logged in as checker', () => {
+      const { wrapper } = setup({}, {credential: {token: 'token', kind: 'checker'}}, '/lottery', false)
+      expect(wrapper.find('Redirect').prop('to')).toBe('/checker')
     })
   })
 })

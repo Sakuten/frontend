@@ -1,6 +1,7 @@
 import React from 'react'
 import { observable, action } from 'mobx'
 import { observer } from 'mobx-react'
+import FullWidth from '../util/fullwidth.js'
 
 import QrReader from 'react-qr-reader'
 
@@ -10,9 +11,9 @@ import QrReader from 'react-qr-reader'
 
   render () {
     return (
-      <div>
+      <FullWidth>
         { this.isLoading && <p>Loading</p> }
-        { this.isLegacyMode && <button onClick={this.onImgSubmit}>Submit an Image</button> }
+        { this.isLegacyMode && <button className='button' onClick={this.onImgSubmit}>QRコードの画像を選択する</button> }
         <div style={{display: this.isLoading ? 'none' : 'block'}} >
           { window.navigator.userAgent.indexOf('jsdom') === -1 &&
             <QrReader
@@ -20,12 +21,11 @@ import QrReader from 'react-qr-reader'
               onScan={this.props.onScan}
               onLoad={this.onLoad}
               legacyMode={this.isLegacyMode}
-              style={{ width: '50%' }}
               ref='reader'
             />
           }
         </div>
-      </div>
+      </FullWidth>
     )
   }
 

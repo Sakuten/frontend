@@ -10,7 +10,7 @@ const setup = (propOverrides, storeOverrides, eventOverrides, isShallow = true) 
   const store = deepAssign(new Store(), storeOverrides)
   const event = deepAssign(new Event(store), eventOverrides)
   const props = Object.assign({
-    user: store.credential.status,
+    credential: store.credential,
     application: store.application
   }, propOverrides)
 
@@ -32,22 +32,10 @@ describe('containers', () => {
       expect(wrapper).toMatchSnapshot()
     })
 
-    it('renders user id', async () => {
-      const { store, title } = setup({}, {}, {}, false)
-      await store.fetchStatus()
-      expect(title.text()).toBe('Logged in as example1')
-    })
-
     it('renders classroom options', async () => {
       const { event, wrapper } = setup({}, {}, {}, false)
       await event.application.onUpdate()
       expect(wrapper.render().find('[data-test="classroom-option"]').length).toBe(8)
-    })
-
-    it('renders lottery options', async () => {
-      const { event, wrapper } = setup({}, {}, {}, false)
-      await event.application.onUpdate()
-      expect(wrapper.render().find('[data-test="lottery-option"]').length).toBe(4)
     })
 
     it('renders application list', async () => {

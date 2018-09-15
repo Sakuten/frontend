@@ -2,15 +2,16 @@
 
 exports[`components ErrorList render 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ErrorList
     list={
       Array [
         Object {
+          "code": 0,
           "message": "Error 1",
         },
         Object {
+          "code": 1,
           "message": "Error 2",
         },
       ]
@@ -26,19 +27,72 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "class",
     "props": Object {
       "children": Array [
-        <div
+        <article
+          className="message is-info"
           data-test="errorlist-error"
         >
-          {"message":"Error 1"}
-        </div>,
-        <div
+          <div
+            className="message-header"
+            data-test="errorlist-error-header"
+          >
+            <p>
+              情報
+            </p>
+            <button
+              aria-label="delete"
+              className="delete"
+              data-test="errorlist-error-close-button"
+              onClick={[Function]}
+            />
+          </div>
+          <styled.div
+            className="message-body"
+          >
+            <styled.span
+              data-test="errorlist-error-body"
+            >
+              もう一度ログインしてください
+            </styled.span>
+            <button
+              className="button is-info"
+              data-test="errorlist-error-ok-button"
+              onClick={[Function]}
+            >
+              OK
+            </button>
+          </styled.div>
+        </article>,
+        <article
+          className="message is-danger"
           data-test="errorlist-error"
         >
-          {"message":"Error 2"}
-        </div>,
+          <div
+            className="message-header"
+            data-test="errorlist-error-header"
+          >
+            <p>
+              内部エラーが発生しました
+            </p>
+            <button
+              aria-label="delete"
+              className="delete"
+              data-test="errorlist-error-close-button"
+              onClick={[Function]}
+            />
+          </div>
+          <styled.div
+            className="message-body"
+          >
+            <styled.span
+              data-test="errorlist-error-body"
+            >
+              グループメンバーのカードが正しくありません。
+            </styled.span>
+          </styled.div>
+        </article>,
       ],
       "data-test": "errorlist",
     },
@@ -49,45 +103,340 @@ ShallowWrapper {
         "key": "0",
         "nodeType": "host",
         "props": Object {
-          "children": "{\\"message\\":\\"Error 1\\"}",
+          "children": Array [
+            <div
+              className="message-header"
+              data-test="errorlist-error-header"
+            >
+              <p>
+                情報
+              </p>
+              <button
+                aria-label="delete"
+                className="delete"
+                data-test="errorlist-error-close-button"
+                onClick={[Function]}
+              />
+            </div>,
+            <styled.div
+              className="message-body"
+            >
+              <styled.span
+                data-test="errorlist-error-body"
+              >
+                もう一度ログインしてください
+              </styled.span>
+              <button
+                className="button is-info"
+                data-test="errorlist-error-ok-button"
+                onClick={[Function]}
+              >
+                OK
+              </button>
+            </styled.div>,
+          ],
+          "className": "message is-info",
           "data-test": "errorlist-error",
         },
         "ref": null,
-        "rendered": "{\\"message\\":\\"Error 1\\"}",
-        "type": "div",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <p>
+                  情報
+                </p>,
+                <button
+                  aria-label="delete"
+                  className="delete"
+                  data-test="errorlist-error-close-button"
+                  onClick={[Function]}
+                />,
+              ],
+              "className": "message-header",
+              "data-test": "errorlist-error-header",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "情報",
+                },
+                "ref": null,
+                "rendered": "情報",
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "aria-label": "delete",
+                  "className": "delete",
+                  "data-test": "errorlist-error-close-button",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "button",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <styled.span
+                  data-test="errorlist-error-body"
+                >
+                  もう一度ログインしてください
+                </styled.span>,
+                <button
+                  className="button is-info"
+                  data-test="errorlist-error-ok-button"
+                  onClick={[Function]}
+                >
+                  OK
+                </button>,
+              ],
+              "className": "message-body",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "もう一度ログインしてください",
+                  "data-test": "errorlist-error-body",
+                },
+                "ref": null,
+                "rendered": "もう一度ログインしてください",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "OK",
+                  "className": "button is-info",
+                  "data-test": "errorlist-error-ok-button",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "OK",
+                "type": "button",
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": "article",
       },
       Object {
         "instance": null,
         "key": "1",
         "nodeType": "host",
         "props": Object {
-          "children": "{\\"message\\":\\"Error 2\\"}",
+          "children": Array [
+            <div
+              className="message-header"
+              data-test="errorlist-error-header"
+            >
+              <p>
+                内部エラーが発生しました
+              </p>
+              <button
+                aria-label="delete"
+                className="delete"
+                data-test="errorlist-error-close-button"
+                onClick={[Function]}
+              />
+            </div>,
+            <styled.div
+              className="message-body"
+            >
+              <styled.span
+                data-test="errorlist-error-body"
+              >
+                グループメンバーのカードが正しくありません。
+              </styled.span>
+            </styled.div>,
+          ],
+          "className": "message is-danger",
           "data-test": "errorlist-error",
         },
         "ref": null,
-        "rendered": "{\\"message\\":\\"Error 2\\"}",
-        "type": "div",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <p>
+                  内部エラーが発生しました
+                </p>,
+                <button
+                  aria-label="delete"
+                  className="delete"
+                  data-test="errorlist-error-close-button"
+                  onClick={[Function]}
+                />,
+              ],
+              "className": "message-header",
+              "data-test": "errorlist-error-header",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "内部エラーが発生しました",
+                },
+                "ref": null,
+                "rendered": "内部エラーが発生しました",
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "aria-label": "delete",
+                  "className": "delete",
+                  "data-test": "errorlist-error-close-button",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "button",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <styled.span
+                  data-test="errorlist-error-body"
+                >
+                  グループメンバーのカードが正しくありません。
+                </styled.span>,
+                false,
+              ],
+              "className": "message-body",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "グループメンバーのカードが正しくありません。",
+                  "data-test": "errorlist-error-body",
+                },
+                "ref": null,
+                "rendered": "グループメンバーのカードが正しくありません。",
+                "type": [Function],
+              },
+              false,
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": "article",
       },
     ],
-    "type": "div",
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "class",
       "props": Object {
         "children": Array [
-          <div
+          <article
+            className="message is-info"
             data-test="errorlist-error"
           >
-            {"message":"Error 1"}
-          </div>,
-          <div
+            <div
+              className="message-header"
+              data-test="errorlist-error-header"
+            >
+              <p>
+                情報
+              </p>
+              <button
+                aria-label="delete"
+                className="delete"
+                data-test="errorlist-error-close-button"
+                onClick={[Function]}
+              />
+            </div>
+            <styled.div
+              className="message-body"
+            >
+              <styled.span
+                data-test="errorlist-error-body"
+              >
+                もう一度ログインしてください
+              </styled.span>
+              <button
+                className="button is-info"
+                data-test="errorlist-error-ok-button"
+                onClick={[Function]}
+              >
+                OK
+              </button>
+            </styled.div>
+          </article>,
+          <article
+            className="message is-danger"
             data-test="errorlist-error"
           >
-            {"message":"Error 2"}
-          </div>,
+            <div
+              className="message-header"
+              data-test="errorlist-error-header"
+            >
+              <p>
+                内部エラーが発生しました
+              </p>
+              <button
+                aria-label="delete"
+                className="delete"
+                data-test="errorlist-error-close-button"
+                onClick={[Function]}
+              />
+            </div>
+            <styled.div
+              className="message-body"
+            >
+              <styled.span
+                data-test="errorlist-error-body"
+              >
+                グループメンバーのカードが正しくありません。
+              </styled.span>
+            </styled.div>
+          </article>,
         ],
         "data-test": "errorlist",
       },
@@ -98,35 +447,289 @@ ShallowWrapper {
           "key": "0",
           "nodeType": "host",
           "props": Object {
-            "children": "{\\"message\\":\\"Error 1\\"}",
+            "children": Array [
+              <div
+                className="message-header"
+                data-test="errorlist-error-header"
+              >
+                <p>
+                  情報
+                </p>
+                <button
+                  aria-label="delete"
+                  className="delete"
+                  data-test="errorlist-error-close-button"
+                  onClick={[Function]}
+                />
+              </div>,
+              <styled.div
+                className="message-body"
+              >
+                <styled.span
+                  data-test="errorlist-error-body"
+                >
+                  もう一度ログインしてください
+                </styled.span>
+                <button
+                  className="button is-info"
+                  data-test="errorlist-error-ok-button"
+                  onClick={[Function]}
+                >
+                  OK
+                </button>
+              </styled.div>,
+            ],
+            "className": "message is-info",
             "data-test": "errorlist-error",
           },
           "ref": null,
-          "rendered": "{\\"message\\":\\"Error 1\\"}",
-          "type": "div",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <p>
+                    情報
+                  </p>,
+                  <button
+                    aria-label="delete"
+                    className="delete"
+                    data-test="errorlist-error-close-button"
+                    onClick={[Function]}
+                  />,
+                ],
+                "className": "message-header",
+                "data-test": "errorlist-error-header",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "情報",
+                  },
+                  "ref": null,
+                  "rendered": "情報",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "aria-label": "delete",
+                    "className": "delete",
+                    "data-test": "errorlist-error-close-button",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "button",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <styled.span
+                    data-test="errorlist-error-body"
+                  >
+                    もう一度ログインしてください
+                  </styled.span>,
+                  <button
+                    className="button is-info"
+                    data-test="errorlist-error-ok-button"
+                    onClick={[Function]}
+                  >
+                    OK
+                  </button>,
+                ],
+                "className": "message-body",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "もう一度ログインしてください",
+                    "data-test": "errorlist-error-body",
+                  },
+                  "ref": null,
+                  "rendered": "もう一度ログインしてください",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "OK",
+                    "className": "button is-info",
+                    "data-test": "errorlist-error-ok-button",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "OK",
+                  "type": "button",
+                },
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": "article",
         },
         Object {
           "instance": null,
           "key": "1",
           "nodeType": "host",
           "props": Object {
-            "children": "{\\"message\\":\\"Error 2\\"}",
+            "children": Array [
+              <div
+                className="message-header"
+                data-test="errorlist-error-header"
+              >
+                <p>
+                  内部エラーが発生しました
+                </p>
+                <button
+                  aria-label="delete"
+                  className="delete"
+                  data-test="errorlist-error-close-button"
+                  onClick={[Function]}
+                />
+              </div>,
+              <styled.div
+                className="message-body"
+              >
+                <styled.span
+                  data-test="errorlist-error-body"
+                >
+                  グループメンバーのカードが正しくありません。
+                </styled.span>
+              </styled.div>,
+            ],
+            "className": "message is-danger",
             "data-test": "errorlist-error",
           },
           "ref": null,
-          "rendered": "{\\"message\\":\\"Error 2\\"}",
-          "type": "div",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <p>
+                    内部エラーが発生しました
+                  </p>,
+                  <button
+                    aria-label="delete"
+                    className="delete"
+                    data-test="errorlist-error-close-button"
+                    onClick={[Function]}
+                  />,
+                ],
+                "className": "message-header",
+                "data-test": "errorlist-error-header",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "内部エラーが発生しました",
+                  },
+                  "ref": null,
+                  "rendered": "内部エラーが発生しました",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "aria-label": "delete",
+                    "className": "delete",
+                    "data-test": "errorlist-error-close-button",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "button",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <styled.span
+                    data-test="errorlist-error-body"
+                  >
+                    グループメンバーのカードが正しくありません。
+                  </styled.span>,
+                  false,
+                ],
+                "className": "message-body",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "グループメンバーのカードが正しくありません。",
+                    "data-test": "errorlist-error-body",
+                  },
+                  "ref": null,
+                  "rendered": "グループメンバーのカードが正しくありません。",
+                  "type": [Function],
+                },
+                false,
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": "article",
         },
       ],
-      "type": "div",
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
   },
 }
 `;

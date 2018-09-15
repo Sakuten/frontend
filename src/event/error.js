@@ -8,16 +8,24 @@ export class ErrorObject {
       response => response,
       error => {
         const message = error.response ? error.response.data : (error.request ? error.request : error.message)
-        this.onError(message)
+        if (typeof message === 'object' && 'code' in message) {
+          this.onError(message.code, message)
+        } else {
+          this.onError(105, message)
+        }
         return Promise.reject(error)
       }
     )
   }
 
-  onError = (message) => {
-    if ('message' in message && message['message'] === 'Unauthorized') {
-      this.store.credential.setToken('')
+  onError = (code, message) => {
+    if (code === 0) {
+      this.store.credential.logout()
     }
-    this.store.error.addError(message)
+    this.store.error.addError(code, message)
+  }
+
+  onDelete = (idx) => {
+    this.store.error.deleteError(idx)
   }
 }

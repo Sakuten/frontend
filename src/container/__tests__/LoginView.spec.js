@@ -20,7 +20,7 @@ const setup = (propOverrides, storeOverrides, eventOverrides, isShallow = true) 
     wrapper,
     store,
     event,
-    ReCAPTCHA: wrapper.find('ReCAPTCHA'),
+    ReCAPTCHA: wrapper.find('ReCaptcha'),
     QRReader: wrapper.find('QRReader')
   }
 }
