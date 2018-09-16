@@ -9,6 +9,7 @@ ShallowWrapper {
         Object {
           "group_members": Array [],
           "id": 1,
+          "is_member": false,
           "is_rep": false,
           "lottery": Object {
             "classroom_id": 1,
@@ -31,6 +32,7 @@ ShallowWrapper {
             },
           ],
           "id": 2,
+          "is_member": false,
           "is_rep": true,
           "lottery": Object {
             "classroom_id": 1,
@@ -406,6 +408,7 @@ ShallowWrapper {
                     </p>,
                     false,
                     false,
+                    false,
                   ],
                   "className": "content",
                   "data-test": "applicationlist-body",
@@ -472,6 +475,7 @@ ShallowWrapper {
                     ],
                     "type": "p",
                   },
+                  false,
                   false,
                   false,
                 ],
@@ -766,6 +770,7 @@ ShallowWrapper {
                     <p>
                       団体応募代表者です
                     </p>,
+                    false,
                     <p>
                       一緒に応募した人: 
                       <b>
@@ -849,6 +854,7 @@ ShallowWrapper {
                     "rendered": "団体応募代表者です",
                     "type": "p",
                   },
+                  false,
                   Object {
                     "instance": null,
                     "key": undefined,
@@ -1275,6 +1281,7 @@ ShallowWrapper {
                       </p>,
                       false,
                       false,
+                      false,
                     ],
                     "className": "content",
                     "data-test": "applicationlist-body",
@@ -1341,6 +1348,7 @@ ShallowWrapper {
                       ],
                       "type": "p",
                     },
+                    false,
                     false,
                     false,
                   ],
@@ -1635,6 +1643,7 @@ ShallowWrapper {
                       <p>
                         団体応募代表者です
                       </p>,
+                      false,
                       <p>
                         一緒に応募した人: 
                         <b>
@@ -1718,6 +1727,7 @@ ShallowWrapper {
                       "rendered": "団体応募代表者です",
                       "type": "p",
                     },
+                    false,
                     Object {
                       "instance": null,
                       "key": undefined,
