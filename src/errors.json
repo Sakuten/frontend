@@ -110,5 +110,9 @@
   "105": {
     "translation": "ネットワークエラー",
     "level": "internal"
+  },
+  "111": {
+    "translation": "もう一度お試しください",
+    "level": "internal"
   }
 }

@@ -2,7 +2,7 @@ import { observable, computed, action } from 'mobx'
 import {getClassrooms, getLotteries, getApplications} from '../api/operation'
 
 export class ApplicationObject {
-  @observable classroom = 1
+  @observable classroom = null
   @observable lottery = 1
   @observable groupMemberList = []
 
@@ -16,7 +16,7 @@ export class ApplicationObject {
   }
 
   @action.bound clearInputs () {
-    this.classroom = 1
+    this.classroom = null
     this.lottery = 1
     this.groupMemberList = []
   }
