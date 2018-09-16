@@ -66,6 +66,7 @@ class App extends React.Component {
     } = this.props.event.error
 
     const {
+      onOpen,
       onClose
     } = this.props.event.dialog
 
@@ -78,7 +79,7 @@ class App extends React.Component {
           <Route exact path='/checker' render={() => this.props.store.credential.isLoggedInAsChecker ? <CheckerView store={this.props.store} /> : <Redirect to='/lottery/login' />} />
           <Route path='/lottery/login' render={() => this.props.store.credential.isLoggedIn ? <Redirect to='/lottery' /> : <LoginView credential={this.props.store.credential} />} />
           <Route exact path='/lottery' render={() => this.props.store.credential.isLoggedIn ? this.props.store.credential.isLoggedInAsChecker ? <Redirect to='/checker' /> : <ApplicationView credential={this.props.store.credential} application={this.props.store.application} /> : <Redirect to='/lottery/login' />} />
-          <ErrorList list={this.props.store.error.errorList} onDelete={onDelete} />
+          <ErrorList list={this.props.store.error.errorList} onDelete={onDelete} onShowDetails={msg => onOpen('エラー詳細', JSON.stringify(msg), '閉じる')} />
           <MessageDialog title={this.props.store.dialog.title} buttonText={this.props.store.dialog.buttonText} isButtonEnabled={this.props.store.dialog.isButtonEnabled} isOpen={this.props.store.dialog.isOpen} onClose={onClose}>
             {this.props.store.dialog.content}
           </MessageDialog>
