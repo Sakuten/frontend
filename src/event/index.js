@@ -24,7 +24,7 @@ export class Event {
 
   onApplyLottery = async () => {
     if (this.store.application.classroom === null) {
-      this.error.onError(111, "もう一度お試しください")
+      this.error.onError(111, 'もう一度お試しください')
       return
     }
 
