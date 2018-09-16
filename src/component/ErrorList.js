@@ -40,7 +40,6 @@ const ErrorList = ({list, onDelete, onShowDetails}) => (
             <MessageContainer className='message-body'>
               <MessageBody data-test='errorlist-error-body'>
                 <p>{error.translation}</p>
-                <p>{JSON.stringify(c)}</p>
               </MessageBody>
               <button data-test='errorlist-error-detail-button' className='button is-light' onClick={() => onShowDetails(c.message)}>
                 詳細
