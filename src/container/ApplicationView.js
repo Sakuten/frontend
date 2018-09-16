@@ -48,6 +48,7 @@ const Cloud = styled.div`
   width: 60vw;
   right: -20%;
   z-index: 20;
+  pointer-events: none;
 `
 
 const ApplicationView = ({credential, application, event}) => {
