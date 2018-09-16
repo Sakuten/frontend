@@ -2,7 +2,7 @@
   publish = "build"
   command = "yarn build"
 
-[context.production]
+[context.production.environment]
   REACT_APP_API_SERVER = "https://api.sakuten.jp"
 
 [context.deploy-preview.environment]
