@@ -4,7 +4,7 @@ import { observer } from 'mobx-react'
 const LotteryView = ({list, classroom, onChange}) => (
   <div>
     {
-      list.length !== 0 ? list
+      classroom === null ? <span>クラスを選択してください</span> : list.length !== 0 ? list
         .filter(c => c.classroom_id === Number(classroom))
         .map(c => {
           onChange(c.id)
