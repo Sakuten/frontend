@@ -125,13 +125,11 @@
     "presets": [
       "react-app",
       "mobx",
-      ["env",
-          {
-              "targets": {
-                "node": "8"
-              }
-          }
-      ]
+      ["env", {
+        "targets": {
+          "browsers": ["last 2 versions", "safari >= 11"]
+        }
+      }]
     ]
   }
 }
