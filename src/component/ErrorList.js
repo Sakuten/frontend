@@ -39,7 +39,8 @@ const ErrorList = ({list, onDelete}) => (
             </div>
             <MessageContainer className='message-body'>
               <MessageBody data-test='errorlist-error-body'>
-                {error.translation}
+                <p>{error.translation}</p>
+                <p>{c}</p>
               </MessageBody>
               {error.level !== 'internal' && <button data-test='errorlist-error-ok-button' className='button is-info' onClick={() => onDelete(i)}>
                 OK
