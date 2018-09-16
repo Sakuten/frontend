@@ -9,6 +9,7 @@ ShallowWrapper {
         Object {
           "group_members": Array [],
           "id": 1,
+          "is_member": false,
           "is_rep": false,
           "lottery": Object {
             "classroom_id": 1,
@@ -31,6 +32,7 @@ ShallowWrapper {
             },
           ],
           "id": 2,
+          "is_member": false,
           "is_rep": true,
           "lottery": Object {
             "classroom_id": 1,
