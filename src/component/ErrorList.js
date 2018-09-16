@@ -20,7 +20,7 @@ const MessageBody = styled.span`
   flex-grow: 1;
 `
 
-const ErrorList = ({list, onDelete}) => (
+const ErrorList = ({list, onDelete, onShowDetails}) => (
   <Container data-test='errorlist'>
     {
       list.map((c, i) => {
@@ -42,6 +42,9 @@ const ErrorList = ({list, onDelete}) => (
                 <p>{error.translation}</p>
                 <p>{JSON.stringify(c)}</p>
               </MessageBody>
+              <button data-test='errorlist-error-detail-button' className='button is-light' onClick={() => onShowDetails(c.message)}>
+                詳細
+              </button>
               {error.level !== 'internal' && <button data-test='errorlist-error-ok-button' className='button is-info' onClick={() => onDelete(i)}>
                 OK
               </button>}

@@ -14,6 +14,7 @@ export const getApplications = (token) => new Promise((resolve, reject) => {
         'winners': []
       },
       'is_rep': false,
+      'is_member': false,
       'status': 'pending',
       'group_members': []
     }
