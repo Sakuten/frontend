@@ -80,8 +80,10 @@ class App extends React.Component {
           <Route path='/lottery/login' render={() => this.props.store.credential.isLoggedIn ? <Redirect to='/lottery' /> : <LoginView credential={this.props.store.credential} />} />
           <Route exact path='/lottery' render={() => this.props.store.credential.isLoggedIn ? this.props.store.credential.isLoggedInAsChecker ? <Redirect to='/checker' /> : <ApplicationView credential={this.props.store.credential} application={this.props.store.application} /> : <Redirect to='/lottery/login' />} />
           <ErrorList list={this.props.store.error.errorList} onDelete={onDelete} onShowDetails={msg => onOpen('エラー詳細', JSON.stringify(msg), '閉じる')} />
-          <MessageDialog title={this.props.store.dialog.title} buttonText={this.props.store.dialog.buttonText} isButtonEnabled={this.props.store.dialog.isButtonEnabled} isOpen={this.props.store.dialog.isOpen} onClose={onClose}>
-            {this.props.store.dialog.content}
+          <MessageDialog title='申し訳ありません' buttonText='復旧の目処立ち次放送でご連絡いたします' isOpen onClose={() => {}}>
+            <p>申し訳ございません。ただいまの時間システムは正常に動作しておりません。
+            そのため、3Fアリーナにおける有人受け付けのみとさせていただきます。</p>
+            <p>ご迷惑をおかけしますが、ご協力よろしくお願いいたします</p>
           </MessageDialog>
         </Container>
       </Outer>
