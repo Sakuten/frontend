@@ -66,8 +66,7 @@ class App extends React.Component {
     } = this.props.event.error
 
     const {
-      onOpen,
-      onClose
+      onOpen
     } = this.props.event.dialog
 
     return (
