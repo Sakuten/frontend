@@ -8,6 +8,7 @@ import GroupMemberButton from '../component/GroupMemberButton'
 import ClassroomSelect from '../component/ClassroomSelect'
 import LotteryView from '../component/LotteryView'
 import Button from '../component/Button'
+import MessageDialog from '../component/MessageDialog'
 
 import cloud from '../cloud.svg'
 
@@ -110,6 +111,10 @@ const ApplicationView = ({credential, application, event}) => {
           </Indent>
         </Selection>
       </Container>
+      <MessageDialog title='申し訳ありません' buttonText='OK' isButtonEnabled isOpen onClose={onLogout}>
+        <p>現在、Web発表に不具合が生じております。抽選結果の発表は廊下に掲示で行います。</p>
+        <p>復旧の目処が立ち次第、放送でご連絡いたします。</p>
+      </MessageDialog>
     </div>
   )
 }
