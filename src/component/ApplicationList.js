@@ -26,6 +26,7 @@ const ApplicationList = ({list, onCancel}) => (
               <div data-test='applicationlist-body' className='content'>
                 <p>第<b>{c.lottery.index + 2}</b>公演</p>
                 {c.status === 'pending' && <p>抽選結果発表: <b>{c.lottery.end_of_drawing}</b></p>}
+                {c.status === 'won' && <p>10分前までにクラス前にお越しください。</p>}
                 {c.is_rep && <p>団体応募代表者です</p>}
                 {c.is_member && <p>団体応募のメンバーです</p>}
                 {c.group_members.length !== 0 && <p>一緒に応募した人: <b>{c.group_members.map(m => m.public_id).join(', ')}</b></p>}
