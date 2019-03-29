@@ -8,6 +8,9 @@ const TagWrapper = styled.span`
   margin: 0.75rem;
 `
 
+const RedText = styled.p`
+  color: #fff;
+`
 const ApplicationList = ({list, onCancel}) => (
   <div>
     {
