@@ -160,12 +160,17 @@ ShallowWrapper {
                 <p>
                   団体応募代表者です
                 </p>
-                <p>
-                  一緒に応募した人: 
-                  <b>
-                    ABCD, EFGH
-                  </b>
-                </p>
+                <div>
+                  <p>
+                    一緒に応募した人: 
+                    <b>
+                      ABCD, EFGH
+                    </b>
+                  </p>
+                  <styled.p>
+                    団体応募代表者がキャンセルすると、メンバー全員がキャンセルされます。
+                  </styled.p>
+                </div>
               </div>
             </div>
             <footer
@@ -564,12 +569,17 @@ ShallowWrapper {
                 <p>
                   団体応募代表者です
                 </p>
-                <p>
-                  一緒に応募した人: 
-                  <b>
-                    ABCD, EFGH
-                  </b>
-                </p>
+                <div>
+                  <p>
+                    一緒に応募した人: 
+                    <b>
+                      ABCD, EFGH
+                    </b>
+                  </p>
+                  <styled.p>
+                    団体応募代表者がキャンセルすると、メンバー全員がキャンセルされます。
+                  </styled.p>
+                </div>
               </div>
             </div>
             <footer
@@ -630,12 +640,17 @@ ShallowWrapper {
                   <p>
                     団体応募代表者です
                   </p>
-                  <p>
-                    一緒に応募した人: 
-                    <b>
-                      ABCD, EFGH
-                    </b>
-                  </p>
+                  <div>
+                    <p>
+                      一緒に応募した人: 
+                      <b>
+                        ABCD, EFGH
+                      </b>
+                    </p>
+                    <styled.p>
+                      団体応募代表者がキャンセルすると、メンバー全員がキャンセルされます。
+                    </styled.p>
+                  </div>
                 </div>
               </div>,
               <footer
@@ -738,12 +753,17 @@ ShallowWrapper {
                   <p>
                     団体応募代表者です
                   </p>
-                  <p>
-                    一緒に応募した人: 
-                    <b>
-                      ABCD, EFGH
-                    </b>
-                  </p>
+                  <div>
+                    <p>
+                      一緒に応募した人: 
+                      <b>
+                        ABCD, EFGH
+                      </b>
+                    </p>
+                    <styled.p>
+                      団体応募代表者がキャンセルすると、メンバー全員がキャンセルされます。
+                    </styled.p>
+                  </div>
                 </div>,
                 "className": "card-content",
               },
@@ -771,12 +791,17 @@ ShallowWrapper {
                       団体応募代表者です
                     </p>,
                     false,
-                    <p>
-                      一緒に応募した人: 
-                      <b>
-                        ABCD, EFGH
-                      </b>
-                    </p>,
+                    <div>
+                      <p>
+                        一緒に応募した人: 
+                        <b>
+                          ABCD, EFGH
+                        </b>
+                      </p>
+                      <styled.p>
+                        団体応募代表者がキャンセルすると、メンバー全員がキャンセルされます。
+                      </styled.p>
+                    </div>,
                   ],
                   "className": "content",
                   "data-test": "applicationlist-body",
@@ -861,28 +886,61 @@ ShallowWrapper {
                     "nodeType": "host",
                     "props": Object {
                       "children": Array [
-                        "一緒に応募した人: ",
-                        <b>
-                          ABCD, EFGH
-                        </b>,
+                        <p>
+                          一緒に応募した人: 
+                          <b>
+                            ABCD, EFGH
+                          </b>
+                        </p>,
+                        <styled.p>
+                          団体応募代表者がキャンセルすると、メンバー全員がキャンセルされます。
+                        </styled.p>,
                       ],
                     },
                     "ref": null,
                     "rendered": Array [
-                      "一緒に応募した人: ",
                       Object {
                         "instance": null,
                         "key": undefined,
                         "nodeType": "host",
                         "props": Object {
-                          "children": "ABCD, EFGH",
+                          "children": Array [
+                            "一緒に応募した人: ",
+                            <b>
+                              ABCD, EFGH
+                            </b>,
+                          ],
                         },
                         "ref": null,
-                        "rendered": "ABCD, EFGH",
-                        "type": "b",
+                        "rendered": Array [
+                          "一緒に応募した人: ",
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "ABCD, EFGH",
+                            },
+                            "ref": null,
+                            "rendered": "ABCD, EFGH",
+                            "type": "b",
+                          },
+                        ],
+                        "type": "p",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "children": "団体応募代表者がキャンセルすると、メンバー全員がキャンセルされます。",
+                        },
+                        "ref": null,
+                        "rendered": "団体応募代表者がキャンセルすると、メンバー全員がキャンセルされます。",
+                        "type": [Function],
                       },
                     ],
-                    "type": "p",
+                    "type": "div",
                   },
                 ],
                 "type": "div",
@@ -1033,12 +1091,17 @@ ShallowWrapper {
                   <p>
                     団体応募代表者です
                   </p>
-                  <p>
-                    一緒に応募した人: 
-                    <b>
-                      ABCD, EFGH
-                    </b>
-                  </p>
+                  <div>
+                    <p>
+                      一緒に応募した人: 
+                      <b>
+                        ABCD, EFGH
+                      </b>
+                    </p>
+                    <styled.p>
+                      団体応募代表者がキャンセルすると、メンバー全員がキャンセルされます。
+                    </styled.p>
+                  </div>
                 </div>
               </div>
               <footer
@@ -1437,12 +1500,17 @@ ShallowWrapper {
                   <p>
                     団体応募代表者です
                   </p>
-                  <p>
-                    一緒に応募した人: 
-                    <b>
-                      ABCD, EFGH
-                    </b>
-                  </p>
+                  <div>
+                    <p>
+                      一緒に応募した人: 
+                      <b>
+                        ABCD, EFGH
+                      </b>
+                    </p>
+                    <styled.p>
+                      団体応募代表者がキャンセルすると、メンバー全員がキャンセルされます。
+                    </styled.p>
+                  </div>
                 </div>
               </div>
               <footer
@@ -1503,12 +1571,17 @@ ShallowWrapper {
                     <p>
                       団体応募代表者です
                     </p>
-                    <p>
-                      一緒に応募した人: 
-                      <b>
-                        ABCD, EFGH
-                      </b>
-                    </p>
+                    <div>
+                      <p>
+                        一緒に応募した人: 
+                        <b>
+                          ABCD, EFGH
+                        </b>
+                      </p>
+                      <styled.p>
+                        団体応募代表者がキャンセルすると、メンバー全員がキャンセルされます。
+                      </styled.p>
+                    </div>
                   </div>
                 </div>,
                 <footer
@@ -1611,12 +1684,17 @@ ShallowWrapper {
                     <p>
                       団体応募代表者です
                     </p>
-                    <p>
-                      一緒に応募した人: 
-                      <b>
-                        ABCD, EFGH
-                      </b>
-                    </p>
+                    <div>
+                      <p>
+                        一緒に応募した人: 
+                        <b>
+                          ABCD, EFGH
+                        </b>
+                      </p>
+                      <styled.p>
+                        団体応募代表者がキャンセルすると、メンバー全員がキャンセルされます。
+                      </styled.p>
+                    </div>
                   </div>,
                   "className": "card-content",
                 },
@@ -1644,12 +1722,17 @@ ShallowWrapper {
                         団体応募代表者です
                       </p>,
                       false,
-                      <p>
-                        一緒に応募した人: 
-                        <b>
-                          ABCD, EFGH
-                        </b>
-                      </p>,
+                      <div>
+                        <p>
+                          一緒に応募した人: 
+                          <b>
+                            ABCD, EFGH
+                          </b>
+                        </p>
+                        <styled.p>
+                          団体応募代表者がキャンセルすると、メンバー全員がキャンセルされます。
+                        </styled.p>
+                      </div>,
                     ],
                     "className": "content",
                     "data-test": "applicationlist-body",
@@ -1734,28 +1817,61 @@ ShallowWrapper {
                       "nodeType": "host",
                       "props": Object {
                         "children": Array [
-                          "一緒に応募した人: ",
-                          <b>
-                            ABCD, EFGH
-                          </b>,
+                          <p>
+                            一緒に応募した人: 
+                            <b>
+                              ABCD, EFGH
+                            </b>
+                          </p>,
+                          <styled.p>
+                            団体応募代表者がキャンセルすると、メンバー全員がキャンセルされます。
+                          </styled.p>,
                         ],
                       },
                       "ref": null,
                       "rendered": Array [
-                        "一緒に応募した人: ",
                         Object {
                           "instance": null,
                           "key": undefined,
                           "nodeType": "host",
                           "props": Object {
-                            "children": "ABCD, EFGH",
+                            "children": Array [
+                              "一緒に応募した人: ",
+                              <b>
+                                ABCD, EFGH
+                              </b>,
+                            ],
                           },
                           "ref": null,
-                          "rendered": "ABCD, EFGH",
-                          "type": "b",
+                          "rendered": Array [
+                            "一緒に応募した人: ",
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "children": "ABCD, EFGH",
+                              },
+                              "ref": null,
+                              "rendered": "ABCD, EFGH",
+                              "type": "b",
+                            },
+                          ],
+                          "type": "p",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "class",
+                          "props": Object {
+                            "children": "団体応募代表者がキャンセルすると、メンバー全員がキャンセルされます。",
+                          },
+                          "ref": null,
+                          "rendered": "団体応募代表者がキャンセルすると、メンバー全員がキャンセルされます。",
+                          "type": [Function],
                         },
                       ],
-                      "type": "p",
+                      "type": "div",
                     },
                   ],
                   "type": "div",
