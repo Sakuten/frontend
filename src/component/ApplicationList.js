@@ -31,7 +31,7 @@ const ApplicationList = ({list, onCancel}) => (
                 {c.status === 'pending' && <p>抽選結果発表: <b>{c.lottery.end_of_drawing}</b></p>}
                 {c.is_rep && <p>団体応募代表者です</p>}
                 {c.is_member && <p>団体応募のメンバーです</p>}
-                {c.group_members.length !== 0 && <div><p>一緒に応募した人: <b>{c.group_members.map(m => m.public_id).join(', ')}</b></p><RedText>団体応募代表者がキャンセルすると、メンバー全員がキャンセルされます。</RedText></div>}
+                {c.group_members.length !== 0 && <div><p>一緒に応募した人: <b>{c.group_members.map(m => m.public_id).join(', ')}</b></p><RedText>団体応募代表者がキャンセルすると、メンバー全員の応募がキャンセルされます。</RedText></div>}
               </div>
             </div>
             {c.status === 'pending' && <footer className='card-footer'>
