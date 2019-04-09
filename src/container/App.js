@@ -86,6 +86,7 @@ class App extends React.Component {
             {this.props.store.dialog.content}
           </MessageDialog>
         </Container>
+        <FooterMenu />
       </Outer>
     )
   }
