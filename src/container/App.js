@@ -35,6 +35,7 @@ const Container = styled.div`
 
   overflow-x: scroll;
   overflow-y: hidden;
+  margin-bottom: 100px;
 `
 
 const Heading = withRouter(styled.header`
