@@ -86,7 +86,7 @@ class App extends React.Component {
             {this.props.store.dialog.content}
           </MessageDialog>
         </Container>
-        <FooterMenu />
+        <FooterMenu router={this.props.store.router} />
       </Outer>
     )
   }
