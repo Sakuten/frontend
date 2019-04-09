@@ -29,12 +29,12 @@ const Icon = styled.div`
 `
 const Text = styled.p`
   color: #fff;
-  font-size: 20px;
+  font-size: 1rem;
 `
 
 export default class FooterMenu extends React.Component {
   moveToLottery = () => {
-    this.props.router.push('/')
+    this.props.router.push('/lottery')
   }
   moveToMap = () => {
     this.props.router.push('/map')
