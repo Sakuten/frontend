@@ -44,7 +44,7 @@ export default class FooterMenu extends React.Component {
       <Menu>
         <Item onClick={this.moveToLottery}>
           <Icon>
-            <FontAwesome name='poll' size='2x' />
+            <FontAwesome name='poll' size='3x' />
           </Icon>
           <Text>
             応募
@@ -52,7 +52,7 @@ export default class FooterMenu extends React.Component {
         </Item>
         <Item onClick={this.moveToMap}>
           <Icon>
-            <FontAwesome name='map' size='2x' />
+            <FontAwesome name='map' size='3x' />
           </Icon>
           <Text>
             マップ
