@@ -13,7 +13,7 @@ const Menu = styled.div`
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 80px;
+  height: 10vh;
   box-shadow: 0 0 10px gray;
 `
 const Item = styled.div`
@@ -28,10 +28,11 @@ const Item = styled.div`
 `
 const Icon = styled.div`
   color: #fff;
+  font-size: 0.8rem;
 `
 const Text = styled.p`
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.6rem;
 `
 
 const setColor = (type, page) => {
