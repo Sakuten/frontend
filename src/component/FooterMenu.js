@@ -51,20 +51,10 @@ export default class FooterMenu extends React.Component {
   moveToMap = () => {
     this.props.router.push('/map')
   }
-  isSelected = (type) => {
-    const path = this.props.router.location.pathname
-    let isSelected = false
-    if (type === 'lottery') {
-      isSelected = path === '/lottery' | path === '/' | path === '/lottery/login'
-    } else if (type === 'map') {
-      isSelected = path === '/map'
-    }
-    return isSelected
-  }
   render () {
     return (
       <Menu>
-        <Item onClick={this.moveToLottery} isSelected={this.isSelected('lottery')}>
+        <Item onClick={this.moveToLottery} page={this.props.page} type='lottery'>
           <Icon>
             <FontAwesome name='poll' size='3x' />
           </Icon>
@@ -72,7 +62,7 @@ export default class FooterMenu extends React.Component {
             応募
           </Text>
         </Item>
-        <Item onClick={this.moveToMap} isSelected={this.isSelected('map')}>
+        <Item onClick={this.moveToMap} page={this.props.page} type='map'>
           <Icon>
             <FontAwesome name='map' size='3x' />
           </Icon>

@@ -86,7 +86,9 @@ class App extends React.Component {
             {this.props.store.dialog.content}
           </MessageDialog>
         </Container>
-        <FooterMenu router={this.props.store.router} />
+        <Route exact path='/' render={() => <FooterMenu router={this.props.store.router} page='lottery' />} />
+        <Route path='/lottery' render={() => <FooterMenu router={this.props.store.router} page='lottery' />} />
+        <Route exact path='/map' render={() => <FooterMenu router={this.props.store.router} page='map' />} />
       </Outer>
     )
   }
