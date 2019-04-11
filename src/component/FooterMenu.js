@@ -24,7 +24,7 @@ const Item = styled.div`
   align-items: center;
   color: #fff;
   width: 50%;
-  background: ${props => props.isSelected ? '#78bfdc' : '#87CEEB'};
+  background: ${props => setColor(props.type, props.page)};
 `
 const Icon = styled.div`
   color: #fff;
@@ -34,6 +34,15 @@ const Text = styled.p`
   font-size: 1rem;
 `
 
+const setColor = (type, page) => {
+  let color = '#78bfdc'
+  if (page === 'lottery') {
+    color = type === 'lottery' ? '#87CEEB' : '#78bfdc'
+  } else if (page === 'map') {
+    color = type === 'map' ? '#87CEEB' : '#78bfdc'
+  }
+  return color
+}
 export default class FooterMenu extends React.Component {
   moveToLottery = () => {
     this.props.router.push('/lottery')
