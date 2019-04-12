@@ -6,7 +6,7 @@ const Menu = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  @media (min-width: 700px) {
+  @media (min-width: 1025px) {
     display: none;
   }
   background: #87CEEB;
