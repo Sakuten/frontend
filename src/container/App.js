@@ -9,6 +9,7 @@ import CheckerView from './CheckerView'
 import ErrorList from '../component/ErrorList'
 import Home from '../component/Home'
 import MessageDialog from '../component/MessageDialog'
+import FooterMenu from '../component/FooterMenu'
 import Map from '../component/Map'
 import styled from 'styled-components'
 import logo from '../header.svg'
@@ -35,6 +36,7 @@ const Container = styled.div`
 
   overflow-x: scroll;
   overflow-y: hidden;
+  margin-bottom: 100px;
 `
 
 const Heading = withRouter(styled.header`
@@ -86,6 +88,9 @@ class App extends React.Component {
             {this.props.store.dialog.content}
           </MessageDialog>
         </Container>
+        <Route exact path='/' render={() => <FooterMenu router={this.props.store.router} page='lottery' />} />
+        <Route path='/lottery' render={() => <FooterMenu router={this.props.store.router} page='lottery' />} />
+        <Route exact path='/map' render={() => <FooterMenu router={this.props.store.router} page='map' />} />
       </Outer>
     )
   }
