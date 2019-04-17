@@ -57,6 +57,13 @@ ShallowWrapper {
               もう一度ログインしてください
             </styled.span>
             <button
+              className="button is-light"
+              data-test="errorlist-error-detail-button"
+              onClick={[Function]}
+            >
+              詳細
+            </button>
+            <button
               className="button is-info"
               data-test="errorlist-error-ok-button"
               onClick={[Function]}
@@ -91,6 +98,13 @@ ShallowWrapper {
             >
               グループメンバーのカードが正しくありません。
             </styled.span>
+            <button
+              className="button is-light"
+              data-test="errorlist-error-detail-button"
+              onClick={[Function]}
+            >
+              詳細
+            </button>
           </styled.div>
         </article>,
       ],
@@ -126,6 +140,13 @@ ShallowWrapper {
               >
                 もう一度ログインしてください
               </styled.span>
+              <button
+                className="button is-light"
+                data-test="errorlist-error-detail-button"
+                onClick={[Function]}
+              >
+                詳細
+              </button>
               <button
                 className="button is-info"
                 data-test="errorlist-error-ok-button"
@@ -201,6 +222,13 @@ ShallowWrapper {
                   もう一度ログインしてください
                 </styled.span>,
                 <button
+                  className="button is-light"
+                  data-test="errorlist-error-detail-button"
+                  onClick={[Function]}
+                >
+                  詳細
+                </button>,
+                <button
                   className="button is-info"
                   data-test="errorlist-error-ok-button"
                   onClick={[Function]}
@@ -223,6 +251,20 @@ ShallowWrapper {
                 "ref": null,
                 "rendered": "もう一度ログインしてください",
                 "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "詳細",
+                  "className": "button is-light",
+                  "data-test": "errorlist-error-detail-button",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "詳細",
+                "type": "button",
               },
               Object {
                 "instance": null,
@@ -272,6 +314,13 @@ ShallowWrapper {
               >
                 グループメンバーのカードが正しくありません。
               </styled.span>
+              <button
+                className="button is-light"
+                data-test="errorlist-error-detail-button"
+                onClick={[Function]}
+              >
+                詳細
+              </button>
             </styled.div>,
           ],
           "className": "message is-danger",
@@ -339,6 +388,13 @@ ShallowWrapper {
                 >
                   グループメンバーのカードが正しくありません。
                 </styled.span>,
+                <button
+                  className="button is-light"
+                  data-test="errorlist-error-detail-button"
+                  onClick={[Function]}
+                >
+                  詳細
+                </button>,
                 false,
               ],
               "className": "message-body",
@@ -356,6 +412,20 @@ ShallowWrapper {
                 "ref": null,
                 "rendered": "グループメンバーのカードが正しくありません。",
                 "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "詳細",
+                  "className": "button is-light",
+                  "data-test": "errorlist-error-detail-button",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "詳細",
+                "type": "button",
               },
               false,
             ],
@@ -401,6 +471,13 @@ ShallowWrapper {
                 もう一度ログインしてください
               </styled.span>
               <button
+                className="button is-light"
+                data-test="errorlist-error-detail-button"
+                onClick={[Function]}
+              >
+                詳細
+              </button>
+              <button
                 className="button is-info"
                 data-test="errorlist-error-ok-button"
                 onClick={[Function]}
@@ -435,6 +512,13 @@ ShallowWrapper {
               >
                 グループメンバーのカードが正しくありません。
               </styled.span>
+              <button
+                className="button is-light"
+                data-test="errorlist-error-detail-button"
+                onClick={[Function]}
+              >
+                詳細
+              </button>
             </styled.div>
           </article>,
         ],
@@ -470,6 +554,13 @@ ShallowWrapper {
                 >
                   もう一度ログインしてください
                 </styled.span>
+                <button
+                  className="button is-light"
+                  data-test="errorlist-error-detail-button"
+                  onClick={[Function]}
+                >
+                  詳細
+                </button>
                 <button
                   className="button is-info"
                   data-test="errorlist-error-ok-button"
@@ -545,6 +636,13 @@ ShallowWrapper {
                     もう一度ログインしてください
                   </styled.span>,
                   <button
+                    className="button is-light"
+                    data-test="errorlist-error-detail-button"
+                    onClick={[Function]}
+                  >
+                    詳細
+                  </button>,
+                  <button
                     className="button is-info"
                     data-test="errorlist-error-ok-button"
                     onClick={[Function]}
@@ -567,6 +665,20 @@ ShallowWrapper {
                   "ref": null,
                   "rendered": "もう一度ログインしてください",
                   "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "詳細",
+                    "className": "button is-light",
+                    "data-test": "errorlist-error-detail-button",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "詳細",
+                  "type": "button",
                 },
                 Object {
                   "instance": null,
@@ -616,6 +728,13 @@ ShallowWrapper {
                 >
                   グループメンバーのカードが正しくありません。
                 </styled.span>
+                <button
+                  className="button is-light"
+                  data-test="errorlist-error-detail-button"
+                  onClick={[Function]}
+                >
+                  詳細
+                </button>
               </styled.div>,
             ],
             "className": "message is-danger",
@@ -683,6 +802,13 @@ ShallowWrapper {
                   >
                     グループメンバーのカードが正しくありません。
                   </styled.span>,
+                  <button
+                    className="button is-light"
+                    data-test="errorlist-error-detail-button"
+                    onClick={[Function]}
+                  >
+                    詳細
+                  </button>,
                   false,
                 ],
                 "className": "message-body",
@@ -700,6 +826,20 @@ ShallowWrapper {
                   "ref": null,
                   "rendered": "グループメンバーのカードが正しくありません。",
                   "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "詳細",
+                    "className": "button is-light",
+                    "data-test": "errorlist-error-detail-button",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "詳細",
+                  "type": "button",
                 },
                 false,
               ],

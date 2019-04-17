@@ -48,6 +48,7 @@ const Cloud = styled.div`
   width: 60vw;
   right: -20%;
   z-index: 20;
+  pointer-events: none;
 `
 
 const ApplicationView = ({credential, application, event}) => {
@@ -86,7 +87,7 @@ const ApplicationView = ({credential, application, event}) => {
           <Title>一緒に応募する</Title>
           <Indent>
             <GroupMemberList list={application.groupMemberList.map(pair => pair[1])} onRemove={onRemoveGroupMember} />
-            <GroupMemberButton onAdd={onAddGroupMember} onError={onQRError} disabled={!application.isAbleToAddGroupMember}>他の人を追加</GroupMemberButton>
+            <GroupMemberButton onAdd={onAddGroupMember} onError={onQRError} disabled={!application.isAbleToAddGroupMember}>一緒に見る人のQRコードを追加</GroupMemberButton>
           </Indent>
         </Selection>
         <ButtonWrap onClick={onApplyLottery}>

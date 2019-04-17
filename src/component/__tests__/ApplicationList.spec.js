@@ -17,6 +17,7 @@ const setup = propOverrides => {
           'winners': []
         },
         'is_rep': false,
+        'is_member': false,
         'status': 'pending',
         'group_members': []
       },
@@ -33,6 +34,7 @@ const setup = propOverrides => {
         },
         'is_rep': true,
         'status': 'pending',
+        'is_member': false,
         'group_members': [{'public_id': 'ABCD'}, {'public_id': 'EFGH'}]
       }
     ],
