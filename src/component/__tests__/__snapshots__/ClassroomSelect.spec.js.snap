@@ -44,6 +44,11 @@ ShallowWrapper {
         value={0}
       >
         <option
+          value={0}
+        >
+          クラスを選択してください
+        </option>
+        <option
           data-test="classroom-option"
           value={1}
         >
@@ -72,23 +77,30 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <option
-            data-test="classroom-option"
-            value={1}
+            value={0}
           >
-            5
-            A
-             
-            タイトル
+            クラスを選択してください
           </option>,
-          <option
-            data-test="classroom-option"
-            value={2}
-          >
-            5
-            B
-             
-            タイトル
-          </option>,
+          Array [
+            <option
+              data-test="classroom-option"
+              value={1}
+            >
+              5
+              A
+               
+              タイトル
+            </option>,
+            <option
+              data-test="classroom-option"
+              value={2}
+            >
+              5
+              B
+               
+              タイトル
+            </option>,
+          ],
         ],
         "data-test": "classroom-select",
         "name": "classrooms",
@@ -97,6 +109,18 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "0",
+          "nodeType": "host",
+          "props": Object {
+            "children": "クラスを選択してください",
+            "value": 0,
+          },
+          "ref": null,
+          "rendered": "クラスを選択してください",
+          "type": "option",
+        },
         Object {
           "instance": null,
           "key": "1",
@@ -161,6 +185,11 @@ ShallowWrapper {
           value={0}
         >
           <option
+            value={0}
+          >
+            クラスを選択してください
+          </option>
+          <option
             data-test="classroom-option"
             value={1}
           >
@@ -189,23 +218,30 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <option
-              data-test="classroom-option"
-              value={1}
+              value={0}
             >
-              5
-              A
-               
-              タイトル
+              クラスを選択してください
             </option>,
-            <option
-              data-test="classroom-option"
-              value={2}
-            >
-              5
-              B
-               
-              タイトル
-            </option>,
+            Array [
+              <option
+                data-test="classroom-option"
+                value={1}
+              >
+                5
+                A
+                 
+                タイトル
+              </option>,
+              <option
+                data-test="classroom-option"
+                value={2}
+              >
+                5
+                B
+                 
+                タイトル
+              </option>,
+            ],
           ],
           "data-test": "classroom-select",
           "name": "classrooms",
@@ -214,6 +250,18 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "0",
+            "nodeType": "host",
+            "props": Object {
+              "children": "クラスを選択してください",
+              "value": 0,
+            },
+            "ref": null,
+            "rendered": "クラスを選択してください",
+            "type": "option",
+          },
           Object {
             "instance": null,
             "key": "1",
