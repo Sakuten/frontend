@@ -22,11 +22,12 @@ export class ApplicationObject {
   }
 
   onAddGroupMember = async (secretId) => {
+    const resp = await getPublicId(secretId, this.store.credential.token)
     if (this.store.credential.status.get('secret_id') === secretId) {
       this.store.error.addError(102, 'You can\'t add yourself as a member')
       return
     }
-    if (this.store.application.groupMemberList.indexOf(secretId) !== -1) {
+    if (this.store.application.groupMemberList.indexOf([secretId,resp.data['public_id']]) !== -1) {
       this.store.error.addError(103, 'The user is already in the member list')
       return
     }
@@ -34,7 +35,6 @@ export class ApplicationObject {
       this.store.error.addError(104, 'Too many group members')
       return
     }
-    const resp = await getPublicId(secretId, this.store.credential.token)
     this.store.application.addGroupMember(secretId, resp.data['public_id'])
   }
 
