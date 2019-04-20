@@ -78,7 +78,7 @@ const ApplicationView = ({credential, application, event}) => {
         <Selection>
           <Title>クラス選択</Title>
           <Indent>
-            <ClassroomSelect list={application.classroomList} value='0' onChange={onChangeClassroom} />
+            <ClassroomSelect list={application.classroomList} value={application.classroom} onChange={onChangeClassroom} />
           </Indent>
           <Title>応募する公演</Title>
           <Indent>
