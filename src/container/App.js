@@ -26,9 +26,6 @@ const Background = styled.div`
 `
 
 const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   min-height: 100vh;
 
