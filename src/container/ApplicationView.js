@@ -22,10 +22,18 @@ const ButtonWrap = styled.button`
 `
 
 const Selection = styled.div`
-  background-color: ${props => props.theme.header_color_lower};
-  width: 80vw;
   height: 70%;
   padding: 30px;
+`
+
+const TopTitle = styled.h1`
+  text-align: center;
+  font-size: 1.7rem;
+`
+
+const EngTopTitle = styled.h1`
+  text-align: center;
+  font-size: 0.7rem;
 `
 
 const Title = styled.h3`
