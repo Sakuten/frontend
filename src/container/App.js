@@ -12,11 +12,9 @@ import MessageDialog from '../component/MessageDialog'
 import FooterMenu from '../component/FooterMenu'
 import Map from '../component/Map'
 import styled from 'styled-components'
-import logo from '../header.svg'
-import bg from '../sakuten.jpg'
+import logo from '../header_2019.png'
 
 const Background = styled.div`
-  background-image: url(${bg});
   background-size: cover;
 
   width: 100vw;
