@@ -5,7 +5,7 @@ import FullWidth from '../util/fullwidth'
 import Button from './Button'
 
 import cloud from '../cloud.svg'
-import week from '../week.svg'
+import headerImg from '../header_2019.png'
 import sousaku from '../sousaku.svg'
 
 const UpperHeading = styled.div`
@@ -57,7 +57,7 @@ const Container = styled.div`
 const Home = ({isUsedByStaff}) => (
   <FullWidth>
     <UpperHeading>
-      <Title src={week} />
+      <Title src={headerImg} />
     </UpperHeading>
     <LowerHeading>
       <Cloud>
