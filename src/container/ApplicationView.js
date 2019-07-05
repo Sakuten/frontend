@@ -70,9 +70,8 @@ const ApplicationView = ({credential, application, event}) => {
   return (
     <div data-test='applicationview'>
       <Container>
-        <Cloud>
-          <img src={cloud} />
-        </Cloud>
+        <TopTitle>観覧受付</TopTitle>
+        <EngTopTitle>Class selection</EngTopTitle>
         <Selection>
           <Title>クラス選択</Title>
           <Indent>
