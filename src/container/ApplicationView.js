@@ -9,8 +9,6 @@ import ClassroomSelect from '../component/ClassroomSelect'
 import LotteryView from '../component/LotteryView'
 import Button from '../component/Button'
 
-import cloud from '../cloud.svg'
-
 const ButtonWrap = styled.button`
   margin: 20px 0;
   text-align: center;
