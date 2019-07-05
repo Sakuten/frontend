@@ -49,14 +49,6 @@ const Container = styled.div`
   margin-top: 20px;
 `
 
-const Cloud = styled.div`
-  position: absolute;
-  width: 60vw;
-  right: -20%;
-  z-index: 20;
-  pointer-events: none;
-`
-
 const ApplicationView = ({credential, application, event}) => {
   const {
     onLogout,
