@@ -38,12 +38,10 @@ const Container = styled.div`
 `
 
 const Heading = withRouter(styled.header`
-  background-color: ${props => props.theme.header_color_upper};
   width: 100%;
   display: ${props => props.location.pathname === '/' ? 'none' : 'block'};
   color: #000;
   z-index: 1;
-  padding: 10px;
   font-size: 2rem;
   font-family: 'Roboto Condensed';
 `)
