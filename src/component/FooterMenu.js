@@ -13,7 +13,6 @@ const Menu = styled.div`
   bottom: 0;
   width: 100%;
   height: 10vh;
-  box-shadow: 0 0 10px gray;
 `
 const Item = styled.div`
   display: flex;
