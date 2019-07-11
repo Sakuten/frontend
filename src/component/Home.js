@@ -23,15 +23,7 @@ const Container = styled.div`
 
 const Home = ({isUsedByStaff}) => (
   <FullWidth>
-    <UpperHeading>
-      <Title src={headerImg} />
-    </UpperHeading>
-    <LowerHeading>
-      <Cloud>
-        <img src={cloud} />
-      </Cloud>
-      <SubTitle src={sousaku} />
-    </LowerHeading>
+    <Heading><img src={logo} /></Heading>
     <Container>
       <Button to={{pathname: '/lottery/login', search: isUsedByStaff && '?staff'}} data-test='home-login'>
         <h3>QRコード読み取り</h3>
