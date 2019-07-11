@@ -23,7 +23,9 @@ const ButtonWrap = styled.button`
 
 const Selection = styled.div`
   height: 70%;
-  padding: 30px;
+  margin: 20px;
+  padding: 10px;
+  border: solid 1px #dbdbdb;
 `
 
 const TopTitle = styled.h1`
