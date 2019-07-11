@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import FontAwesome from 'react-fontawesome'
 
 const Menu = styled.div`
   display: flex;
@@ -21,23 +22,25 @@ const Item = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  color: ${props => setProper(props.type, props.page, '#fff', '#000')};
+  color: #fff;
   width: 50%;
-  background: ${props => setProper(props.type, props.page, 'linear-gradient(#fff,#87CEEB)', '#fff')};
-  ${props => setProper(props.type, props.page, '', 'border: solid 1px #000;')}
+  background: ${props => setColor(props.type, props.page)};
 `
-
+const Icon = styled.div`
+  color: #fff;
+  font-size: 2vh;
+`
 const Text = styled.p`
-  color: ${props => setProper(props.type, props.page, '#fff', '#000')};
-  font-size: 2.2rem;
+  color: #fff;
+  font-size: 1vh;
 `
 
-const setProper = (type, page, selected, unselected) => {
-  let color = unselected
+const setColor = (type, page) => {
+  let color = '#78bfdc'
   if (page === 'lottery') {
-    color = type === 'lottery' ? selected : unselected
+    color = type === 'lottery' ? '#87CEEB' : '#78bfdc'
   } else if (page === 'map') {
-    color = type === 'map' ? selected : unselected
+    color = type === 'map' ? '#87CEEB' : '#78bfdc'
   }
   return color
 }
@@ -53,12 +56,18 @@ export default class FooterMenu extends React.Component {
     return (
       <Menu>
         <Item onClick={this.moveToLottery} page={this.props.page} type='lottery'>
-          <Text page={this.props.page} type='lottery'>
+          <Icon>
+            <FontAwesome name='poll' size='3x' />
+          </Icon>
+          <Text>
             応募
           </Text>
         </Item>
         <Item onClick={this.moveToMap} page={this.props.page} type='map'>
-          <Text page={this.props.page} type='map'>
+          <Icon>
+            <FontAwesome name='map' size='3x' />
+          </Icon>
+          <Text>
             マップ
           </Text>
         </Item>
