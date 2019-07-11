@@ -36,11 +36,16 @@ const TopTitle = styled.h1`
 const EngTopTitle = styled.h1`
   text-align: center;
   font-size: 0.7rem;
+  color: #636e72;
 `
 
 const Title = styled.h3`
   font-size: 1.5rem;
   color: #000;
+  span {
+    color: #636e72;
+    font-size: 0.7rem;
+  }
 `
 
 const Indent = styled.div`
@@ -73,7 +78,7 @@ const ApplicationView = ({credential, application, event}) => {
     <div data-test='applicationview'>
       <Container>
         <TopTitle>観覧受付</TopTitle>
-        <EngTopTitle>Class selection</EngTopTitle>
+        <EngTopTitle>Apply for the lottery</EngTopTitle>
         <Selection>
           <Title>クラス選択</Title>
           <Indent>
