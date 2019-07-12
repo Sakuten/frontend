@@ -17,7 +17,6 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": <div>
-        <styled.div />
         <styled.div
           data-test="button-text"
         />
@@ -29,37 +28,23 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": Array [
-          <styled.div />,
-          <styled.div
-            data-test="button-text"
-          />,
-        ],
+        "children": <styled.div
+          data-test="button-text"
+        />,
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": undefined,
+          "data-test": "button-text",
         },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": undefined,
-            "data-test": "button-text",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
       "type": "div",
     },
     "type": [Function],
@@ -71,7 +56,6 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": <div>
-          <styled.div />
           <styled.div
             data-test="button-text"
           />
@@ -83,37 +67,23 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [
-            <styled.div />,
-            <styled.div
-              data-test="button-text"
-            />,
-          ],
+          "children": <styled.div
+            data-test="button-text"
+          />,
         },
         "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {},
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": undefined,
+            "data-test": "button-text",
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": undefined,
-              "data-test": "button-text",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-        ],
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
         "type": "div",
       },
       "type": [Function],
