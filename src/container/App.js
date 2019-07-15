@@ -12,11 +12,9 @@ import MessageDialog from '../component/MessageDialog'
 import FooterMenu from '../component/FooterMenu'
 import Map from '../component/Map'
 import styled from 'styled-components'
-import logo from '../header.svg'
-import bg from '../sakuten.jpg'
+import logo from '../header_2019.png'
 
 const Background = styled.div`
-  background-image: url(${bg});
   background-size: cover;
 
   width: 100vw;
@@ -28,9 +26,6 @@ const Background = styled.div`
 `
 
 const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   min-height: 100vh;
 
@@ -40,12 +35,10 @@ const Container = styled.div`
 `
 
 const Heading = withRouter(styled.header`
-  background-color: ${props => props.theme.header_color_upper};
   width: 100%;
   display: ${props => props.location.pathname === '/' ? 'none' : 'block'};
   color: #000;
   z-index: 1;
-  padding: 10px;
   font-size: 2rem;
   font-family: 'Roboto Condensed';
 `)

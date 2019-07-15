@@ -7,7 +7,7 @@ import threeFloorImage from '../S10.3.png'
 import fourFloorImage from '../S12.4.png'
 
 const Container = styled.div`
-  background-color: rgb(241,156,187);
+  background-color: #fff;
   width: 80vw;
   height: 70%;
   padding: 30px;

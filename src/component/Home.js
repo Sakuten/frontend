@@ -4,47 +4,14 @@ import React from 'react'
 import FullWidth from '../util/fullwidth'
 import Button from './Button'
 
-import cloud from '../cloud.svg'
-import week from '../week.svg'
-import sousaku from '../sousaku.svg'
+import logo from '../header_2019.png'
 
-const UpperHeading = styled.div`
-  position: relative;
-  height: ${props => props.theme.header_height}rem;
-  background-color: ${props => props.theme.header_color_upper};
-  color: white;
-`
-
-const LowerHeading = styled.div`
-  position: relative;
-  height: ${props => props.theme.header_height}rem;
-  background-color: ${props => props.theme.header_color_lower};
-  color: white;
-`
-
-const Title = styled.img`
-  position: absolute;
-  right: 5%;
-  bottom: 20%;
-  z-index: 10;
-
-  height: ${props => props.theme.header_height - 2.5}rem;
-`
-
-const SubTitle = styled.img`
-  position: absolute;
-  right: 30%;
-  bottom: 20%;
-
-  height: ${props => props.theme.header_height - 2.5}rem;
-`
-
-const Cloud = styled.div`
-  position: absolute;
-  width: 40vw;
-  left: -10%;
-  z-index: 20;
-  top: -60%;
+const Heading = styled.header`
+  width: 100%;
+  color: #000;
+  z-index: 1;
+  font-size: 2rem;
+  font-family: 'Roboto Condensed';
 `
 
 const Container = styled.div`
@@ -56,15 +23,7 @@ const Container = styled.div`
 
 const Home = ({isUsedByStaff}) => (
   <FullWidth>
-    <UpperHeading>
-      <Title src={week} />
-    </UpperHeading>
-    <LowerHeading>
-      <Cloud>
-        <img src={cloud} />
-      </Cloud>
-      <SubTitle src={sousaku} />
-    </LowerHeading>
+    <Heading><img src={logo} /></Heading>
     <Container>
       <Button to={{pathname: '/lottery/login', search: isUsedByStaff && '?staff'}} data-test='home-login'>
         <h3>QRコード読み取り</h3>
