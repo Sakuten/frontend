@@ -26,7 +26,7 @@ export class ApplicationObject {
       this.store.error.addError(102, 'You can\'t add yourself as a member')
       return
     }
-    if (this.store.application.groupMemberList.indexOf(secretId) !== -1) {
+    if (this.store.application.groupMemberList.find(ele => ele[0] === secretId) !== undefined) {
       this.store.error.addError(103, 'The user is already in the member list')
       return
     }

@@ -24,6 +24,10 @@ export class Event {
 
   onApplyLottery = async () => {
     this.dialog.onOpen('応募しています', 'しばらくお待ちください', 'お待ちください', false)
+    if (this.store.application.classroom === 0 | this.store.application.classroom === '0') {
+      this.dialog.onOpen('失敗しました', 'クラスが選択されていません', '戻る')
+      return
+    }
     let app
     try {
       app = await applyLottery(this.store.application.lottery, this.store.application.groupMemberList.map(pair => pair[0]), this.store.credential.token)
