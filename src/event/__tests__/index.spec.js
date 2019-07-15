@@ -18,6 +18,7 @@ describe('events', () => {
     })
 
     it('applies to lottery', async () => {
+      event.application.onChangeClassroom(1)
       await event.onApplyLottery()
       const applications = event.store.credential.status.get('application_history')
       expect(applications).toBeDefined()

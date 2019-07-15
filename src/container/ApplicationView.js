@@ -9,8 +9,6 @@ import ClassroomSelect from '../component/ClassroomSelect'
 import LotteryView from '../component/LotteryView'
 import Button from '../component/Button'
 
-import cloud from '../cloud.svg'
-
 const ButtonWrap = styled.button`
   margin: 20px 0;
   text-align: center;
@@ -24,15 +22,30 @@ const ButtonWrap = styled.button`
 `
 
 const Selection = styled.div`
-  background-color: ${props => props.theme.header_color_lower};
-  width: 80vw;
   height: 70%;
-  padding: 30px;
+  margin: 20px;
+  padding: 10px;
+  border: solid 1px #dbdbdb;
+`
+
+const TopTitle = styled.h1`
+  text-align: center;
+  font-size: 1.7rem;
+`
+
+const EngTopTitle = styled.h1`
+  text-align: center;
+  font-size: 0.7rem;
+  color: #636e72;
 `
 
 const Title = styled.h3`
   font-size: 1.5rem;
   color: #000;
+  span {
+    color: #636e72;
+    font-size: 0.7rem;
+  }
 `
 
 const Indent = styled.div`
@@ -41,14 +54,6 @@ const Indent = styled.div`
 
 const Container = styled.div`
   margin-top: 20px;
-`
-
-const Cloud = styled.div`
-  position: absolute;
-  width: 60vw;
-  right: -20%;
-  z-index: 20;
-  pointer-events: none;
 `
 
 const ApplicationView = ({credential, application, event}) => {
@@ -72,9 +77,8 @@ const ApplicationView = ({credential, application, event}) => {
   return (
     <div data-test='applicationview'>
       <Container>
-        <Cloud>
-          <img src={cloud} />
-        </Cloud>
+        <TopTitle>観覧受付</TopTitle>
+        <EngTopTitle>Apply for the lottery</EngTopTitle>
         <Selection>
           <Title>クラス選択</Title>
           <Indent>

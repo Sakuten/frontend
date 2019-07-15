@@ -28,11 +28,11 @@ const Item = styled.div`
 `
 const Icon = styled.div`
   color: #fff;
-  font-size: 2vh;
+  font-size: 0.8rem;
 `
 const Text = styled.p`
   color: #fff;
-  font-size: 1vh;
+  font-size: 0.6rem;
 `
 
 const setColor = (type, page) => {
