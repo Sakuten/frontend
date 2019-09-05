@@ -7,7 +7,7 @@ const LotteryListIsEmptyContent = () => {
         応募できる抽選がありません
       </p>
       <p>
-        応募受付時間になったら、下のボタンを押して再読み込みしてください
+        応募受付時間になりましたら、下のボタンを押して再読み込みしてください
       </p>
       <button onClick={() => window.location.reload()}className='button is-info'>再読み読み</button>
     </div>
