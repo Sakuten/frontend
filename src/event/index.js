@@ -8,6 +8,7 @@ import {DialogObject} from './dialog'
 
 import {applyLottery, cancelLottery} from '../api/operation'
 
+import LotteryListIsEmptyContent from '../component/LotteryListIsEmptyContent'
 export class Event {
   constructor (store) {
     this.store = store
@@ -24,6 +25,11 @@ export class Event {
 
   onApplyLottery = async () => {
     this.dialog.onOpen('応募しています', 'しばらくお待ちください', 'お待ちください', false)
+    if (this.store.application.lotteryList.length === 0) {
+      this.dialog.onOpen('失敗しました', <LotteryListIsEmptyContent />, '戻る')
+      return
+    }
+
     if (this.store.application.classroom === 0 | this.store.application.classroom === '0') {
       this.dialog.onOpen('失敗しました', 'クラスが選択されていません', '戻る')
       return
