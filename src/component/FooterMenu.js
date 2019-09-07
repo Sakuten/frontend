@@ -41,6 +41,8 @@ const setColor = (type, page) => {
     color = type === 'lottery' ? '#87CEEB' : '#78bfdc'
   } else if (page === 'map') {
     color = type === 'map' ? '#87CEEB' : '#78bfdc'
+  } else if (page === 'groups') {
+    color = type === 'groups' ? '#87CEEB' : '#78bfdc'
   }
   return color
 }
@@ -51,6 +53,9 @@ export default class FooterMenu extends React.Component {
   }
   moveToMap = () => {
     this.props.router.push('/map')
+  }
+  moveToGroups = () => {
+    this.props.router.push('/groups')
   }
   render () {
     return (
@@ -65,10 +70,18 @@ export default class FooterMenu extends React.Component {
         </Item>
         <Item onClick={this.moveToMap} page={this.props.page} type='map'>
           <Icon>
-            <FontAwesome name='map' size='3x' />
+            <FontAwesome name='map-marked' size='3x' />
           </Icon>
           <Text>
             マップ
+          </Text>
+        </Item>
+        <Item onClick={this.moveToGroups} page={this.props.page} type='groups'>
+          <Icon>
+            <FontAwesome name='user-friends' size='3x' />
+          </Icon>
+          <Text>
+            団体紹介
           </Text>
         </Item>
       </Menu>
