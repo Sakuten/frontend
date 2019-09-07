@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import introduction from '../introduction.json'
+import { Transition } from 'react-transition-group'
 
 const TopTitle = styled.h1`
   text-align: center;
@@ -28,26 +29,60 @@ const SetClassColor = n => {
       return ''
   }
 }
+const duration = 300
+
+const defaultStyle = {
+  transition: `all ${duration}ms ease-out`,
+  opacity: 0
+}
+
+const transitionStyles = {
+  entering: { opacity: 0 },
+  entered: { opacity: 1 },
+  exiting: { opacity: 0 },
+  exited: { opacity: 0 }
+}
+
 class IntroCard extends React.Component {
   constructor (props) {
     super(props)
     this.state = {isVisiable: false}
+  }
+  onHeaderClick = () => {
+    this.setState({isVisiable: true})
   }
   render () {
     const { name } = this.props
     return (
       <div className='column' style={{marginBottom: 5}}>
         <div className='card'>
-          <header className='card-header'>
+          <header className='card-header' onClick={this.onHeaderClick}>
             <p className='card-header-title'>
-              <span className={'tag ' + SetClassColor(name)}>{name}</span> {introduction[name].title}
+              <span className={'tag ' + SetClassColor(name)}>{name}</span>
+              <Transition in={this.state.isVisiable} timeout={duration} mountOnEnter>
+                {state => (
+                  <span style={{
+                    ...defaultStyle,
+                    ...transitionStyles[state]
+                  }}>
+                    {introduction[name].title}
+                  </span>
+                )}
+              </Transition>
             </p>
           </header>
-          <div className='card-content'>
-            <div className='content' style={{whiteSpace: 'pre-line'}}>
-              <p>{introduction[name].body}</p>
-            </div>
-          </div>
+          <Transition in={this.state.isVisiable} timeout={duration} mountOnEnter>
+            {state => (
+              <div className='card-content' style={{
+                ...defaultStyle,
+                ...transitionStyles[state]
+              }}>
+                <div className='content' style={{whiteSpace: 'pre-line'}}>
+                  <p>{introduction[name].body}</p>
+                </div>
+              </div>
+            )}
+          </Transition>
         </div>
       </div>
     )
@@ -85,6 +120,7 @@ export default class ClassroomIntroduction extends React.Component {
       <div className='container'>
         <TopTitle>団体紹介</TopTitle>
         <EngTopTitle>Introduction</EngTopTitle>
+        <p className='has-text-centered'>クリックして詳細を表示できます</p>
         <div className='tabs is-medium is-centered'>
           <ul>
             <li className={this.ListClassName(5)} onClick={() => this.setState({isActive: 5})}><a>5年</a></li>
