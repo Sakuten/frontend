@@ -8,6 +8,7 @@ import GroupMemberButton from '../component/GroupMemberButton'
 import ClassroomSelect from '../component/ClassroomSelect'
 import LotteryView from '../component/LotteryView'
 import Button from '../component/Button'
+import Caution from '../component/Caution'
 
 const ButtonWrap = styled.button`
   margin: 20px 0;
@@ -94,6 +95,9 @@ const ApplicationView = ({credential, application, event}) => {
             <GroupMemberButton onAdd={onAddGroupMember} onError={onQRError} disabled={!application.isAbleToAddGroupMember}>一緒に見る人のQRコードを追加</GroupMemberButton>
           </Indent>
         </Selection>
+        <Indent>
+          <Caution />
+        </Indent>
         <ButtonWrap onClick={onApplyLottery}>
           <Button>
             申し込む
