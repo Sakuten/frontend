@@ -1,5 +1,18 @@
 import React from 'react'
+import styled from 'styled-components'
 import introduction from '../introduction.json'
+
+const TopTitle = styled.h1`
+  text-align: center;
+  font-size: 1.7rem;
+  margin-top: 20px;
+`
+
+const EngTopTitle = styled.h1`
+  text-align: center;
+  font-size: 0.7rem;
+  color: #636e72;
+`
 
 const SetClassColor = n => {
   switch (n[1]) {
@@ -63,6 +76,8 @@ export default class ClassroomIntroduction extends React.Component {
   render () {
     return (
       <div className='container'>
+        <TopTitle>団体紹介</TopTitle>
+        <EngTopTitle>Introduction</EngTopTitle>
         <div className='tabs is-medium is-centered'>
           <ul>
             <li className={this.ListClassName(5)} onClick={() => this.setState({isActive: 5})}><a>5年</a></li>
