@@ -28,23 +28,30 @@ const SetClassColor = n => {
       return ''
   }
 }
-const IntroCard = ({name}) => {
-  return (
-    <div className='column' style={{marginBottom: 5}}>
-      <div className='card'>
-        <header className='card-header'>
-          <p className='card-header-title'>
-            <span className={'tag ' + SetClassColor(name)}>{name}</span> {introduction[name].title}
-          </p>
-        </header>
-        <div className='card-content'>
-          <div className='content' style={{whiteSpace: 'pre-line'}}>
-            <p>{introduction[name].body}</p>
+class IntroCard extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {isVisiable: false}
+  }
+  render () {
+    const { name } = this.props
+    return (
+      <div className='column' style={{marginBottom: 5}}>
+        <div className='card'>
+          <header className='card-header'>
+            <p className='card-header-title'>
+              <span className={'tag ' + SetClassColor(name)}>{name}</span> {introduction[name].title}
+            </p>
+          </header>
+          <div className='card-content'>
+            <div className='content' style={{whiteSpace: 'pre-line'}}>
+              <p>{introduction[name].body}</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 const Fifth = () => {
   return (
