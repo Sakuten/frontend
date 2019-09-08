@@ -78,6 +78,7 @@ class App extends React.Component {
           <Route exact path='/lottery' render={() => this.props.store.credential.isLoggedIn ? this.props.store.credential.isLoggedInAsChecker ? <Redirect to='/checker' /> : <ApplicationView credential={this.props.store.credential} application={this.props.store.application} /> : <Redirect to='/lottery/login' />} />
           <Route exact path='/map' component={Map} />
           <Route exact path='/groups' component={GroupIntroduction} />
+          <Route exact path='/info' component={GroupIntroduction} />
           <ErrorList list={this.props.store.error.errorList} onDelete={onDelete} onShowDetails={msg => onOpen('エラー詳細', JSON.stringify(msg), '閉じる')} />
           <MessageDialog title={this.props.store.dialog.title} buttonText={this.props.store.dialog.buttonText} isButtonEnabled={this.props.store.dialog.isButtonEnabled} isOpen={this.props.store.dialog.isOpen} onClose={onClose}>
             {this.props.store.dialog.content}
@@ -87,6 +88,7 @@ class App extends React.Component {
         <Route path='/lottery' render={() => <FooterMenu router={this.props.store.router} page='lottery' />} />
         <Route exact path='/map' render={() => <FooterMenu router={this.props.store.router} page='map' />} />
         <Route exact path='/groups' render={() => <FooterMenu router={this.props.store.router} page='groups' />} />
+        <Route exact path='/info' render={() => <FooterMenu router={this.props.store.router} page='info' />} />
       </Outer>
     )
   }
