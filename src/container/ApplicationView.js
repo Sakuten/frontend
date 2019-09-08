@@ -79,7 +79,7 @@ const ApplicationView = ({credential, application, event}) => {
     <div data-test='applicationview'>
       <Container>
         <TopTitle>観覧受付</TopTitle>
-        <EngTopTitle>Apply for the lottery</EngTopTitle>
+        <EngTopTitle>Participate in a lottery</EngTopTitle>
         <Selection>
           <Title>クラス選択</Title>
           <Indent>
