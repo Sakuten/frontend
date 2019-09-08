@@ -84,6 +84,14 @@ export default class FooterMenu extends React.Component {
             団体紹介
           </Text>
         </Item>
+        <Item onClick={this.moveToGroups} page={this.props.page} type='groups'>
+          <Icon>
+            <FontAwesome name='info' size='3x' />
+          </Icon>
+          <Text>
+            案内
+          </Text>
+        </Item>
       </Menu>
     )
   }
