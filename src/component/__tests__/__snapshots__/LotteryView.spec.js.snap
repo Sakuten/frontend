@@ -23,21 +23,7 @@ ShallowWrapper {
         },
       ]
     }
-    onChange={
-      [MockFunction] {
-        "calls": Array [
-          Array [
-            4,
-          ],
-        ],
-        "results": Array [
-          Object {
-            "isThrow": false,
-            "value": undefined,
-          },
-        ],
-      }
-    }
+    onChange={[MockFunction]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -52,38 +38,39 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <span
-          data-test="lottery-lottery"
-          value={4}
-        >
-          第
-          2
-          公演
-        </span>,
+        <PerformanceNumber
+          c={
+            Object {
+              "classroom_id": 1,
+              "done": false,
+              "id": 4,
+              "index": 0,
+              "name": "5A.0",
+            }
+          }
+          onChange={[MockFunction]}
+        />,
       ],
     },
     "ref": null,
     "rendered": Array [
       Object {
         "instance": null,
-        "key": "4",
-        "nodeType": "host",
+        "key": undefined,
+        "nodeType": "class",
         "props": Object {
-          "children": Array [
-            "第",
-            2,
-            "公演",
-          ],
-          "data-test": "lottery-lottery",
-          "value": 4,
+          "c": Object {
+            "classroom_id": 1,
+            "done": false,
+            "id": 4,
+            "index": 0,
+            "name": "5A.0",
+          },
+          "onChange": [MockFunction],
         },
         "ref": null,
-        "rendered": Array [
-          "第",
-          2,
-          "公演",
-        ],
-        "type": "span",
+        "rendered": null,
+        "type": [Function],
       },
     ],
     "type": "div",
@@ -95,38 +82,39 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <span
-            data-test="lottery-lottery"
-            value={4}
-          >
-            第
-            2
-            公演
-          </span>,
+          <PerformanceNumber
+            c={
+              Object {
+                "classroom_id": 1,
+                "done": false,
+                "id": 4,
+                "index": 0,
+                "name": "5A.0",
+              }
+            }
+            onChange={[MockFunction]}
+          />,
         ],
       },
       "ref": null,
       "rendered": Array [
         Object {
           "instance": null,
-          "key": "4",
-          "nodeType": "host",
+          "key": undefined,
+          "nodeType": "class",
           "props": Object {
-            "children": Array [
-              "第",
-              2,
-              "公演",
-            ],
-            "data-test": "lottery-lottery",
-            "value": 4,
+            "c": Object {
+              "classroom_id": 1,
+              "done": false,
+              "id": 4,
+              "index": 0,
+              "name": "5A.0",
+            },
+            "onChange": [MockFunction],
           },
           "ref": null,
-          "rendered": Array [
-            "第",
-            2,
-            "公演",
-          ],
-          "type": "span",
+          "rendered": null,
+          "type": [Function],
         },
       ],
       "type": "div",
