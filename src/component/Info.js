@@ -25,21 +25,20 @@ export default class Info extends React.Component {
   ListClassName = n => this.state.isActive === n ? 'is-active' : ''
   render () {
     return (
-      <div className='container'>
+      <Wrapper>
         <TopTitle>ご案内</TopTitle>
         <EngTopTitle>Introduction</EngTopTitle>
-        <p className='has-text-centered'>クリックして詳細を表示できます</p>
-        <div className='tabs is-medium is-centered'>
-          <ul>
-            <li className={this.ListClassName(5)} onClick={() => this.setState({isActive: 5})}><a>5年</a></li>
-            <li className={this.ListClassName(6)} onClick={() => this.setState({isActive: 6})}><a>6年</a></li>
-          </ul>
-        </div>
         <div className='columns'>
-          {this.state.isActive === 5 && <Fifth />}
-          {this.state.isActive === 6 && <Sixth />}
+          <div className='column'>
+            <div className='content'>
+              <p><strong>抽選申し込みについて</strong>は、立志の28~29ページを参照してください。</p>
+              <p><strong>抽選申し込みのタイムテーブル</strong>は、立志の40~41ページを参照してください。</p>
+              <p>もし、抽選申し込みシステムに<strong>トラブルが発生した場合</strong>は、<a href='https://twitter.com/sakutendev' target='_blank'>Twitterアカウント</a>でお知らせします。</p>
+              <h2>よくある質問</h2>
+            </div>
+          </div>
         </div>
-      </div>
+      </Wrapper>
     )
   }
 }
