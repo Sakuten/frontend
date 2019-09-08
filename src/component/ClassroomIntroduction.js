@@ -46,10 +46,10 @@ const transitionStyles = {
 class IntroCard extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {isVisiable: false}
+    this.state = {isVisible: false}
   }
   onHeaderClick = () => {
-    this.setState({isVisiable: true})
+    this.setState({isVisible: true})
   }
   render () {
     const { name } = this.props
@@ -62,7 +62,7 @@ class IntroCard extends React.Component {
               {introduction[name].title}
             </p>
           </header>
-          <Transition in={this.state.isVisiable} timeout={duration} mountOnEnter>
+          <Transition in={this.state.isVisible} timeout={duration} mountOnEnter>
             {state => (
               <div className='card-content' style={{
                 ...defaultStyle,
