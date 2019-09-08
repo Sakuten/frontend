@@ -55,7 +55,7 @@ export default class FooterMenu extends React.Component {
   render () {
     return (
       <Menu>
-        <Item onClick={this.moveTo('/lottery')} page={this.props.page} type='lottery'>
+        <Item onClick={() => this.moveTo('/lottery')} page={this.props.page} type='lottery'>
           <Icon>
             <FontAwesome name='poll' size='3x' />
           </Icon>
@@ -63,7 +63,7 @@ export default class FooterMenu extends React.Component {
             応募
           </Text>
         </Item>
-        <Item onClick={this.moveTo('/map')} page={this.props.page} type='map'>
+        <Item onClick={() => this.moveTo('/map')} page={this.props.page} type='map'>
           <Icon>
             <FontAwesome name='map-marked' size='3x' />
           </Icon>
@@ -71,7 +71,7 @@ export default class FooterMenu extends React.Component {
             マップ
           </Text>
         </Item>
-        <Item onClick={this.moveTo('/groups')} page={this.props.page} type='groups'>
+        <Item onClick={() => this.moveTo('/groups')} page={this.props.page} type='groups'>
           <Icon>
             <FontAwesome name='user-friends' size='3x' />
           </Icon>
@@ -79,7 +79,7 @@ export default class FooterMenu extends React.Component {
             団体紹介
           </Text>
         </Item>
-        <Item onClick={this.moveTo('/info')} page={this.props.page} type='info'>
+        <Item onClick={() => this.moveTo('/info')} page={this.props.page} type='info'>
           <Icon>
             <FontAwesome name='info' size='3x' />
           </Icon>
