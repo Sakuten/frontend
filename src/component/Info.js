@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import introduction from '../introduction.json'
-import { Transition } from 'react-transition-group'
 
 const TopTitle = styled.h1`
   text-align: center;
@@ -13,94 +11,13 @@ const EngTopTitle = styled.h1`
   text-align: center;
   font-size: 0.7rem;
   color: #636e72;
+  margin-bottom: 20px;
 `
 
-const SetClassColor = n => {
-  switch (n[1]) {
-    case 'A':
-      return 'is-link'
-    case 'B':
-      return 'is-danger'
-    case 'C':
-      return 'is-success'
-    case 'D':
-      return 'is-light'
-    default:
-      return ''
-  }
-}
-const duration = 300
-
-const defaultStyle = {
-  transition: `all ${duration}ms ease-out`,
-  opacity: 0
-}
-
-const transitionStyles = {
-  entering: { opacity: 0 },
-  entered: { opacity: 1 },
-  exiting: { opacity: 0 },
-  exited: { opacity: 0 }
-}
-
-class IntroCard extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {isVisiable: false}
-  }
-  onHeaderClick = () => {
-    this.setState({isVisiable: true})
-  }
-  render () {
-    const { name } = this.props
-    return (
-      <div className='column' style={{marginBottom: 5}}>
-        <div className='card'>
-          <header className='card-header' onClick={this.onHeaderClick}>
-            <p className='card-header-title'>
-              <span className={'tag ' + SetClassColor(name)}>{name}</span>
-              {introduction[name].title}
-            </p>
-          </header>
-          <Transition in={this.state.isVisiable} timeout={duration} mountOnEnter>
-            {state => (
-              <div className='card-content' style={{
-                ...defaultStyle,
-                ...transitionStyles[state]
-              }}>
-                <div className='content' style={{whiteSpace: 'pre-line'}}>
-                  <p>{introduction[name].body}</p>
-                </div>
-              </div>
-            )}
-          </Transition>
-        </div>
-      </div>
-    )
-  }
-}
-const Fifth = () => {
-  return (
-    <div>
-      <IntroCard name='5A' />
-      <IntroCard name='5B' />
-      <IntroCard name='5C' />
-      <IntroCard name='5D' />
-    </div>
-  )
-}
-
-const Sixth = () => {
-  return (
-    <div>
-      <IntroCard name='6A' />
-      <IntroCard name='6B' />
-      <IntroCard name='6C' />
-      <IntroCard name='6D' />
-    </div>
-  )
-}
-export default class ClassroomIntroduction extends React.Component {
+const Wrapper = styled.div`
+  padding: 1.5rem;
+`
+export default class Info extends React.Component {
   constructor (props) {
     super(props)
     this.state = {isActive: 5}
