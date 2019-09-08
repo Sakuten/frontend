@@ -15,7 +15,7 @@ const EngTopTitle = styled.h1`
   color: #636e72;
 `
 
-const MarginLeft = styled.span`
+const MarginRight = styled.span`
   margin-right: 12px;
 `
 const SetClassColor = n => {
@@ -61,7 +61,7 @@ class IntroCard extends React.Component {
         <div className='card'>
           <header className='card-header' onClick={this.onHeaderClick}>
             <p className='card-header-title'>
-              <MarginLeft className={'tag ' + SetClassColor(name)}>{name}</MarginLeft>
+              <MarginRight className={'tag ' + SetClassColor(name)}>{name}</MarginRight>
               {introduction[name].title}
             </p>
           </header>
