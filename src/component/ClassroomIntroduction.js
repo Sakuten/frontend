@@ -59,16 +59,7 @@ class IntroCard extends React.Component {
           <header className='card-header' onClick={this.onHeaderClick}>
             <p className='card-header-title'>
               <span className={'tag ' + SetClassColor(name)}>{name}</span>
-              <Transition in={this.state.isVisiable} timeout={duration} mountOnEnter>
-                {state => (
-                  <span style={{
-                    ...defaultStyle,
-                    ...transitionStyles[state]
-                  }}>
-                    {introduction[name].title}
-                  </span>
-                )}
-              </Transition>
+              {introduction[name].title}
             </p>
           </header>
           <Transition in={this.state.isVisiable} timeout={duration} mountOnEnter>
