@@ -15,6 +15,9 @@ const EngTopTitle = styled.h1`
   color: #636e72;
 `
 
+const MarginLeft = styled.span`
+  margin-right: 12px;
+`
 const SetClassColor = n => {
   switch (n[1]) {
     case 'A':
@@ -46,10 +49,10 @@ const transitionStyles = {
 class IntroCard extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {isVisiable: false}
+    this.state = {isVisible: false}
   }
   onHeaderClick = () => {
-    this.setState({isVisiable: true})
+    this.setState({isVisible: true})
   }
   render () {
     const { name } = this.props
@@ -58,11 +61,11 @@ class IntroCard extends React.Component {
         <div className='card'>
           <header className='card-header' onClick={this.onHeaderClick}>
             <p className='card-header-title'>
-              <span className={'tag ' + SetClassColor(name)}>{name}</span>
+              <MarginLeft className={'tag ' + SetClassColor(name)}>{name}</MarginLeft>
               {introduction[name].title}
             </p>
           </header>
-          <Transition in={this.state.isVisiable} timeout={duration} mountOnEnter>
+          <Transition in={this.state.isVisible} timeout={duration} mountOnEnter>
             {state => (
               <div className='card-content' style={{
                 ...defaultStyle,
