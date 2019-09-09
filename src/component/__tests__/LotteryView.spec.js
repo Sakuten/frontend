@@ -49,7 +49,7 @@ describe('components', () => {
 
     it('renders with human-readable messages', () => {
       const { lottery } = setup()
-      expect(lottery.html()).toBe('<span data-test=\"lottery-lottery\" value=\"4\">第2公演</span>')
+      expect(lottery.html()).toBe('<span data-test="lottery-lottery" value="4">第2公演</span>')
     })
 
     it('renders only in same classroom', () => {
