@@ -4,9 +4,10 @@ import { observer } from 'mobx-react'
 const LotteryView = ({list, classroom, onChange}) => (
   <div>
     {
-      list.length !== 0 ? list
-        .filter(c => c.classroom_id === Number(classroom))
-        .map(performN => <PerformanceNumber onChange={onChange} performN={performN} />) : <span data-test='lottery-notfound'>現在応募は受け付けておりません。</span>
+      list.length !== 0
+        ? list.filter(c => c.classroom_id === Number(classroom))
+          .map(performN => <PerformanceNumber onChange={onChange} performN={performN} />)
+        : <span data-test='lottery-notfound'>現在応募は受け付けておりません。</span>
     }
   </div>
 )
