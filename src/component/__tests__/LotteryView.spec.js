@@ -30,7 +30,7 @@ const setup = propOverrides => {
     props,
     wrapper,
     lottery: wrapper.find(PerformanceNumber),
-    notfound: wrapper.find('[data-test="lottery-notfound"]'),
+    notfound: wrapper.find('[data-test="lottery-notfound"]')
   }
 }
 
