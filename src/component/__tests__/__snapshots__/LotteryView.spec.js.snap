@@ -56,7 +56,7 @@ ShallowWrapper {
     "rendered": Array [
       Object {
         "instance": null,
-        "key": undefined,
+        "key": "[object Object]",
         "nodeType": "class",
         "props": Object {
           "onChange": [MockFunction],
@@ -100,7 +100,7 @@ ShallowWrapper {
       "rendered": Array [
         Object {
           "instance": null,
-          "key": undefined,
+          "key": "[object Object]",
           "nodeType": "class",
           "props": Object {
             "onChange": [MockFunction],
