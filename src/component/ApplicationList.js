@@ -12,9 +12,10 @@ const RedText = styled.p`
   color: #ff3860;
 `
 
-const ConfirmCancel = (id, onCancel) => {
-  if (window.confirm('本当にキャンセルしますか？')) {
-    onCancel(id)
+const ConfirmCancel = (c, onCancel) => {
+  const message = '本当にキャンセルしますか？\n 以下のメンバーがキャンセルされます\n' + c.group_members.map(m => m.public_id).join(', ')
+  if (window.confirm(message)) {
+    onCancel(c.id)
   }
 }
 const ApplicationList = ({list, onCancel}) => (
@@ -43,7 +44,7 @@ const ApplicationList = ({list, onCancel}) => (
               </div>
             </div>
             {c.status === 'pending' && <footer className='card-footer'>
-              <a className='card-footer-item has-text-danger' data-test='applicationlist-cancel' onClick={() => ConfirmCancel(c.id, onCancel)}>キャンセル</a>
+              <a className='card-footer-item has-text-danger' data-test='applicationlist-cancel' onClick={() => ConfirmCancel(c, onCancel)}>キャンセル</a>
             </footer>}
           </div>
         </div>
