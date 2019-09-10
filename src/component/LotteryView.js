@@ -6,7 +6,7 @@ const LotteryView = ({list, classroom, onChange}) => (
     {
       list.length !== 0
         ? list.filter(c => c.classroom_id === Number(classroom))
-          .map(performN => <PerformanceNumber onChange={onChange} performN={performN} key={performN} />)
+          .map(lotteryN => <PerformanceNumber onChange={onChange} lotteryN={lotteryN} key={lotteryN.id} />)
         : <span data-test='lottery-notfound'>現在応募は受け付けておりません。</span>
     }
   </div>
@@ -14,12 +14,12 @@ const LotteryView = ({list, classroom, onChange}) => (
 
 export class PerformanceNumber extends React.Component {
   componentWillMount () {
-    this.props.onChange(this.props.performN.id)
+    this.props.onChange(this.props.lotteryN.id)
     console.log(this.props)
   }
   render () {
-    const { performN } = this.props
-    return <span data-test='lottery-lottery' key={performN.id} value={performN.id}>第{performN.index + 2}公演</span>
+    const { lotteryN } = this.props
+    return <span data-test='lottery-lottery' key={lotteryN.id} value={lotteryN.id}>第{lotteryN.index + 2}公演</span>
   }
 }
 export default observer(LotteryView)
