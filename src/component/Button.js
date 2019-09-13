@@ -5,13 +5,15 @@ import {Link} from 'react-router-dom'
 const Button = styled.div`
   width: 100%;
   position: relative;
-  border: solid 1px #000;
+  background-color: #209cee;
+  border-color: transparent;
+  border-radius: 4px;
 `
 
 const ButtonText = styled.div`
   padding: 30px;
   text-align: center;
-  color: #000;
+  color: #fff;
   font-size: 1.5rem;
 
   /* To bring text in front of triangle */
