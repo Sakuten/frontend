@@ -11,6 +11,12 @@ const TagWrapper = styled.span`
 const RedText = styled.p`
   color: #ff3860;
 `
+
+const ConfirmCancel = (id, onCancel) => {
+  if (window.confirm('本当にキャンセルしますか？')) {
+    onCancel(id)
+  }
+}
 const ApplicationList = ({list, onCancel}) => (
   <div>
     {
@@ -39,7 +45,7 @@ const ApplicationList = ({list, onCancel}) => (
               </div>
             </div>
             {c.status === 'pending' && <footer className='card-footer'>
-              <a className='card-footer-item has-text-danger' data-test='applicationlist-cancel' onClick={() => onCancel(c.id)}>キャンセル</a>
+              <a className='card-footer-item has-text-danger' data-test='applicationlist-cancel' onClick={() => ConfirmCancel(c.id, onCancel)}>キャンセル</a>
             </footer>}
           </div>
         </div>

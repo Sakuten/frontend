@@ -3,6 +3,7 @@ import { shallow } from 'enzyme'
 import ApplicationList from '../ApplicationList'
 
 const setup = propOverrides => {
+  window.confirm = () => true
   const props = Object.assign({
     list: [
       {
