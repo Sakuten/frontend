@@ -13,7 +13,8 @@ const RedText = styled.p`
 `
 
 const ConfirmCancel = (c, onCancel) => {
-  const message = '本当にキャンセルしますか？\n 以下のメンバーがキャンセルされます\n' + c.group_members.map(m => m.public_id).join(', ')
+  const groupConfirm = c.group_members.length === 0 ? '' : '以下のメンバーがキャンセルされます\n' + c.group_members.map(m => m.public_id).join(', ')
+  const message = '本当にキャンセルしますか？\n' + groupConfirm
   if (window.confirm(message)) {
     onCancel(c.id)
   }
