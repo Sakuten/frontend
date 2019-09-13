@@ -41,21 +41,21 @@ const setColor = (type, page) => {
     color = type === 'lottery' ? '#87CEEB' : '#78bfdc'
   } else if (page === 'map') {
     color = type === 'map' ? '#87CEEB' : '#78bfdc'
+  } else if (page === 'groups') {
+    color = type === 'groups' ? '#87CEEB' : '#78bfdc'
+  } else if (page === 'info') {
+    color = type === 'info' ? '#87CEEB' : '#78bfdc'
   }
   return color
 }
 export default class FooterMenu extends React.Component {
-  moveToLottery = () => {
-    this.props.router.push('/lottery')
-    console.log(this.props.router)
-  }
-  moveToMap = () => {
-    this.props.router.push('/map')
+  moveTo = (path) => {
+    this.props.router.push(path)
   }
   render () {
     return (
       <Menu>
-        <Item onClick={this.moveToLottery} page={this.props.page} type='lottery'>
+        <Item onClick={() => this.moveTo('/lottery')} page={this.props.page} type='lottery'>
           <Icon>
             <FontAwesome name='poll' size='3x' />
           </Icon>
@@ -63,12 +63,28 @@ export default class FooterMenu extends React.Component {
             応募
           </Text>
         </Item>
-        <Item onClick={this.moveToMap} page={this.props.page} type='map'>
+        <Item onClick={() => this.moveTo('/map')} page={this.props.page} type='map'>
           <Icon>
-            <FontAwesome name='map' size='3x' />
+            <FontAwesome name='map-marked' size='3x' />
           </Icon>
           <Text>
             マップ
+          </Text>
+        </Item>
+        <Item onClick={() => this.moveTo('/groups')} page={this.props.page} type='groups'>
+          <Icon>
+            <FontAwesome name='user-friends' size='3x' />
+          </Icon>
+          <Text>
+            団体紹介
+          </Text>
+        </Item>
+        <Item onClick={() => this.moveTo('/info')} page={this.props.page} type='info'>
+          <Icon>
+            <FontAwesome name='info' size='3x' />
+          </Icon>
+          <Text>
+            案内
           </Text>
         </Item>
       </Menu>

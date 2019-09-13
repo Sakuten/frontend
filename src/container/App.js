@@ -11,6 +11,8 @@ import Home from '../component/Home'
 import MessageDialog from '../component/MessageDialog'
 import FooterMenu from '../component/FooterMenu'
 import Map from '../component/Map'
+import Info from '../component/Info'
+import GroupIntroduction from '../component/ClassroomIntroduction'
 import styled from 'styled-components'
 import logo from '../header_2019.png'
 
@@ -76,6 +78,8 @@ class App extends React.Component {
           <Route path='/lottery/login' render={() => this.props.store.credential.isLoggedIn ? <Redirect to='/lottery' /> : <LoginView credential={this.props.store.credential} />} />
           <Route exact path='/lottery' render={() => this.props.store.credential.isLoggedIn ? this.props.store.credential.isLoggedInAsChecker ? <Redirect to='/checker' /> : <ApplicationView credential={this.props.store.credential} application={this.props.store.application} /> : <Redirect to='/lottery/login' />} />
           <Route exact path='/map' component={Map} />
+          <Route exact path='/groups' component={GroupIntroduction} />
+          <Route exact path='/info' component={Info} />
           <ErrorList list={this.props.store.error.errorList} onDelete={onDelete} onShowDetails={msg => onOpen('エラー詳細', JSON.stringify(msg), '閉じる')} />
           <MessageDialog title={this.props.store.dialog.title} buttonText={this.props.store.dialog.buttonText} isButtonEnabled={this.props.store.dialog.isButtonEnabled} isOpen={this.props.store.dialog.isOpen} onClose={onClose}>
             {this.props.store.dialog.content}
@@ -84,6 +88,8 @@ class App extends React.Component {
         <Route exact path='/' render={() => <FooterMenu router={this.props.store.router} page='lottery' />} />
         <Route path='/lottery' render={() => <FooterMenu router={this.props.store.router} page='lottery' />} />
         <Route exact path='/map' render={() => <FooterMenu router={this.props.store.router} page='map' />} />
+        <Route exact path='/groups' render={() => <FooterMenu router={this.props.store.router} page='groups' />} />
+        <Route exact path='/info' render={() => <FooterMenu router={this.props.store.router} page='info' />} />
       </Outer>
     )
   }
