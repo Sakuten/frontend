@@ -1,5 +1,7 @@
 @import "bulma/bulma";
 
+// scss-lint:disable ImportantRule
 .grecaptcha-badge {
   bottom: 80px !important;
 }
+// scss-lint:enable ImportantRule
