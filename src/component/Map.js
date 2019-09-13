@@ -8,16 +8,19 @@ import fourFloorImage from '../S12.4.png'
 
 const Container = styled.div`
   background-color: #fff;
-  width: 80vw;
-  height: 70%;
-  padding: 30px;
-  margin-top: 20px;
+  padding: 0 30px 0;
 `
 const Title = styled.h1`
-  font-size: 2rem;
-  color: #000;
-  margin: 20px 0;
+  text-align: center;
+  font-size: 1.7rem;
+  margin-top: 20px;
 `
+const EngTitle = styled.h1`
+  text-align: center;
+  font-size: 0.7rem;
+  color: #636e72;
+`
+
 const FloorTitle = styled.h2`
   font-size: 1.5rem;
   color: #000;
@@ -39,6 +42,7 @@ const MarkImage = styled(MapImage)`
 const Map = () => (
   <Container>
     <Title>校内地図</Title>
+    <EngTitle>Map</EngTitle>
     <MarkTitle>マークの説明</MarkTitle>
     <MarkImage src={markImage} />
     <FloorTitle>一階</FloorTitle>
