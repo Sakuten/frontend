@@ -34,6 +34,8 @@ const ApplicationList = ({list, onCancel}) => (
                 {c.group_members.length !== 0 && <div><p>一緒に応募した人: <b>{c.group_members.map(m => m.public_id).join(', ')}</b></p>
                   {c.status === 'pending' && <RedText>団体応募代表者がキャンセルすると、メンバー全員の応募がキャンセルされます。</RedText> }
                 </div>}
+                {c.status === 'waiting' && <RedText>キャンセル待ちは開演5分前から当選者と同じ扱いになり、先着で入場することができます。</RedText>}
+                {(c.status === 'won' || c.status === 'waiting') && <RedText>6年の教室に向かう際は中央階段を使ってください。</RedText>}
               </div>
             </div>
             {c.status === 'pending' && <footer className='card-footer'>
