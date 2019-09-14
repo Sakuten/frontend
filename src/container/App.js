@@ -14,7 +14,7 @@ import Map from '../component/Map'
 import Info from '../component/Info'
 import GroupIntroduction from '../component/ClassroomIntroduction'
 import styled from 'styled-components'
-import logo from '../header_2019.png'
+import logo from '../header_2019.svg'
 
 const Background = styled.div`
   background-size: cover;
