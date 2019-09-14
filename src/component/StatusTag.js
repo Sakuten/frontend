@@ -6,7 +6,7 @@ const StatusTag = ({status, className, left}) => {
     'pending': ['is-dark', '発表をお待ちください。'],
     'won': ['is-success', '当選しました。'],
     'lose': ['is-danger', '落選しました。'],
-    'waiting': ['is-warning', 'キャンセル待ちです。']
+    'waiting': ['is-warning', 'キャンセル待ち(補欠当選)です。']
   }
 
   const tagInfo = tags[status] || ['', status]
