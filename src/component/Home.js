@@ -4,7 +4,7 @@ import React from 'react'
 import FullWidth from '../util/fullwidth'
 import Button from './Button'
 
-import logo from '../header_2019.png'
+import logo from '../header_2019.svg'
 
 const Heading = styled.header`
   width: 100%;
