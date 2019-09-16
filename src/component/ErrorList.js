@@ -24,7 +24,7 @@ const ErrorList = ({list, onDelete, onShowDetails}) => (
   <Container data-test='errorlist'>
     {
       list.map((c, i) => {
-        const error = errors[c.code] || {"translation": "前回当選したので、今回は応募できません。","level": "notice"}
+        const error = errors[c.code] || {'translation': '前回当選したので、今回は応募できません。', 'level': 'notice'}
         const levelToMessage = {
           'internal': ['is-danger', '内部エラーが発生しました'],
           'error': ['is-warning', '失敗しました'],
