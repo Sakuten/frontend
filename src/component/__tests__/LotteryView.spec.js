@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import LotteryView from '../LotteryView'
+import LotteryView, { PerformanceNumber } from '../LotteryView'
 
 const setup = propOverrides => {
   const props = Object.assign({
@@ -29,7 +29,7 @@ const setup = propOverrides => {
   return {
     props,
     wrapper,
-    lottery: wrapper.find('[data-test="lottery-lottery"]'),
+    lottery: wrapper.find(PerformanceNumber),
     notfound: wrapper.find('[data-test="lottery-notfound"]')
   }
 }
@@ -44,18 +44,18 @@ describe('components', () => {
     it('renders one lottery', () => {
       const { lottery } = setup()
       expect(lottery.length).toBe(1)
-      expect(lottery.at(0).props().value).toBe(4)
+      expect(lottery.props().performN.id).toBe(4)
     })
 
     it('renders with human-readable messages', () => {
       const { lottery } = setup()
-      expect(lottery.at(0).text()).toBe('第2公演')
+      expect(lottery.html()).toBe('<span data-test="lottery-lottery" value="4">第2公演</span>')
     })
 
     it('renders only in same classroom', () => {
       const { lottery } = setup({classroom: 2})
       expect(lottery.length).toBe(1)
-      expect(lottery.at(0).props().value).toBe(5)
+      expect(lottery.props().performN.id).toBe(5)
     })
 
     it('renders a message when the list was empty', () => {
